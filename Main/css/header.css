@@ -1,4 +1,12 @@
 /* General Header Styles */
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Ubunutu', sans-serif;
+}
+
 header {
     background-color: #f8f9fa;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -26,30 +34,31 @@ header {
 }
 
 /* Navigation Menu */
-.menuzord {
+.nav-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 /* Logo */
-.menuzord-brand img {
-    max-height: 50px;
+.brand img {
+    max-height: 5rem;
+	max-width: auto;
 }
 
 /* Menu Items */
-.menuzord-menu {
+.menu {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
 
-.menuzord-menu li {
+.menu li {
     position: relative;
 }
 
-.menuzord-menu li a {
+.menu li a {
     display: block;
     padding: 10px 20px;
     color: #264455;
@@ -57,13 +66,13 @@ header {
     font-weight: bold;
 }
 
-.menuzord-menu li a:hover,
-.menuzord-menu li.active a {
+.menu li a:hover,
+.menu li.active a {
     color: #007bff;
 }
 
 /* Dropdown Menu */
-.menuzord-menu .dropdown {
+.menu .dropdown {
     display: none;
     position: absolute;
     top: 100%;
@@ -74,20 +83,20 @@ header {
     z-index: 1000;
 }
 
-.menuzord-menu li:hover .dropdown {
+.menu li:hover .dropdown {
     display: block;
 }
 
-.menuzord-menu .dropdown li {
+.menu .dropdown li {
     width: 200px;
 }
 
-.menuzord-menu .dropdown li a {
+.menu .dropdown li a {
     padding: 10px;
     color: #264455;
 }
 
-.menuzord-menu .dropdown li a:hover {
+.menu .dropdown li a:hover {
     background: #f8f9fa;
 }
 
