@@ -1,0 +1,134 @@
+/* General Header Styles */
+header {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+/* Top Bar Styles */
+.top-bar {
+    background-color: #264455;
+    color: #fff;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Navigation Background */
+.nav-bg {
+    background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1000;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Menu */
+.menuzord {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.menuzord-brand img {
+    max-height: 50px;
+}
+
+/* Menu Items */
+.menuzord-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menuzord-menu li {
+    position: relative;
+}
+
+.menuzord-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #264455;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menuzord-menu li a:hover,
+.menuzord-menu li.active a {
+    color: #007bff;
+}
+
+/* Dropdown Menu */
+.menuzord-menu .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 1000;
+}
+
+.menuzord-menu li:hover .dropdown {
+    display: block;
+}
+
+.menuzord-menu .dropdown li {
+    width: 200px;
+}
+
+.menuzord-menu .dropdown li a {
+    padding: 10px;
+    color: #264455;
+}
+
+.menuzord-menu .dropdown li a:hover {
+    background: #f8f9fa;
+}
+
+/* Search Bar Styles */
+.search-bar {
+    background-color: #f1f1f1;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar form {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px 0 0 3px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0 3px 3px 0;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
