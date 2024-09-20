@@ -17,7 +17,8 @@ header {
 .top-bar {
     background-color: #264455;
     color: #fff;
-    padding: 5px 0;
+    padding: 5px 0px;
+	margin-bottom: 0.2rem;
     text-align: center;
     font-size: 14px;
 }
@@ -56,6 +57,7 @@ header {
 
 .menu li {
     position: relative;
+	align-self: center;
 }
 
 .menu li a {
@@ -64,6 +66,7 @@ header {
     color: #264455;
     text-decoration: none;
     font-weight: bold;
+	text-align: center;
 }
 
 .menu li a:hover,
@@ -140,4 +143,17 @@ header {
 
 .search-bar button:hover {
     background-color: #0056b3;
+	transition: 0.3s;
+}
+.btn-nav {
+	background-color: #007bff;
+	color: #fff;
+	padding: 0.7rem 1.2rem;
+	border-radius: 3px;
+	border-style: none;
+
+}
+.btn-nav:hover {
+	background-color: #0056b3;
+	transition: 0.3s;
 }
