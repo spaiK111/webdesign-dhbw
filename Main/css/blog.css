@@ -43,3 +43,10 @@
     align-items: center;
     margin-bottom: 20px;
 }
+.blog-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px 1rem;
+}
