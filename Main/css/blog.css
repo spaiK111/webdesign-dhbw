@@ -11,6 +11,7 @@
 }
 
 .blog-item {
+    background-image: url(../images/immoONE.jpg);
     background-color: #f8f9fa;
     border: 1px solid #ddd;
     border-radius: 5px;
