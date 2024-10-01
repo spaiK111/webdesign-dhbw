@@ -18,7 +18,6 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/footer.css" />
-  <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/blog.css" />
   <!-- JS -->
   <script src="js/landing.js"></script>
@@ -50,7 +49,7 @@
                     <a href="index.html"><span>Home</span></a>
                   </li>
                   <li>
-                    <a href="xxx.html"><span>Blog</span></a>
+                    <a href="blog.html"><span>Blog</span></a>
                   </li>
                   <li>
                     <a href="xxx.html"><span>Raiting</span></a>
@@ -71,16 +70,28 @@
     </div>
   </header>
    <!-- Search Bar Section -->
-   <div class="search-bar">
+    <div class="search-bar">
     <div class="container">
         <form action="/search" method="get">
             <input type="text" name="query" placeholder="Blogeinträge erfassen..." required>
-            <button type="submit">Suche</button>
+            <button class="search-button">
+              <span>
+                <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9.145 18.29c-5.042 0-9.145-4.102-9.145-9.145s4.103-9.145 9.145-9.145 9.145 4.103 9.145 9.145-4.102 9.145-9.145 9.145zm0-15.167c-3.321 0-6.022 2.702-6.022 6.022s2.702 6.022 6.022 6.022 6.023-2.702 6.023-6.022-2.702-6.022-6.023-6.022zm9.263 12.443c-.817 1.176-1.852 2.188-3.046 2.981l5.452 5.453 3.014-3.013-5.42-5.421z"></path></svg>
+              </span>
+            </button>
         </form>
     </div>
 </div>
 <main> 
     <div class="content">
+      <div class="topstory-grid">
+        
+          <div class="topstory-blog-item">
+            <h1>Top Story</h1>
+          </div>
+        
+      </div>
+      
         <!-- Your content goes here -->
          <!-- Main Content -->
 <div class="main-content">
@@ -88,30 +99,34 @@
         <h1>Blogeinträge</h1>
     </div>
     <div class="blog-grid">
+      
         <div class="blog-item">
-            <h3>Blog Title 1</h3>
-            <p>Kurze Beschreibung des Blogbeitrags 1.</p>
+          <h3>Blog Title 1</h3>
+          <p>Kurze Beschreibung des Blogbeitrags 1.</p>
         </div>
         <div class="blog-item">
-            <h3>Blog Title 2</h3>
-            <p>Kurze Beschreibung des Blogbeitrags 2.</p>
+          <h3>Blog Title 2</h3>
+          <p>Kurze Beschreibung des Blogbeitrags 2.</p>
         </div>
         <div class="blog-item">
-            <h3>Blog Title 3</h3>
-            <p>Kurze Beschreibung des Blogbeitrags 3.</p>
+          <h3>Blog Title 3</h3>
+          <p>Kurze Beschreibung des Blogbeitrags 3.</p>
         </div>
         <div class="blog-item">
-            <h3>Blog Title 4</h3>
-            <p>Kurze Beschreibung des Blogbeitrags 4.</p>
+          <h3>Blog Title 4</h3>
+          <p>Kurze Beschreibung des Blogbeitrags 4.</p>
         </div>
         <div class="blog-item">
-            <h3>Blog Title 5</h3>
-            <p>Kurze Beschreibung des Blogbeitrags 5.</p>
+          <h3>Blog Title 5</h3>
+          <p>Kurze Beschreibung des Blogbeitrags 5.</p>
         </div>
         <div class="blog-item">
-            <h3>Blog Title 6</h3>
-            <p>Kurze Beschreibung des Blogbeitrags 6.</p>
+          <h3>Blog Title 6</h3>
+          <p>Kurze Beschreibung des Blogbeitrags 6.</p>
         </div>
+
+      
+        
         
         
     </div>
