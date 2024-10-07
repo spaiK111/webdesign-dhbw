@@ -1,180 +1,138 @@
 <!DOCTYPE html>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website Title</title>
-  <!--  Google Fonts  -->
-  <link
-    href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,300"
-    rel="stylesheet"
-    type="text/css"
-  />
-  <link
-    href="http://fonts.googleapis.com/css?family=Ubuntu:400,300italic,300,400italic,500,500italic,700"
-    rel="stylesheet"
-    type="text/css"
-  />
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Car.Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Font awesome icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/blog/blog.css" />
+  </head>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/header.css" />
-  <link rel="stylesheet" href="css/footer.css" />
-  <link rel="stylesheet" href="css/blog.css" />
-  <!-- JS -->
-  <script src="js/landing.js"></script>
-</head>
-<body>
-  <!-- Header Section -->
-  <header>
-    <!-- Top Bar -->
-    <div class="top-bar">
-      <!-- Content for the top bar can go here -->
-       <a>Erfahren Sie alles über die neusten Fahrzeuge </a>
-    </div>
-
-    <!-- Logo and Navigation -->
-    <div id="nav-wrap">
-      <div class="nav-bg fullwidth">
+  <body>
+    <!-- Header Section -->
+    <header>
+      <nav class="navbar">
         <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="nav-box">
-                <a href="index.html" class="brand">
-                  <img src="images/logo.png" alt="Logo" />
-                </a>
-                <a class="nav-title">
-                    <h2>WWI2023A</h2>
-                  </a>
-                <ul class="menu">
-                  <li class="active">
-                    <a href="index.html"><span>Home</span></a>
-                  </li>
-                  <li>
-                    <a href="blog.html"><span>Blog</span></a>
-                  </li>
-                  <li>
-                    <a href="xxx.html"><span>Raiting</span></a>
-                  </li>
-                  <li>
-                    <a href="xxx.html"><span>Kontakt</span></a>
-                  </li>
-                  <li>
-                    <a href="xxx.html"><button class = 'btn-nav'><strong>Login</strong></button></a>
-                  </li>
-                  </li>
-                </ul>
-              </div>
-            </div>
+          <a href="index.html" class="navbar-brand">Car.Blog</a>
+          <div class="navbar-nav">
+            <a href="/index.html">home</a>
+            <a href="/admin.html">admin</a>
+            <a href="/login.html">login</a>
+            <a href="/blog.html">blog</a>
           </div>
         </div>
-      </div>
-    </div>
-  </header>
-   <!-- Search Bar Section -->
-    <div class="search-bar">
-    <div class="container">
-        <form action="/search" method="get">
-            <input type="text" name="query" placeholder="Blogeinträge erfassen..." required>
-            <button class="search-button">
-              <span>
-                <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9.145 18.29c-5.042 0-9.145-4.102-9.145-9.145s4.103-9.145 9.145-9.145 9.145 4.103 9.145 9.145-4.102 9.145-9.145 9.145zm0-15.167c-3.321 0-6.022 2.702-6.022 6.022s2.702 6.022 6.022 6.022 6.023-2.702 6.023-6.022-2.702-6.022-6.023-6.022zm9.263 12.443c-.817 1.176-1.852 2.188-3.046 2.981l5.452 5.453 3.014-3.013-5.42-5.421z"></path></svg>
-              </span>
-            </button>
-        </form>
-    </div>
-</div>
-<main> 
-    <div class="content">
+      </nav>
+
       <div class="blog-topcontent-grid">
-          <div class="blog-topcontent-topStory">
-            <h1>Top Story</h1>
+        <div class="blog-topcontent-topStory">
+          <h1>Top Story</h1>
+        </div>
+        <div class="wrapper-topNews">
+          <h1>Top News</h1>
+          <div class="blog-topNews">
+            <div class="topnews item-one">
+              <h3>Porsche wird pleite!?</h3>
+              <p>Kek</p>
+            </div>
           </div>
-          <div class="blog-topcontent-topNews">
-            <h1>Top News</h1>
-            <div class="topnews-item">
+          <div class="blog-topNews">
+            <div class="topnews item-two">
               <h3>Blog Title 1</h3>
               <p>Kurze Beschreibung des Blogbeitrags 1.</p>
             </div>
-            <div class="topnews-item">
+          </div>
+          <div class="blog-topNews">
+            <div class="topnews item-three">
+              <h3>Blog Title 1</h3>
+              <p>Kurze Beschreibung des Blogbeitrags 1.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="content">
+        <!-- Your content goes here -->
+        <!-- Main Content -->
+        <div class="main-content">
+          <div class="blog-header">
+            <h1>Blogeinträge</h1>
+
+            <div class="banner">
+              <div class="container">
+                <form>
+                  <input
+                    type="text"
+                    class="search-input"
+                    placeholder="Suche Blogbeitrag..."
+                  />
+                  <button type="submit" class="search-button">
+                    <span>
+                      <svg
+                        viewBox="0 0 24 24"
+                        height="24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.145 18.29c-5.042 0-9.145-4.102-9.145-9.145s4.103-9.145 9.145-9.145 9.145 4.103 9.145 9.145-4.102 9.145-9.145 9.145zm0-15.167c-3.321 0-6.022 2.702-6.022 6.022s2.702 6.022 6.022 6.022 6.023-2.702 6.023-6.022-2.702-6.022-6.023-6.022zm9.263 12.443c-.817 1.176-1.852 2.188-3.046 2.981l5.452 5.453 3.014-3.013-5.42-5.421z"
+                        ></path>
+                      </svg>
+                    </span>
+                    <!--<i class = "fas fa-search"></i> Obsolete -->
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="blog-grid">
+            <div class="blog-item">
+              <h3>Blog Title 1</h3>
+              <p>Kurze Beschreibung des Blogbeitrags 1.</p>
+            </div>
+            <div class="blog-item">
               <h3>Blog Title 2</h3>
               <p>Kurze Beschreibung des Blogbeitrags 2.</p>
             </div>
-            <div class="topnews-item">
+            <div class="blog-item">
               <h3>Blog Title 3</h3>
               <p>Kurze Beschreibung des Blogbeitrags 3.</p>
             </div>
-
-
+            <div class="blog-item">
+              <h3>Blog Title 4</h3>
+              <p>Kurze Beschreibung des Blogbeitrags 4.</p>
+            </div>
+            <div class="blog-item">
+              <h3>Blog Title 5</h3>
+              <p>Kurze Beschreibung des Blogbeitrags 5.</p>
+            </div>
+            <div class="blog-item">
+              <h3>cluster.überschrift</h3>
+              <p>Kurze Beschreibung des Blogbeitrags 6.</p>
+            </div>
           </div>
+        </div>
       </div>
-      
-        <!-- Your content goes here -->
-         <!-- Main Content -->
-<div class="main-content">
-    <div class= "blog-header">
-        <h1>Blogeinträge</h1>
-    </div>
-    <div class="blog-grid">
-      
-        <div class="blog-item">
-          <h3>Blog Title 1</h3>
-          <p>Kurze Beschreibung des Blogbeitrags 1.</p>
-        </div>
-        <div class="blog-item">
-          <h3>Blog Title 2</h3>
-          <p>Kurze Beschreibung des Blogbeitrags 2.</p>
-        </div>
-        <div class="blog-item">
-          <h3>Blog Title 3</h3>
-          <p>Kurze Beschreibung des Blogbeitrags 3.</p>
-        </div>
-        <div class="blog-item">
-          <h3>Blog Title 4</h3>
-          <p>Kurze Beschreibung des Blogbeitrags 4.</p>
-        </div>
-        <div class="blog-item">
-          <h3>Blog Title 5</h3>
-          <p>Kurze Beschreibung des Blogbeitrags 5.</p>
-        </div>
-        <div class="blog-item">
-          <h3>Blog Title 6</h3>
-          <p>Kurze Beschreibung des Blogbeitrags 6.</p>
-        </div>
+    </main>
 
-      
-        
-        
-        
-    </div>
-</div>
-    </div>
-</main>
-
-</body>
-<!-- Footer Section -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>Blog WWI2023A</h4>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-            </div>
-            <div class="footer-column">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="typography.html">Blog</a></li>
-                    <li><a href="elements.html">Raiting</a></li>
-                    <li><a href="tables.html">Kontakt</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Kontakt</h4>
-                <p>Email: me@example.com</p>
-                <p>Telefon: +49 123 456 789</p>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2024 Blog WWI2023A. Alle Rechte vorbehalten.</p>
-    </div>
-</footer>
+    <!-- footer -->
+    <footer>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+      </div>
+      <span>Car Blog Page</span>
+    </footer>
+    <!-- end of footer -->
+  </body>
+</html>
