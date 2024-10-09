@@ -102,3 +102,13 @@ body{
 .register-link p a:hover{
   text-decoration: underline;
 }
+@media screen and (max-width: 450px){
+  .wrapper{
+    margin: 15px;
+    padding: 10px 15px;
+  }
+  .wrapper .remember-forgot{
+    gap: 20px;
+    align-items: space-between;
+  }
+}
