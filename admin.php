@@ -71,7 +71,7 @@
 			</form>
 			<input type="checkbox" id="switch-mode" hidden>
 			<label for="switch-mode" class="switch-mode"></label>
-			<a href="#" class="notification">
+			<a href="#" id ="notification-nav" class="notification">
 				<i class='bx bxs-bell' ></i>
 				<span class="num">8</span>
 			</a>
@@ -131,6 +131,25 @@
 					</div>
 				</div>
 			</div>
+			<div id="notification-popup" class="popup hidden">
+				<div class="popup-header">
+					<h3>Notifications</h3>
+				</div>
+				
+				<div class="popup-content">
+					<?php include 'notifications.php'; ?>
+					<?php foreach ($notifications as $notification): ?>
+						<div class="notification <?php echo $notification['type']; ?>" style="background-color: <?php echo $notification['type'] === 'danger' ? 'red' : ($notification['type'] === 'success' ? 'green' : 'yellow'); ?>;">
+							<p><?php echo getNotificationIcon($notification['type']) . ' ' . $notification['message']; ?></p>
+							<a><?php echo $notification['description']; ?></a>
+						</div>
+					<?php endforeach; ?>
+				</div>
+				
+					<!-- Weitere Benachrichtigungen -->
+				</div>
+			</div>
+
 		</main>
 		<!-- MAIN -->
 	</section>
@@ -138,5 +157,6 @@
 	
 
 	<script src="/assets/admin/js/script.js"></script>
+	<script src="/assets/admin/js/popup.js"></script>
 </body>
 </html>
