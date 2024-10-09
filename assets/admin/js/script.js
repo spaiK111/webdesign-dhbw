@@ -11,13 +11,23 @@ allSideMenu.forEach(item=> {
 	})
 });
 
-
+function updateSpanContent() {
+    if (sidebar.classList.contains('hide')) {
+        span.innerHTML = 'C'; // Replace with the desired content
+		console.log("test1")
+    } else {
+        span.innerHTML = 'CarBlog'; // Replace with the original content
+		console.log("test2")
+    }
+}
 
 
 // TOGGLE SIDEBAR
 const menuBar = document.querySelector('.content nav .bx.bx-menu');
 const sidebar = document.querySelector('.sidebar');
 const content = document.querySelector('.content');
+const span = document.querySelector('.sidebar .brand .text')
+console.log(span)
 
 menuBar.addEventListener('click', function () {
 	sidebar.classList.toggle('hide');
@@ -41,6 +51,10 @@ searchButton.addEventListener('click', function (e) {
 	}
 })
 
+menuBar.addEventListener('click', function () {
+	updateSpanContent();
+})
+
 function toggleSidebar() {
     if (window.innerWidth < 602) {
         sidebar.classList.add('hide');
@@ -51,6 +65,7 @@ function toggleSidebar() {
     }
 }
 
+updateSpanContent();
 toggleSidebar();
 
 window.addEventListener('resize', toggleSidebar);
