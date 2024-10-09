@@ -17,9 +17,11 @@ allSideMenu.forEach(item=> {
 // TOGGLE SIDEBAR
 const menuBar = document.querySelector('.content nav .bx.bx-menu');
 const sidebar = document.getElementsByClassName('sidebar')[0];
+const content = document.getElementsByClassName('content')[0];
 
 menuBar.addEventListener('click', function () {
 	sidebar.classList.toggle('hide');
+	content.classList.toggle('full');
 })
 
 
