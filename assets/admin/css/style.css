@@ -517,15 +517,10 @@ body {
 	.content nav form .form-input input {
 		display: none;
 	}
-
-}
-
-@media (max-width: 768px) {
 	.box-info .li {
-	  display: block;
-	}
-  }
-
+		display: block;
+	  }
+}
 
 
 
@@ -543,17 +538,6 @@ body {
 		align-items: center;	
 	}
 
-}
-
-@media screen and (max-width: 551px) {
-	.content .main .box-info li {
-		display: flex;
-		width: 100%;
-		align-items: center;	
-	}
-}
-
-@media screen and (max-width: 602px) {
 	.content .main .table-data .order .head{
 		display: flex;
 		flex-direction: column;
@@ -563,5 +547,13 @@ body {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+	}
+}
+
+@media screen and (max-width: 551px) {
+	.content .main .box-info li {
+		display: flex;
+		width: 100%;
+		align-items: center;	
 	}
 }

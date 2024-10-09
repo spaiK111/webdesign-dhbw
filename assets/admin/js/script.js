@@ -16,8 +16,8 @@ allSideMenu.forEach(item=> {
 
 // TOGGLE SIDEBAR
 const menuBar = document.querySelector('.content nav .bx.bx-menu');
-const sidebar = document.getElementsByClassName('sidebar')[0];
-const content = document.getElementsByClassName('content')[0];
+const sidebar = document.querySelector('.sidebar');
+const content = document.querySelector('.content');
 
 menuBar.addEventListener('click', function () {
 	sidebar.classList.toggle('hide');
@@ -40,6 +40,20 @@ searchButton.addEventListener('click', function (e) {
 		}
 	}
 })
+
+function toggleSidebar() {
+    if (window.innerWidth < 602) {
+        sidebar.classList.add('hide');
+		content.classList.add('full');
+    } else {
+        sidebar.classList.remove('hide');
+		content.classList.remove('full');
+    }
+}
+
+toggleSidebar();
+
+window.addEventListener('resize', toggleSidebar);
 
 
 if(window.innerWidth < 768) {
