@@ -8,6 +8,7 @@
     <!-- Font awesome icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="/assets//home/css/style.css">
+    
   </head>
   <body>
  
@@ -140,40 +141,11 @@
           <p>Neuste Blogeinträge zu den aktuellen Themen</p>
         </div>
         <div class = "blog-content">
-          <!-- item -->
-          <script>
-            // API GET-Aufruf, um alle Blog-Posts abzurufen
-            fetch('http://localhost:5000/api/posts')
-                .then(response => response.json())
-                .then(data => {
-                    const contentDiv = document.querySelector('.blog-content');
-                    data.forEach(post => {
-                        const postElement = document.createElement('div');
-                        postElement.classList.add('blog-item');
-                        postElement.innerHTML = `
-                            <div class="blog-img">
-                                <img src="${post.img}" alt="">
-                                <span><i class="far fa-heart"></i></span>
-                            </div>
-                            <div class="blog-text">
-                                <span>${new Date(post.date).toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' })}</span>
-                                <h2>${post.title}</h2>
-                                <h3>${post.subtitel}</h3>
-                                <p>${post.content}</p>
-                                <div class="author">
-                                    <img src="${post.author_img}" alt="${post.author}">
-                                    <span>${post.author}</span>
-                                </div>
-                                <a href="#">Mehr erfahren</a>
-                            </div>
-                        `;
-                        contentDiv.appendChild(postElement);
-                    });
-                })
-                .catch(error => console.error('Fehler beim Abrufen der Daten:', error));
-          </script>
+          <!-- items -->
+          <?php include 'assets\home\php\load_blog_posts.php'; ?>
+          <!-- end of items -->
           </div>
-          <!-- end of item -->
+          
         </div>
       </div>
     </section>
@@ -211,6 +183,6 @@
     </footer>
     <!-- end of footer -->
     
-    
+    <script src="/assets/home/js/search-bar.js"></script>
   </body>
 </html>
