@@ -141,7 +141,7 @@
 				</div>
 				
 				<div class="popup-content">
-					<?php include 'notifications.php'; ?>
+					<?php include 'assets\admin\php\popup-style.php'; ?>
 					<?php foreach ($notifications as $notification): ?>
 						<div class="notification <?php echo $notification['type']; ?>" style="background-color: <?php echo $notification['type'] === 'danger' ? 'red' : ($notification['type'] === 'success' ? 'green' : 'yellow'); ?>;">
 							<p><?php echo getNotificationIcon($notification['type']) . ' ' . $notification['message']; ?></p>

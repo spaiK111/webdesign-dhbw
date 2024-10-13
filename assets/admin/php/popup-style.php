@@ -2,17 +2,17 @@
 $notifications = [
     [
         'type' => 'danger',
-        'message' => 'Benachrichtigung 1',
+        'message' => 'Gefahr',
         'description' => 'Es besteht aktuell keine Verbindung zur Datenbank!'
     ],
     [
         'type' => 'warning',
-        'message' => 'Benachrichtigung 2',
+        'message' => 'Warnung',
         'description' => 'Die Webseite ist noch nicht fertig!'
     ],
     [
         'type' => 'success',
-        'message' => 'Benachrichtigung 3',
+        'message' => 'Erfolg',
         'description' => 'Die Datenbankverbindung wurde erfolgreich hergestellt!'
     ]
 ];

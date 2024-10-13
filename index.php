@@ -15,13 +15,13 @@
     <header>
       <nav class = "navbar">
         <div class = "container">
-          <a href = "index.html" class = "navbar-brand">AutoInsider®</a>
+          <a href = "index.php" class = "navbar-brand">AutoInsider®</a>
           <div class = "navbar-nav">
-            <a href = "/index.html">home</a>
-            <a href = "/blog.html">blog</a>
-            <a href = "/login.html">login</a>
-            <a href = "/kontakt.html">kontakt</a>     <!-- Entweder separate Kontakt-Seite oder Diret-Link zu Email? -->
-            <a href = "/admin.html">admin</a>
+            <a href = "/index.php">home</a>
+            <a href = "/blog.php">blog</a>
+            <a href = "/login.php">login</a>
+            <a href = "/kontakt.php">kontakt</a>     <!-- Entweder separate Kontakt-Seite oder Diret-Link zu Email? -->
+            <a href = "/admin.php">admin</a>
           </div>
         </div>
       </nav>
@@ -141,87 +141,37 @@
         </div>
         <div class = "blog-content">
           <!-- item -->
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/assets/home/images/cars-blogpage-bg1.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>03 Oktober, 2024</span>
-              <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-              <a href = "#">Mehr erfahren</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/assets/home/images/cars-blogpage-bg2.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>03 Oktober, 2024</span>
-              <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-              <a href = "#">Mehr erfahren</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/assets/home/images/cars-blogpage-bg3.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>03 Oktober, 2024</span>
-              <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-              <a href = "#">Mehr erfahren</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/assets/home/images/cars-blogpage-bg4.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>03 Oktober, 2024</span>
-              <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-              <a href = "#">Mehr erfahren</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/assets/home/images/cars-blogpage-bg5.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>03 Oktober, 2024</span>
-              <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-              <a href = "#">Mehr erfahren</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/assets/home/images/cars-blogpage-bg6.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>03 Oktober, 2024</span>
-              <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-              <a href = "#">Mehr erfahren</a>
-            </div>
+          <script>
+            // API GET-Aufruf, um alle Blog-Posts abzurufen
+            fetch('http://localhost:5000/api/posts')
+                .then(response => response.json())
+                .then(data => {
+                    const contentDiv = document.querySelector('.blog-content');
+                    data.forEach(post => {
+                        const postElement = document.createElement('div');
+                        postElement.classList.add('blog-item');
+                        postElement.innerHTML = `
+                            <div class="blog-img">
+                                <img src="${post.img}" alt="">
+                                <span><i class="far fa-heart"></i></span>
+                            </div>
+                            <div class="blog-text">
+                                <span>${new Date(post.date).toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' })}</span>
+                                <h2>${post.title}</h2>
+                                <h3>${post.subtitel}</h3>
+                                <p>${post.content}</p>
+                                <div class="author">
+                                    <img src="${post.author_img}" alt="${post.author}">
+                                    <span>${post.author}</span>
+                                </div>
+                                <a href="#">Mehr erfahren</a>
+                            </div>
+                        `;
+                        contentDiv.appendChild(postElement);
+                    });
+                })
+                .catch(error => console.error('Fehler beim Abrufen der Daten:', error));
+          </script>
           </div>
           <!-- end of item -->
         </div>
