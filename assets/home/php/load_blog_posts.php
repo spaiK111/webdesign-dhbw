@@ -1,5 +1,4 @@
 <?php
-      // API GET-Aufruf, um alle Blog-Posts abzurufen
       $apiUrl = 'http://localhost:5000/api/posts';
       $response = file_get_contents($apiUrl);
       $data = json_decode($response, true);
