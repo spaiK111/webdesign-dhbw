@@ -218,6 +218,17 @@ footer {
 }
 
 /* Media Queries */
+@media screen and (min-width: 320px) {
+  .blog-topcontent-grid {
+    margin: 20px;
+    gap: 10px;
+    display: grid;
+    height: 500px;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+  }
+}
+
 @media screen and (min-width: 540px) {
   .navbar-nav a {
     padding-right: 1.2rem;
@@ -377,64 +388,29 @@ form {
   gap: 10px;
   display: grid;
   height: 500px;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
+  overflow: hidden;
+}
+
+.blog-topcontent-topNews h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .blog-topcontent-topStory {
   background-color: #ffffff;
   border: 1px solid #000000;
   border-radius: 5px;
-  padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.item-one {
-  background-image: url(images/cars-blogpage-bg1.jpg);
-}
-.wrapper-topNews h1 {
-  margin: 20px;
-}
-
-.wrapper-topNews {
-  height: 30%;
-  width: 80%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.blog-topNews {
-  color: white;
-  border: solid 2px black;
-  width: 100%;
-  margin: 10px;
-  height: 100%;
-  overflow: hidden;
-
-  cursor: pointer;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-}
-.topnews {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-flow: column wrap;
-  height: 100%;
-  width: 100%;
-  background-size: contain;
-  transition: all 0.7s;
-}
-.blog-topNews:hover .topnews {
-  transform: scale(1.2);
+  height: 500px;
 }
 
 .blog-topcontent-topStory h1 {
-  margin: 30px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 20px;
 }
 
 .blog-topcontent-topStory:hover {
@@ -454,7 +430,7 @@ form {
 /* Blog Grid Styles */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 1fr;
   gap: 1.2rem;
   margin: 20px;
 }
