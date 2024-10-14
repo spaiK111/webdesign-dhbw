@@ -1,33 +1,74 @@
+<?php
+// Konfigurationsdatei (config.php)
+require_once 'config.php';
+
+// Funktion zum Einloggen eines Benutzers
+function loginUser($username, $password) {
+    global $conn;
+
+    // SQL-Abfrage zum Überprüfen der Anmeldedaten
+    $sql = "SELECT PASSWORT, salt FROM login WHERE username=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 1) {
+        $row = $result->fetch_assoc();
+        $storedHash = $row['PASSWORT'];
+        $salt = $row['salt'];
+
+        // Passwort überprüfen
+        if (password_verify($password . $salt, $storedHash)) {
+            // Erfolgreicher Login
+            session_start();
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $username;
+            return true;
+        }
+    }
+    return false;
+}
+
+// HTML-Formular für den Login
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Einloggen</title>
-  <link rel="stylesheet" href="/assets/login/css/style.css">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Login</title>
 </head>
 <body>
-  <div class="wrapper">
-    <form action="">
-      <h1>Login</h1>
-      <div class="input-box">
-        <input type="text" placeholder="Username" required>
-        <i class='bx bxs-user'></i>
-      </div>
-      <div class="input-box">
-        <input type="password" placeholder="Password" required>
-        <i class='bx bxs-lock-alt' ></i>
-      </div>
-      <div class="remember-forgot">
-        <label><input type="checkbox">Remember Me</label>
-        <a href="#">Password vergessen</a>
-      </div>
-      <button type="submit" class="btn">Login</button>
-      <div class="register-link">
-        <p>Haben Sie noch keinen Account? <a href="#">Registrieren</a></p>
-      </div>
+    <h1>Login</h1>
+    <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <?php
+        if (isset($_GET['error'])) {
+            echo "<p style='color: red;'>".$_GET['error']."</p>";
+        }
+        ?>
+        <label for="username">Benutzername:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Passwort:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <input type="submit" value="Login">
     </form>
-  </div>
 </body>
 </html>
+
+<?php
+// Überprüfen, ob das Formular abgesendet wurde
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Daten aus dem Formular abrufen
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Benutzer einloggen und Ergebnis ausgeben
+    if (loginUser($username, $password)) {
+        header('Location: success.php');
+        exit();
+    } else {
+        header("Location: login.php?error=Falsches+Passwort+oder+Benutzername");
+        exit();
+    }
+}
