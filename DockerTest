@@ -1,0 +1,15 @@
+# 1. Wähle das offizielle PHP-Apache-Image als Basis
+FROM php:8.0-apache
+
+# 2. Kopiere alle Dateien deines Projekts in das Arbeitsverzeichnis von Apache
+WORKDIR /var/www/html
+COPY . /var/www/html/
+
+# 3. (Optional) Installiere zusätzliche PHP-Erweiterungen, falls notwendig
+# RUN docker-php-ext-install mysqli pdo pdo_mysql
+
+# 4. Exponiere den Standard-Port 80 für Apache
+EXPOSE 80
+
+# 5. Starte Apache, wenn der Container ausgeführt wird
+CMD ["apache2-foreground"]
