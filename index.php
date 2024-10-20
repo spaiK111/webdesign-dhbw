@@ -140,9 +140,32 @@
           <h2>Neuste Blogeinträge</h2>
           <p>Neuste Blogeinträge zu den aktuellen Themen</p>
         </div>
-        <div class = "blog-content">
+        <div class = "blog-content-modern">
           <!-- items -->
-          <?php include 'assets\home\php\load_blog_posts.php'; ?>
+          <div class = "blog-list-modern">
+            <div class="blog-item-modern-outside">
+              <div class = "blog-item-modern-inside">
+                <div class ="blog-img-modern">
+                  <img src = "/assets/home/images/cars-blogpage-bg6.jpg" alt = "">
+                </div>
+                <div class = "data-modern">
+                  <span>Audi-Q5</span>
+                  <span>12.12.2021</span>
+                </div>
+                <div class = "blog-price-modern">
+                  <a href = "#">Preis: 4000$</a>
+              </div>
+            </div>    
+              <div class = "blog-additional-info-modern">
+                <a href = "#">Airbags</a>
+              </div> 
+              <div class ="blog-buttons-contact"> 
+                <a href = "#">Kontaktieren</a>
+                <a href = "#">Mehr</a>
+              </div> 
+          </div>
+
+
           <!-- end of items -->
           </div>
           
