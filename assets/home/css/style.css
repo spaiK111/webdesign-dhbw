@@ -226,6 +226,7 @@ header {
 /* design */
 .design {
   padding: 4.5rem 0;
+  background-color: #F9F9F9;
 }
 .title {
   text-align: center;
@@ -356,6 +357,7 @@ header {
 /* about */
 .about {
   padding: 4.5rem 0;
+  background-color: #F9F9F9;
 }
 .about-text {
   margin: 2rem 0;
@@ -475,26 +477,4 @@ footer {
   gap: 1rem;
   width: 100%;
   margin: 2rem;
-}
-
-.blog-item-modern-inside {
-  display: inline-grid; 
-  gap: 18px; 
-  grid-template-columns: 218px 279px 160px;
-  grid-template-rows: auto;
-
-}
-
-.blog-item-modern-outside {
-  padding: 20px;
-  background-color: rgb(16,17,20);
-  border-bottom: 4px solid rgb(224,75,0); 
-  border-top: 4px solid rgb(224,75,0); 
-}
-
-.blog-content-modern{
-  display: flex; 
-  flex-direction: row;
-  justify-content: center;
-  color: white; 
 }

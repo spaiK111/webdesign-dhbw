@@ -1,0 +1,610 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 100%;
+    height: 30vh;
+}
+
+.div1 { 
+    grid-area: 1 / 1 / 6 / 3; 
+    background-color: #1E1F24; 
+    width: 100%; }
+.div2 { 
+    grid-area: 1 / 3 / 3 / 6; 
+    background-color: #1E1F24; 
+    padding:20px }
+.div3 { 
+    grid-area: 3 / 3 / 5 / 6; 
+    background-color: #1E1F24; 
+    padding: 20px }
+.div4 { 
+    grid-area: 5 / 3 / 6 / 6; 
+    background-color: #1E1F24; 
+    align-self: center; 
+    padding: 20px }
+
+.div1 .all_images {
+    width: 100%;
+    height: 100%; /* Ensure it takes full height of the parent */
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.div1 .big_image {
+    width: 100%;
+    height: 70%; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div1 .big_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 20px;
+}
+
+.div1 .small_images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 20%; /* Adjust height as needed */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.div1 .small_images img {
+    width: 32%; /* Adjust width to fit three images in a row */
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-content-modern {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+    row-gap: 2px;
+}
+
+
+
+/* ".inherited-styles-for-exported-element" is a generated class for the inherited styles of the exported element, feel free to rename it. */
+
+
+
+/* div2 */
+:root {
+    --space-S: calc(18px/2);
+    --text-weight-400: 400;
+    --text-size-100: 12px;
+    --text-height-100: 20px;
+    --color-content-lead: rgb(237, 238, 240);
+    --color-background-secondary: rgb(16, 17, 20);
+    --space-XS: calc(18px/3);
+    --text-weight-600: 600;
+    --text-size-300: 16px;
+    --text-size-200: 14px;
+    --text-color: #EDEEF0; 
+  }
+  
+  .beschreibung {
+    font-size: var(--text-size-200);
+  }
+  
+  .beschreibung, .badge-font {
+    font-weight: var(--text-weight-400);
+  }
+  
+  .beschreibung {
+    line-height: var(--text-height-100);
+  }
+
+  .beschreibung-content{
+    color: var(--text-color);
+  }
+  
+  .badge-font {
+    font-size: var(--text-size-100);
+  }
+  
+  .bagde-margin.bagde-margin {
+    margin-right: var(--space-XS);
+  }
+  
+  .badge-style {
+    background-color: var(--color-background-secondary);
+    border: .909091px solid #5a5e66;
+    border-image: none 100% 1 0 stretch;
+    border-radius: 4px;
+    color: var(--color-content-lead);
+    display: inline-block;
+    line-height: var(--text-height-100);
+    padding: 0 4px;
+  }
+  
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  
+  .inherited-styles-for-exported-element {
+    color: #edeef0;
+    cursor: pointer;
+    font-family: Gibson, Tahoma, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+  }
+  
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .content {
+    display: -webkit-box;
+    max-height: 40px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-bottom: var(--space-S);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    text-overflow: ellipsis;
+  }
+  
+  .car-name {
+    color: var(--color-content-lead);
+    display: inline;
+    font-size: var(--text-size-300);
+    font-weight: var(--text-weight-600);
+    line-height: var(--text-height-100);
+  }
+
+  
+  /* div3 */
+
+  /* ".inherited-styles-for-exported-element" is a generated class for the inherited styles of the exported element, feel free to rename it. */
+
+:root {
+    --text-size-300: 16px;
+    --text-height-100: 20px;
+    --text-weight-600: 600;
+    --text-size-200: 14px;
+    --text-weight-400: 400;
+    --Link-primary-color-rgb: 255, 102, 0;
+    --Link-primary-color: rgb(255, 102, 0);
+    --Link-primary-hover-color: rgb(255, 189, 138);
+    --space-S: calc(18px/2);
+    --Rating-color-VERY_GOOD_PRICE: rgb(40, 125, 14);
+    --text-height-050: 16px;
+    --text-weight-500: 500;
+    --text-size-100: 12px;
+    --color-content-secondary: rgb(131, 136, 143);
+  }
+  
+  .bzOeV {
+    text-align: right;
+  }
+  
+  .beschreibung, .price-info {
+    font-size: var(--text-size-300);
+    font-weight: var(--text-weight-600);
+    line-height: var(--text-height-100);
+    color: var(--text-color)
+  }
+  
+  .beschreibung {
+    font-size: var(--text-size-200);
+    font-weight: var(--text-weight-400);
+  }
+  
+  .price-txt {
+    background-color: initial;
+    background-position: 0 0;
+    border-style: initial;
+    border-width: 0;
+    cursor: pointer;
+    padding: 0;
+    text-decoration-line: underline;
+    text-decoration-style: initial;
+    text-decoration-thickness: initial;
+  }
+  
+  .price-txt:focus {
+    outline: 0;
+  }
+  
+  .hover-color {
+    color: var(--Link-primary-color);
+    text-decoration-color: rgba(var(--Link-primary-color-rgb), .5);
+  }
+  
+  .hover-color:active, .hover-color:focus, .hover-color:hover {
+    color: var(--Link-primary-hover-color);
+  }
+  
+  .jsOU1 {
+    overflow: hidden;
+    text-wrap: nowrap;
+    white-space-collapse: collapse;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .GS9hc {
+    width: 97px;
+  }
+  
+  .GS9hc .dyWge>span {
+    height: 8px;
+    width: 17px;
+  }
+  
+  .dyWge {
+    column-gap: 3px;
+    display: flex;
+    row-gap: 3px;
+  }
+  
+  .dyWge>span {
+    border-radius: 1px;
+  }
+  
+  ._u77E {
+    overflow: hidden;
+    text-wrap: nowrap;
+    white-space-collapse: collapse;
+    color: var(--color-content-secondary);
+    font-size: var(--text-size-100);
+    font-weight: var(--text-weight-500);
+    line-height: var(--text-height-050);
+    text-overflow: ellipsis;
+  }
+  
+  .sISuU>span {
+    background-color: var(--Rating-color-VERY_GOOD_PRICE);
+  }
+  
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  
+  .inherited-styles-for-exported-element {
+    color: #edeef0;
+    cursor: pointer;
+    font-family: Gibson, Tahoma, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+  }
+  
+  .price-box {
+    grid-column-end: auto;
+    grid-column-start: 3;
+    grid-row-end: auto;
+    grid-row-start: 1;
+  }
+  
+  ._rpAd {
+    margin-top: var(--space-S);
+  }
+  
+  /*div4 */ 
+
+  /* ".inherited-styles-for-exported-element" is a generated class for the inherited styles of the exported element, feel free to rename it. */
+
+:root {
+    --color-content-secondary-hover: rgb(181, 185, 191);
+    --color-content-secondary-active: rgb(181, 185, 191);
+    --text-weight-500: 500;
+    --ButtonHighlight-background-color: rgb(8, 130, 154);
+    --ButtonHighlight-color: rgb(255, 255, 255);
+    --ButtonMedium-padding: 8px 12px;
+    --ButtonMedium-height: 36px;
+    --ButtonMedium-border-radius: 5px;
+    --text-height-100: 20px;
+    --text-size-200: 14px;
+    --ButtonHighlight-active-background-color: #006981;
+    --ButtonHighlight-hover-background-color: #158fa7;
+    --UIEffects-FocusGlow: 0px 0px 1px 4px rgb(6, 101, 120);
+    --UIEffects-HoverShadow: 0px 1px 4px hsla(0, 0%, 100%, .33);
+    --ButtonDisabled-color: rgb(165, 219, 230);
+    --ButtonDisabled-background-color: rgb(53, 55, 61);
+    --space-S: calc(18px/2);
+    --ButtonSecondary-background-color: rgba(30, 31, 36, .33);
+    --ButtonSecondary-color: rgb(165, 219, 230);
+  }
+  
+  .TXrbf {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .YgmFC {
+    user-select: none;
+    fill: currentcolor;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  
+  .hover-txt-vers {
+    color: inherit;
+    text-decoration-color: inherit;
+  }
+  
+  .hover-txt-vers:focus, .hover-txt-vers:hover {
+    color: var(--color-content-secondary-hover);
+  }
+  
+  .hover-txt-vers:active {
+    color: var(--color-content-secondary-active);
+  }
+  
+  .FxqoS {
+    text-decoration: none;
+    transition: background-color .25s ease-out;
+    text-wrap: nowrap;
+    white-space-collapse: collapse;
+    user-select: none;
+    transition-behavior: normal;
+    cursor: pointer;
+    display: inline-block;
+    touch-action: manipulation;
+  }
+  
+  .FxqoS:active, .FxqoS:focus, .FxqoS:hover {
+    outline: 0;
+    text-decoration: none;
+  }
+  
+  .FxqoS:hover {
+    box-shadow: var(--UIEffects-HoverShadow);
+  }
+  
+  .FxqoS.FxqoS:focus-visible {
+    border: .909091px solid #5a5e66;
+    border-image: none 100% 1 0 stretch;
+    box-shadow: var(--UIEffects-FocusGlow);
+  }
+  
+  @media not all and (-webkit-min-device-pixel-ratio:2.64583e-05), not all and (min-resolution:.001dpcm) {
+    .FxqoS.FxqoS:focus {
+      border: .909091px solid #5a5e66;
+      border-image: none 100% 1 0 stretch;
+      box-shadow: var(--UIEffects-FocusGlow);
+    }
+  }
+  
+  .H68e7 {
+    height: 100%;
+  }
+  
+  .H2Y6F {
+    background-color: var(--ButtonHighlight-background-color);
+    border-image: none 100% 1 0 stretch;
+    border-style: solid;
+    border-width: .909091px;
+    font-weight: var(--text-weight-500);
+  }
+  
+  .H2Y6F, .H2Y6F:hover {
+    border-color: #066578;
+    color: var(--ButtonHighlight-color);
+  }
+  
+  .H2Y6F:focus, .H2Y6F:hover {
+    background-color: var(--ButtonHighlight-hover-background-color);
+  }
+  
+  .H2Y6F:active {
+    background-color: var(--ButtonHighlight-active-background-color);
+    border-color: #066578;
+  }
+  
+  .cq2eI {
+    background-color: var(--ButtonSecondary-background-color);
+    border-image: none 100% 1 0 stretch;
+    border-style: solid;
+    border-width: .909091px;
+    font-weight: var(--text-weight-500);
+  }
+  
+  .cq2eI, .cq2eI:active, .cq2eI:hover {
+    border-color: #5a5e66;
+    color: var(--ButtonSecondary-color);
+  }
+  
+  .FxqoS:disabled {
+    background-color: var(--ButtonDisabled-background-color);
+    border: .909091px solid #5a5e66;
+    border-image: none 100% 1 0 stretch;
+    color: var(--ButtonDisabled-color);
+    cursor: default;
+    opacity: .5;
+    pointer-events: none;
+  }
+  
+  .p7tM_ {
+    border-radius: var(--ButtonMedium-border-radius);
+    font-size: var(--text-size-200);
+    height: var(--ButtonMedium-height);
+    line-height: var(--text-height-100);
+    padding: var(--ButtonMedium-padding);
+  }
+  
+  .hcDLf {
+    margin-right: var(--space-S);
+  }
+  
+  .nQao3:only-child {
+    margin: 0;
+  }
+  
+  button {
+    margin: 0;
+    overflow: visible;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    font-family: Gibson, Tahoma, Arial, sans-serif;
+    font-feature-settings: "liga", "dlig" 0, "hlig" 0, "calt", "rlig";
+  }
+  
+  [type=button], button {
+    appearance: button;
+  }
+  
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  
+  .inherited-styles-for-exported-element {
+    color: #edeef0;
+    cursor: pointer;
+    font-family: Gibson, Tahoma, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+  }
+  
+  .button-box {
+    display: flex;
+    justify-content: flex-end;
+    row-gap: 9px;
+  }
+  
+  .div4-content {
+    align-items: center;
+    display: flex;
+    grid-column-end: span 2;
+    grid-column-start: 2;
+    grid-row-end: auto;
+    grid-row-start: 3;
+  }
+  
+  .button-box-hover-vers {
+    flex: 1 1 0;
+  }
+
+
+  /* Button - Contact */ 
+
+  .btn, .btn::after {
+    transition: all .3s;
+    transition-behavior: normal;
+  }
+  
+  .btn {
+    border-style: none;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Lato;
+    font-size: inherit;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 15px 30px;
+    outline: 0;
+    position: relative;
+    text-transform: uppercase;
+  }
+  
+  .btn::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .btn::before {
+    font-family: FontAwesome;
+    font-variant: normal;
+    speak: none;
+    font-variant-position: normal;
+    font-weight: 400;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .btn-sep {
+    padding: 25px 60px 25px 120px;
+  }
+  
+  .btn-sep::before {
+    background-color: rgba(0, 0, 0, .15);
+  }
+  
+  .btn-1 {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .btn-1:active, .btn-1:hover {
+    background-color: #2980b9;
+  }
+  
+  .btn-1:active {
+    top: 2px;
+  }
+  
+  .btn-1::before {
+    font-size: 140%;
+    height: 100%;
+    left: 0;
+    line-height: 3;
+    position: absolute;
+    top: 0;
+    width: 60px;
+  }
+  
+  .icon-info::before {
+    content: "";
+  }
+
+  .contact-btn{
+    border-style: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 15px 30px;
+    outline: 0;
+    position: relative;
+    text-transform: uppercase;
+    background-color: #FF6600;
+    padding: 10px;
+  }
+
+  .call-btn{
+    border-style: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 15px 30px;
+    outline: 0;
+    position: relative;
+    text-transform: uppercase;
+    background-color: #FF6600;
+    padding: 10px;
+  }

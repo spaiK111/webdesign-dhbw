@@ -1,0 +1,38 @@
+.pagination2 {
+    display: inline-block;
+    margin: 8px 0;
+    padding: 0;
+    align-self: center;
+  }
+  
+  .pagination2 li {
+    display: inline;
+  }
+  
+  .pagination2 li a {
+    color: #000;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .border li a {
+    transition: background-color .3s;
+    transition-behavior: normal;
+    border: 1px solid #ddd;
+  }
+  
+  .size li a {
+    font-size: 22px;
+  }
+  
+  ul.pagination2 li a.active {
+    background-color: #4caf50;
+    border: 1px solid #4caf50;
+    color: #fff;
+  }
+  
+  ul.pagination2 li a:hover:not(.active) {
+    background-color: #ddd;
+  }
+  
