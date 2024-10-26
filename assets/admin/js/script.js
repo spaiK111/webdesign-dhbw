@@ -1,4 +1,11 @@
 const allSideMenu = document.querySelectorAll('.sidebar .side-menu.top li a');
+const dashboard = document.getElementById('dashboard');
+const config = document.getElementById('config');
+const stats = document.getElementById('stats');
+const blog = document.getElementById('new-blog');
+
+const activeLink = document.querySelector('.breadcrumb .active');
+const headingMain = document.querySelector('.left h1');
 
 allSideMenu.forEach(item=> {
 	const li = item.parentElement;
@@ -6,18 +13,25 @@ allSideMenu.forEach(item=> {
 	item.addEventListener('click', function () {
 		allSideMenu.forEach(i=> {
 			i.parentElement.classList.remove('active');
+			
 		})
 		li.classList.add('active');
 	})
 });
 
+allSideMenu.forEach(item=> {
+	item.addEventListener('click', function () {
+		activeLink.innerHTML = item.innerHTML;
+		headingMain.innerHTML = item.innerHTML;
+	})
+});
+
+
 function updateSpanContent() {
     if (sidebar.classList.contains('hide')) {
         span.innerHTML = 'C'; // Replace with the desired content
-		console.log("test1")
     } else {
         span.innerHTML = 'CarBlog'; // Replace with the original content
-		console.log("test2")
     }
 }
 

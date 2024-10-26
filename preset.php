@@ -1,3 +1,44 @@
+<?php
+// Überprüfen, ob die ID als URL-Parameter übergeben wurde
+$id = isset($_GET['id']) ? $_GET['id'] : null;
+
+if ($id) {
+    // API-URL mit der übergebenen ID
+    $apiUrl = "http://localhost:5000/api/posts/$id";
+
+    // cURL initialisieren
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $apiUrl);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    // API-Anfrage ausführen und Antwort speichern
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    // Antwort in ein Array umwandeln
+    $data = json_decode($response, true);
+
+    if ($data) {
+        // Daten erfolgreich abgerufen
+        $make = htmlspecialchars($data['make']);
+        $model = htmlspecialchars($data['model']);
+        $year = htmlspecialchars($data['year']);
+        $color = htmlspecialchars($data['color']);
+        $engine = htmlspecialchars($data['engine']);
+        $price = htmlspecialchars($data['price']);
+        $imageFront = htmlspecialchars($data['image_front']);
+        $imageBack = htmlspecialchars($data['image_back']);
+        $imageSide = htmlspecialchars($data['image_side']);
+        $imageInterior = htmlspecialchars($data['image_interior']);
+    } else {
+        echo "Fehler beim Abrufen der Daten.";
+        exit;
+    }
+} else {
+    echo "Keine ID übergeben.";
+    exit;
+}
+?>
 <html>
     <link rel="stylesheet" href="test.css">
     <!DOCTYPE html>
@@ -11,6 +52,7 @@
         <link rel="stylesheet" href="/assets//car-page/css/item.css">
         <link rel="stylesheet" href="/assets//car-page/css/style.css">
         <link rel="stylesheet" href="/assets//car-page/css/test.css">
+        <link rel="stylesheet" href="/assets//preset/slider.css">
       </head>
       <body>
         <!-- header -->
@@ -36,12 +78,12 @@
             <div class="card-auto_used">
                 <div class="card-auto_used-top flex-block" style="margin-top: 0">
                     <div class="card-auto_used-top_info flex-block">
-                        <h1>Skoda Yeti</h1>
+                        <h1><?php echo $make; ?></h1>
                         <div class="used-info_main flex-block">
                             <ul class="list flex-block">
-                                <li>2015</li>
-                                <li><span>113 274</span> km</li>
-                                <li>Köln, Bonn, 75623</li>
+                                <li><?php echo $year; ?></li>
+                                <li><span><?php echo $engine; ?></span> km</li>
+                                <li><?php echo $model; ?></li>
                             </ul>
                             <a class="link card-auto_phone--link-new">+49 (123) 345-23-22</a>
                             <a class="btn btn_blue btn_mini modal-open">Kontakt aufnehmen</a>
@@ -62,59 +104,31 @@
                     </div>
                 </div>
                 <!-- Slider -->
-                <div class="card-auto_used-sliders flex-block">
-                    <div class="card-mainSlider_wrapper">
-                        <a class="label label_bg semibold">Bald auf Lager</a>
 
-                        <!-- Slider austauschen -->
-                        <div class="card-mainSlider_container-used swiper-container swiper-container-fade swiper-container-initialized swiper-container-horizontal" style="cursor: grab;">
-                            <div class="swiper-wrapper lightgallery-used">
 
-                                <a href="https://cdn.tts.ru/upload/mileage/dd3ea14dd916936a1dd0bbd0e298932f/903de33f0705820d99e91a91aa47878e.jpg" class="swiper-slide card-mainSlider_slide lightgallery__item swiper-slide-active" style="background-image: url(&quot;https://cdn.tts.ru/upload/mileage/dd3ea14dd916936a1dd0bbd0e298932f/903de33f0705820d99e91a91aa47878e.jpg&quot;); width: 860px; opacity: 1; transform: translate3d(0px, 0px, 0px);" data-external-thumb-image="https://cdn.tts.ru/upload/mileage/dd3ea14dd916936a1dd0bbd0e298932f/903de33f0705820d99e91a91aa47878e.jpg" onclick="gtag('event', 'sprobegom_card', { 'category': 'view-foto', 'brand': 'Skoda', 'URL': document.location.href}); ym(15912367,'reachGoal', 'sprobegom_card', {'category': 'view-foto', 'brand': 'Skoda', 'URL': document.location.href});">
-                                </a>
+                <div id="page">
+<div class="wrapper">
+  <div class="bottom">
+    <!--   images got deleted :'(   -->
+        <img src="<?php echo $imageInterior; ?>" draggable="false"/>
+  </div>
+  <div class="middle">
+        <img src="<?php echo $imageBack; ?>" draggable="false"/> 
+  </div>
+  <div class="scroller scroller-middle">
+    <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0 50 37 68 37 32 0 50" style="fill:#FFCCBC"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#FFCCBC"/></svg>
+  </div>
+  <div class="top">
+    <img src="<?php echo $imageFront; ?>" draggable="false"/>
+  </div>
+  <div class="scroller scroller-top">
+    <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0 50 37 68 37 32 0 50" style="fill:#FFAB91"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#FFAB91"/></svg>
+  </div>
+</div>
+</div>
 
-                                <a href="https://cdn.tts.ru/upload/mileage/dd3ea14dd916936a1dd0bbd0e298932f/77ef87175c733b7279c62f6d89c1768d.jpg" class="swiper-slide card-mainSlider_slide lightgallery__item swiper-slide-next" style="background-image: url(&quot;https://cdn.tts.ru/upload/mileage/dd3ea14dd916936a1dd0bbd0e298932f/77ef87175c733b7279c62f6d89c1768d.jpg&quot;); width: 860px; opacity: 0; transform: translate3d(-860px, 0px, 0px);" data-external-thumb-image="https://cdn.tts.ru/upload/mileage/dd3ea14dd916936a1dd0bbd0e298932f/77ef87175c733b7279c62f6d89c1768d.jpg" onclick="gtag('event', 'sprobegom_card', { 'category': 'view-foto', 'brand': 'Skoda', 'URL': document.location.href}); ym(15912367,'reachGoal', 'sprobegom_card', {'category': 'view-foto', 'brand': 'Skoda', 'URL': document.location.href});">
-                                </a>
 
-                            </div>
-                            <div class="arrow_noellipse-shadow arrow_noellipse-prev disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
-                            <div class="arrow_noellipse-shadow arrow_noellipse-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">20</span></div>
-                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                        </div>
-
-                        <div class="card-mainSlider_icons flex-block">
-                            <div class="card-mainSlider_icon card-mainSlider_icon--photo flex-block">
-                                <span class="semibold">3</span>
-                                <img src="/assets/car-page/images/right-arrow.svg" alt="">
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-thumbsSlider_wrapper">
-                        <div class="card-thumbsSlider_container-used swiper-container swiper-container-initialized swiper-container-vertical swiper-container-free-mode swiper-container-thumbs">
-                            <div class="swiper-wrapper">
-
-                                <div class="swiper-slide card-thumbsSlider_slide swiper-slide-visible swiper-slide-active swiper-slide-thumb-active" style="background-image: url(&quot;https://cdn.tts.ru/upload/mileage/dd3ea14dd916936a1dd0bbd0e298932f/903de33f0705820d99e91a91aa47878e.jpg&quot;); height: 201.667px; margin-bottom: 20px;">
-                                </div>
-
-                                <div class="swiper-slide card-thumbsSlider_slide swiper-slide-visible swiper-slide-next" style="background-image: url(&quot;https://cdn.tts.ru/upload/mileage/dd3ea14dd916936a1dd0bbd0e298932f/77ef87175c733b7279c62f6d89c1768d.jpg&quot;); height: 201.667px; margin-bottom: 20px;">
-                                </div>
-
-                                <div class="swiper-slide card-thumbsSlider_slide more-photo swiper-slide-visible" style="height: 201.667px; margin-bottom: 20px;">
-                                    <a href="javascript: void(0)" class="card-thumbsSlider_slide-more flex-block semibold" style="background-image: url(/bitrix/templates/redisign_new/media/img/colored_preview.png);background-position: center;">
-                                       
-                                    </a>
-                                </div>
-
-                            </div>
-                            <div class="arrow arrow-prev"></div>
-                            <div class="arrow arrow-next"></div>
-                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- Slider end -->
 
                 <!-- small info -->
@@ -318,6 +332,7 @@
   <!-- end of footer -->
   
   <script src="/assets/home/js/search-bar.js"></script>
+  <script src="/assets/preset/slider.js"></script>
 
 </body>
 </html>

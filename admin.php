@@ -21,19 +21,19 @@
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
-				<a href="#">
+				<a href="#" id="dashboard">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Dashboard</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="#" id="new-blog">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Neuer Blog</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="#" id="stats">
 					<i class='bx bxs-doughnut-chart' ></i>
 					<span class="text">Statistik</span>
 				</a>
@@ -41,7 +41,7 @@
 		</ul>
 		<ul class="side-menu">
 			<li>
-				<a href="#">
+				<a href="#" id="config">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Einstellungen</span>
 				</a>
@@ -85,14 +85,15 @@
 		<main class ="main">
 			<div class="head-title">
 				<div class="left">
-					<h1>Dashboard</h1>
+					<h1><i class='bx bxs-dashboard' ></i> Dashboard</h1>
 					<ul class="breadcrumb">
 						<li>
+							
 							<a href="#">Dashboard</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Home</a>
+							<a class="active" href="#"> <i class='bx bxs-dashboard' ></i> Dashboard</a>
 						</li>
 					</ul>
 
