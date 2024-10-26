@@ -9,6 +9,12 @@ router.post('/', blogController.createPost);
 // Hole alle Blogposts
 router.get('/', blogController.getAllPosts);
 
+// Zähle alle Blogposts
+router.get('/count', blogController.countPosts);
+
+// Zähle die 5 Blogposts per Page
+router.get('/gPPP', blogController.getPostsPerPage);
+
 // Hole einen Blogpost nach ID
 router.get('/:id', blogController.getPostById);
 

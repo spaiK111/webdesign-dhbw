@@ -21,6 +21,20 @@ exports.getAllPosts = async (req, res) => {
     }
 };
 
+exports.getPostsPerPage = async (req, res) => {
+    try {
+        const posts = await BlogPost.find()
+        //.sort({ price: -1 })
+        .skip(req.query.pagination * 5)
+        .limit(5); 
+        res.json(posts);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
+
+
+
 // Hole einen Blogpost nach ID
 exports.getPostById = async (req, res) => {
     try {
@@ -33,6 +47,16 @@ exports.getPostById = async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 };
+
+exports.countPosts = async (req, res) => {
+    try {
+        const posts = await BlogPost.countDocuments();
+        res.json({ count: posts });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
+
 
 // Aktualisiere einen Blogpost
 exports.updatePost = async (req, res) => {
