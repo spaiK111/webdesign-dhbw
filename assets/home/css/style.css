@@ -518,8 +518,13 @@ footer {
   height: 1rem;
   width: 1rem;
 }
+.search-selection-item input {
+  height: 1.75rem;
+}
 
 .search-selection {
+  cursor: pointer;
+  padding: 10px;
   position: relative;
   border-radius: 10px;
   width: 100%;
@@ -541,4 +546,31 @@ footer {
 
 .search-box:hover {
   background-color: #f9f9f9;
+}
+
+.reset-button {
+  gap: 20px;
+  grid-row: 3;
+  grid-column: 3;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.reset-button i {
+  cursor: pointer;
+  border: none;
+}
+
+.reset-button a {
+  cursor: pointer;
+  border: none;
+}
+
+.reset-button i:hover {
+  transform: scale(1.05);
+}
+
+.reset-button a:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
