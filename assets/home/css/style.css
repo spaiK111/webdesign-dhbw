@@ -472,6 +472,7 @@ footer {
 /*Viet Teil*/
 
 .search-filter-box {
+  padding-top: 4.5rem;
   display: flex;
   justify-content: center;
 }
@@ -553,7 +554,7 @@ footer {
   grid-row: 3;
   grid-column: 3;
   display: flex;
-  justify-content: right;
+  justify-content: left;
   align-items: center;
 }
 
@@ -568,9 +569,29 @@ footer {
 }
 
 .reset-button i:hover {
-  transform: scale(1.05);
+  filter: brightness(200%);
 }
 
 .reset-button a:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  filter: brightness(200%);
+}
+
+.search-button-one {
+  grid-column: 4;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 10px;
+}
+
+.search-button-one button {
+  width: 100%;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  background-color: #cacaca;
+}
+
+.search-button-one:hover {
+  filter: brightness(105%);
 }
