@@ -1,8 +1,8 @@
-From mongo:latest
+FROM mongo:latest
 
 ENV MONGO_INITDB_ROOT_USERNAME=root
 ENV MONGO_INITDB_ROOT_PASSWORD = ""
 
-Volume /data/db
+VOLUME /data/db
 
-Expose 27017
+EXPOSE 27017

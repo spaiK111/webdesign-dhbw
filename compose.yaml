@@ -1,23 +1,23 @@
 version: "3.7"
 services:
   db:
-    image: mongodb-image # Verwende die neueste Version von MongoDB
+    image: mongo:latest # Verwende die neueste Version von MongoDB
     container_name: mongodb-container
     environment:
       MONGO_INITDB_ROOT_USERNAME: dhbw-stuttgart-2023 # Root-Benutzername für MongoDB
       MONGO_INITDB_ROOT_PASSWORD: NiBEr650294_X # Root-Passwort für MongoDB
-    volumes:
-      - ./api/db/data:/data/db # Mount-Pfad für MongoDB-Daten
-    restart: always
+    #volumes:
+    #- ./api/db/data:/data/db # Mount-Pfad für MongoDB-Daten
+
     networks:
       - website-network
 
   api:
-    image: node-image
+    image: controller-image-test
     container_name: node-container
-    restart: always
+
     volumes:
-      - ./api:/home/node/app
+      - ./Controller/api-website-dhbw:/home/node/app
     ports:
       - "5000:5000"
     depends_on:
@@ -29,7 +29,7 @@ services:
     image: php:apache
     ports:
       - "9000:80"
-    restart: always
+
     volumes:
       - ./View:/var/www/html/
     depends_on:

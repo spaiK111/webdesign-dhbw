@@ -1,5 +1,5 @@
 # Verwende die Node.js-Version 20.18.0
-FROM node:20.18.0-alpine
+FROM node:latest
 
 # Setze die Umgebungsvariable
 ENV NODE_ENV production
