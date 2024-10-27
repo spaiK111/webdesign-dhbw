@@ -1,0 +1,21 @@
+1. docker build -t mongodb-image -f model/Dockerfile .
+
+2. docker build -t node-image -f Controller/api-website-dhbw/Dockerfile .
+
+3. docker build -t php-image -f View/Dockerfile .
+
+4. docker compose up -d
+
+
+
+
+docker run -d -p 27017:27017 -v /model:/data/db  --name mongodb-container mongodb-image
+
+
+
+docker run -d -v /Controller/api-website-dhbw:/home/node/app -p 5000:5000 --link mongodb-container  --name node-container node-image
+
+docker run -d -p 27017:27017 -v /model:/data/db  --name mongodb-container mongodb-image
+
+docker run -d -v /View:/var/www/html -p 8888:80 --link node-container --name php-container php-image
+
