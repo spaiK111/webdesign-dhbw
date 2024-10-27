@@ -378,7 +378,7 @@ form {
 .blog-topcontent-grid {
   margin: 20px;
   display: grid;
-  max-height: 800px;
+  height: 50vw;
   width: 90vw;
   grid-gap: 50px;
   grid-template-columns: 2fr 1fr;
@@ -389,7 +389,7 @@ form {
 
   /* TOPNEWS TOPCONTENT */
 }
-.blog-topcontent-topNews {
+.blog-topcontent-latestBlog {
   height: 100%;
   width: 100%;
   display: flex;
@@ -401,12 +401,12 @@ form {
   gap: 10px;
 }
 /*Hier noch was machen*/
-.blog-topcontent-topNews h1:first-of-type {
+.blog-topcontent-latestBlog h1:first-of-type {
   color: white;
   font-size: 60px;
 }
 
-.blog-topcontent-topNews-item {
+.blog-topcontent-latestBlog-item {
   width: 100%;
   height: 100%;
   display: flex;
@@ -419,7 +419,7 @@ form {
   position: relative;
 }
 
-.blog-topcontent-topNews-item img {
+.blog-topcontent-latestBlog-item img {
   position: absolute;
   object-fit: cover;
   filter: brightness(0.7);
@@ -428,19 +428,19 @@ form {
   transition: transform 0.4s ease;
 }
 
-.blog-topcontent-topNews-item:hover img {
+.blog-topcontent-latestBlog-item:hover img {
   transform: scale(1.2);
   filter: brightness(1);
 }
 
-.blog-topcontent-topNews-item-heading {
+.blog-topcontent-latestBlog-item-heading {
   padding-left: 20px;
   z-index: 1;
   color: rgba(255, 255, 255, 0.647);
   font-size: 50px;
 }
 
-.blog-topcontent-topNews-item-paragraph {
+.blog-topcontent-latestBlog-item-paragraph {
   padding-left: 20px;
   z-index: 1;
   color: rgba(255, 255, 255, 0.647);
@@ -501,106 +501,6 @@ form {
   transform: scale(1.2);
 }
 
-/*Blog Cars 2024*/
-.blog-recent-cars-header {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
-  font-size: 40px;
-  font-family: "Roboto", sans-serif;
-}
-
-.blog-recent-cars-slider-container {
-  padding: 20px;
-}
-
-.blog-recent-cars-slider-wrapper {
-  position: relative;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.blog-recent-cars-slider {
-  display: flex;
-  aspect-ratio: 10/3;
-  overflow-x: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-}
-
-.blog-recent-cars-slider img {
-  flex: 1 0 100%;
-  object-fit: cover;
-}
-
-.blog-recent-cars-slider-nav {
-  display: flex;
-  column-gap: 30px;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-.blog-recent-cars-slider-nav a {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #fff;
-  opacity: 0.75;
-  transition: opacity ease 250ms;
-}
-
-.blog-recent-cars-slider-nav a:hover {
-  opacity: 1;
-}
-
-/* Summer Cars */
-
-.blog-summer-cars-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.blog-summer-cars {
-  width: 100%;
-  height: 100%;
-}
-
-.blog-summer-cars-item {
-  border: 1px solid black;
-  height: 100%;
-  display: grid;
-  justify-items: start;
-  overflow: hidden;
-  grid-area: auto;
-}
-
-.lol {
-  border: 1px solid black;
-}
-
-.blog-summer-cars-item-img {
-  width: 100%;
-  height: 50%;
-}
-.blog-summer-cars-item-text {
-  width: 100%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-}
-
-.blog-summer-cars-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: relative;
-}
 /*Blog Header*/
 
 .blog-header {
@@ -657,4 +557,68 @@ form {
   justify-content: center;
   align-items: center;
   padding: 0px 0px 1rem;
+}
+
+/* Blog Gallery */
+.blog-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-gallery-container {
+  width: 90vw;
+  height: 60vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "a a b b"
+    "a a c c"
+    "d d d d"
+    "d d d d"
+    "e e f f"
+    "e e f f";
+  gap: 20px;
+}
+
+.blog-gallery-item {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.blog-gallery-item img:hover {
+  transform: scale(1.2);
+}
+
+#gallery-item-one {
+  grid-area: a;
+}
+
+#gallery-item-two {
+  grid-area: b;
+}
+
+#gallery-item-three {
+  grid-area: c;
+}
+
+#gallery-item-four {
+  grid-area: d;
+}
+
+#gallery-item-five {
+  grid-area: e;
+}
+
+#gallery-item-six {
+  grid-area: f;
+}
+
+.blog-gallery-item img {
+  transition: 0.3s all;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
 }
