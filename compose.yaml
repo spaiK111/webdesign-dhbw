@@ -8,14 +8,14 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: NiBEr650294_X # Root-Passwort für MongoDB
     #volumes:
     #- ./api/db/data:/data/db # Mount-Pfad für MongoDB-Daten
-
+    restart: always
     networks:
       - website-network
 
   api:
     image: controller-image-test
     container_name: node-container
-
+    restart: always
     volumes:
       - ./Controller/api-website-dhbw:/home/node/app
     ports:
@@ -29,7 +29,7 @@ services:
     image: php:apache
     ports:
       - "9000:80"
-
+    restart: always
     volumes:
       - ./View:/var/www/html/
     depends_on:
