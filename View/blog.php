@@ -22,12 +22,12 @@
         <div class="container">
           <a href="index.html" class="navbar-brand">Car.Blog</a>
           <div class="navbar-nav">
-            <a href="/index.html">home</a>
-            <a href="/blog.html">blog</a>
-            <a href="/login.html">login</a>
-            <a href="/kontakt.html">kontakt</a>
+            <a href="index.html">home</a>
+            <a href="blog.php">blog</a>
+            <a href="login-old.php">login</a>
+            <a href="kontakt.php">kontakt</a>
             <!-- Entweder separate Kontakt-Seite oder Diret-Link zu Email? -->
-            <a href="/admin.html">admin</a>
+            <a href="admin.php">admin</a>
           </div>
         </div>
       </nav>
