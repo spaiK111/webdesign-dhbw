@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/assets//home/css/style.css">
     <link rel="stylesheet" href="assets/home/css/search-box.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/assets//home/css/item.css">
+    <link rel="stylesheet" href="/assets//home/css/pagination.css">
   </head>
   <body>
  
@@ -17,13 +19,13 @@
     <header>
       <nav class = "navbar">
         <div class = "container">
-          <a href = "index.html" class = "navbar-brand">AutoInsider®</a>
+          <a href = "index.php" class = "navbar-brand">AutoInsider®</a>
           <div class = "navbar-nav">
-            <a href = "/index.html">home</a>
-            <a href = "/blog.html">blog</a>
-            <a href = "/login.html">login</a>
-            <a href = "/kontakt.html">kontakt</a>     <!-- Entweder separate Kontakt-Seite oder Diret-Link zu Email? -->
-            <a href = "/admin.html">admin</a>
+            <a href = "/index.php">home</a>
+            <a href = "/blog.php">blog</a>
+            <a href = "/login.php">login</a>
+            <a href = "/kontakt.php">kontakt</a>     <!-- Entweder separate Kontakt-Seite oder Diret-Link zu Email? -->
+            <a href = "/admin.php">admin</a>
           </div>
         </div>
       </nav>
@@ -415,182 +417,210 @@
     <section class = "design" id = "design">
       <div class = "container">
         <div class = "title">
-          <h2>Recent Cars & Designs</h2>
-          <p>recent cars & designs on the blog</p>
-        </div>
-
-        <div class = "design-content">
-          <!-- item -->
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "/assets/home/images/news-blogpage-bg1.jpg" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Car Blog</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">make an awesome car portfolio</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "/assets/home/images/news-blogpage-bg2.jpg" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Car Blog</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">make an awesome car portfolio </a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "/assets/home/images/news-blogpage-bg3.jpg" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Car Blog</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">make an awesome car portfolio </a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "/assets/home/images/news-blogpage-bg4.jpg" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Car Blog</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">make an awesome car portfolio</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "/assets/home/images/news-blogpage-bg5.jpg" alt = ""class="cover-image">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Car Blog</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">make an awesome car portfolio</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "/assets/home/images/news-blogpage-bg6.jpg" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Car Blog</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">make an awesome car portfolio </a>
-            </div>
-          </div>
-          <!-- end of item -->
-        </div>
-      </div>
-    </section>
-    <!-- end of design -->
-
-
-    <!-- blog -->
-    <section class = "blog" id = "blog">
-      <div class = "container">
-        <div class = "title">
           <h2>Neuste Blogeinträge</h2>
           <p>Neuste Blogeinträge zu den aktuellen Themen</p>
         </div>
-        <div class = "blog-content">
-          <!-- item -->
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/assets/home/images/cars-blogpage-bg1.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
+  <div class = "blog-content-modern">
+          <!-- items -->
+     <div class ="item-list">
+      <div class="parent">
+        <div class="div1">
+          <div class = "all_images"> 
+            <div class="big_image"> 
+              <img src = "/assets/home/images/news-blogpage-bg1.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 22</span>
             </div>
-            <div class = "blog-text">
-              <span>03 Oktober, 2024</span>
-              <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-              <a href = "#">Mehr erfahren</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/assets/home/images/cars-blogpage-bg2.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>03 Oktober, 2024</span>
-              <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-              <a href = "#">Mehr erfahren</a>
+            <div class ="small_images">
+              <img src = "/assets/home/images/news-blogpage-bg1.jpg" alt = "">
+              <img src = "/assets/home/images/news-blogpage-bg1.jpg" alt = "">
+              <img src = "/assets/home/images/news-blogpage-bg1.jpg" alt = "">
+
             </div>
           </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/assets/home/images/cars-blogpage-bg3.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>03 Oktober, 2024</span>
-              <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-              <a href = "#">Mehr erfahren</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/assets/home/images/cars-blogpage-bg4.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>03 Oktober, 2024</span>
-              <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-              <a href = "#">Mehr erfahren</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/assets/home/images/cars-blogpage-bg5.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>03 Oktober, 2024</span>
-              <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-              <a href = "#">Mehr erfahren</a>
-            </div>
-          </div>
-          <!-- end of item -->
-          <!-- item -->
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/assets/home/images/cars-blogpage-bg6.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>03 Oktober, 2024</span>
-              <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-              <a href = "#">Mehr erfahren</a>
-            </div>
-          </div>
-          <!-- end of item -->
         </div>
+        <div class="div2">
+          <div class="div2-body">
+            <div class="content"><span class="badge-font bagde-margin badge-style">Gesponsert</span>
+                <h2 class="car-name">BMW M5 5-serie LCI FACELIFT *Competition* 626 PK / M</h2>
+            </div>
+            <section>
+                <div class="beschreibung">
+                    <div class="beschreibung-content">EZ 04/2021<!-- --> • <!-- -->51.747&nbsp;km<!-- --> • <!-- -->460&nbsp;kW&nbsp;(625&nbsp;PS)<!-- --> • <!-- -->Benzin</div>
+                </div>
+            </section>
+        </div>
+        </div>
+        <div class="div3"> 
+
+          <div class="price-box">
+                <div class="price-content">
+                  <span class="price-info">
+                    79.950&nbsp;€
+                  </span>
+                </div>
+                <span class="beschreibung">
+                  21% MwSt.
+                </span>
+            <div class=""><span class="price-txt hover-color">Finanzierung berechnen</span></div>
+        </div>
+
+
+        </div>
+       
+        <div class="div4">
+        
+          <div class="div4-content">
+            <div class="">
+              <span class="price-txt hover-txt-vers">
+                Versicherung vergleichen
+              </span>
+            </div>
+            <div class="button-box button-box-hover-vers" >
+              <button class="contact-btn">Kontakt</button>
+              <button class ="call-btn">Anrufen</button>
+            </div>
+        </div>
+          
+        </div>
+      </div>
+      <div class="parent">
+        <div class="div1">
+          <div class = "all_images"> 
+            <div class="big_image"> 
+              <img src = "/assets/home/images/news-blogpage-bg1.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 22</span>
+            </div>
+            <div class ="small_images">
+              <img src = "/assets/home/images/news-blogpage-bg1.jpg" alt = "">
+              <img src = "/assets/home/images/news-blogpage-bg1.jpg" alt = "">
+              <img src = "/assets/home/images/news-blogpage-bg1.jpg" alt = "">
+
+            </div>
+          </div>
+          
+        </div>
+        <div class="div2">
+          <div class="div2-body">
+            <div class="content"><span class="badge-font bagde-margin badge-style">Gesponsert</span>
+                <h2 class="car-name">BMW M5 5-serie LCI FACELIFT *Competition* 626 PK / M</h2>
+            </div>
+            <section>
+                <div class="beschreibung">
+                    <div class="beschreibung-content">EZ 04/2021<!-- --> • <!-- -->51.747&nbsp;km<!-- --> • <!-- -->460&nbsp;kW&nbsp;(625&nbsp;PS)<!-- --> • <!-- -->Benzin</div>
+                </div>
+            </section>
+        </div>
+        </div>
+        <div class="div3"> 
+
+          <div class="price-box">
+                <div class="price-content">
+                  <span class="price-info">
+                    79.950&nbsp;€
+                  </span>
+                </div>
+                <span class="beschreibung">
+                  21% MwSt.
+                </span>
+            <div class=""><span class="price-txt hover-color">Finanzierung berechnen</span></div>
+        </div>
+
+
+        </div>
+       
+        <div class="div4">
+        
+          <div class="div4-content">
+            <div class="">
+              <span class="price-txt hover-txt-vers">
+                Versicherung vergleichen
+              </span>
+            </div>
+            <div class="button-box button-box-hover-vers" >
+              <button class="contact-btn">Kontakt</button>
+              <button class ="call-btn">Anrufen</button>
+            </div>
+        </div>
+          
+        </div>
+      </div>
+      <div class="parent">
+        <div class="div1">
+          <div class = "all_images"> 
+            <div class="big_image"> 
+              <img src = "/assets/home/images/news-blogpage-bg1.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 22</span>
+            </div>
+            <div class ="small_images">
+              <img src = "/assets/home/images/news-blogpage-bg1.jpg" alt = "">
+              <img src = "/assets/home/images/news-blogpage-bg1.jpg" alt = "">
+              <img src = "/assets/home/images/news-blogpage-bg1.jpg" alt = "">
+
+            </div>
+          </div>
+        </div>
+        <div class="div2">
+          <div class="div2-body">
+            <div class="content"><span class="badge-font bagde-margin badge-style">Gesponsert</span>
+                <h2 class="car-name">BMW M5 5-serie LCI FACELIFT *Competition* 626 PK / M</h2>
+            </div>
+            <section>
+                <div class="beschreibung">
+                    <div class="beschreibung-content">EZ 04/2021<!-- --> • <!-- -->51.747&nbsp;km<!-- --> • <!-- -->460&nbsp;kW&nbsp;(625&nbsp;PS)<!-- --> • <!-- -->Benzin</div>
+                </div>
+            </section>
+        </div>
+        </div>
+        <div class="div3"> 
+
+          <div class="price-box">
+                <div class="price-content">
+                  <span class="price-info">
+                    79.950&nbsp;€
+                  </span>
+                </div>
+                <span class="beschreibung">
+                  21% MwSt.
+                </span>
+            <div class=""><span class="price-txt hover-color">Finanzierung berechnen</span></div>
+        </div>
+
+
+        </div>
+       
+        <div class="div4">
+        
+          <div class="div4-content">
+            <div class="">
+              <span class="price-txt hover-txt-vers">
+                Versicherung vergleichen
+              </span>
+            </div>
+            <div class="button-box button-box-hover-vers" >
+              <button class="contact-btn">Kontakt</button>
+              <button class ="call-btn">Anrufen</button>
+            </div>
+        </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+
+    <ul class="pagination2 border size">
+      <li class=""><a href="#" class="">«</a></li>
+      <li class=""><a class="active" href="#" >1</a></li>
+      <li class=""><a href="#">2</a></li>
+      <li class=""><a href="#" class="">3</a></li>
+      <li class=""><a href="#" class="">4</a></li>
+      <li class=""><a href="#" class="">5</a></li>
+      <li class=""><a href="#">6</a></li>
+      <li><a href="#">7</a></li>
+      <li><a href="#">»</a></li>
+  </ul>
+
+  </div>
       </div>
     </section>
     <!-- end of blog -->
@@ -627,6 +657,8 @@
     </footer>
     <!-- end of footer -->
     
-    
+    <script src="/assets/home/js/search-bar.js"></script>
+
   </body>
 </html>
+
