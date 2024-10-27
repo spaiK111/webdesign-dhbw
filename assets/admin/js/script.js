@@ -3,6 +3,11 @@ const dashboard = document.getElementById('dashboard');
 const config = document.getElementById('config');
 const stats = document.getElementById('stats');
 const blog = document.getElementById('new-blog');
+const boxInfo = document.getElementById('box-info');
+const divOrder = document.getElementById('div-order');
+const tableData = document.getElementById('table-data');
+
+console.log(boxInfo)
 
 const activeLink = document.querySelector('.breadcrumb .active');
 const headingMain = document.querySelector('.left h1');
@@ -18,6 +23,17 @@ allSideMenu.forEach(item=> {
 		li.classList.add('active');
 	})
 });
+
+blog.addEventListener('click', function () {
+	boxInfo.style.display = 'none';
+	divOrder.style.display = 'none';
+	tableData.style.display = 'block';
+	}
+)
+
+dashboard.addEventListener('click', function () {
+	boxInfo.style.display = 'grid';
+})
 
 allSideMenu.forEach(item=> {
 	item.addEventListener('click', function () {

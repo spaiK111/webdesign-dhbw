@@ -97,7 +97,7 @@
 						</li>
 					</ul>
 
-			<ul class="box-info">
+			<ul class="box-info" id="box-info">
 				<li>
 					<i class='bx bxs-calendar-check' ></i>
 					<span class="text">
@@ -115,8 +115,8 @@
 			</ul>
 
 
-			<div class="table-data">
-				<div class="order">
+			<div class="table-data" id="table-data">
+				<div class="order" id="div-order">
 					<div class="head">
 						<h3>Interessante Informationen</h3>
 						<div class="search-filter-buttons">
@@ -135,7 +135,38 @@
 						</div>	
 					</div>
 				</div>
+				<div class="insert">
+					<div class="head">
+						<h3>Blogeinträge hinzufügen</h3>
+						<div class="search-filter-buttons">
+							<i class='bx bx-plus' ></i>
+							<i class='bx bx-filter' ></i>
+						</div>	
+					</div>
+				</div>
 			</div>
+
+			<!-- Neue Eingabefelder -->
+			<div class="input-fields">
+        <div class="input-group">
+            <label for="brand">Marke</label>
+            <input type="text" id="brand" name="brand" class="small-input">
+        </div>
+        <div class="input-group">
+            <label for="year">Jahr</label>
+            <input type="text" id="year" name="year">
+        </div>
+        <div class="input-group">
+            <label for="link">Link</label>
+            <input type="text" id="link" name="link">
+        </div>
+    </div>
+
+
+
+
+
+
 			<div id="notification-popup" class="popup hidden">
 				<div class="popup-header">
 					<h3>Notifications</h3>

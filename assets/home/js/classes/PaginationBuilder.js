@@ -1,5 +1,5 @@
 export class PaginationBuilder {
-
+    
     async getPagesCount() {
         try {
             const req = await fetch('http://localhost:5000/api/posts/count');
@@ -12,35 +12,61 @@ export class PaginationBuilder {
         }
     }
 
-    async buildPagination(){
+    async buildPagination(count){
         const pageCount = await this.getPagesCount();
         const pagination = document.getElementById('pagination');
-        
+        const nextLi = document.createElement('li');
+        const nextA = document.createElement('a');
+        nextA.classList.add('bb');
+        nextA.href = '#';
+        nextA.textContent = '<';
+        nextLi.appendChild(nextA);
+        pagination.appendChild(nextLi);
+
         for (let i = 1; i <= pageCount; i++) {
             const li = document.createElement('li');
             const a = document.createElement('a');
             i == 1 ? a.classList.add('active') : null;
+            a.classList.add('page');
             a.href = '#';
             a.textContent = i;
             li.appendChild(a);
             pagination.appendChild(li);
         }
+
+        const prevLi = document.createElement('li');
+        const prevA = document.createElement('a');
+        prevA.classList.add('ff');
+        prevA.href = '#';
+        prevA.textContent = '>';
+        prevLi.appendChild(prevA);
+        pagination.appendChild(prevLi);
     }
+
+
 
     async changeActivePage(){
         const paginationItems = document.querySelectorAll('.pagination2 li');
         paginationItems.forEach(item => {
             item.addEventListener('click', function() {
+                // Entfernen der Klasse 'active' von allen <a> Elementen mit der Klasse 'page'
+                paginationItems.forEach(el => {
+                    const pageLink = el.querySelector('a.page');
+                    if (pageLink) {
+                        pageLink.classList.remove('active');
+                    }
 
+                });
+        
+                // Hinzufügen der Klasse 'active' zum angeklickten <a> Element
+                const clickedLink = this.querySelector('a.page');
+                if (clickedLink) {
+                    clickedLink.classList.add('active');
+                }
                 
-
-
-
-                paginationItems.forEach(el => el.querySelector('a').classList.remove('active'));
-                this.querySelector('a').classList.add('active');
             });
         })
     }
 
     
-}
+} 
