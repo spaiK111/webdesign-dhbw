@@ -33,23 +33,21 @@
   border-radius: 10px;
 }
 .search-box {
-  right: 0.5px;
+  display: flex;
+  justify-content: center;
+  right: 1px;
   position: absolute;
   pointer-events: none;
   border: solid rgb(191, 192, 192) 1px;
-  padding: 15px;
-  height: 1rem;
-  width: 1rem;
+  height: 3rem;
+  width: 3rem;
   /*background: rgb(237, 238, 240);*/
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 .search-box svg {
-  height: 1rem;
+  height: 3rem;
   width: 1rem;
-}
-.search-selection-item input {
-  height: 1.75rem;
 }
 
 .search-selection {
