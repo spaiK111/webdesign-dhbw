@@ -1,13 +1,12 @@
 const allSideMenu = document.querySelectorAll('.sidebar .side-menu.top li a');
-const dashboard = document.getElementById('dashboard');
 const config = document.getElementById('config');
 const stats = document.getElementById('stats');
 const blog = document.getElementById('new-blog');
-const boxInfo = document.getElementById('box-info');
-const divOrder = document.getElementById('div-order');
-const tableData = document.getElementById('table-data');
+const dashboard = document.getElementById('dashboard');
+const divTable = document.querySelector('ul#box-info.box-info');
+const tableData = document.querySelector('div#table-data.table-data');
 
-console.log(boxInfo)
+const inputFields = document.querySelector('div.input-fields');
 
 const activeLink = document.querySelector('.breadcrumb .active');
 const headingMain = document.querySelector('.left h1');
@@ -25,15 +24,19 @@ allSideMenu.forEach(item=> {
 });
 
 blog.addEventListener('click', function () {
-	boxInfo.style.display = 'none';
-	divOrder.style.display = 'none';
-	tableData.style.display = 'block';
+	divTable.style.display = 'none';
+	tableData.style.display = 'none';
+	inputFields.style.display = 'block';
 	}
 )
 
 dashboard.addEventListener('click', function () {
-	boxInfo.style.display = 'grid';
+	divTable.style.display = 'grid';
+	tableData.style.display = 'flex';
+	inputFields.style.display = 'none';
 })
+
+
 
 allSideMenu.forEach(item=> {
 	item.addEventListener('click', function () {

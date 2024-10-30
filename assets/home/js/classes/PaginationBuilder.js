@@ -5,7 +5,7 @@ export class PaginationBuilder {
             const req = await fetch('http://localhost:5000/api/posts/count');
             const data = await req.json(); // Antwort in JSON umwandeln
             const count = data.count; // Auf das count-Feld zugreifen
-            return Math.ceil(parseFloat(count) / 5);
+            return Math.ceil(parseFloat(count) / 5); 
             
         } catch (error) {
             console.error('Error fetching pagination:', error);
@@ -17,8 +17,9 @@ export class PaginationBuilder {
         const pagination = document.getElementById('pagination');
         const nextLi = document.createElement('li');
         const nextA = document.createElement('a');
-        nextA.classList.add('bb');
+        nextA.classList.add('bb')
         nextA.href = '#';
+        nextA.id = 'back';
         nextA.textContent = '<';
         nextLi.appendChild(nextA);
         pagination.appendChild(nextLi);
@@ -27,7 +28,8 @@ export class PaginationBuilder {
             const li = document.createElement('li');
             const a = document.createElement('a');
             i == 1 ? a.classList.add('active') : null;
-            a.classList.add('page');
+            a.classList.add(`page`);
+            a.classList.add(`page_${i}`);
             a.href = '#';
             a.textContent = i;
             li.appendChild(a);
@@ -38,12 +40,29 @@ export class PaginationBuilder {
         const prevA = document.createElement('a');
         prevA.classList.add('ff');
         prevA.href = '#';
+        prevA.id = 'forward';
         prevA.textContent = '>';
         prevLi.appendChild(prevA);
         pagination.appendChild(prevLi);
     }
 
+    async setActivePage(pageNumber){
+        const paginationItems = document.querySelectorAll('.pagination2 li');
+                // Entfernen der Klasse 'active' von allen <a> Elementen mit der Klasse 'page'
+                paginationItems.forEach(el => {
+                    const pageLink = el.querySelector('a.page');
+                    if (pageLink) {
+                        pageLink.classList.remove('active');
+                    }
+                });
 
+                const activePage = document.querySelector(`a.page.page_${pageNumber}`);
+                console.log(activePage);
+                // Hinzufügen der Klasse 'active' zum angeklickten <a> Element
+                if (activePage) {
+                    activePage.classList.add('active');
+                }
+    }
 
     async changeActivePage(){
         const paginationItems = document.querySelectorAll('.pagination2 li');

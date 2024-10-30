@@ -24,5 +24,5 @@ document.addEventListener('DOMContentLoaded', function() {
     notificationNav.addEventListener('click', togglePopup);
 
 
-    closePopupButton.addEventListener('click', hidePopup);
+    //closePopupButton.addEventListener('click', hidePopup);
 });

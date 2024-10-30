@@ -1,10 +1,12 @@
 
 export class CarsBuilder {
 
-    async fetchBlogPosts(pagination) {
+    async fetchBlogPosts(pagination, make) {
         try {
+            const makeVal = make ? make : '';
             const blogPostsContainer = document.getElementById('item-list');
-            const response = await fetch(`http://localhost:5000/api/posts/gPPP?pagination=${pagination}`); // URL der API
+            const response = await fetch(`http://localhost:5000/api/posts/gPPP?pagination=${pagination}&make=${makeVal}`); // URL der API
+            console.log(response)
             const posts = await response.json();
             
             // Blogposts in das HTML einfügen

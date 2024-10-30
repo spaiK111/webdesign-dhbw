@@ -147,24 +147,27 @@
 			</div>
 
 			<!-- Neue Eingabefelder -->
-			<div class="input-fields">
-        <div class="input-group">
+	<div class="input-fields">
+        <div class="input-group small-input">
             <label for="brand">Marke</label>
-            <input type="text" id="brand" name="brand" class="small-input">
+            <input type="text" id="make" name="brand" class="small-input">
         </div>
-        <div class="input-group">
+        <div class="input-group  small-input">
             <label for="year">Jahr</label>
             <input type="text" id="year" name="year">
         </div>
-        <div class="input-group">
+        <div class="input-group large-input">
             <label for="link">Link</label>
-            <input type="text" id="link" name="link">
+            <input type="text" class="large-input" id="link" name="link">
         </div>
+		<div class="btn-group">
+			<div class ="btn-wrapper">
+				<button class="btn" id="add_blog">Hinzufügen</button>
+				<button class="btn" id="clear_blog">Clear</button>
+			</div>
+		</div>
+
     </div>
-
-
-
-
 
 
 			<div id="notification-popup" class="popup hidden">
@@ -194,5 +197,6 @@
 
 	<script src="/assets/admin/js/script.js"></script>
 	<script src="/assets/admin/js/popup.js"></script>
+	<script src="/assets/admin/js/main.js"></script>
 </body>
 </html>

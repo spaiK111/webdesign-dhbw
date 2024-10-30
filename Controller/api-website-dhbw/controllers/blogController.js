@@ -3,7 +3,9 @@ const BlogPost = require('../models/BlogPost');
 // Erstelle einen neuen Blogpost
 exports.createPost = async (req, res) => {
     try {
-        const post = new BlogPost(req.body);
+
+        const {make, year, link} = req.query;
+        const post = new BlogPost({ make: make, year: year, image_front: link });
         await post.save();
         res.status(201).json(post);
     } catch (err) {
@@ -21,9 +23,13 @@ exports.getAllPosts = async (req, res) => {
     }
 };
 
-exports.getPostsPerPage = async (req, res) => {
+exports.getPostsPerPage = async (req, res) => { //gPPP
     try {
-        const posts = await BlogPost.find()
+        const { make, pagination } = req.query;
+        const query = make ? { make: { $regex: new RegExp(`^${make}$`, 'i') } } : {};
+        console.log("Pagination: ", req.query.pagination)
+        console.log("Make: ", req.query.make)
+        const posts = await BlogPost.find(query)
         //.sort({ price: -1 })
         .skip(req.query.pagination * 5)
         .limit(5); 
@@ -50,7 +56,10 @@ exports.getPostById = async (req, res) => {
 
 exports.countPosts = async (req, res) => {
     try {
-        const posts = await BlogPost.countDocuments();
+        const { make } = req.query;
+        const query = make ? { make: { $regex: new RegExp(`^${make}$`, 'i') } } : {};
+        console.log("Make-count: ", req.query.make)
+        const posts = await BlogPost.countDocuments(query);
         res.json({ count: posts });
     } catch (err) {
         res.status(500).json({ error: err.message });
