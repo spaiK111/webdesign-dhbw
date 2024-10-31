@@ -1,0 +1,13 @@
+
+
+
+
+
+
+Blau von Logo:
+HEX: #001b6f
+RGB: rgba(0,27,111,255)
+
+Orange von Logo:
+HEX: #fbb632
+RGB: rgba(251,182,50,255)
