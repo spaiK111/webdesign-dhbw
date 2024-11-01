@@ -11,10 +11,10 @@ export class CarsBuilder {
             
             // Blogposts in das HTML einfügen
             posts.forEach(async post => {
-                const imageFront = post.image_front ? post.image_front : "/assets/home/images/car-not-found.jpg"; // Fallback-Bild verwenden
-                const imageBack = post.image_back ? post.image_back : "/assets/home/images/car-not-found.jpg";
-                const imageSide = post.image_side ? post.image_side : "/assets/home/images/car-not-found.jpg";
-                const imageInterior = post.image_interior ? post.image_interior : "/assets/home/images/car-not-found.jpg";
+                const imageFront = post.image_front ? post.image_front : "../../../../../car-not-found.jpg"; // Fallback-Bild verwenden
+                const imageBack = post.image_back ? post.image_back : "../../../../../car-not-found.jpg";
+                const imageSide = post.image_side ? post.image_side : "../../../../../car-not-found.jpg";
+                const imageInterior = post.image_interior ? post.image_interior : "../../../../../car-not-found.jpg";
 
 
 
@@ -40,7 +40,7 @@ export class CarsBuilder {
                             <div class="content">
                                 <span class="badge-font bagde-margin badge-style">Gesponsert</span>
                                 <h2 class="car-name">
-                                    <a href="http://localhost:3000/preset.php?id=${post._id}">${post.make}</a>
+                                    <a href="http://127.0.0.1:5500/view/preset.php?id=${post._id}">${post.make}</a>
                                 </h2>
                             </div>
                             <section>

@@ -1,4 +1,5 @@
 const BlogPost = require('../models/BlogPost');
+const MakeOptions = require('../models/MakeOptions');
 
 // Erstelle einen neuen Blogpost
 exports.createPost = async (req, res) => {
@@ -10,6 +11,15 @@ exports.createPost = async (req, res) => {
         res.status(201).json(post);
     } catch (err) {
         res.status(400).json({ error: err.message });
+    }
+};
+
+exports.getMakeOptions = async (req, res) => {
+    try {
+        const options = await MakeOptions.find();
+        res.json(options);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
 };
 

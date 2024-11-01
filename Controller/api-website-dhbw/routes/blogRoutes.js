@@ -9,6 +9,8 @@ router.post('/', blogController.createPost);
 // Hole alle Blogposts
 router.get('/', blogController.getAllPosts);
 
+router.get('/makeOptions', blogController.getMakeOptions);
+
 // Zähle alle Blogposts
 router.get('/count', blogController.countPosts);
 

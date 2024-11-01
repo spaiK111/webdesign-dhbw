@@ -58,92 +58,16 @@
           <label>Marke</label>
           <div class="search-selection-item">
             
-            <select class="search-selection">
+            <select class="search-selection" id="make">
               <option selected value =""> Beliebig </option>
               <optgroup label = "Top-Marken">
-                <option value="mercedes-benz">Mercedes-Benz</option>
-                <option value="bmw">BMW</option>
-                <option value="audi">Audi</option>
-                <option value="volkswagen">Volkswagen</option>
-                <option value="porsche">Porsche</option>
-                <option value="ford">Ford</option>
-                <option value="skoda">Skoda</option>
-                <option value="opel">Opel</option>
-                <option value="toyota">Toyota</option>
-                <option value="volvo">Volvo</option>
+              <?php
+                $top = true;
+                include "assets/home/php/createDynamicOptions.php";
+              ?>
               </optgroup>
               <optgroup label = "Alle Marken">
-                <option value="acura">Acura</option>
-                <option value="alfa-romeo">Alfa Romeo</option>
-                <option value="aston-martin">Aston Martin</option>
-                <option value="baic">BAIC</option>
-                <option value="bentley">Bentley</option>
-                <option value="buick">Buick</option>
-                <option value="cadillac">Cadillac</option>
-                <option value="chevrolet">Chevrolet</option>
-                <option value="chrysler">Chrysler</option>
-                <option value="citroen">Citroën</option>
-                <option value="daihatsu">Daihatsu</option>
-                <option value="dodge">Dodge</option>
-                <option value="fiat">Fiat</option>
-                <option value="ferrari">Ferrari</option>
-                <option value="ford">Ford</option>
-                <option value="genesis">Genesis</option>
-                <option value="gmc">GMC</option>
-                <option value="honda">Honda</option>
-                <option value="hyundai">Hyundai</option>
-                <option value="infiniti">Infiniti</option>
-                <option value="jaguar">Jaguar</option>
-                <option value="jeep">Jeep</option>
-                <option value="kia">Kia</option>
-                <option value="land-rover">Land Rover</option>
-                <option value="lexus">Lexus</option>
-                <option value="lincoln">Lincoln</option>
-                <option value="mazda">Mazda</option>
-                <option value="mini">Mini</option>
-                <option value="mitsubishi">Mitsubishi</option>
-                <option value="nissan">Nissan</option>
-                <option value="peugeot">Peugeot</option>
-                <option value="ram">Ram</option>
-                <option value="renault">Renault</option>
-                <option value="saab">Saab</option>
-                <option value="subaru">Subaru</option>
-                <option value="suzuki">Suzuki</option>
-                <option value="tesla">Tesla</option>
-                <option value="seat">SEAT</option>
-                <option value="smart">Smart</option>
-                <option value="tata">Tata</option>
-                <option value="zotye">Zotye</option>
-                <option value="changan">Changan</option>
-                <option value="great-wall">Great Wall</option>
-                <option value="haval">Haval</option>
-                <option value="lancia">Lancia</option>
-                <option value="mg">MG</option>
-                <option value="pininfarina">Pininfarina</option>
-                <option value="wuling">Wuling</option>
-                <option value="bugatti">Bugatti</option>
-                <option value="jensen">Jensen</option>
-                <option value="koenigsegg">Koenigsegg</option>
-                <option value="lambo">Lamborghini</option>
-                <option value="lotus">Lotus</option>
-                <option value="pagani">Pagani</option>
-                <option value="maserati">Maserati</option>
-                <option value="rolls-royce">Rolls-Royce</option>
-                <option value="spyker">Spyker</option>
-                <option value="smart">Smart</option>
-                <option value="noble">Noble</option>
-                <option value="brilliance">Brilliance</option>
-                <option value="daewoo">Daewoo</option>
-                <option value="foton">Foton</option>
-                <option value="geely">Geely</option>
-                <option value="jingyi">Jingyi</option>
-                <option value="luxgen">Luxgen</option>
-                <option value="ssangyong">SsangYong</option>
-                <option value="troller">Troller</option>
-                <option value="vinfast">VinFast</option>
-                <option value="yangtze">Yangtze</option>
-                <option value="zotye">Zotye</option>
-  
+              <?php include "assets/home/php/createDynamicOptions.php"; ?>
               </optgroup>
               
             </select>
@@ -171,11 +95,6 @@
             </div>
           </div>
         </div>
-
-
-        
-
-
 
 
 
@@ -407,7 +326,7 @@
           
       </script>
       <!--END of Reset Button-->
-      <div class = "search-button-one">
+      <div class = "search-button-one" id="filter-button">
         <button>Suchen</button>
       </div>
 
@@ -453,7 +372,7 @@
       <div class = "container">
         <div class = "about-content">
           <div>
-            <img src = "/assets/home/images/about-us-p1.jpg" alt = "">
+            <img src = "assets/home/images/about-us-p1.jpg" alt = "">
           </div>
           <div class = "about-text">
             <div class = "title">
@@ -480,7 +399,7 @@
     </footer>
     <!-- end of footer -->
     
-    <script type="module" src="/assets/home/js/classes/Main.js"></script>
+    <script type="module" src="assets/home/js/classes/Main.js"></script>
   </body>
 </html>
 
