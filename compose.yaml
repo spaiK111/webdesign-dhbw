@@ -31,13 +31,7 @@ services:
     ports:
       - "9000:80"
     restart: always
-    develop:
-      watch:
-        - action: rebuild
-          path: ./View/
-        - action: sync
-          path: ./View
-          target: /var/www/html/
+
     volumes:
       - ./View:/var/www/html/
     depends_on:
