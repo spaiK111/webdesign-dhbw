@@ -84,7 +84,7 @@
         <div class="search-container-item">
           <label>Modell</label>
           <div class="search-selection-item">
-            <select class="search-selection">
+            <select class="search-selection" id ="model" disabled>
               <option selected value =""> Beliebig </option>
               
             </select>

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const options = document.getElementById("make")
 
     const selectedValue = options.value;
-
+    const model = document.getElementById('model')
 
     let pagination = 0;
 
@@ -57,6 +57,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         
     })
 
+    options.addEventListener('change', async () => {
+       
+        if(options.value !== ' ') {
+            model.removeAttribute("disabled");
+            await createOptions();
+        }
+    })
+
     bb_Item.addEventListener('click', async () => {
         pagination = 0;
 
@@ -68,5 +76,38 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         await paginationBuilder.setActivePage(pagination + 1);
     })
+
+    async function createOptions() {
+        try {
+            const response = await fetch('http://localhost:5000/api/posts/makeOptions'); // Replace with your actual API endpoint
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            console.log('Data:', data);
+            
+            const model = document.getElementById('model');
+
+            model.innerHTML = ''; // Clear existing options
+
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = 'Beliebig';
+            model.appendChild(defaultOption);
+
+            for(let i = 0; i < data.length; i++) {
+                for(let j = 0; j < data[i].options.length; j++) {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = data[i].options[j];
+                    optionElement.textContent = data[i].options[j];
+                    model.appendChild(optionElement);
+                 }
+            }   
+            
+            
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+        }
+    }
 
 });
