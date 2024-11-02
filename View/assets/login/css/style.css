@@ -9,7 +9,7 @@ body{
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url(./images/admin-bg-1.jpg) no-repeat;
+  background: url(./../images/admin-bg-1.jpg) no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -111,4 +111,39 @@ body{
     gap: 20px;
     align-items: space-between;
   }
+}
+
+/* The alert message box */
+.alert {
+  display: none;
+  flex-direction: row;
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+  position: absolute;
+  bottom: 0;
+}
+
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
+
+.alert {
+  opacity: 1;
+  transition: opacity 0.6s; /* 600ms to fade out */
 }

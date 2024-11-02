@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets//home/css/item.css">
     <link rel="stylesheet" href="assets//home/css/pagination.css">
+    <link rel="stylesheet" href="assets//home/css/pagination.css">
   </head>
   <body>
  
@@ -24,7 +25,7 @@
             <a href = "index.php">home</a>
             <a href = "blog.php">blog</a>
             <a href = "login-old.php">login</a>
-            <a href = "kontakt.php">kontakt</a>     <!-- Entweder separate Kontakt-Seite oder Diret-Link zu Email? -->
+            <a href = "registrieren-old.php">registrieren</a>     <!-- Entweder separate Kontakt-Seite oder Diret-Link zu Email? -->
             <a href = "admin.php">admin</a>
           </div>
         </div>
