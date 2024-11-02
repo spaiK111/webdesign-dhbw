@@ -23,7 +23,7 @@
         <label><input type="checkbox">Remember Me</label>
         <a href="#">Password vergessen</a>
       </div>
-      <button type="submit" class="btn" id="submit">Login</button>
+      <button type="button" class="btn" id="submit">Login</button>
       <div class="register-link">
         <p>Haben Sie noch keinen Account? <a href="#">Registrieren</a></p>
       </div>

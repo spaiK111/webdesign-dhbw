@@ -27,7 +27,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             error.style.display = 'flex'
             errorParagraph.textContent = 'Please fill in all fields';
         }
-
+        else {
+            const response = await fetch(`http://localhost:5000/api/posts//login?login=${login.value}&password=${password.value}`);
+            const data = await response.json();
+            if(data == null) {
+                error.style.display = 'flex'
+                errorParagraph.textContent = 'Invalid login or password';
+            }
+             else {
+                 window.location.href = 'http://localhost:3000/View/admin.php';	
+             }
+        }
 
     })
 

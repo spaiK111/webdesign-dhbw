@@ -13,6 +13,8 @@ router.get('/makeOptions', blogController.getMakeOptions);
 
 router.get('/users', blogController.getUsers);
 
+router.get('/login', blogController.login);
+
 // Zähle alle Blogposts
 router.get('/count', blogController.countPosts);
 
