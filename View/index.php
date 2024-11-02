@@ -24,7 +24,7 @@
             <a href = "index.php">home</a>
             <a href = "blog.php">blog</a>
             <a href = "login-old.php">login</a>
-            <a href = "kontakt.php">kontakt</a>     <!-- Entweder separate Kontakt-Seite oder Diret-Link zu Email? -->
+            <a href = "registrieren-old.php">registrieren</a>     <!-- Entweder separate Kontakt-Seite oder Diret-Link zu Email? -->
             <a href = "admin.php">admin</a>
           </div>
         </div>
