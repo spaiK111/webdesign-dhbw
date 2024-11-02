@@ -15,6 +15,17 @@ exports.createPost = async (req, res) => {
     }
 };
 
+exports.register = async (req, res) => {
+    try {
+        const { login, password } = req.body; // Use req.body to get data from POST request
+        const user = new User({ login: login, password: password });
+        await user.save();
+        res.status(201).json(user);
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
+};
+
 exports.login = async (req, res) => {
     try {
         const { login, password } = req.query;
