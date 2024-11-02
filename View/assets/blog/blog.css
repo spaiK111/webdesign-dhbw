@@ -474,7 +474,8 @@ form {
   transition: transform 0.4s ease;
 }
 
-.blog-topcontent-topStory:hover img {
+.blog-topcontent-topStory-item:hover img {
+  background-color: white;
   transform: scale(1.2);
 }
 

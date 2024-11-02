@@ -20,6 +20,7 @@ services:
       - ./Controller/api-website-dhbw:/home/node/app
     ports:
       - "5000:5000"
+
     depends_on:
       - db
     networks:
@@ -30,6 +31,7 @@ services:
     ports:
       - "9000:80"
     restart: always
+
     volumes:
       - ./View:/var/www/html/
     depends_on:
