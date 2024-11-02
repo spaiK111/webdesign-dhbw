@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font awesome icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets//home/css/style.css">
+    <link rel="stylesheet" href="assets/home/css/style.css">
     <link rel="stylesheet" href="assets/home/css/search-box.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="assets//home/css/item.css">
-    <link rel="stylesheet" href="assets//home/css/pagination.css">
+    <link rel="stylesheet" href="assets/home/css/item.css">
+    <link rel="stylesheet" href="assets/home/css/pagination.css">
   </head>
   <body>
  
@@ -29,6 +29,7 @@
           </div>
         </div>
       </nav>
+
       <div class = "banner">
         <div class = "container">
           <h1 class = "banner-title">
@@ -51,7 +52,7 @@
 
     <section class="search-filter-box">
       <div class="search-container" id ="search-container-box">
-
+        
         <!--Search Items-->
         
         <div class="search-container-item">
@@ -60,16 +61,18 @@
             
             <select class="search-selection" id="make">
               <option selected value =""> Beliebig </option>
+              <!--Hier PHP-->
               <optgroup label = "Top-Marken">
               <?php
                 $top = true;
                 include "assets/home/php/createDynamicOptions.php";
-              ?>
+              ?> 
               </optgroup>
               <optgroup label = "Alle Marken">
               <?php include "assets/home/php/createDynamicOptions.php"; ?>
               </optgroup>
               
+
             </select>
             <div class ="search-box">
               <svg   version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="292.362px" height="292.362px" viewBox="0 0 292.362 292.362">
@@ -101,7 +104,7 @@
         <div class="search-container-item">
           <label>Erscheinungsjahr</label>
           <div class="search-selection-item">
-            <input class="search-selection" list="jahre" id="jahr" name="jahr" placeholder="z. B. 2025" />
+            <input class="search-selection" list="jahre" id="jahr" name="jahr" placeholder="Beliebig" />
             <datalist id="jahre">
               <option value="1999"></option>
               <option value="2000"></option>
@@ -322,17 +325,80 @@
                   input.value = ''; // Setze den Wert auf leer
               });
           });
+        </script>
+        <!--END of Reset Button-->
+        <div class = "search-button-one" id="filter-button">
+          <button>Suchen</button>
+        </div>
+      </div>
+      <!--End of search-container-->
 
-          
-      </script>
-      <!--END of Reset Button-->
-      <div class = "search-button-one" id="filter-button">
-        <button>Suchen</button>
+
+      <!--VIET search-container first search-->
+      <div class = "first-search-container">
+
+        <div class="search-container-item" id="hsn-container-item">
+          <label>Herstellerschlüsselnummer (HSN)</label>
+          <div class="search-selection-item">
+            <input type="text" class="search-selection" placeholder="Bitte angeben">
+          </div>
+        </div>
+
+        <div class="search-container-item" id="tsn-container-item">
+          <label>Typschlüsselnummer (TSN)</label>
+          <div class="search-selection-item">
+            <input type="text" class="search-selection" placeholder="Bitte angeben">
+          </div>
+        </div>
+
+        <!--Reset Button-->
+        <div class="reset-button" id="first-search-reset-button">
+          <i class="fa-solid fa-rotate-right" id="reset-button-one"></i>
+          <a id="reset-button-two">Auswahl zurücksetzen</a>
+        </div>
+        
+        <script>
+          document.getElementById('reset-button-one').addEventListener('click', function() {
+              // Alle Select-Elemente zurücksetzen
+              const selects = document.querySelectorAll('select');
+              selects.forEach(select => {
+                  select.selectedIndex = 0; // Setze die Auswahl auf die erste Option
+              });
+      
+              // Alle Input-Felder zurücksetzen
+              const inputs = document.querySelectorAll('input');
+              inputs.forEach(input => {
+                  input.value = ''; // Setze den Wert auf leer
+              });
+          });
+
+          document.getElementById('reset-button-two').addEventListener('click', function() {
+              // Alle Select-Elemente zurücksetzen
+              const selects = document.querySelectorAll('select');
+              selects.forEach(select => {
+                  select.selectedIndex = 0; // Setze die Auswahl auf die erste Option
+              });
+      
+              // Alle Input-Felder zurücksetzen
+              const inputs = document.querySelectorAll('input');
+              inputs.forEach(input => {
+                  input.value = ''; // Setze den Wert auf leer
+              });
+          });
+        </script>
+
+
+        <!--END of Reset Button-->
+        <div class = "search-button-one" id="first-filter-button">
+          <button>Suchen</button>
+        </div>
+
+
       </div>
 
-      </div>
+
     </section>
-    
+
     <!-- design -->
     <section class = "design" id = "design">
       <div class = "container">

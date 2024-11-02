@@ -1,0 +1,9 @@
+<optgroup label = "Top-Marken">
+              <?php
+                $top = true;
+                include "assets/home/php/createDynamicOptions.php";
+              ?> 
+              </optgroup>
+              <optgroup label = "Alle Marken">
+              <?php include "assets/home/php/createDynamicOptions.php"; ?>
+              </optgroup>

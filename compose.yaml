@@ -1,4 +1,3 @@
-version: "3.7"
 services:
   db:
     image: mongo:latest # Verwende die neueste Version von MongoDB
@@ -27,13 +26,15 @@ services:
       - website-network
 
   web:
-    image: php:apache
+    build:
+      context: ./View
+      dockerfile: Dockerfile
     ports:
       - "9000:80"
     restart: always
-
     volumes:
-      - ./View:/var/www/html/
+      - ./View:/var/www/html
+
     depends_on:
       - db
       - api
