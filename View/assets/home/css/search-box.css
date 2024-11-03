@@ -4,13 +4,54 @@
   padding-top: 4.5rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/*First-search-container*/
+
+.first-search-container {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin: 10px;
+  padding: 20px;
+  gap: 1rem;
+  background: #ffffff;
+  box-shadow: 6px 6px 12px #646464, -6px -6px 12px #ffffff;
 }
 
+#hsn-container-item {
+  grid-column: span 2;
+}
+#hsn-container-item .search-selection-item {
+  width: 80%;
+}
+
+#tsn-container-item {
+  grid-column: span 2;
+}
+
+#tsn-container-item .search-selection-item {
+  width: 80%;
+}
+
+#first-search-reset-button {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+#first-filter-button {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+/*Second-search-container*/
 .search-container {
   width: 70%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   margin: 10px;
   padding: 20px;
   gap: 1rem;
@@ -18,8 +59,10 @@
   box-shadow: 6px 6px 12px #646464, -6px -6px 12px #ffffff;
 }
 .search-container-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   position: relative;
-  gap: 2rem;
 }
 
 .search-container-item label {
@@ -41,7 +84,6 @@
   border: solid rgb(191, 192, 192) 1px;
   height: 3rem;
   width: 3rem;
-  /*background: rgb(237, 238, 240);*/
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -131,6 +173,12 @@
     flex-direction: column;
   }
 
+  .first-search-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  }
+
   .reset-button a {
     font-size: 20px;
   }
@@ -147,6 +195,12 @@
     flex-direction: column;
   }
 
+  .first-search-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  }
+
   .reset-button a {
     font-size: 20px;
   }
@@ -158,6 +212,11 @@
 
 @media screen and (max-width: 992px) {
   .search-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  }
+  .first-search-container {
     width: 60%;
     display: flex;
     flex-direction: column;

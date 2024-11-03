@@ -22,7 +22,7 @@
         <div class="container">
           <a href="index.html" class="navbar-brand">Car.Blog</a>
           <div class="navbar-nav">
-            <a href="index.html">home</a>
+            <a href="index.php">home</a>
             <a href="blog.php">blog</a>
             <a href="login-old.php">login</a>
             <a href="kontakt.php">kontakt</a>
@@ -98,43 +98,64 @@
     <main>
       <div class="content">
         <section class="blog-gallery">
+          <div class="blog-gallery-title">
+            <h1>Hot cars</h1>
+          </div>
+
           <div class="blog-gallery-container">
-            <div class="blog-gallery-item" id="gallery-item-one">
-              <a href=""
-                ><img src="assets/blog/images/news-blogpage-bg1.jpg"
-              /></a>
+
+            
+
+            <!--first item-->
+            <div class="blog-gallery-item" id="blog-gallery-item-one">
+              <div class="blog-gallery-image">
+                <img src="assets/blog/images/cars-blogpage-bg1.jpg">
+              </div>
+              <div class="blog-gallery-text-title">
+                <h2>Titel</h2>
+              </div>
+              <div class="blog-gallery-text">
+                <p>jsddhskdjskjdlfkdslfkldskfldkslfkldsklfksldkkfldksl</p>
+              </div>
             </div>
-            <div class="blog-gallery-item" id="gallery-item-two">
-              <a href=""
-                ><img src="assets/blog/images/news-blogpage-bg1.jpg"
-              /></a>
+            
+
+            <!--second item-->
+            <div class="blog-gallery-item-reverse" id="blog-gallery-item-two">
+              <div class="blog-gallery-image">
+                <img src="assets/blog/images/cars-blogpage-bg1.jpg">
+              </div>
+              <div class="blog-gallery-text-title">
+                <h2>Titel</h2>
+              </div>
+              <div class="blog-gallery-text">
+                <p>jsddhskdjskjdlfkdslfkldskfldkslfkldsklfksldkkfldksl</p>
+              </div>
             </div>
-            <div class="blog-gallery-item" id="gallery-item-three">
-              <a href=""
-                ><img src="assets/blog/images/news-blogpage-bg1.jpg"
-              /></a>
+
+            <!--third item-->
+            <div class="blog-gallery-item"  id="blog-gallery-item-three">
+              <div class="blog-gallery-image">
+                <img src="assets/blog/images/cars-blogpage-bg1.jpg">
+              </div>
+              <div class="blog-gallery-text-title">
+                <h2>Titel</h2>
+              </div>
+              <div class="blog-gallery-text">
+                <p>jsddhskdjskjdlfkdslfkldskfldkslfkldsklfksldkkfldksl</p>
+              </div>
             </div>
-            <div class="blog-gallery-item" id="gallery-item-four">
-              <a href=""
-                ><img src="assets/blog/images/news-blogpage-bg1.jpg"
-              /></a>
-            </div>
-            <div class="blog-gallery-item" id="gallery-item-five">
-              <a href=""
-                ><img src="assets/blog/images/news-blogpage-bg1.jpg"
-              /></a>
-            </div>
-            <div class="blog-gallery-item" id="gallery-item-six">
-              <a href=""
-                ><img src="assets/blog/images/news-blogpage-bg1.jpg"
-              /></a>
-            </div>
+
+
           </div>
         </section>
 
         <section class="blog-part">
           <div class="blog-header">
-            <h1>Blogeinträge</h1>
+
+            <div class="blog-header-title">
+              <h1>Blogeinträge</h1>
+            </div>
 
             <div class="banner">
               <div class="container">
@@ -163,6 +184,8 @@
               </div>
             </div>
           </div>
+
+
           <div class="blog-grid">
             <div class="blog-item">
               <h3>Blog Title 1</h3>
