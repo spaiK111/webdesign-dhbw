@@ -25,7 +25,7 @@ router.get('/count', blogController.countPosts);
 router.get('/gPPP', blogController.getPostsPerPage);
 
 // Hole einen Blogpost nach ID
-router.get('/:id', blogController.getPostById);
+router.get('/getPostById', blogController.getPostById);
 
 // Aktualisiere einen Blogpost
 router.put('/:id', blogController.updatePost);

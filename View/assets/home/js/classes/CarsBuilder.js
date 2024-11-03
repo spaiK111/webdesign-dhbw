@@ -5,7 +5,7 @@ export class CarsBuilder {
         try {
             const makeVal = make ? make : '';
             const modelVal = model ? model : '';
-            const ps1Val = ps1 ? ps1 : '';
+            const ps1Val = ps1 ? ps1 : 0;
             const ps2Val = ps2 ? ps2 : '';
             const categoryVal = category ? category : '';
             const fueltypeVal = fueltype ? fueltype : '';

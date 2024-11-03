@@ -118,7 +118,9 @@ exports.getPostsPerPage = async (req, res) => { //gPPP
 // Hole einen Blogpost nach ID
 exports.getPostById = async (req, res) => {
     try {
-        const post = await BlogPost.findById(req.params.id);
+        const { uid } = req.query;
+        const post = await BlogPost.findOne({ uid: uid });
+        console.log(post)
         if (!post) {
             return res.status(404).json({ error: 'Post nicht gefunden' });
         }

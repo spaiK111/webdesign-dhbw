@@ -248,14 +248,14 @@
         <div class="search-container-item" id="hsn-container-item">
           <label>Herstellerschlüsselnummer (HSN)</label>
           <div class="search-selection-item">
-            <input type="text" class="search-selection" placeholder="Bitte angeben">
+            <input type="text" class="search-selection" placeholder="Bitte angeben" id="hsn-input">
           </div>
         </div>
 
         <div class="search-container-item" id="tsn-container-item">
           <label>Typschlüsselnummer (TSN)</label>
           <div class="search-selection-item">
-            <input type="text" class="search-selection" placeholder="Bitte angeben">
+            <input type="text" class="search-selection" placeholder="Bitte angeben" id="tsn-input">
           </div>
         </div>
 
@@ -297,8 +297,8 @@
 
 
         <!--END of Reset Button-->
-        <div class = "search-button-one" id="first-filter-button">
-          <button>Suchen</button>
+        <div class = "search-button-one" id="first-filter-button" id="search-tsn-hsn">
+          <button id="first-filter-button-btn">Suchen</button>
         </div>
 
 
@@ -374,6 +374,7 @@
     <!-- end of footer -->
     
     <script type="module" src="assets/home/js/classes/Main.js"></script>
+    <script src="assets/home/js/classes/searchHsnTsn.js"></script>
   </body>
 </html>
 

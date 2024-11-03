@@ -1,10 +1,9 @@
 <?php
 // Überprüfen, ob die ID als URL-Parameter übergeben wurde
-$id = isset($_GET['id']) ? $_GET['id'] : null;
-
-if ($id) {
+$uid = isset($_GET['uid']) ? $_GET['uid'] : null;
+if ($uid) {
     // API-URL mit der übergebenen ID
-    $apiUrl = "http://localhost:5000/api/posts/$id";
+    $apiUrl = "http://localhost:5000/api/posts/getPostById/?uid=$uid";
 
     // cURL initialisieren
     $ch = curl_init();
@@ -17,19 +16,23 @@ if ($id) {
 
     // Antwort in ein Array umwandeln
     $data = json_decode($response, true);
-
     if ($data) {
         // Daten erfolgreich abgerufen
         $make = htmlspecialchars($data['make']);
         $model = htmlspecialchars($data['model']);
-        $year = htmlspecialchars($data['year']);
-        $color = htmlspecialchars($data['color']);
+        $year = $data['year'];
+        $year_from = htmlspecialchars($year[0]);
+        $year_to = htmlspecialchars($year[1]);
+        $kw = $data['kw'];
+        $kw_from = htmlspecialchars($kw[0]);
+        $kw_to = htmlspecialchars($kw[1]);
+        $category = htmlspecialchars($data['category']);
         $engine = htmlspecialchars($data['engine']);
-        $price = htmlspecialchars($data['price']);
-        $imageFront = htmlspecialchars($data['image_front']);
-        $imageBack = htmlspecialchars($data['image_back']);
-        $imageSide = htmlspecialchars($data['image_side']);
-        $imageInterior = htmlspecialchars($data['image_interior']);
+        $fuelType = htmlspecialchars($data['fuelType']);
+        $image_1 = htmlspecialchars($data['images'][0]);
+        $image_2 = htmlspecialchars($data['images'][1]);
+        $image_3 = htmlspecialchars($data['images'][2]);
+        $image_4 = htmlspecialchars($data['images'][3]);
     } else {
         echo "Fehler beim Abrufen der Daten.";
         exit;
@@ -48,11 +51,11 @@ if ($id) {
         <title>AutoInsider®</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Font awesome icon -->
-        <link rel="stylesheet" href="test.css">
-        <link rel="stylesheet" href="/assets//car-page/css/item.css">
-        <link rel="stylesheet" href="/assets//car-page/css/style.css">
-        <link rel="stylesheet" href="/assets//car-page/css/test.css">
-        <link rel="stylesheet" href="/assets//preset/slider.css">
+        <link rel="stylesheet" href="assets/preset/css/item.css">
+        <link rel="stylesheet" href="assets/preset/css/style.css">
+        <link rel="stylesheet" href="assets/preset/css/test.css">
+        <link rel="stylesheet" href="assets/preset/css/slider.css">
+
       </head>
       <body>
         <!-- header -->
@@ -81,7 +84,7 @@ if ($id) {
                         <h1><?php echo $make; ?></h1>
                         <div class="used-info_main flex-block">
                             <ul class="list flex-block">
-                                <li><?php echo $year; ?></li>
+                                <li><?php echo $year_from - $year_to; ?></li>
                                 <li><span><?php echo $engine; ?></span> km</li>
                                 <li><?php echo $model; ?></li>
                             </ul>
@@ -110,16 +113,16 @@ if ($id) {
 <div class="wrapper">
   <div class="bottom">
     <!--   images got deleted :'(   -->
-        <img src="<?php echo $imageInterior; ?>" draggable="false"/>
+        <img src="<?php echo $image_1; ?>" draggable="false"/>
   </div>
   <div class="middle">
-        <img src="<?php echo $imageBack; ?>" draggable="false"/> 
+        <img src="<?php echo $image_2; ?>" draggable="false"/> 
   </div>
   <div class="scroller scroller-middle">
     <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0 50 37 68 37 32 0 50" style="fill:#FFCCBC"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#FFCCBC"/></svg>
   </div>
   <div class="top">
-    <img src="<?php echo $imageFront; ?>" draggable="false"/>
+    <img src="<?php echo $image_3; ?>" draggable="false"/>
   </div>
   <div class="scroller scroller-top">
     <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0 50 37 68 37 32 0 50" style="fill:#FFAB91"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#FFAB91"/></svg>
@@ -331,8 +334,8 @@ if ($id) {
   </footer>
   <!-- end of footer -->
   
-  <script src="/assets/home/js/search-bar.js"></script>
-  <script src="/assets/preset/slider.js"></script>
+  <script src="assets/preset/js/search-bar.js"></script>
+  <script src="assets/preset/js/slider.js"></script>
 
 </body>
 </html>
