@@ -19,7 +19,11 @@
     <header>
       <nav class = "navbar">
         <div class = "container">
+          
           <a href = "index.php" class = "navbar-brand">AutoInsider®</a>
+          <div class ="navbar-dropdown">
+             
+          </div>
           <div class = "navbar-nav">
             <a href = "index.php">home</a>
             <a href = "blog.php">blog</a>
@@ -72,6 +76,7 @@
               <?php include "assets/home/php/createDynamicOptions.php"; ?>
               </optgroup>
               
+              
 
             </select>
             <div class ="search-box">
@@ -89,6 +94,7 @@
           <div class="search-selection-item">
             <select class="search-selection" id ="model" disabled>
               <option selected value =""> Beliebig </option>
+
               
             </select>
             <div class ="search-box">
