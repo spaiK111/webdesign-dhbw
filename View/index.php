@@ -102,84 +102,55 @@
 
 
         <div class="search-container-item">
-          <label>Erscheinungsjahr</label>
-          <div class="search-selection-item">
-            <input class="search-selection" list="jahre" id="jahr" name="jahr" placeholder="Beliebig" />
-            <datalist id="jahre">
-              <option value="1999"></option>
-              <option value="2000"></option>
-              <option value="2001"></option>
-              <!-- Weitere Jahre... -->
-              <option value="2024"></option>
-            </datalist>
+    <label>Leistungsbereich</label>
+    <div class="search-selection-item">
+        <input class="search-selection" list="leistungsbereich1" id="ps1" name="ps1" placeholder="Beliebig" />
+        <datalist id="leistungsbereich1">
+            <option value="1999"></option>
+            <option value="2000"></option>
+            <option value="2001"></option>
+            <!-- Weitere Jahre... -->
+            <option value="2024"></option>
+        </datalist>
 
-            <!--<select class="search-selection">
-              <option selected value =""> Beliebig </option>
-              <option value="1999">1999</option>
-              <option value="2000">2000</option>
-              <option value="2001">2001</option>
-              <option value="2002">2002</option>
-              <option value="2003">2003</option>
-              <option value="2004">2004</option>
-              <option value="2005">2005</option>
-              <option value="2006">2006</option>
-              <option value="2007">2007</option>
-              <option value="2008">2008</option>
-              <option value="2009">2009</option>
-              <option value="2010">2010</option>
-              <option value="2011">2011</option>
-              <option value="2012">2012</option>
-              <option value="2013">2013</option>
-              <option value="2014">2014</option>
-              <option value="2015">2015</option>
-              <option value="2016">2016</option>
-              <option value="2017">2017</option>
-              <option value="2018">2018</option>
-              <option value="2019">2019</option>
-              <option value="2020">2020</option>
-              <option value="2021">2021</option>
-              <option value="2022">2022</option>
-              <option value="2023">2023</option>
-              <option value="2024">2024</option>
-              
-            </select>-->
-            <div class ="search-box">
-              <svg   version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="292.362px" height="292.362px" viewBox="0 0 292.362 292.362">
+        <input class="search-selection" list="leistungsbereich2" id="ps2" name="ps2" placeholder="Beliebig" />
+        <datalist id="leistungsbereich2">
+            <option value="1999"></option>
+            <option value="2000"></option>
+            <option value="2001"></option>
+            <!-- Weitere Jahre... -->
+            <option value="2024"></option>
+        </datalist>
+
+        <div class="search-box">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="292.362px" height="292.362px" viewBox="0 0 292.362 292.362">
                 <path d="M286.935,69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952,0-9.233,1.807-12.85,5.424 C1.807,72.998,0,77.279,0,82.228c0,4.948,1.807,9.229,5.424,12.847l127.907,127.907c3.621,3.617,7.902,5.428,12.85,5.428 s9.233-1.811,12.847-5.428L286.935,95.074c3.613-3.617,5.427-7.898,5.427-12.847C292.362,77.279,290.548,72.998,286.935,69.377z"/>
-              </svg>
-            </div>
-          </div>
+            </svg>
         </div>
+    </div>
+</div>
 
 
         <div class="search-container-item">
-          <label>Farbe</label>
+          <label>Fahrzeugkategorie</label>
           <div class="search-selection-item">
-            <select class="search-selection">
+            <select class="search-selection" id="catergory">
               <option selected value =""> Beliebig </option>
               
                 
-              <option value="red">Rot</option>
-              <option value="orange">Orange</option>
-              <option value="yellow">Gelb</option>
-              <option value="green">Grün</option>
-              <option value="blue">Blau</option>
-              <option value="indigo">Indigo</option>
-              <option value="violet">Violett</option>
-              <option value="purple">Lila</option>
-              <option value="pink">Pink</option>
-              <option value="brown">Braun</option>
-              <option value="black">Schwarz</option>
-              <option value="white">Weiß</option>
-              <option value="gray">Grau</option>
-              <option value="cyan">Cyan</option>
-              <option value="magenta">Magenta</option>
-              <option value="lime">Limette</option>
-              <option value="maroon">Bordeaux</option>
-              <option value="navy">Marineblau</option>
-              <option value="teal">Türkis</option>
-              <option value="olive">Olive</option>
-            
+              <option value="red">Limousine</option>
+              <option value="orange">Kombi</option>
+              <option value="yellow">SUV </option>
+              <option value="green">Coupe</option>
+              <option value="blue">Cabriolet</option>
+              <option value="indigo">Roadster</option>
+              <option value="violet">Sportwagen </option>
+              <option value="purple">Minivan</option>
+              <option value="pink">Pick Up</option>
+              <option value="brown">Kompaktwagen</option>
+              <option value="black">Kleinwagen</option>
+              <option value="white">Crossover</option>
+              <option value="gray">Van</option>
               
             </select>
             <div class ="search-box">
@@ -189,45 +160,11 @@
             </div>
           </div>
         </div>
-
-
-        <div class="search-container-item">
-          <label>Motor</label>
-          <div class="search-selection-item">
-            <select class="search-selection">
-              <option selected value =""> Beliebig </option>
-              <option value="1.0L">1.0L</option>
-              <option value="1.2L">1.2L</option>
-              <option value="1.4L">1.4L</option>
-              <option value="1.5L Turbo">1.5L Turbo</option>
-              <option value="1.6L">1.6L</option>
-              <option value="1.8L">1.8L</option>
-              <option value="2.0L">2.0L</option>
-              <option value="2.0L Turbo">2.0L Turbo</option>
-              <option value="2.5L">2.5L</option>
-              <option value="2.5L Turbo">2.5L Turbo</option>
-              <option value="3.0L">3.0L</option>
-              <option value="3.0L Turbo">3.0L Turbo</option>
-              <option value="3.5L">3.5L</option>
-              <option value="4.0L">4.0L</option>
-              <option value="4.0L Twin-Turbo">4.0L Twin-Turbo</option>
-              <option value="5.0L">5.0L</option>
-              <option value="5.0L Supercharged">5.0L Supercharged</option>
-              
-            </select>
-            <div class ="search-box">
-              <svg   version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="292.362px" height="292.362px" viewBox="0 0 292.362 292.362">
-                <path d="M286.935,69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952,0-9.233,1.807-12.85,5.424 C1.807,72.998,0,77.279,0,82.228c0,4.948,1.807,9.229,5.424,12.847l127.907,127.907c3.621,3.617,7.902,5.428,12.85,5.428 s9.233-1.811,12.847-5.428L286.935,95.074c3.613-3.617,5.427-7.898,5.427-12.847C292.362,77.279,290.548,72.998,286.935,69.377z"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
 
         <div class="search-container-item">
           <label>Kraftstoffart</label>
           <div class="search-selection-item">
-            <select class="search-selection">
+            <select class="search-selection" id="fueltype">
               <option selected value =""> Beliebig </option>
               <option value="gasoline">Benzin</option>
               <option value="diesel">Diesel</option>
@@ -247,47 +184,6 @@
             </div>
           </div>
         </div>
-
-
-        <div class="search-container-item">
-          <label>Getriebeart</label>
-          <div class="search-selection-item">
-            <select class="search-selection">
-              <option selected value =""> Beliebig </option>
-              <option value="manual">Manuell</option>
-              <option value="automatic">Automatisch</option>
-              <option value="semi-automatic">Halbautomatisch</option>
-              <option value="cvt">CVT (Stufenloses Getriebe)</option>
-              <option value="dual-clutch">Doppelkupplungsgetriebe</option>
-            </select>
-            <div class ="search-box">
-              <svg   version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="292.362px" height="292.362px" viewBox="0 0 292.362 292.362">
-                <path d="M286.935,69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952,0-9.233,1.807-12.85,5.424 C1.807,72.998,0,77.279,0,82.228c0,4.948,1.807,9.229,5.424,12.847l127.907,127.907c3.621,3.617,7.902,5.428,12.85,5.428 s9.233-1.811,12.847-5.428L286.935,95.074c3.613-3.617,5.427-7.898,5.427-12.847C292.362,77.279,290.548,72.998,286.935,69.377z"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="search-container-item">
-          <label>Kilometerstand-Kategorie</label>
-          <div class="search-selection-item">
-            <select class="search-selection">
-              <option selected value =""> Beliebig </option>
-              <option value="under-5000">Unter 5.000 km</option>
-              <option value="5000-20000">5.000 - 20.000 km</option>
-              <option value="20000-50000">20.000 - 50.000 km</option>
-              <option value="50000-100000">50.000 - 100.000 km</option>
-              <option value="over-100000">Über 100.000 km</option>
-            </select>
-            <div class ="search-box">
-              <svg   version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="292.362px" height="292.362px" viewBox="0 0 292.362 292.362">
-                <path d="M286.935,69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952,0-9.233,1.807-12.85,5.424 C1.807,72.998,0,77.279,0,82.228c0,4.948,1.807,9.229,5.424,12.847l127.907,127.907c3.621,3.617,7.902,5.428,12.85,5.428 s9.233-1.811,12.847-5.428L286.935,95.074c3.613-3.617,5.427-7.898,5.427-12.847C292.362,77.279,290.548,72.998,286.935,69.377z"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
 
 
         <!--End of Search Items-->
