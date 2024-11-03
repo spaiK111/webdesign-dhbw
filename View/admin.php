@@ -7,7 +7,7 @@
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
-	<link rel="stylesheet" href="/assets/admin/css/style.css">
+	<link rel="stylesheet" href="assets//admin/css/style.css">
 
 	<title>Admin</title>
 </head>
@@ -195,8 +195,8 @@
 	<!-- CONTENT -->
 	
 
-	<script src="/assets/admin/js/script.js"></script>
-	<script src="/assets/admin/js/popup.js"></script>
-	<script src="/assets/admin/js/main.js"></script>
+	<script src="assets//admin/js/script.js"></script>
+	<script src="assets//admin/js/popup.js"></script>
+	<script src="assets//admin/js/main.js"></script>
 </body>
 </html>
