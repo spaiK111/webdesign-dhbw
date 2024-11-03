@@ -298,7 +298,7 @@
 
         <!--END of Reset Button-->
         <div class = "search-button-one" id="first-filter-button" id="search-tsn-hsn">
-          <button id="first-filter-button-btn">Suchen</button>
+          <button type="reset" id="first-filter-button-btn">Suchen</button>
         </div>
 
 

@@ -91,8 +91,8 @@ if ($uid) {
                             <a class="link card-auto_phone--link-new">+49 (123) 345-23-22</a>
                             <a class="btn btn_blue btn_mini modal-open">Kontakt aufnehmen</a>
                             <a class="btn btn_contur-blue btn-chat icon_wrapper-svg" >
-                                <img class="icon icon-hover" src="/assets/car-page/images/like.svg" alt="">
-                                <img class="icon icon-hover" src="/assets/car-page/images/like.svg" alt="">
+                                <img class="icon icon-hover" src="assets/preset/images/like.svg" alt="">
+                                <img class="icon icon-hover" src="assets/preset/images/like.svg" alt="">
                             </a>
                         </div>
                     </div>
@@ -108,29 +108,36 @@ if ($uid) {
                 </div>
                 <!-- Slider -->
 
+                    <h2 class="w3-center">Manual Slideshow</h2>
 
-                <div id="page">
-<div class="wrapper">
-  <div class="bottom">
-    <!--   images got deleted :'(   -->
-        <img src="<?php echo $image_1; ?>" draggable="false"/>
-  </div>
-  <div class="middle">
-        <img src="<?php echo $image_2; ?>" draggable="false"/> 
-  </div>
-  <div class="scroller scroller-middle">
-    <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0 50 37 68 37 32 0 50" style="fill:#FFCCBC"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#FFCCBC"/></svg>
-  </div>
-  <div class="top">
-    <img src="<?php echo $image_3; ?>" draggable="false"/>
-  </div>
-  <div class="scroller scroller-top">
-    <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0 50 37 68 37 32 0 50" style="fill:#FFAB91"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#FFAB91"/></svg>
-  </div>
-</div>
-</div>
+                    <div class="w3-content w3-display-container">
+                        <img class="mySlides" src="<?php echo $image_1?>" style="width:100%">
+                        <img class="mySlides" src="<?php echo $image_2?>" style="width:100%">
+                        <img class="mySlides" src="<?php echo $image_3?>" style="width:100%">
+                        <img class="mySlides" src="<?php echo $image_4?>" style="width:100%">
 
+                        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                    </div>
+                    <script>
+                            var slideIndex = 1;
+                            showDivs(slideIndex);
 
+                            function plusDivs(n) {
+                            showDivs(slideIndex += n);
+                            }
+
+                            function showDivs(n) {
+                            var i;
+                            var x = document.getElementsByClassName("mySlides");
+                            if (n > x.length) {slideIndex = 1}
+                            if (n < 1) {slideIndex = x.length}
+                            for (i = 0; i < x.length; i++) {
+                                x[i].style.display = "none";  
+                            }
+                            x[slideIndex-1].style.display = "block";  
+                            }
+                    </script>
                 
                 <!-- Slider end -->
 
@@ -146,7 +153,7 @@ if ($uid) {
                         <div class="card-auto_used-advantages flex-block">
 
                             <div class="card-auto_used-advantage flex-block">
-                                <img src="/assets/car-page/images/top-file.svg" alt="">
+                                <img src="assets/preset/images/top-file.svg" alt="">
                                 <div class="text flex-block">
                                     <div class="text_main text-uppercase flex-block">
                                         <span>EXTRA</span>
@@ -156,7 +163,7 @@ if ($uid) {
                                 </div>
                             </div>
                             <div class="card-auto_used-advantage flex-block">
-                                <img src="/assets/car-page/images/convertible-car.svg" alt="">
+                                <img src="assets/preset/images/convertible-car.svg" alt="">
                                 <div class="text flex-block">
                                     <div class="text_main text-uppercase flex-block">
                                         <span>EXTRA</span>
@@ -166,7 +173,7 @@ if ($uid) {
                                 </div>
                             </div>
                             <div class="card-auto_used-advantage flex-block">
-                                <img src="/assets/car-page/images/warranty.svg" alt="">
+                                <img src="assets/preset/images/warranty.svg" alt="">
                                 <div class="text flex-block">
                                     <div class="text_main text-uppercase flex-block">
                                         <span>EXTRA</span>
@@ -278,7 +285,7 @@ if ($uid) {
                     <div class="card-auto_used-main_right">
                         <div class="card-auto_used-interact flex-block">
                             <a class="interact_link-download flex-block semibold">
-                                <img src="/assets/car-page/images/download-folder.svg" alt="">
+                                <img src="assets/preset/images/download-folder.svg" alt="">
                                 <span>Auto Daten download</span>
                             </a>
                         </div>
@@ -312,7 +319,7 @@ if ($uid) {
 
                         <div class="card-auto_sevice-banner">
                             <a>
-                                <img src="/assets/car-page/images/about-us-p1.jpg" alt="">
+                                <img src="assets/preset/images/about-us-p1.jpg" alt="">
                             </a>
                         </div>
 

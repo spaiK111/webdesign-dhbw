@@ -16,14 +16,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if(validated){
             const uid = `${hsn +"_"+ tsn}`;
-
             try{
-                await fetch(`http://localhost:5000/api/posts/getPostByUid/?uid=${uid}`)
-                window.location.href = `http://127.0.0.1:5500/View/preset.php?uid=${uid}`
+                const response = fetch(`http://localhost:5000/api/posts/getPostById/?uid=${uid}`)
+                const post = await response.json();
+                if(!post) {
+                    alert(`Die Seite mit der UID ${uid} konnte nicht gefunden werden`);
+                    return;
+                }
+                window.location.href = `http://localhost:3000/View/preset.php?uid=${uid}`
             }
             catch(err){
-                console.log(err)
+                alert(`Die Seite mit der UID ${uid} konnte nicht gefunden werden`);
             }
+
         }
 
        
