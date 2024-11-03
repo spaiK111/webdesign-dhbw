@@ -25,7 +25,7 @@
             <a href="index.php">home</a>
             <a href="blog.php">blog</a>
             <a href="login-old.php">login</a>
-            <a href="kontakt.php">kontakt</a>
+            
             <!-- Entweder separate Kontakt-Seite oder Diret-Link zu Email? -->
             <a href="admin.php">admin</a>
           </div>
@@ -33,65 +33,100 @@
       </nav>
 
       <div class="blog-topcontent-grid">
-        <div class="blog-topcontent-topStory">
-          <div class="blog-topcontent-topStory-item">
-            <a href="#"
-              ><img src="assets/blog/images/cars-blogpage-bg6.jpg" alt=""
-            /></a>
-          </div>
-          <div class="blog-topcontent-topStory-item-title">
-            <h1><a href="#">Platz 1</a></h1>
-            <p>
-              <a href="#"
-                >dfjfdkjflkflskdlldfsklfsldkldfdkslkfldklsdfdlskflklsdfkkfsdjklfjdslkjfdslkfjkl</a
-              >
-            </p>
-            <p>
-              <a href="#"
-                >dfjfdkjflkflskdlldfsklfsldkldfdkslkfldklsdfdlskflklsdfkkfsdjklfjdslkjfdslkfjkl</a
-              >
-            </p>
-          </div>
-        </div>
 
+        <!--Top Blog-->
+        <div class="blog-topcontent-topBlog">
+          <div class="blog-topcontent-topBlog-title">
+            <h1>Top Blog</h1>
+          </div>
+          <div class ="blog-topcontent-topBlog-item">
+            <div class="blog-topcontent-topBlog-item-image">
+              <a href="#"><img src="assets/blog/images/cars-blogpage-bg6.jpg" alt=""/></a>
+            </div>
+
+            <div class="blog-topcontent-topBlog-item-heading">
+              <h2>LOL</h2>
+            </div>
+
+            <div class="blog-topcontent-topBlog-item-paragraph">
+              <p>dhjfhdshfjsdhjfdhdjshfdjhs</p>
+            </div>
+          </div>
+          
+            
+        
+        </div>
+        <!--End of TopBlog-->
+
+        <!--Latest Blog-->
         <div class="blog-topcontent-latestBlog">
-          <h1>Neuesten Blogs</h1>
-          <div class="blog-topcontent-latestBlog-item">
-            <h2 class="blog-topcontent-latestBlog-item-heading">LOL</h2>
-            <p class="blog-topcontent-latestBlog-item-paragraph">
-              dhjfhdshfjsdhjfdhdjshfdjhsj
-            </p>
-            <img src="assets/blog/images/cars-blogpage-bg1.jpg" />
+          <div class="blog-topcontent-latestBlog-title">
+            <h1>Neuesten Blogs</h1>
           </div>
-          <div class="blog-topcontent-latestBlog-item">
-            <h2 class="blog-topcontent-latestBlog-item-heading">LOL</h2>
-            <p class="blog-topcontent-latestBlog-item-paragraph">
-              dhjfhdshfjsdhjfdhdjshfdjhsj
-            </p>
-            <img src="assets/blog/images/cars-blogpage-bg1.jpg" />
-          </div>
-          <div class="blog-topcontent-latestBlog-item">
-            <h2 class="blog-topcontent-latestBlog-item-heading">LOL</h2>
-            <p class="blog-topcontent-latestBlog-item-paragraph">
-              dhjfhdshfjsdhjfdhdjshfdjhsj
-            </p>
-            <img src="assets/blog/images/cars-blogpage-bg1.jpg" />
-          </div>
-          <div class="blog-topcontent-latestBlog-item">
-            <h2 class="blog-topcontent-latestBlog-item-heading">LOL</h2>
-            <p class="blog-topcontent-latestBlog-item-paragraph">
-              dhjfhdshfjsdhjfdhdjshfdjhsj
-            </p>
-            <img src="assets/blog/images/cars-blogpage-bg1.jpg" />
-          </div>
-          <div class="blog-topcontent-latestBlog-item">
-            <h2 class="blog-topcontent-latestBlog-item-heading">LOL</h2>
-            <p class="blog-topcontent-latestBlog-item-paragraph">
-              dhjfhdshfjsdhjfdhdjshfdjhsj
-            </p>
-            <img src="assets/blog/images/cars-blogpage-bg1.jpg" />
+          
+          <div class="blog-topcontent-latestBlog-item-box">
+            <div class="blog-topcontent-latestBlog-item">
+              <div class="blog-topcontent-latestBlog-item-heading">
+                <h2>LOL</h2>
+              </div>
+
+              <div class="blog-topcontent-latestBlog-item-paragraph">
+                <p>dhjfhdshfjsdhjfdhdjshfdjhs</p>
+              </div>
+
+              <div class="blog-topcontent-latestBlog-item-image">
+                <img src="assets/blog/images/cars-blogpage-bg1.jpg" />
+              </div> 
+            </div>
+
+
+            <div class="blog-topcontent-latestBlog-item">
+              <div class="blog-topcontent-latestBlog-item-heading">
+                <h2>LOL</h2>
+              </div>
+
+              <div class="blog-topcontent-latestBlog-item-paragraph">
+                <p>dhjfhdshfjsdhjfdhdjshfdjhs</p>
+              </div>
+
+              <div class="blog-topcontent-latestBlog-item-image">
+                <img src="assets/blog/images/cars-blogpage-bg1.jpg" />
+              </div> 
+            </div>
+
+
+            <div class="blog-topcontent-latestBlog-item">
+              <div class="blog-topcontent-latestBlog-item-heading">
+                <h2>LOL</h2>
+              </div>
+
+              <div class="blog-topcontent-latestBlog-item-paragraph">
+                <p>dhjfhdshfjsdhjfdhdjshfdjhs</p>
+              </div>
+
+              <div class="blog-topcontent-latestBlog-item-image">
+                <img src="assets/blog/images/cars-blogpage-bg1.jpg" />
+              </div> 
+            </div>
+
+
+            <div class="blog-topcontent-latestBlog-item">
+              <div class="blog-topcontent-latestBlog-item-heading">
+                <h2>LOL</h2>
+              </div>
+
+              <div class="blog-topcontent-latestBlog-item-paragraph">
+                <p>dhjfhdshfjsdhjfdhdjshfdjhs</p>
+              </div>
+
+              <div class="blog-topcontent-latestBlog-item-image">
+                <img src="assets/blog/images/cars-blogpage-bg1.jpg" />
+              </div> 
+            </div>
+
           </div>
         </div>
+        <!--End of latest blog-->
       </div>
     </header>
 
@@ -99,7 +134,7 @@
       <div class="content">
         <section class="blog-gallery">
           <div class="blog-gallery-title">
-            <h1>Hot cars</h1>
+            <h1>Im Trend</h1>
           </div>
 
           <div class="blog-gallery-container">
