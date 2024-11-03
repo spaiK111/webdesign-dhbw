@@ -66,14 +66,47 @@ exports.getAllPosts = async (req, res) => {
 
 exports.getPostsPerPage = async (req, res) => { //gPPP
     try {
-        const { make, pagination } = req.query;
-        const query = make ? { make: { $regex: new RegExp(`^${make}$`, 'i') } } : {};
-        console.log("Pagination: ", req.query.pagination)
-        console.log("Make: ", req.query.make)
+        const { pagination, make, model, ps1, ps2, category, fueltype } = req.query;
+        const query = {};
+        console.log("Make: ", make)
+        console.log("Model: ", model)
+        console.log("PS1: ", ps1)
+        console.log("PS2: ", ps2)
+        console.log("Category: ", category)
+        console.log("Fueltype: ", fueltype)
+        
+
+        if (make) {
+            query.make = make;
+        }
+
+        if (model) {
+            query.model = model;
+        }
+
+        if (category) {
+            query.category = category;
+        }
+
+        if (fueltype) {
+            query.fueltype = fueltype;
+        }
+        
+        if (ps1 && ps2) {
+            query.kw = { $elemMatch: { $gte: parseInt(ps1), $lte: parseInt(ps2) } };
+        } else if (ps1) {
+            query.kw = { $elemMatch: { $gte: parseInt(ps1) } };
+        } else if (ps2) {
+            query.kw = { $elemMatch: { $lte: parseInt(ps2) } };
+        }
+        const page = parseInt(pagination); // Default to page 0 if pagination is not provided
+        const limit = 5; // Number of posts per page
+
         const posts = await BlogPost.find(query)
-        //.sort({ price: -1 })
-        .skip(req.query.pagination * 5)
-        .limit(5); 
+            //.sort({ price: -1 })
+            .skip(page * limit)
+            .limit(limit);
+
         res.json(posts);
     } catch (err) {
         res.status(500).json({ error: err.message });

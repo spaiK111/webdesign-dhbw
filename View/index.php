@@ -12,8 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/home/css/item.css">
     <link rel="stylesheet" href="assets/home/css/pagination.css">
+    <link rel="stylesheet" href="assets/home/css/notification.css">
   </head>
   <body>
+
+  <div class="alert" id="error">
+    <strong>Danger! </strong> <p> Indicates a dangerous or potentially negative action. </p>
+    <span class="closebtn">×</span>
+  </div>
  
     <!-- header -->
     <header>
@@ -140,7 +146,7 @@
         <div class="search-container-item">
           <label>Fahrzeugkategorie</label>
           <div class="search-selection-item">
-            <select class="search-selection" id="catergory">
+            <select class="search-selection" id="category">
               <option selected value =""> Beliebig </option>
               
                 

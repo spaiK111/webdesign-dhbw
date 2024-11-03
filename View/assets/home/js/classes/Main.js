@@ -5,41 +5,85 @@ document.addEventListener('DOMContentLoaded', async () => {
     const paginationBuilder = new PaginationBuilder();
     const carsBuilder = new CarsBuilder();
 
-    const options = document.getElementById("make")
-
-    const selectedValue = options.value;
+    const make = document.getElementById("make")
     const model = document.getElementById('model')
+    const ps1 = document.getElementById('ps1')
+    const ps2 = document.getElementById('ps2')
+    const category = document.getElementById('category')
+    const fueltype = document.getElementById('fueltype')
+
+    const modelValue = model.value
+    const ps1Value = ps1.value
+    const ps2Value = ps2.value
+    const categoryValue = category.value
+    const fueltypeValue = fueltype.value
+    const makeValue = make.value;
+
+    const submit = document.getElementById('filter-button')
+    const error = document.getElementById('error')
+
+   
 
     let pagination = 0;
 
-    await paginationBuilder.buildPagination(pagination, selectedValue);
+    await paginationBuilder.buildPagination(pagination, makeValue);
     await paginationBuilder.changeActivePage();
-    await carsBuilder.fetchBlogPosts(pagination, selectedValue);
+    await carsBuilder.fetchBlogPosts(pagination, makeValue, modelValue, ps1Value,ps2Value, categoryValue, fueltypeValue)
 
 
-    
+    var close = document.getElementsByClassName("closebtn");
+    var i;
 
-    const search_btn = document.getElementById('filter-button')
+// Loop through all close buttons
+    for (i = 0; i < close.length; i++) {
+  // When someone clicks on a close button
+    close[i].onclick = function(){
 
-    search_btn.addEventListener('click', async () => {
-        const selectedValue = options.value;
-        console.log('Selected value:', selectedValue);
+    // Get the parent of <span class="closebtn"> (<div class="alert">)
+    var div = this.parentElement;
 
-        await carsBuilder.deleteOldPosts(); 
-        await carsBuilder.fetchBlogPosts(pagination, selectedValue);
+    // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+    setTimeout(function(){ div.style.display = "none"; }, 200);
+        }
+    }   
+
+    submit.addEventListener('click', async () => {
+        const modelValue = model.value
+        const ps1Value = ps1.value
+        const ps2Value = ps2.value
+        const categoryValue = category.value
+        const fueltypeValue = fueltype.value
+        const makeValue = make.value;
+        const errorParagraph = error.querySelector('p');
+            const result = await validateFields();
+            if(!result){
+                error.style.display = 'block'
+                errorParagraph.textContent = 'Fehler bei der Eingabe';
+            }
+
+            await carsBuilder.deleteOldPosts(); 
+            await carsBuilder.fetchBlogPosts(pagination, makeValue, modelValue, ps1Value,ps2Value, categoryValue, fueltypeValue)
+
 
 
     })
 
+
+
+
     const paginationItems = document.querySelectorAll('.pagination2 li a.page');
+    
     paginationItems.forEach(item => {
         item.addEventListener('click', async function() {
             const pagination = parseInt(this.textContent) - 1;
-            const selectedValue = options.value;
-
-
+            const modelValue = model.value
+            const ps1Value = ps1.value
+            const ps2Value = ps2.value
+            const categoryValue = category.value
+            const fueltypeValue = fueltype.value
+            const makeValue = make.value;
             await carsBuilder.deleteOldPosts(); 
-            await carsBuilder.fetchBlogPosts(pagination, selectedValue);
+            await carsBuilder.fetchBlogPosts(pagination, makeValue, modelValue, ps1Value,ps2Value, categoryValue, fueltypeValue)
         });
     });
     const ff_Item = document.querySelector('.pagination2 li a.ff');
@@ -49,19 +93,24 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         await carsBuilder.deleteOldPosts(); 
 
-        const selectedValue = options.value;
+        const modelValue = model.value
+        const ps1Value = ps1.value
+        const ps2Value = ps2.value
+        const categoryValue = category.value
+        const fueltypeValue = fueltype.value
+        const makeValue = make.value;
 
-        await carsBuilder.fetchBlogPosts(pagination, selectedValue);
+        await carsBuilder.fetchBlogPosts(pagination, makeValue, modelValue, ps1Value,ps2Value, categoryValue, fueltypeValue)
 
         await paginationBuilder.setActivePage(pagination + 1);
         
     })
 
-    options.addEventListener('change', async () => {
+    make.addEventListener('change', async () => {
        
-        if(options.value !== ' ') {
+        if(make.value !== ' ') {
             model.removeAttribute("disabled");
-            await createOptions();
+            await createmake();
         }
     })
 
@@ -70,14 +119,43 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         await carsBuilder.deleteOldPosts(); 
 
-        const selectedValue = options.value;
+        const modelValue = model.value
+        const ps1Value = ps1.value
+        const ps2Value = ps2.value
+        const categoryValue = category.value
+        const fueltypeValue = fueltype.value
+        const makeValue = make.value;
 
-        await carsBuilder.fetchBlogPosts(pagination, selectedValue);
+        await carsBuilder.fetchBlogPosts(pagination, makeValue, modelValue, ps1Value,ps2Value, categoryValue, fueltypeValue)
 
         await paginationBuilder.setActivePage(pagination + 1);
     })
 
-    async function createOptions() {
+    async function validateFields() {
+
+
+        if(ps1Value > ps2Value) {
+            alert('PS1 darf nicht größer als PS2 sein');
+            return false;
+        }
+
+        if(ps1Value < 0 || ps2Value < 0) {
+            alert('PS darf nicht negativ sein');
+            return false;
+        }
+
+
+        if(ps1Value > 1000 || ps2Value > 1000) {
+            alert('PS darf nicht größer als 1000 sein');
+            return false;
+        }
+
+
+        return true;
+
+    }
+
+    async function createmake() {
         try {
             const response = await fetch('http://localhost:5000/api/posts/makeOptions'); // Replace with your actual API endpoint
             if (!response.ok) {
@@ -88,7 +166,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             const model = document.getElementById('model');
 
-            model.innerHTML = ''; // Clear existing options
+            model.innerHTML = ''; // Clear existing make
 
             const defaultOption = document.createElement('option');
             defaultOption.value = '';

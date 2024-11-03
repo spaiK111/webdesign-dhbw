@@ -1,22 +1,28 @@
 
 export class CarsBuilder {
 
-    async fetchBlogPosts(pagination, make) {
+    async fetchBlogPosts(pagination, make, model, ps1, ps2, category, fueltype) {
         try {
             const makeVal = make ? make : '';
+            const modelVal = model ? model : '';
+            const ps1Val = ps1 ? ps1 : '';
+            const ps2Val = ps2 ? ps2 : '';
+            const categoryVal = category ? category : '';
+            const fueltypeVal = fueltype ? fueltype : '';
             const blogPostsContainer = document.getElementById('item-list');
-            const response = await fetch(`http://localhost:5000/api/posts/gPPP?pagination=${pagination}&make=${makeVal}`); // URL der API
+            const response = await fetch(`http://localhost:5000/api/posts/gPPP?pagination=${pagination}&make=${makeVal}&model=${modelVal}&ps1=${ps1Val}&ps2=${ps2Val}&category=${categoryVal}&fueltype=${fueltypeVal}`); // URL der API
             console.log(response)
             const posts = await response.json();
-            
+            console.log(posts)
             // Blogposts in das HTML einfügen
             posts.forEach(async post => {
-                const imageFront = post.image_front ? post.image_front : "../../../../../car-not-found.jpg"; // Fallback-Bild verwenden
-                const imageBack = post.image_back ? post.image_back : "../../../../../car-not-found.jpg";
-                const imageSide = post.image_side ? post.image_side : "../../../../../car-not-found.jpg";
-                const imageInterior = post.image_interior ? post.image_interior : "../../../../../car-not-found.jpg";
+                console.log("here")
+                const image_1 = post.image_1 ? post.image_1 : "../../../../../car-not-found.jpg"; // Fallback-Bild verwenden
+                const image_2 = post.image_2 ? post.image_2 : "../../../../../car-not-found.jpg";
+                const image_3 = post.image_3 ? post.image_3 : "../../../../../car-not-found.jpg";
+                const image_4 = post.image_4 ? post.image_4 : "../../../../../car-not-found.jpg";
 
-
+                console.log("here")
 
                 const postElement = document.createElement('div');
                 postElement.classList.add('parent');
@@ -25,13 +31,13 @@ export class CarsBuilder {
                     <div class="div1 ">
                         <div class="all_images">
                             <div class="big_image">
-                                <img src="${imageFront} ">
+                                <img src="${image_1} ">
                                 <span><i class="far fa-heart"></i> 22</span>
                             </div>
                             <div class="small_images">
-                                <img src="${imageBack}">
-                                <img src="${imageSide}">
-                                <img src="${imageInterior}">
+                                <img src="${image_2}">
+                                <img src="${image_3}">
+                                <img src="${image_4}">
                             </div>
                         </div>
                     </div>
@@ -45,7 +51,7 @@ export class CarsBuilder {
                             </div>
                             <section>
                                 <div class="beschreibung">
-                                    <div class="beschreibung-content">${post.model} • ${post.color} • ${post.engine}</div>
+                                    <div class="beschreibung-content">${post.model} • ${post.year[0]} - ${post.year[1]}</div>
                                 </div>
                             </section>
                         </div>
@@ -53,7 +59,7 @@ export class CarsBuilder {
                     <div class="div3">
                         <div class="price-box">
                             <div class="price-content">
-                                <span class="price-info">${post.mileage}</span>
+                                <span class="price-info">${post.kw[0]} - ${post.kw[1]} • ${post.category} • ${post.engine}  </span>
                             </div>
                             <span class="beschreibung">21% MwSt.</span>
                             <div class=""><span class="price-txt hover-color">Finanzierung berechnen</span></div>
@@ -71,8 +77,9 @@ export class CarsBuilder {
                         </div>
                     </div>
                 `;
-    
+                console.log("here1")
                 blogPostsContainer.appendChild(postElement);
+                console.log("here2")
             });
         } catch (error) {
             console.error('Error fetching blog posts:', error);
