@@ -1,5 +1,6 @@
 const BlogPost = require('../models/BlogPost');
 const MakeOptions = require('../models/MakeOptions');
+const Blog = require("../models/Blog");
 const User = require("../models/User")
 
 // Erstelle einen neuen Blogpost
@@ -10,6 +11,18 @@ exports.createPost = async (req, res) => {
         const post = new BlogPost({ make: make, year: year, image_front: link });
         await post.save();
         res.status(201).json(post);
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
+};
+
+
+exports.postBlog = async (req, res) => {
+    try {
+        const { heading, short_dsc, long_dsc, image } = req.body; // Use req.body to get data from POST request
+        const blog = new Blog({ heading: heading, short_dsc: short_dsc, long_dsc: long_dsc, image: image });
+        await blog.save();
+        res.status(201).json(blog);
     } catch (err) {
         res.status(400).json({ error: err.message });
     }

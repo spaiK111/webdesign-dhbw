@@ -27,6 +27,12 @@
 				</a>
 			</li>
 			<li>
+				<a href="#" id="new-blog-car">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Neuer Car Blog</span>
+				</a>
+			</li>
+			<li>
 				<a href="#" id="new-blog">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Neuer Blog</span>
@@ -149,16 +155,20 @@
 			<!-- Neue Eingabefelder -->
 	<div class="input-fields">
         <div class="input-group small-input">
-            <label for="brand">Marke</label>
+            <label for="brand">Heading</label>
             <input type="text" id="make" name="brand" class="small-input">
         </div>
         <div class="input-group  small-input">
-            <label for="year">Jahr</label>
+            <label for="year">Kurzbeschreibung</label>
             <input type="text" id="year" name="year">
         </div>
         <div class="input-group large-input">
-            <label for="link">Link</label>
+            <label for="link">Großbeschreibung</label>
             <input type="text" class="large-input" id="link" name="link">
+        </div>
+		<div class="input-group small-input">
+            <label for="brand">Hauptbild</label>
+            <input type="text" id="make" name="brand" class="small-input">
         </div>
 		<div class="btn-group">
 			<div class ="btn-wrapper">
@@ -169,6 +179,50 @@
 
     </div>
 
+			<div class = "input-blog" style="display: none; padding: 20px; border: 1px solid #ccc;" id="new-blog-new">
+
+				<h2>Geben Sie die IDs ein</h2>
+
+				<p><strong>HSN: </strong> <input class="input" value="99" type="number"></p>
+
+				<p><strong>TSN: </strong> <input class="input" value="99" type="number"></p>
+
+
+				<!--<p><strong>TSN: </strong> I would like <span class="input" role="textbox" contenteditable>99</span> hugs</p> -->
+
+				<h2>Weitere Daten</h2>
+
+				<p><strong>Make: </strong> <textarea class="textarea resize-ta"></textarea></p>
+
+				<p><strong>Model: </strong> <textarea class="textarea resize-ta"></textarea></p>
+
+				<div class ="horizontal-fields" style="display: flex; justify-content: space-between;">
+					<p><strong>Jahr: von </strong> <input class="input" value="99" type="number"></p>
+					<p><strong> bis </strong> <input class="input" value="99" type="number"></p>
+				</div>
+
+				<div class ="horizontal-fields" style="display: flex; justify-content: space-between;">
+					<p><strong>KW: von </strong> <input class="input" value="99" type="number"></p>
+					<p><strong> bis </strong> <input class="input" value="99" type="number"></p>
+				</div>
+
+				<p><strong>Kategorie: </strong> <textarea class="textarea resize-ta"></textarea></p>
+
+				<p><strong>Engine: </strong> <textarea class="textarea resize-ta"></textarea></p>
+
+				<p><strong>Fueltype: </strong> <textarea class="textarea resize-ta"></textarea></p>
+
+				<p><strong>Image (1): </strong> <textarea class="textarea resize-ta"></textarea></p>
+
+				<p><strong>Image (2): </strong> <textarea class="textarea resize-ta"></textarea></p>
+
+				<p><strong>Image (3): </strong> <textarea class="textarea resize-ta"></textarea></p>
+
+				<p><strong>Image (4): </strong> <textarea class="textarea resize-ta"></textarea></p>
+
+				<button class="btn" id="add_blog" style="margin-top: 20px">Hinzufügen</button>
+
+			</div>
 
 			<div id="notification-popup" class="popup hidden">
 				<div class="popup-header">
@@ -198,5 +252,6 @@
 	<script src="assets//admin/js/script.js"></script>
 	<script src="assets//admin/js/popup.js"></script>
 	<script src="assets//admin/js/main.js"></script>
+	<script src="assets//admin/js/input.js"></script>
 </body>
 </html>

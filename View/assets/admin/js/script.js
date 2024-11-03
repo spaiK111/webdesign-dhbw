@@ -6,7 +6,11 @@ const dashboard = document.getElementById('dashboard');
 const divTable = document.querySelector('ul#box-info.box-info');
 const tableData = document.querySelector('div#table-data.table-data');
 
+const carBlog = document.getElementById('new-blog-car');
+
 const inputFields = document.querySelector('div.input-fields');
+
+const blogNew = document.getElementById('new-blog-new');
 
 const activeLink = document.querySelector('.breadcrumb .active');
 const headingMain = document.querySelector('.left h1');
@@ -23,10 +27,26 @@ allSideMenu.forEach(item=> {
 	})
 });
 
+carBlog.addEventListener('click', function () {
+	divTable.style.display = 'none';
+	tableData.style.display = 'none';
+	inputFields.style.display = 'none';
+	blogNew.style.display = 'block';
+}) 
+
+stats.addEventListener('click', function () {
+	divTable.style.display = 'none';
+	tableData.style.display = 'none';
+	inputFields.style.display = 'none';
+	blogNew.style.display = 'none';
+})
+
+
 blog.addEventListener('click', function () {
 	divTable.style.display = 'none';
 	tableData.style.display = 'none';
 	inputFields.style.display = 'block';
+	blogNew.style.display = 'none';
 	}
 )
 
@@ -34,6 +54,7 @@ dashboard.addEventListener('click', function () {
 	divTable.style.display = 'grid';
 	tableData.style.display = 'flex';
 	inputFields.style.display = 'none';
+	blogNew.style.display = 'none';
 })
 
 
