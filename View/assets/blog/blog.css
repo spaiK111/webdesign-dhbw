@@ -729,21 +729,50 @@ form {
     min-height: 90vh;
   }
 
-  .blog-topcontent-topBlog {
-    flex: 4;
+  .blog-topcontent-latestBlog-item-heading h2 {
+    font-size: 4rem;
+  }
+  .blog-topcontent-latestBlog-item-paragraph p {
+    font-size: 2rem;
+  }
+
+  .blog-topcontent-latestBlog-item {
+    width: 90vw;
+    height: 20vh;
   }
 
   .blog-topcontent-topBlog {
-    flex: 1;
-  }
-
-  .blog-topcontent-latestBlog-item-heading {
-    font-size: 1rem;
-  }
-  .blog-topcontent-latestBlog-item-paragraph {
-    font-size: 0.5rem;
+    height: 50vh;
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1240px) {
+  .blog-topcontent-grid {
+    margin: 20px;
+    display: flex;
+    height: 100%;
+    width: 90vw;
+
+    flex-direction: column;
+  }
+
+  header {
+    min-height: 90vh;
+  }
+
+  .blog-topcontent-latestBlog-item-heading h2 {
+    font-size: 4rem;
+  }
+  .blog-topcontent-latestBlog-item-paragraph p {
+    font-size: 2rem;
+  }
+
+  .blog-topcontent-latestBlog-item {
+    width: 90vw;
+    height: 20vh;
+  }
+
+  .blog-topcontent-topBlog {
+    height: 50vh;
+  }
 }
