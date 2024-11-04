@@ -23,23 +23,9 @@
  
     <!-- header -->
     <header>
-      <nav class = "navbar">
-        <div class = "container">
-          
-          <a href = "index.php" class = "navbar-brand">AutoInsider®</a>
-          <div class ="navbar-dropdown">
-             
-          </div>
-          <div class = "navbar-nav">
-            <a href = "index.php">home</a>
-            <a href = "blog.php">blog</a>
-            <a href = "login-old.php">login</a>
-            <a href = "registrieren-old.php">registrieren</a>     <!-- Entweder separate Kontakt-Seite oder Diret-Link zu Email? -->
-            <a href = "admin.php">admin</a>
-          </div>
-        </div>
-      </nav>
-
+      <div class="navigation-bar">
+        <?php include "navbar.php"; ?>
+      </div>
       <div class = "banner">
         <div class = "container">
           <h1 class = "banner-title">
@@ -63,14 +49,7 @@
             <select class="search-selection" id="make">
               <option selected value =""> Beliebig </option>
               <!--Hier PHP-->
-              <optgroup label = "Top-Marken">
-              <?php
-                $top = true;
-                include "assets/home/php/createDynamicOptions.php";
-              ?> 
-              </optgroup>
-              <optgroup label = "Alle Marken">
-              <?php include "assets/home/php/createDynamicOptions.php"; ?>
+              
               </optgroup>
               
               
