@@ -1,0 +1,46 @@
+<BlogPosts>
+    <BlogPost>
+        <uid>123ABC</uid>
+        <hsn>1234</hsn>
+        <tsn>5678XYZ</tsn>
+        <make>Volkswagen</make>
+        <model>Golf</model>
+        <year>2022</year>
+        <category>Compact</category>
+        <engine>1.5 TSI</engine>
+        <fuelType>Petrol</fuelType>
+        <image_1>https://example.com/image1.jpg</image_1>
+        <image_2>https://example.com/image2.jpg</image_2>
+        <image_3>https://example.com/image3.jpg</image_3>
+        <image_4>https://example.com/image4.jpg</image_4>
+        <createdAt>2024-11-04T00:00:00.000Z</createdAt>
+        <author>John Doe</author>
+        <hubraum>1993</hubraum>
+        <co2Wert>120</co2Wert>
+        <antriebsart>Front-Wheel Drive</antriebsart>
+        <backVolumen>2</backVolumen>
+        <maxSpeed>100</maxSpeed>
+    </BlogPost>
+    <BlogPost>
+        <uid>456DEF</uid>
+        <hsn>4321</hsn>
+        <tsn>8765ZYX</tsn>
+        <make>BMW</make>
+        <model>3 Series</model>
+        <year>2023</year>
+        <category>Sedan</category>
+        <engine>2.0 Turbo</engine>
+        <fuelType>Diesel</fuelType>
+        <image_1>https://example.com/image5.jpg</image_1>
+        <image_2>https://example.com/image6.jpg</image_2>
+        <image_3>https://example.com/image7.jpg</image_3>
+        <image_4>https://example.com/image8.jpg</image_4>
+        <createdAt>2024-11-05T00:00:00.000Z</createdAt>
+        <author>Jane Smith</author>
+        <hubraum>1998</hubraum>
+        <co2Wert>110</co2Wert>
+        <antriebsart>Rear-Wheel Drive</antriebsart>
+        <backVolumen>3</backVolumen>
+        <maxSpeed>240</maxSpeed>
+    </BlogPost>
+</BlogPosts>

@@ -6,8 +6,8 @@ const BlogPostSchema = new mongoose.Schema({
     tsn: {type: String, required: true},
     make: {type: String, required: true},
     model: {type: String, required: true},
-    year: { type: Array, default: [] },
-    kw: {type: Array, default: [] },
+    year: { type: Number, required: true },
+    kw: { type: Number, required: true }, // Wert muss weg da die Werte in KW_FROM und KW_UP gespeichert werden
     category: {type: String, required: true},
     engine: {type: String, required: true},
     fuelType: {type: String, required: true},
@@ -17,6 +17,13 @@ const BlogPostSchema = new mongoose.Schema({
     image_4: {type: String, required: true},
     createdAt: { type: Date, default: Date.now },
     author: { type: String, default: "Unknown" },
+    // Neue Attribute:
+    hubraum: { type: Number, deafult: 1993 }, // in ccm
+    co2Wert: { type: Number, default: 120 }, // in g/km
+    antriebsart: { type: String, default: "Unbekannt" },
+    backVolumen: { type: Number, default: 2 }, // in Litern
+    maxSpeed: { type: Number, default: 100 }, // in km/h
+    
 });
 
 
