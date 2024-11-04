@@ -192,9 +192,9 @@
 
 				<h2>Weitere Daten</h2>
 
-				<p><strong>Make: </strong> <textarea class="textarea resize-ta" id="entry-make-area">></textarea></p>
+				<p><strong>Make: </strong> <textarea class="textarea resize-ta" id="entry-make-area"></textarea></p>
 
-				<p><strong>Model: </strong> <textarea class="textarea resize-ta" id="entry-model-area">></textarea></p>
+				<p><strong>Model: </strong> <textarea class="textarea resize-ta" id="entry-model-area"></textarea></p>
 
 				<div class ="horizontal-fields" style="display: flex; justify-content: space-between;">
 					<p><strong>Jahr: von </strong> <input class="input" value="99" type="number" id="entry-year-from"></p>
