@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="BlogPosts">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="BlogPost" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="uid" type="xs:string" />
+                            <xs:element name="hsn" type="xs:integer" />
+                            <xs:element name="tsn" type="xs:string" />
+                            <xs:element name="make" type="xs:string" />
+                            <xs:element name="model" type="xs:string" />
+                            <xs:element name="year" type="xs:integer" />
+                            <xs:element name="category" type="xs:string" />
+                            <xs:element name="engine" type="xs:string" />
+                            <xs:element name="fuelType" type="xs:string" />
+                            <xs:element name="image_1" type="xs:string" />
+                            <xs:element name="image_2" type="xs:string" />
+                            <xs:element name="image_3" type="xs:string" />
+                            <xs:element name="image_4" type="xs:string" />
+                            <xs:element name="createdAt" type="xs:dateTime" />
+                            <xs:element name="author" type="xs:string" />
+                            <xs:element name="hubraum" type="xs:integer" />
+                            <xs:element name="co2Wert" type="xs:integer" />
+                            <xs:element name="antriebsart" type="xs:string" />
+                            <xs:element name="backVolumen" type="xs:integer" />
+                            <xs:element name="maxSpeed" type="xs:integer" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
