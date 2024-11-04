@@ -8,9 +8,10 @@ const UserSchema = new mongoose.Schema({
     lastName: { type: String, required: true },
     firstName: { type: String, required: true },
     profile: { type: String, default: "" },
-    verified: { type: Boolean, default: true },
-    created_At: { type: Date, default: Date.now },
-    changed_At: { type: Date, default: Date.now }
+    verified: { type: Boolean, default: false },
+    created_At: { type: Number, default: Date.now() },
+    changed_At: { type: Number, default: Date.now() },
+    login_attempts: { type: Number, default: 0 },
 });
 
 // Hier kannst du ein Auto-Increment Plugin hinzufügen, wenn benötigt
