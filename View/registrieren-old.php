@@ -8,6 +8,12 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+  <!--navigation bar-->
+  <div class="navigation-bar">
+    <?php include "navbar.php"; ?>
+  </div>
+  <!--end of navigation bar-->
+  <div class="wrapper-container">
   <div class="wrapper">
     <form action="">
       <h1>Registrieren</h1>
@@ -23,11 +29,19 @@
     </form>
   </div>
 
+  </div>
+  
+
   <div class="alert" id="error">
     <strong>Danger! </strong> <p> Indicates a dangerous or potentially negative action. </p>
     <span class="closebtn">×</span>
   </div>
 
   <script src="assets/registrieren/js/register.js""></script>
+  <!-- footer -->
+  <div class="footer">
+        <?php include "footer.php"; ?>
+  </div>
+  <!-- end of footer -->
 </body>
 </html>

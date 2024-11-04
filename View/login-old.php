@@ -8,27 +8,39 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-  <div class="wrapper">
-    <form action="">
-      <h1>Login</h1>
-      <div class="input-box">
-        <input type="text" placeholder="Username" required id="login">
-        <i class='bx bxs-user'></i>
-      </div>
-      <div class="input-box">
-        <input type="password" placeholder="Password" required id="password">
-        <i class='bx bxs-lock-alt' ></i>
-      </div>
-      <div class="remember-forgot">
-        <label><input type="checkbox">Remember Me</label>
-        <a href="#">Password vergessen</a>
-      </div>
-      <button type="button" class="btn" id="submit">Login</button>
-      <div class="register-link">
-        <p>Haben Sie noch keinen Account? <a href="#">Registrieren</a></p>
-      </div>
-    </form>
+  <!--navigation bar-->
+  <div class="navigation-bar">
+    <?php include "navbar.php"; ?>
   </div>
+  <!--end of navigation bar-->
+
+  <div class="wrapper-container">
+    <div class="wrapper">
+      <form action="">
+        <h1>Login</h1>
+        <div class="input-box">
+          <input type="text" placeholder="Username" required id="login">
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Password" required id="password">
+          <i class='bx bxs-lock-alt' ></i>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox">Remember Me</label>
+          <a href="#">Password vergessen</a>
+        </div>
+        <button type="button" class="btn" id="submit">Login</button>
+        <div class="register-link">
+          <p>Haben Sie noch keinen Account? <a href="#">Registrieren</a></p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  
+
+  
 
   <div class="alert" id="error">
     <strong>Danger! </strong> <p> Indicates a dangerous or potentially negative action. </p>
@@ -36,5 +48,11 @@
   </div>
 
   <script src="assets/login/js/validateLogin.js""></script>
+
+  <!-- footer -->
+  <div class="footer">
+        <?php include "footer.php"; ?>
+  </div>
+  <!-- end of footer -->
 </body>
 </html>
