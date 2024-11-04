@@ -18,7 +18,7 @@ router.post('/register', blogController.register);
 
 router.post('/postBlog', blogController.postBlog);
 
-router.get('/login', blogController.login);
+router.get('/loginUser', blogController.login);
 
 // Zähle alle Blogposts
 router.get('/count', blogController.countPosts);

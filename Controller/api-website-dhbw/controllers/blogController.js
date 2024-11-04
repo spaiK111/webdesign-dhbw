@@ -2,6 +2,7 @@ const BlogPost = require('../models/BlogPost');
 const MakeOptions = require('../models/MakeOptions');
 const Blog = require("../models/Blog");
 const User = require("../models/User")
+const bcrypt = require('bcrypt');
 
 // Erstelle einen neuen Blogpost
 exports.createPost = async (req, res) => {
@@ -31,7 +32,9 @@ exports.postBlog = async (req, res) => {
 exports.register = async (req, res) => {
     try {
         const { login, password } = req.body; // Use req.body to get data from POST request
-        const user = new User({ login: login, password: password });
+        const hashedPassword = await bcrypt.hash(password, 10);
+        
+        const user = new User({ login: login, password: hashedPassword });
         await user.save();
         res.status(201).json(user);
     } catch (err) {
@@ -42,8 +45,14 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
     try {
         const { login, password } = req.query;
-        const users = await User.findOne({ login: login, password: password });
-        res.json(users);
+
+        const user = await User.findOne({ login: login });
+
+       if (user && await bcrypt.compare(password, user.password)) {
+            res.json(user);
+        } else {
+            res.status(401).json({ error: 'Invalid login or password' });
+        }
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
