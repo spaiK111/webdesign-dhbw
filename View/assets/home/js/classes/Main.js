@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const submit = document.getElementById('filter-button')
     const error = document.getElementById('error')
 
-   
 
     let pagination = 0;
 
@@ -181,7 +180,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                     model.appendChild(optionElement);
                  }
             }   
-            
             
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);

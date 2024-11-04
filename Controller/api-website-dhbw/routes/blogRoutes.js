@@ -4,7 +4,9 @@ const blogController = require('../controllers/blogController');
 const router = express.Router();
 
 // Erstelle einen Blogpost
-router.post('/', blogController.createPost);
+router.post('/createBlogTxt', blogController.postBlog);
+
+router.post('/createCar', blogController.createCar);
 
 // Hole alle Blogposts
 router.get('/', blogController.getAllPosts);
@@ -16,9 +18,7 @@ router.get('/users', blogController.getUsers);
 // Register
 router.post('/register', blogController.register);
 
-router.post('/postBlog', blogController.postBlog);
-
-router.get('/login', blogController.login);
+router.get('/loginUser', blogController.login);
 
 // Zähle alle Blogposts
 router.get('/count', blogController.countPosts);

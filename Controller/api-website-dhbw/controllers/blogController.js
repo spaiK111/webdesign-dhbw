@@ -2,24 +2,62 @@ const BlogPost = require('../models/BlogPost');
 const MakeOptions = require('../models/MakeOptions');
 const Blog = require("../models/Blog");
 const User = require("../models/User")
+const xml2js = require('xml2js');
+const bcrypt = require('bcrypt');
+const fs = require('fs');
 
 // Erstelle einen neuen Blogpost
-exports.createPost = async (req, res) => {
+exports.createCar = async (req, res) => {
     try {
-
-        const {make, year, link} = req.query;
-        const post = new BlogPost({ make: make, year: year, image_front: link });
+        const { hsn, tsn, make, model, year, kw, category, engine, fuelType, hubraum, co2, antrieb, backVolumen, maxSpeed, image_1, image_2, image_3, image_4, author  } = req.query;
+        const uid = `${hsn}_${tsn}`;
+        const createdAt = Date.now()
+        const postJSON = { uid: uid, hsn: hsn, tsn: tsn, make: make, model: model, year: year, kw: kw, category: category, engine: engine, fuelType: fuelType, hubraum: hubraum, co2Wert: co2, antriebsart: antrieb, backVolumen: backVolumen, maxSpeed: maxSpeed, image_1: image_1, image_2: image_2, image_3: image_3, image_4: image_4, createdAt: createdAt, author: author };
+        const post = new BlogPost({ uid: uid, hsn: hsn, tsn: tsn, make: make, model: model, year: year, kw: kw, category: category, engine: engine, fuelType: fuelType, hubraum: hubraum, co2Wert: co2, antriebsart: antrieb, backVolumen: backVolumen, maxSpeed: maxSpeed, image_1: image_1, image_2: image_2, image_3: image_3, image_4: image_4, createdAt: createdAt, author: author });
         await post.save();
+        convertAndSaveToXML(postJSON);
         res.status(201).json(post);
     } catch (err) {
         res.status(400).json({ error: err.message });
     }
+
+};
+
+const convertAndSaveToXML = async (post) => {
+    const builder = new xml2js.Builder({ headless: true });
+    const newEntry = { Entry: post };
+
+    fs.readFile('data.xml', 'utf8', (err, data) => {
+
+        // Datei existiert, füge neuen Eintrag hinzu
+        xml2js.parseString(data, (err, result) => {
+            if (err) {
+                console.error('Error parsing XML:', err);
+                return;
+            }
+
+            if (!result.root.Entry) {
+                result.root.Entry = [];
+            }
+
+            result.root.Entry.push(post);
+
+            const updatedXml = builder.buildObject(result);
+            fs.writeFile('data.xml', updatedXml, (err) => {
+                if (err) {
+                    console.error('Error writing XML to file:', err);
+                } else {
+                    console.log('XML successfully updated in data.xml');
+                }
+            });
+        });
+    });
 };
 
 
 exports.postBlog = async (req, res) => {
     try {
-        const { heading, short_dsc, long_dsc, image } = req.body; // Use req.body to get data from POST request
+        const { heading, short_dsc, long_dsc, image } = req.query; // Use req.body to get data from POST request
         const blog = new Blog({ heading: heading, short_dsc: short_dsc, long_dsc: long_dsc, image: image });
         await blog.save();
         res.status(201).json(blog);
@@ -31,7 +69,9 @@ exports.postBlog = async (req, res) => {
 exports.register = async (req, res) => {
     try {
         const { login, password } = req.body; // Use req.body to get data from POST request
-        const user = new User({ login: login, password: password });
+        const hashedPassword = await bcrypt.hash(password, 10);
+        
+        const user = new User({ login: login, password: hashedPassword });
         await user.save();
         res.status(201).json(user);
     } catch (err) {
@@ -42,8 +82,14 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
     try {
         const { login, password } = req.query;
-        const users = await User.findOne({ login: login, password: password });
-        res.json(users);
+
+        const user = await User.findOne({ login: login });
+
+       if (user && await bcrypt.compare(password, user.password)) {
+            res.json(user);
+        } else {
+            res.status(401).json({ error: 'Invalid login or password' });
+        }
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
