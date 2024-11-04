@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const blogRoutes = require('./routes/blogRoutes'); // Import der Routen
+const parseAndUpdate = require('./parseAndUpdate'); // Import the parser function
 const app = express();
 const port = 5000;
 
@@ -14,8 +15,10 @@ app.use(cors());
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-}).then(() => {
+}).then(async (connection) => {
     console.log('Mit MongoDB verbunden');
+    const database = connection.connection.db; // Get the database instance
+    await parseAndUpdate(database); // Call the parser function with the database instance
 }).catch((err) => {
     console.error('MongoDB-Verbindung fehlgeschlagen:', err.message);
 });
