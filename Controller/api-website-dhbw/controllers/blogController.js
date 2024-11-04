@@ -2,19 +2,72 @@ const BlogPost = require('../models/BlogPost');
 const MakeOptions = require('../models/MakeOptions');
 const Blog = require("../models/Blog");
 const User = require("../models/User")
+const xml2js = require('xml2js');
 const bcrypt = require('bcrypt');
+const fs = require('fs');
 
 // Erstelle einen neuen Blogpost
 exports.createCar = async (req, res) => {
     try {
-        const { hsn, tsn, make, model, year_from, year_up, kw_from, kw_up, category, engine, fuelType, image_1, image_2, image_3, image_4  } = req.query;
+        const { hsn, tsn, make, model, year, kw, category, engine, fuelType, hubraum, co2, antrieb, backVolumen, maxSpeed, image_1, image_2, image_3, image_4  } = req.query;
         const uid = `${hsn}_${tsn}`;
-        const post = new BlogPost({ uid: uid, hsn: hsn, tsn: tsn, make: make, model: model, year:[year_from, year_up], kw: [kw_from, kw_up], category: category, engine: engine, fuelType: fuelType, image_1: image_1, image_2: image_2, image_3: image_3, image_4: image_4 });
+        const postJSON = { uid: uid, hsn: hsn, tsn: tsn, make: make, model: model, year: year, kw: kw, category: category, engine: engine, fuelType: fuelType, hubraum: hubraum, co2Wert: co2, antriebsart: antrieb, backVolumen: backVolumen, maxSpeed: maxSpeed, image_1: image_1, image_2: image_2, image_3: image_3, image_4: image_4 };
+        const post = new BlogPost({ uid: uid, hsn: hsn, tsn: tsn, make: make, model: model, year: year, kw: kw, category: category, engine: engine, fuelType: fuelType, hubraum: hubraum, co2Wert: co2, antriebsart: antrieb, backVolumen: backVolumen, maxSpeed: maxSpeed, image_1: image_1, image_2: image_2, image_3: image_3, image_4: image_4 });
         await post.save();
+        convertAndSaveToXML(postJSON);
         res.status(201).json(post);
     } catch (err) {
         res.status(400).json({ error: err.message });
     }
+
+};
+
+const convertAndSaveToXML = async (post) => {
+    const builder = new xml2js.Builder({ headless: true });
+    const newEntry = { Entry: post };
+
+    fs.readFile('data.xml', 'utf8', (err, data) => {
+        if (err) {
+            if (err.code === 'ENOENT') {
+                // Datei existiert nicht, erstelle eine neue
+                const rootBuilder = new xml2js.Builder({ rootName: 'root', headless: true });
+                const xml = rootBuilder.buildObject({ root: { Entry: [post] } });
+                fs.writeFile('data.xml', xml, (err) => {
+                    if (err) {
+                        console.error('Error writing XML to file:', err);
+                    } else {
+                        console.log('XML successfully written to data.xml');
+                    }
+                });
+            } else {
+                console.error('Error reading XML file:', err);
+            }
+            return;
+        }
+
+        // Datei existiert, füge neuen Eintrag hinzu
+        xml2js.parseString(data, (err, result) => {
+            if (err) {
+                console.error('Error parsing XML:', err);
+                return;
+            }
+
+            if (!result.root.Entry) {
+                result.root.Entry = [];
+            }
+
+            result.root.Entry.push(post);
+
+            const updatedXml = builder.buildObject(result);
+            fs.writeFile('data.xml', updatedXml, (err) => {
+                if (err) {
+                    console.error('Error writing XML to file:', err);
+                } else {
+                    console.log('XML successfully updated in data.xml');
+                }
+            });
+        });
+    });
 };
 
 

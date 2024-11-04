@@ -20,13 +20,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     const tsn = document.getElementById('entry-tsn')
     const make = document.getElementById('entry-make-area')
     const model = document.getElementById('entry-model-area')
-    const year_from = document.getElementById('entry-year-from')
-    const year_up = document.getElementById('entry-year-up')
-    const kw_from = document.getElementById('entry-kw-from')
-    const kw_up = document.getElementById('entry-kw-up')
+    const year = document.getElementById('entry-year-area')
+    const kw = document.getElementById('entry-kw-area')
     const category = document.getElementById('entry-category')
     const engine = document.getElementById('entry-engine')
     const fueltype = document.getElementById('entry-fueltype')
+    // neue felder
+    const hubraum = document.getElementById('entry-hubraum-area')
+    const co2Wert = document.getElementById('entry-co2-area')
+    const antriebsart = document.getElementById('entry-antrieb')
+    const backVolumen = document.getElementById('entry-backVolumen-area')
+    const maxSpeed = document.getElementById('entry-maxSpeed-area')
+
+    //Bilder
     const image1 = document.getElementById('entry-image1')
     const image2 = document.getElementById('entry-image2')
     const image3 = document.getElementById('entry-image3')
@@ -39,10 +45,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             const tsnValue = tsn.value;
             const makeValue = make.value;
             const modelValue = model.value;
-            const year_fromValue = year_from.value;
-            const year_upValue = year_up.value;
-            const kw_fromValue = kw_from.value;
-            const kw_upValue = kw_up.value;
+            const yearValue = year.value;
+            const kwValue = kw.value;
             const categoryValue = category.value;
             const engineValue = engine.value;
             const fueltypeValue = fueltype.value;
@@ -50,9 +54,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             const image2Value = image2.value;
             const image3Value = image3.value;
             const image4Value = image4.value;
+            // neue Werte 
+            const hubraumValue = hubraum.value;
+            const co2WertValue = co2Wert.value;
+            const antriebsartValue = antriebsart.value;
+            const backVolumenValue = backVolumen.value;
+            const maxSpeedValue = maxSpeed.value;
     
             try {
-                const response = await fetch(`http://localhost:5000/api/posts/createCar?hsn=${hsnValue}&tsn=${tsnValue}&make=${makeValue}&model=${modelValue}&year_from=${year_fromValue}&year_up=${year_upValue}&kw_from=${kw_fromValue}&kw_up=${kw_upValue}&category=${categoryValue}&engine=${engineValue}&fuelType=${fueltypeValue}&image_1=${image1Value}&image_2=${image2Value}&image_3=${image3Value}&image_4=${image4Value}`, {
+                const response = await fetch(`http://localhost:5000/api/posts/createCar?hsn=${hsnValue}&tsn=${tsnValue}&make=${makeValue}&model=${modelValue}&year=${yearValue}&kw=${kwValue}&category=${categoryValue}&engine=${engineValue}&fuelType=${fueltypeValue}&hubraum=${hubraumValue}&co2=${co2WertValue}&antrieb=${antriebsartValue}&backVolumen=${backVolumenValue}&maxSpeed=${maxSpeedValue}&image_1=${image1Value}&image_2=${image2Value}&image_3=${image3Value}&image_4=${image4Value}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
