@@ -7,9 +7,8 @@ const bcrypt = require('bcrypt');
 // Erstelle einen neuen Blogpost
 exports.createPost = async (req, res) => {
     try {
-
-        const {make, year, link} = req.query;
-        const post = new BlogPost({ make: make, year: year, image_front: link });
+        const { heading, short_dsc, long_dsc, main_img} = req.query;
+        const post = new BlogPost({ heading: heading, short_dsc: short_dsc, long_dsc: long_dsc, image: main_img });
         await post.save();
         res.status(201).json(post);
     } catch (err) {
@@ -20,7 +19,7 @@ exports.createPost = async (req, res) => {
 
 exports.postBlog = async (req, res) => {
     try {
-        const { heading, short_dsc, long_dsc, image } = req.body; // Use req.body to get data from POST request
+        const { heading, short_dsc, long_dsc, image } = req.query; // Use req.body to get data from POST request
         const blog = new Blog({ heading: heading, short_dsc: short_dsc, long_dsc: long_dsc, image: image });
         await blog.save();
         res.status(201).json(blog);

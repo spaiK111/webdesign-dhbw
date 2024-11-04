@@ -2,15 +2,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
     const clearButton = document.getElementById('clear_blog');
-    const addButton = document.getElementById('add_blog');
+    const addButton = document.getElementById('add_blog_txt');
 
     addButton.addEventListener('click', async () => {  
-        const make = document.getElementById('make').value;
-        const jahr = document.getElementById('year').value;
-        const link = document.getElementById('link').value;
+        const heading = document.getElementById('entry-heading').value;
+        const short_dsc = document.getElementById('entry-short-dsc').value;
+        const long_dsc = document.getElementById('entry-long-dsc').value;
+        const main_img = document.getElementById('entry-main-image').value;
 
         try {
-            const response = await fetch(`http://localhost:5000/api/posts?make=${make}&year=${jahr}&link=${link}`, {
+            const response = await fetch(`http://localhost:5000/api/posts/createBlogTxt?heading=${heading}&short_dsc=${short_dsc}&long_dsc=${long_dsc}&image=${main_img}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             const data = await response.json();
             console.log('Success:', data);
+            alert('Blogpost created successfully');
         } catch (error) {
             console.error('Error fetching pagination:', error);
         }
