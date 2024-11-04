@@ -15,7 +15,7 @@ const BlogPostSchema = new mongoose.Schema({
     image_2: {type: String, required: true},
     image_3: {type: String, required: true},
     image_4: {type: String, required: true},
-    createdAt: { type: Date, default: Date.now },
+    createdAt: { type: Number, default: Date.now() },
     author: { type: String, default: "Unknown" },
     // Neue Attribute:
     hubraum: { type: Number, deafult: 1993 }, // in ccm

@@ -9,10 +9,11 @@ const fs = require('fs');
 // Erstelle einen neuen Blogpost
 exports.createCar = async (req, res) => {
     try {
-        const { hsn, tsn, make, model, year, kw, category, engine, fuelType, hubraum, co2, antrieb, backVolumen, maxSpeed, image_1, image_2, image_3, image_4  } = req.query;
+        const { hsn, tsn, make, model, year, kw, category, engine, fuelType, hubraum, co2, antrieb, backVolumen, maxSpeed, image_1, image_2, image_3, image_4, author  } = req.query;
         const uid = `${hsn}_${tsn}`;
-        const postJSON = { uid: uid, hsn: hsn, tsn: tsn, make: make, model: model, year: year, kw: kw, category: category, engine: engine, fuelType: fuelType, hubraum: hubraum, co2Wert: co2, antriebsart: antrieb, backVolumen: backVolumen, maxSpeed: maxSpeed, image_1: image_1, image_2: image_2, image_3: image_3, image_4: image_4 };
-        const post = new BlogPost({ uid: uid, hsn: hsn, tsn: tsn, make: make, model: model, year: year, kw: kw, category: category, engine: engine, fuelType: fuelType, hubraum: hubraum, co2Wert: co2, antriebsart: antrieb, backVolumen: backVolumen, maxSpeed: maxSpeed, image_1: image_1, image_2: image_2, image_3: image_3, image_4: image_4 });
+        const createdAt = Date.now()
+        const postJSON = { uid: uid, hsn: hsn, tsn: tsn, make: make, model: model, year: year, kw: kw, category: category, engine: engine, fuelType: fuelType, hubraum: hubraum, co2Wert: co2, antriebsart: antrieb, backVolumen: backVolumen, maxSpeed: maxSpeed, image_1: image_1, image_2: image_2, image_3: image_3, image_4: image_4, createdAt: createdAt, author: author };
+        const post = new BlogPost({ uid: uid, hsn: hsn, tsn: tsn, make: make, model: model, year: year, kw: kw, category: category, engine: engine, fuelType: fuelType, hubraum: hubraum, co2Wert: co2, antriebsart: antrieb, backVolumen: backVolumen, maxSpeed: maxSpeed, image_1: image_1, image_2: image_2, image_3: image_3, image_4: image_4, createdAt: createdAt, author: author });
         await post.save();
         convertAndSaveToXML(postJSON);
         res.status(201).json(post);
@@ -27,23 +28,6 @@ const convertAndSaveToXML = async (post) => {
     const newEntry = { Entry: post };
 
     fs.readFile('data.xml', 'utf8', (err, data) => {
-        if (err) {
-            if (err.code === 'ENOENT') {
-                // Datei existiert nicht, erstelle eine neue
-                const rootBuilder = new xml2js.Builder({ rootName: 'root', headless: true });
-                const xml = rootBuilder.buildObject({ root: { Entry: [post] } });
-                fs.writeFile('data.xml', xml, (err) => {
-                    if (err) {
-                        console.error('Error writing XML to file:', err);
-                    } else {
-                        console.log('XML successfully written to data.xml');
-                    }
-                });
-            } else {
-                console.error('Error reading XML file:', err);
-            }
-            return;
-        }
 
         // Datei existiert, füge neuen Eintrag hinzu
         xml2js.parseString(data, (err, result) => {

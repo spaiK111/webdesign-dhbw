@@ -2,35 +2,35 @@ const fs = require('fs');
 const xml2js = require('xml2js');
 
 // Function to update the database
-async function dbUpdate(database, blogPost) {
+async function dbUpdate(database, formattedEntry) {
     const collection = database.collection('cars_blogs');
 
     // Check if the blog post with the given uid exists
-    const existingPost = await collection.findOne({ uid: blogPost.uid });
+    const existingPost = await collection.findOne({ uid: formattedEntry.uid });
 
     if (existingPost) {
         // Check if any fields are different
         const fieldsToUpdate = {};
-        for (const key in blogPost) {
-            if (blogPost[key] !== existingPost[key]) {
-                fieldsToUpdate[key] = blogPost[key];
+        for (const key in formattedEntry) {
+            if (formattedEntry[key] !== existingPost[key]) {
+                fieldsToUpdate[key] = formattedEntry[key];
             }
         }
 
         // If there are fields to update, update the document
         if (Object.keys(fieldsToUpdate).length > 0) {
             await collection.updateOne(
-                { uid: blogPost.uid },
+                { uid: formattedEntry.uid },
                 { $set: fieldsToUpdate }
             );
-            console.log(`BlogPost with uid ${blogPost.uid} updated.`);
+            console.log(`FormattedEntry with uid ${formattedEntry.uid} updated.`);
         } else {
-            console.log(`BlogPost with uid ${blogPost.uid} is already up-to-date.`);
+            console.log(`FormattedEntry with uid ${formattedEntry.uid} is already up-to-date.`);
         }
     } else {
         // Insert the new blog post
-        await collection.insertOne(blogPost);
-        console.log(`BlogPost with uid ${blogPost.uid} inserted.`);
+        await collection.insertOne(formattedEntry);
+        console.log(`FormattedEntry with uid ${formattedEntry.uid} inserted.`);
     }
 }
 
@@ -50,33 +50,33 @@ async function parseAndUpdate(database) {
                 return;
             }
 
-            const blogPosts = result.BlogPosts.BlogPost;
-            for (const blogPost of blogPosts) {
+            const entries = result.root.Entry;
+            for (const entry of entries) {
                 // Convert blogPost object to a simpler format
-                const formattedBlogPost = {
-                    uid: blogPost.uid[0],
-                    hsn: blogPost.hsn[0],
-                    tsn: blogPost.tsn[0],
-                    make: blogPost.make[0],
-                    model: blogPost.model[0],
-                    year: blogPost.year[0],
-                    category: blogPost.category[0],
-                    engine: blogPost.engine[0],
-                    fuelType: blogPost.fuelType[0],
-                    image_1: blogPost.image_1[0],
-                    image_2: blogPost.image_2[0],
-                    image_3: blogPost.image_3[0],
-                    image_4: blogPost.image_4[0],
-                    createdAt: blogPost.createdAt[0],
-                    author: blogPost.author[0],
-                    hubraum: blogPost.hubraum[0],
-                    co2Wert: blogPost.co2Wert[0],
-                    antriebsart: blogPost.antriebsart[0],
-                    backVolumen: blogPost.backVolumen[0],
-                    maxSpeed: blogPost.maxSpeed[0]
+                const formattedEntry = {
+                    uid: entry.uid[0],
+                    hsn: entry.hsn[0],
+                    tsn: entry.tsn[0],
+                    make: entry.make[0],
+                    model: entry.model[0],
+                    year: entry.year[0],
+                    category: entry.category[0],
+                    engine: entry.engine[0],
+                    fuelType: entry.fuelType[0],
+                    image_1: entry.image_1[0],
+                    image_2: entry.image_2[0],
+                    image_3: entry.image_3[0],
+                    image_4: entry.image_4[0],
+                    createdAt: entry.createdAt[0],
+                    author: entry.author[0],
+                    hubraum: entry.hubraum[0],
+                    co2Wert: entry.co2Wert[0],
+                    antriebsart: entry.antriebsart[0],
+                    backVolumen: entry.backVolumen[0],
+                    maxSpeed: entry.maxSpeed[0]
                 };
 
-                await dbUpdate(database, formattedBlogPost);
+                await dbUpdate(database, formattedEntry);
             }
         });
     });

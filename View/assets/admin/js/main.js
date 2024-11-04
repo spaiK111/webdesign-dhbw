@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const image2Value = image2.value;
             const image3Value = image3.value;
             const image4Value = image4.value;
+            const author = "Login_user"
             // neue Werte 
             const hubraumValue = hubraum.value;
             const co2WertValue = co2Wert.value;
@@ -62,7 +63,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const maxSpeedValue = maxSpeed.value;
     
             try {
-                const response = await fetch(`http://localhost:5000/api/posts/createCar?hsn=${hsnValue}&tsn=${tsnValue}&make=${makeValue}&model=${modelValue}&year=${yearValue}&kw=${kwValue}&category=${categoryValue}&engine=${engineValue}&fuelType=${fueltypeValue}&hubraum=${hubraumValue}&co2=${co2WertValue}&antrieb=${antriebsartValue}&backVolumen=${backVolumenValue}&maxSpeed=${maxSpeedValue}&image_1=${image1Value}&image_2=${image2Value}&image_3=${image3Value}&image_4=${image4Value}`, {
+                const response = await fetch(`http://localhost:5000/api/posts/createCar?hsn=${hsnValue}&tsn=${tsnValue}&make=${makeValue}&model=${modelValue}&year=${yearValue}&kw=${kwValue}&category=${categoryValue}&engine=${engineValue}&fuelType=${fueltypeValue}&hubraum=${hubraumValue}&co2=${co2WertValue}&antrieb=${antriebsartValue}&backVolumen=${backVolumenValue}&maxSpeed=${maxSpeedValue}&image_1=${image1Value}&image_2=${image2Value}&image_3=${image3Value}&image_4=${image4Value}&author=${author}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

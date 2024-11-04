@@ -17,8 +17,8 @@ mongoose.connect(process.env.MONGODB_URI, {
     useUnifiedTopology: true,
 }).then(async (connection) => {
     console.log('Mit MongoDB verbunden');
-    //const database = connection.connection.db; // Get the database instance
-    //await parseAndUpdate(database); // Call the parser function with the database instance
+    const database = connection.connection.db; // Get the database instance
+    await parseAndUpdate(database); // Call the parser function with the database instance
 }).catch((err) => {
     console.error('MongoDB-Verbindung fehlgeschlagen:', err.message);
 });
