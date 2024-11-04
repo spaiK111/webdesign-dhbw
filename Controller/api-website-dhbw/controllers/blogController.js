@@ -5,10 +5,11 @@ const User = require("../models/User")
 const bcrypt = require('bcrypt');
 
 // Erstelle einen neuen Blogpost
-exports.createPost = async (req, res) => {
+exports.createCar = async (req, res) => {
     try {
-        const { heading, short_dsc, long_dsc, main_img} = req.query;
-        const post = new BlogPost({ heading: heading, short_dsc: short_dsc, long_dsc: long_dsc, image: main_img });
+        const { hsn, tsn, make, model, year_from, year_up, kw_from, kw_up, category, engine, fuelType, image_1, image_2, image_3, image_4  } = req.query;
+        const uid = `${hsn}_${tsn}`;
+        const post = new BlogPost({ uid: uid, hsn: hsn, tsn: tsn, make: make, model: model, year:[year_from, year_up], kw: [kw_from, kw_up], category: category, engine: engine, fuelType: fuelType, image_1: image_1, image_2: image_2, image_3: image_3, image_4: image_4 });
         await post.save();
         res.status(201).json(post);
     } catch (err) {

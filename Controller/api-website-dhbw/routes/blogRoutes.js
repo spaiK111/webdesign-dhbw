@@ -6,6 +6,8 @@ const router = express.Router();
 // Erstelle einen Blogpost
 router.post('/createBlogTxt', blogController.postBlog);
 
+router.post('/createCar', blogController.createCar);
+
 // Hole alle Blogposts
 router.get('/', blogController.getAllPosts);
 
