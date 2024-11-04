@@ -183,42 +183,61 @@
 
 				<h2>Geben Sie die IDs ein</h2>
 
-				<p><strong>HSN: </strong> <input class="input" value="99" type="number" id="entry-hsn"></p>
+				<p><strong>HSN: </strong> <input class="input" value="2345622" type="number" id="entry-hsn"></p>
 
-				<p><strong>TSN: </strong> <input class="input" value="99" type="number" id="entry-tsn">></p>
-
-
-				<!--<p><strong>TSN: </strong> I would like <span class="input" role="textbox" contenteditable>99</span> hugs</p> -->
+				<p><strong>TSN: </strong> <input class="input" value="6543223" type="number" id="entry-tsn"></p>
 
 				<h2>Weitere Daten</h2>
 
-				<p><strong>Make: </strong> <textarea class="textarea resize-ta" id="entry-make-area"></textarea></p>
+				<p><strong>Make: </strong> <textarea class="textarea resize-ta" id="entry-make-area">BMW</textarea></p>
 
-				<p><strong>Model: </strong> <textarea class="textarea resize-ta" id="entry-model-area"></textarea></p>
+				<p><strong>Model: </strong> <textarea class="textarea resize-ta" id="entry-model-area">318i</textarea></p>
 
-				<div class ="horizontal-fields" style="display: flex; justify-content: space-between;">
-					<p><strong>Jahr: von </strong> <input class="input" value="99" type="number" id="entry-year-from"></p>
-					<p><strong> bis </strong> <input class="input" value="99" type="number" id="entry-year-up"></p>
-				</div>
+				<p><strong>Jahr: </strong> <textarea class="textarea resize-ta" id="entry-year-area">2014</textarea></p>
 
-				<div class ="horizontal-fields" style="display: flex; justify-content: space-between;">
-					<p><strong>KW: von </strong> <input class="input" value="99" type="number"  id="entry-kw-from"></p>
-					<p><strong> bis </strong> <input class="input" value="99" type="number"  id="entry-kw-up"></p>
-				</div>
+				<p><strong>KW: </strong> <textarea class="textarea resize-ta" id="entry-kw-area">147</textarea></p>
 
-				<p><strong>Kategorie: </strong> <textarea class="textarea resize-ta" id="entry-category"></textarea></p>
+				<p><strong>Kategorie: </strong>
+					<select class="textarea resize-ta" id="entry-category">
+						<option value="Limousine" default>Limousine</option>
+						<option value="Kombi">Kombi</option>
+						<option value="Cabrio">Cabrio</option>
+					</select>
+				</p>
 
-				<p><strong>Engine: </strong> <textarea class="textarea resize-ta" id="entry-engine"></textarea></p>
+				<p><strong>Engine: </strong> <textarea class="textarea resize-ta" id="entry-engine">1.9TFSI</textarea></p>
 
-				<p><strong>Fueltype: </strong> <textarea class="textarea resize-ta" id="entry-fueltype"></textarea></p>
+				<p><strong>Kraftstoffart: </strong>
+					<select class="textarea resize-ta" id="entry-fueltype">
+						<option value="Benzin" default>Benzin</option>
+						<option value="Diesel">Diesel</option>
+						<option value="Elektro">Elektro</option>
+					</select>
+				</p>
 
-				<p><strong>Image (1): </strong> <textarea class="textarea resize-ta" id="entry-image1"></textarea></p>
+				<p><strong>Hubraum: </strong> <textarea class="textarea resize-ta" id="entry-hubraum-area">1993</textarea></p>
+				
+				<p><strong>CO2-Emission: </strong> <textarea class="textarea resize-ta" id="entry-co2-area">120</textarea></p>
 
-				<p><strong>Image (2): </strong> <textarea class="textarea resize-ta" id="entry-image2"></textarea></p>
+				<p><strong>Antriebsart: </strong>
+					<select class="textarea resize-ta" id="entry-antrieb">
+						<option value="Manuell" default>Manuell</option>
+						<option value="Automatik">Automatik</option>
+					</select>
+				</p>
 
-				<p><strong>Image (3): </strong> <textarea class="textarea resize-ta" id="entry-image3"></textarea></p>
 
-				<p><strong>Image (4): </strong> <textarea class="textarea resize-ta" id="entry-image4"></textarea></p>
+				<p><strong>Kofferraumvolumen: </strong> <textarea class="textarea resize-ta" id="entry-backVolumen-area">3</textarea></p>
+
+				<p><strong>Maximale Geschwindigkeit (km/h): </strong> <textarea class="textarea resize-ta" id="entry-maxSpeed-area">260</textarea></p>
+
+				<p><strong>Image (1): </strong> <textarea class="textarea resize-ta" id="entry-image1">https://media.istockphoto.com/id/1435226078/photo/front-of-a-white-bmw-m4-parked-on-a-street-with-trees-in-the-background.jpg?s=612x612&w=0&k=20&c=l1IupUrh-_Zbcse-hDkaUAh-qMD82hJspXjnN0IBZlg=</textarea></p>
+
+				<p><strong>Image (2): </strong> <textarea class="textarea resize-ta" id="entry-image2">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgy3Vihtm_EdW3klYnE0IsHeMwpRMnHJGmng&s</textarea></p>
+
+				<p><strong>Image (3): </strong> <textarea class="textarea resize-ta" id="entry-image3">https://imgd.aeplcdn.com/370x208/n/cw/ec/132513/7-series-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80</textarea></p>
+
+				<p><strong>Image (4): </strong> <textarea class="textarea resize-ta" id="entry-image4">https://t4.ftcdn.net/jpg/04/20/38/41/360_F_420384111_5fzxWlWxvB7bg5BROxfKdBbgBYB2TwGP.jpg</textarea></p>
 
 				<button class="btn" id="add_blog_default" style="margin-top: 20px">Hinzufügen</button>
 
