@@ -7,7 +7,7 @@ const parseAndUpdate = require('./parseAndUpdate'); // Import the parser functio
 const updateMakeOptions = require("./updateMakeOptions")
 const app = express();
 const port = 5000;
-    
+
 // Middleware
 app.use(express.json());
 app.use(cors());
@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODB_URI, {
     console.log('Mit MongoDB verbunden');
     const database = connection.connection.db; // Get the database instance
     await parseAndUpdate(database); // Call the parser function with the database instance
-    await updateMakeOptions(database);
+    //await updateMakeOptions(database);
 }).catch((err) => {
     console.error('MongoDB-Verbindung fehlgeschlagen:', err.message);
 });
