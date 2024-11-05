@@ -27,7 +27,7 @@
         <?php include "navbar.php"; ?>
       </div>
       <div class = "banner">
-        <div class = "container">
+        <div class = "banner-container">
           <h1 class = "banner-title">
             <span>real</span> AutoInsider
           </h1>

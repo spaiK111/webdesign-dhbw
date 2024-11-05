@@ -30,15 +30,16 @@ img {
 header {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(../images/cars-blogpage-bg1.jpg) center/cover no-repeat fixed;
+    url(../images/cars-banner.jpg) center/cover no-repeat fixed;
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
+  justify-content: center;
 }
 
 .banner {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -337,44 +338,6 @@ header {
   opacity: 0.8;
 }
 
-/* footer */
-footer {
-  background: var(--exDark);
-  color: #fff;
-  text-align: center;
-  padding: 2rem 0;
-}
-.social-links {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.4rem;
-}
-.social-links a {
-  border: 2px solid #fff;
-  color: #fff;
-  display: block;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  text-decoration: none;
-  margin: 0 0.3rem;
-  transition: all 0.5s ease;
-}
-
-.social-links a:hover {
-  background: #fff;
-  color: var(--exDark);
-}
-.footer span {
-  margin-top: 1rem;
-  display: block;
-  font-family: var(--Playfair);
-  letter-spacing: 2px;
-}
-
 /* Media Queries */
 @media screen and (min-width: 540px) {
   .navbar-nav a {
@@ -393,11 +356,6 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
-  .navbar .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
   .search-input {
     padding: 0.8rem 0;
   }
