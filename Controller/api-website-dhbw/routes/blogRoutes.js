@@ -33,6 +33,8 @@ router.get('/count', blogController.countPosts);
 // Zähle die 5 Blogposts per Page
 router.get('/gPPP', blogController.getPostsPerPage);
 
+router.get('/getAllMakePosts', blogController.getAllMakePosts )
+
 // Hole einen Blogpost nach ID
 router.get('/getPostById', blogController.getPostById);
 
