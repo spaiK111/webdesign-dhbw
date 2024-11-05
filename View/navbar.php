@@ -12,7 +12,7 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="container">
+      <div class="navbar-container">
         <a href="index.php" class="navbar-brand">AutoInsider®</a>
 
         <div class="navbar-nav">
