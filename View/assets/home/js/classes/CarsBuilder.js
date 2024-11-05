@@ -43,14 +43,13 @@ export class CarsBuilder {
                     <div class="div2">
                         <div class="div2-body">
                             <div class="content">
-                                <span class="badge-font bagde-margin badge-style">Gesponsert</span>
                                 <h2 class="car-name">
                                     <a href="http://127.0.0.1:5500/view/preset.php?id=${post._id}">${post.make}</a>
                                 </h2>
                             </div>
                             <section>
                                 <div class="beschreibung">
-                                    <div class="beschreibung-content">${post.model} • ${post.year[0]} - ${post.year[1]}</div>
+                                    <div class="beschreibung-content">${post.model} • ${post.year} - ${post.engine}</div>
                                 </div>
                             </section>
                         </div>
@@ -58,22 +57,13 @@ export class CarsBuilder {
                     <div class="div3">
                         <div class="price-box">
                             <div class="price-content">
-                                <span class="price-info">${post.kw[0]} - ${post.kw[1]} • ${post.category} • ${post.engine}  </span>
+                                <span class="price-info">${post.fuelType} • ${post.kw} KW • ${post.category} • ${post.hubraum}  </span>
                             </div>
-                            <span class="beschreibung">21% MwSt.</span>
-                            <div class=""><span class="price-txt hover-color">Finanzierung berechnen</span></div>
+                            <span class="beschreibung"> publiziert vom ${post.author}</span>
+                            
                         </div>
                     </div>
                     <div class="div4">
-                        <div class="div4-content">
-                            <div class="">
-                                <span class="price-txt hover-txt-vers">Versicherung vergleichen</span>
-                            </div>
-                            <div class="button-box button-box-hover-vers">
-                                <button class="contact-btn">Kontakt</button>
-                                <button class="call-btn">Anrufen</button>
-                            </div>
-                        </div>
                     </div>
                 `;
                 console.log("here1")
