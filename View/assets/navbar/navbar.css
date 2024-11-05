@@ -81,7 +81,7 @@ body {
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.9);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-  display: none;
+
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 1.2rem;
@@ -172,5 +172,23 @@ body {
 
   .sidebar {
     transform: translateX(100%);
+  }
+}
+
+@media (max-height: 900px) {
+  #responsive-navbar {
+    gap: 40px;
+  }
+}
+
+@media (max-height: 650px) {
+  #responsive-navbar {
+    gap: 20px;
+  }
+}
+
+@media (max-height: 550px) {
+  #responsive-navbar {
+    gap: 5px;
   }
 }
