@@ -22,7 +22,7 @@ const BlogPostSchema = new mongoose.Schema({
     co2Wert: { type: Number, default: 120 }, // in g/km
     antriebsart: { type: String, default: "Unbekannt" },
     backVolumen: { type: Number, default: 2 }, // in Litern
-    maxSpeed: { type: Number, default: 100 }, // in km/h
+    maxSpeed: { type: Number, default: 100 }, // in km/h 
     
 });
 

@@ -215,16 +215,16 @@ exports.getPostsPerPage = async (req, res) => { //gPPP
         }
 
         if (fueltype) {
-            query.fueltype = fueltype;
+            query.fuelType = fueltype;
         }
         
-        if (ps1 && ps2) {
-            query.kw = { $elemMatch: { $gte: parseInt(ps1), $lte: parseInt(ps2) } };
-        } else if (ps1) {
-            query.kw = { $elemMatch: { $gte: parseInt(ps1) } };
-        } else if (ps2) {
-            query.kw = { $elemMatch: { $lte: parseInt(ps2) } };
-        }
+        // if (ps1 && ps2) {
+        //     query.kw = { $elemMatch: { $gte: parseInt(ps1), $lte: parseInt(ps2) } };
+        // } else if (ps1) {
+        //     query.kw = { $elemMatch: { $gte: parseInt(ps1) } };
+        // } else if (ps2) {
+        //     query.kw = { $elemMatch: { $lte: parseInt(ps2) } };
+        // }
         const page = parseInt(pagination); // Default to page 0 if pagination is not provided
         const limit = 5; // Number of posts per page
 

@@ -11,7 +11,6 @@ export class CarsBuilder {
             const fueltypeVal = fueltype ? fueltype : '';
             const blogPostsContainer = document.getElementById('item-list');
             const response = await fetch(`http://localhost:5000/api/posts/gPPP?pagination=${pagination}&make=${makeVal}&model=${modelVal}&ps1=${ps1Val}&ps2=${ps2Val}&category=${categoryVal}&fueltype=${fueltypeVal}`); // URL der API
-            console.log(response)
             const posts = await response.json();
             console.log(posts)
             // Blogposts in das HTML einfügen
