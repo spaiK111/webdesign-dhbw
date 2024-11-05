@@ -78,7 +78,7 @@
           <label>Modell</label>
           <div class="search-selection-item">
             <select class="search-selection" id ="model" disabled>
-              <option selected value =""> Beliebig </option>
+              <option selected value ="" default> Beliebig </option>
 
               
             </select>
@@ -97,20 +97,22 @@
     <div class="search-selection-item">
         <input class="search-selection" list="leistungsbereich1" id="ps1" name="ps1" placeholder="Beliebig" />
         <datalist id="leistungsbereich1">
-            <option value="1999"></option>
-            <option value="2000"></option>
-            <option value="2001"></option>
-            <!-- Weitere Jahre... -->
-            <option value="2024"></option>
+            <option value="20"></option>
+            <option value="40"></option>
+            <option value="60"></option>
+            <option value="80"></option>
+            <option value="100"></option>
+            <option value="120"></option>
         </datalist>
 
         <input class="search-selection" list="leistungsbereich2" id="ps2" name="ps2" placeholder="Beliebig" />
         <datalist id="leistungsbereich2">
-            <option value="1999"></option>
-            <option value="2000"></option>
-            <option value="2001"></option>
-            <!-- Weitere Jahre... -->
-            <option value="2024"></option>
+            <option value="140"></option>
+            <option value="160"></option>
+            <option value="180"></option>
+            <option value="200"></option>
+            <option value="220"></option>
+            <option value="240"></option>
         </datalist>
 
         <div class="search-box">

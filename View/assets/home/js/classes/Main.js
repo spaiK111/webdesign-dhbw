@@ -107,9 +107,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     make.addEventListener('change', async () => {
        
-        if(make.value !== ' ') {
+        if(make.value !== '') {
+            console.log("111")
             model.removeAttribute("disabled");
             await createmake();
+        }
+        else {
+            console.log("222")
+            model.setAttribute("disabled", "true");
+            clearOptionsExceptDefault('model')
         }
     })
 
@@ -156,33 +162,49 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function createmake() {
         try {
-            const response = await fetch('http://localhost:5000/api/posts/makeOptions'); // Replace with your actual API endpoint
+            const makeValue = make.value
+            const response = await fetch(`http://localhost:5000/api/posts/getAllMakePosts?make=${makeValue}`); // Replace with your actual API endpoint
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
             console.log('Data:', data);
-            
-            const model = document.getElementById('model');
+    
+            clearOptionsExceptDefault('model')
+            // Create a set to store unique models
+            const uniqueModels = new Set();
+    
+            // Iterate over the entries and add models to the set
+            data.forEach(entry => {
+                if (entry.model) {
+                    uniqueModels.add(entry.model);
+                }
+            });
+    
+            // Create options from the unique models
+            console.log("Unique-Models", uniqueModels)
+            const selectElement = document.getElementById('model'); // Replace with your actual select element ID
+            uniqueModels.forEach(model => {
+                const option = document.createElement('option');
+                option.value = model;
+                option.textContent = model;
+                selectElement.appendChild(option);
+            });
+    
+            console.log('Unique models:', Array.from(uniqueModels));
+        } catch (err) {
+            console.error('Error:', err);
+        }
+    }
 
-            model.innerHTML = ''; // Clear existing make
-
-            const defaultOption = document.createElement('option');
-            defaultOption.value = '';
-            defaultOption.textContent = 'Beliebig';
-            model.appendChild(defaultOption);
-
-            for(let i = 0; i < data.length; i++) {
-                for(let j = 0; j < data[i].options.length; j++) {
-                    const optionElement = document.createElement('option');
-                    optionElement.value = data[i].options[j];
-                    optionElement.textContent = data[i].options[j];
-                    model.appendChild(optionElement);
-                 }
-            }   
-            
-        } catch (error) {
-            console.error('There was a problem with the fetch operation:', error);
+    function clearOptionsExceptDefault(selectElementId) {
+        const selectElement = document.getElementById(selectElementId);
+        const options = selectElement.options;
+    
+        for (let i = options.length - 1; i >= 0; i--) {
+            if (options[i].value !== "") {
+                selectElement.remove(i);
+            }
         }
     }
 

@@ -190,6 +190,16 @@ exports.getAllPosts = async (req, res) => {
     }
 };
 
+exports.getAllMakePosts = async (req, res) => {
+    try {
+        const { make } = req.query
+        const posts = await BlogPost.find({ make: make});
+        res.json(posts);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
+
 exports.getPostsPerPage = async (req, res) => { //gPPP
     try {
         const { pagination, make, model, ps1, ps2, category, fueltype } = req.query;
