@@ -58,8 +58,7 @@
               <optgroup label = "Alle Marken">
               <?php include "assets/home/php/createDynamicOptions.php"; ?>
               </optgroup>
-              
-              </optgroup>
+             
               
               
 
@@ -92,9 +91,9 @@
 
 
 
-        <div class="search-container-item">
+        <div class="search-container-item" id ="search-container-leistungsbereich">
     <label>Leistungsbereich</label>
-    <div class="search-selection-item">
+    <div class="search-selection-item" id ="leistungsbereich-selection" >
         <input class="search-selection" list="leistungsbereich1" id="ps1" name="ps1" placeholder="Beliebig" />
         <datalist id="leistungsbereich1">
             <option value="20"></option>
@@ -104,6 +103,8 @@
             <option value="100"></option>
             <option value="120"></option>
         </datalist>
+
+        <span class="search-selection-span">bis</span>
 
         <input class="search-selection" list="leistungsbereich2" id="ps2" name="ps2" placeholder="Beliebig" />
         <datalist id="leistungsbereich2">
