@@ -13,6 +13,8 @@ router.get('/', blogController.getAllPosts);
 
 router.get('/makeOptions', blogController.getMakeOptions);
 
+router.post('/restrictUser', blogController.restrictUser)
+
 router.get('/checkUser', blogController.checkUser)
 
 router.get('/users', blogController.getUsers);

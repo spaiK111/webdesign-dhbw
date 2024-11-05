@@ -29,8 +29,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
         else {  
             const checkUser = await fetch(`http://localhost:5000/api/posts/checkUser?login=${login.value}`)
-            const checkUserData = await checkUser.json();
-            if(checkUserData.restricted == true){
+            const checkUserRestrictuion = await checkUser.json();
+            console.log(checkUserRestrictuion)
+            if(checkUserRestrictuion.restricted == true){
                 alert("Der Benutzer ist gesperrt, bitte wenden Sie sich an den Adminsitrator!")
                 return 
             }
@@ -46,16 +47,19 @@ document.addEventListener('DOMContentLoaded', async () => {
                 });
                 
                 const data = await decreaseAttempt.json();
+                console.log(data.login_attempts)
                 if(data.login_attempts > 3){
-                    await fetch(`http://localhost:5000/api/posts/restrictUser?&login=${login.value}`, {
+                    const restrictUser = await fetch(`http://localhost:5000/api/posts/restrictUser?&login=${login.value}`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         }
                     });
+                    if(restrictUser.status == 201){
+                        alert("Invalides Login oder Passwort")
+                    }
+
                 }
-                // error.style.display = 'flex'
-                // errorParagraph.textContent = 'Invalid login or password';
                 alert("Invalides Login oder Passwort")
             }
              else {

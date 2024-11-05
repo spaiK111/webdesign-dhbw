@@ -78,7 +78,7 @@ exports.restrictUser = async (req, res) => {
             { $set: { restricted: true } },
             { new: true } // Optional: returns the updated document
         );
-        res.status(201)
+        res.status(201).json(updatedUser);
     } catch (err) {
         res.status(400).json({ error: err.message });
     }
@@ -139,7 +139,7 @@ exports.checkUser = async (req, res) => {
     try {
         const { login } = req.query
         const user = await User.findOne({ login: login });
-        res.json(user);
+        res.json({restricted: user.restricted });
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
