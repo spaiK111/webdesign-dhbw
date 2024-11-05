@@ -49,18 +49,9 @@
             <select class="search-selection" id="make">
               <option selected value =""> Beliebig </option>
               <!--Hier PHP-->
-              <optgroup label = "Top-Marken">
-              <?php
-                $top = true;
-                include "assets/home/php/createDynamicOptions.php";
-              ?> 
-              </optgroup>
-              <optgroup label = "Alle Marken">
-              <?php include "assets/home/php/createDynamicOptions.php"; ?>
-              </optgroup>
               
-              </optgroup>
               
+            
               
 
             </select>
