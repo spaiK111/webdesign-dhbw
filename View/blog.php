@@ -121,7 +121,7 @@
             
 
             <!--first item-->
-            <div class="blog-gallery-item" id="blog-gallery-item-one">
+            <div class="blog-gallery-item" id="C">
               <div class="blog-gallery-image">
                 <img src="assets/blog/images/cars-blogpage-bg1.jpg">
               </div>
