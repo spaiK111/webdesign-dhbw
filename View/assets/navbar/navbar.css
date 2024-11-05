@@ -118,6 +118,18 @@ body {
   opacity: 0.3;
 }
 
+.icon-container:hover {
+  opacity: 0.3;
+}
+
+.icon-container {
+  cursor: pointer;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 800px) and (max-width: 1100px) {
   .container > .navbar-nav a {
     display: none;
