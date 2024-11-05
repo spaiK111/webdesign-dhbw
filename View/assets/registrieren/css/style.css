@@ -17,6 +17,7 @@ body {
 .wrapper-container {
   display: flex;
   justify-content: center;
+  width: 100vw;
 }
 
 form {
@@ -116,10 +117,19 @@ form {
   .wrapper {
     margin: 15px;
     padding: 10px 15px;
+    height: 50vh;
+    width: 100vw;
   }
   .wrapper .remember-forgot {
     gap: 20px;
     align-items: space-between;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 450px) {
+  .wrapper {
+    height: 50vh;
+    width: 100vw;
   }
 }
 
