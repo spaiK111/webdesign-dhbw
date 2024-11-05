@@ -13,8 +13,13 @@ router.get('/', blogController.getAllPosts);
 
 router.get('/makeOptions', blogController.getMakeOptions);
 
+router.get('/checkUser', blogController.checkUser)
+
 router.get('/users', blogController.getUsers);
 
+router.post('/resetLoginAttempts', blogController.resetLoginAttempts )
+
+router.post('/decreaseLoginAttempt', blogController.decreaseLoginAttempt )
 // Register
 router.post('/register', blogController.register);
 

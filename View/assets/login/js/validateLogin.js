@@ -28,17 +28,48 @@ document.addEventListener('DOMContentLoaded', async () => {
             errorParagraph.textContent = 'Please fill in all fields';
         }
         else {  
+            const checkUser = await fetch(`http://localhost:5000/api/posts/checkUser?login=${login.value}`)
+            const checkUserData = await checkUser.json();
+            if(checkUserData.restricted == true){
+                alert("Der Benutzer ist gesperrt, bitte wenden Sie sich an den Adminsitrator!")
+                return 
+            }
             const response = await fetch(`http://localhost:5000/api/posts/loginUser?login=${login.value}&password=${password.value}`);
             const data = await response.json();
             console.log(data.login, data.password)
-            if(data.error) {
+            if(response.status == 401) {
+                const decreaseAttempt = await fetch(`http://localhost:5000/api/posts/decreaseLoginAttempt?&login=${login.value}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const data = await decreaseAttempt.json();
+                if(data.login_attempts > 3){
+                    await fetch(`http://localhost:5000/api/posts/restrictUser?&login=${login.value}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                }
                 // error.style.display = 'flex'
                 // errorParagraph.textContent = 'Invalid login or password';
                 alert("Invalides Login oder Passwort")
             }
              else {
+                const resetLoginAttempts = await fetch(`http://localhost:5000/api/posts/resetLoginAttempts?login=${login.value}&password=${password.value}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                });
+                const data = await resetLoginAttempts.json();
+                if(data){
                  window.location.href = 'http://localhost:3000/View/admin.php';	
              }
+            }
         }
 
     })

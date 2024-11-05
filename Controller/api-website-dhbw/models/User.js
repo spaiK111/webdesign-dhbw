@@ -12,6 +12,7 @@ const UserSchema = new mongoose.Schema({
     created_At: { type: Number, default: Date.now() },
     changed_At: { type: Number, default: Date.now() },
     login_attempts: { type: Number, default: 0 },
+    restricted: {type: Boolean, default: false }
 });
 
 // Hier kannst du ein Auto-Increment Plugin hinzufügen, wenn benötigt

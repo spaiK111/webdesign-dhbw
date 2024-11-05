@@ -5,6 +5,7 @@ const User = require("../models/User")
 const xml2js = require('xml2js');
 const bcrypt = require('bcrypt');
 const fs = require('fs');
+const exp = require('constants');
 
 // Erstelle einen neuen Blogpost
 exports.createCar = async (req, res) => {
@@ -54,6 +55,49 @@ const convertAndSaveToXML = async (post) => {
     });
 };
 
+exports.decreaseLoginAttempt = async (req, res) => {
+    try {
+        const  { login } = req.query
+        const userToDecrease = await User.findOneAndUpdate(
+            { login: login },
+            { $inc: { login_attempts: 1 } },
+            { new: true } // Optional: returns the updated document
+        );
+        res.status(201).json(userToDecrease);
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
+};
+
+
+exports.restrictUser = async (req, res) => {
+    try {
+        const  { login } = req.query
+        await User.findOneAndUpdate(
+            { login: login },
+            { $set: { restricted: true } },
+            { new: true } // Optional: returns the updated document
+        );
+        res.status(201)
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
+};
+
+exports.decreaseLoginAttempt = async (req, res) => {
+    try {
+        const  { login } = req.query
+        const userToDecrease = await User.findOneAndUpdate(
+            { login: login },
+            { $inc: { login_attempts: 1 } },
+            { new: true } // Optional: returns the updated document
+        );
+        res.status(201).json(userToDecrease);
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
+};
+
 
 exports.postBlog = async (req, res) => {
     try {
@@ -68,14 +112,36 @@ exports.postBlog = async (req, res) => {
 
 exports.register = async (req, res) => {
     try {
-        const { login, password } = req.body; // Use req.body to get data from POST request
+        const { login, password, firstName, lastName } = req.body; // Use req.body to get data from POST request
         const hashedPassword = await bcrypt.hash(password, 10);
         
-        const user = new User({ login: login, password: hashedPassword });
+        const user = new User({ login: login, firstName: firstName, lastName: lastName, password: hashedPassword });
         await user.save();
         res.status(201).json(user);
     } catch (err) {
         res.status(400).json({ error: err.message });
+    }
+};
+
+exports.resetLoginAttempts = async (req, res) => {
+    try {
+        const { login, password } = req.body; // Use req.body to get data from POST request
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const user = new User({ login: login, firstName: firstName, lastName: lastName, password: hashedPassword });
+        await user.save();
+        res.status(201).json(user);
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
+};
+
+exports.checkUser = async (req, res) => {
+    try {
+        const { login } = req.query
+        const user = await User.findOne({ login: login });
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
 };
 
@@ -84,8 +150,9 @@ exports.login = async (req, res) => {
         const { login, password } = req.query;
 
         const user = await User.findOne({ login: login });
+        console.log("user", user)
 
-       if (user && await bcrypt.compare(password, user.password)) {
+       if (user != null && await bcrypt.compare(password, user.password)) {
             res.json(user);
         } else {
             res.status(401).json({ error: 'Invalid login or password' });

@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const login = document.getElementById('login')
     const password = document.getElementById('password')
+    const firstName = document.getElementById('firstName')
+    const lastName = document.getElementById('lastName')
     const submit = document.getElementById('submit')
     const error = document.getElementById('error')
 
@@ -31,13 +33,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                 },
                 body: JSON.stringify({
                     login: login.value,
-                    password: password.value
+                    password: password.value,
+                    lastName: lastName.value,
+                    firstName: firstName.value
+
                 })
             });
 
             if (response.status === 201) {
-                const data = await response.json();
-                window.location.href = 'http://localhost:3000/View/admin.php';
+             
+                    window.location.href = 'http://localhost:3000/View/admin.php';
+
             } else {
                 const errorData = await response.json();
                 error.style.display = 'flex';
