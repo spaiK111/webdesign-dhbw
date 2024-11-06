@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const long_dsc = document.getElementById('entry-long-dsc')
     const main_img = document.getElementById('entry-main-image')
 
+    const authorFirstname = addButton.getAttribute('authorFirstname');
+    const authorLastname = addButton.getAttribute('authorLastname');
+
 
     addButton.addEventListener('click', async () => {  
 
@@ -21,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
         try {
-            const response = await fetch(`http://localhost:5000/api/posts/createBlogTxt?heading=${headingValue}&short_dsc=${short_dscValue}&long_dsc=${long_dscValue}&image=${main_imgValue}`, {
+            const response = await fetch(`http://localhost:5000/api/posts/createBlogTxt?heading=${headingValue}&short_dsc=${short_dscValue}&long_dsc=${long_dscValue}&image=${main_imgValue}&authorFirstname=${authorFirstname}&authorLastname=${authorLastname}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

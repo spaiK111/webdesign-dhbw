@@ -102,8 +102,8 @@ exports.decreaseLoginAttempt = async (req, res) => {
 
 exports.postBlog = async (req, res) => {
     try {
-        const { heading, short_dsc, long_dsc, image } = req.query; // Use req.body to get data from POST request
-        const blog = new Blog({ heading: heading, short_dsc: short_dsc, long_dsc: long_dsc, image: image });
+        const { heading, short_dsc, long_dsc, image, authorFirstname, authorLastname } = req.query; // Use req.body to get data from POST request
+        const blog = new Blog({ heading: heading, short_dsc: short_dsc, long_dsc: long_dsc, image: image, created_By: `${authorFirstname} ${authorLastname}` });
         await blog.save();
         res.status(201).json(blog);
     } catch (err) {
@@ -132,6 +132,27 @@ exports.resetLoginAttempts = async (req, res) => {
         res.status(201).json(user);
     } catch (err) {
         res.status(400).json({ error: err.message });
+    }
+};
+
+exports.getBlogs = async (req, res) => {
+    try {
+        const blogs = await Blog.find();
+        console.log(blogs)
+        res.json(blogs)
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
+
+
+exports.checkAdmin = async (req, res) => {
+    try {
+        const { login } = req.query
+        const user = await User.findOne({ login: login });
+        res.json({admin: user.admin });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
 };
 

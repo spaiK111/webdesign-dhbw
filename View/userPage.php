@@ -1,32 +1,34 @@
 <?php
-// // Empfange die Parameter login und password
-// $login = isset($_GET['login']) ? $_GET['login'] : '';
-// $hashedPassword = isset($_GET['hashedPassword']) ? $_GET['hashedPassword'] : '';
+// Empfange die Parameter login und password
+$login = isset($_GET['login']) ? $_GET['login'] : '';
+$hashedPassword = isset($_GET['hashedPassword']) ? $_GET['hashedPassword'] : '';
 
-// if (!$login || !$hashedPassword) {
-//     die('Login und Passwort sind erforderlich.');
-// }
+if (!$login || !$hashedPassword) {
+    die('Login und Passwort sind erforderlich.');
+}
 
-// // Funktion zum Senden einer HTTPS-Anfrage
-// $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassword=$hashedPassword";
+// Funktion zum Senden einer HTTPS-Anfrage
+$apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassword=$hashedPassword";
 
-//     // cURL initialisieren
-//     $ch = curl_init();
-//     curl_setopt($ch, CURLOPT_URL, $apiUrl);
-//     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    // cURL initialisieren
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $apiUrl);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-//     // API-Anfrage ausführen und Antwort speichern
-//     $response = curl_exec($ch);
-//     curl_close($ch);
+    // API-Anfrage ausführen und Antwort speichern
+    $response = curl_exec($ch);
+    curl_close($ch);
 
-//     // Antwort in ein Array umwandeln
-//     $data = json_decode($response, true);
-//     if ($data) {
+    // Antwort in ein Array umwandeln
+    $data = json_decode($response, true);
+    if ($data) {
+		$firstName = $data['firstName'];
+		$lastName = $data['lastName'];
 
-// 	}
-// 	else {
-// 		echo "Bad Request";
-// 	}
+	} 
+	else {
+		echo "Bad Request";
+	}
 
 ?>
 <!DOCTYPE html>
@@ -123,7 +125,7 @@
         </div>
 		<div class="btn-group">
 			<div class ="btn-wrapper">
-				<button class="btn" id="add_blog_txt">Hinzufügen</button>
+				<button class="btn" id="add_blog_txt" authorFirstname="<?php echo $firstName; ?>" authorLastname="<?php echo $lastName; ?>">Hinzufügen</button>
 				<button class="btn" id="clear_blog">Clear</button>
 			</div>
 		</div>
