@@ -6,6 +6,7 @@ const xml2js = require('xml2js');
 const bcrypt = require('bcrypt');
 const fs = require('fs');
 const exp = require('constants');
+const CryptoJS = require('crypto-js');
 
 // Erstelle einen neuen Blogpost
 exports.createCar = async (req, res) => {
@@ -113,7 +114,7 @@ exports.postBlog = async (req, res) => {
 exports.register = async (req, res) => {
     try {
         const { login, password, firstName, lastName } = req.body; // Use req.body to get data from POST request
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = CryptoJS.SHA256(password).toString();
         
         const user = new User({ login: login, firstName: firstName, lastName: lastName, password: hashedPassword });
         await user.save();
@@ -150,15 +151,23 @@ exports.login = async (req, res) => {
         const { login, password } = req.query;
 
         const user = await User.findOne({ login: login });
-        console.log("user", user)
+        console.log("user", user);
 
-       if (user != null && await bcrypt.compare(password, user.password)) {
-            res.json(user);
+        if (user != null) {
+            // Hash the provided password using SHA-256
+            const hashedPassword = CryptoJS.SHA256(password).toString();
+
+            // Compare the hashed password with the stored hashed password
+            if (hashedPassword === user.password) {
+                res.status(200).json(user); // Successful login
+            } else {
+                res.status(401).json({ error: 'Invalid login or password' }); // Invalid password
+            }
         } else {
-            res.status(401).json({ error: 'Invalid login or password' });
+            res.status(401).json({ error: 'Invalid login or password' }); // User not found
         }
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        res.status(500).json({ error: err.message }); // Server error
     }
 };
 

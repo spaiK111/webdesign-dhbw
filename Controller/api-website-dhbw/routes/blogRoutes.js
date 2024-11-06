@@ -25,7 +25,7 @@ router.post('/decreaseLoginAttempt', blogController.decreaseLoginAttempt )
 // Register
 router.post('/register', blogController.register);
 
-router.get('/loginUser', blogController.login);
+router.post('/loginUser', blogController.login);
 
 // Zähle alle Blogposts
 router.get('/count', blogController.countPosts);
