@@ -1,7 +1,7 @@
 <?php
 // Empfange die Parameter login und password
-$login = isset($_GET['login']) ? $_GET['login'] : '';
-$hashedPassword = isset($_GET['hashedPassword']) ? $_GET['hashedPassword'] : '';
+$login = isset($_GET['login']) ? $_GET['login'] : (isset($_COOKIE['login']) ? $_COOKIE['login'] : '');
+$hashedPassword = isset($_GET['hashedPassword']) ? $_GET['hashedPassword'] : (isset($_COOKIE['password']) ? $_COOKIE['password'] : '');
 
 if (!$login || !$hashedPassword) {
     die('Login und Passwort sind erforderlich.');
@@ -22,15 +22,42 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
     // Antwort in ein Array umwandeln
     $data = json_decode($response, true);
     if ($data) {
-		$firstName = $data['firstName'];
-		$lastName = $data['lastName'];
-
-	} 
+      echo "login successful";
+	}
 	else {
 		echo "Bad Request";
 	}
 
+  $apiUrl2 = "http://localhost:5000/api/posts/getBlogs";
+
+    // cURL initialisieren
+    $ch1 = curl_init();
+    curl_setopt($ch1, CURLOPT_URL, $apiUrl2);
+    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1);
+
+    // API-Anfrage ausführen und Antwort speichern
+    $blogs = curl_exec($ch1);
+    curl_close($ch1);
+
+    // Antwort in ein Array umwandeln
+    $data = json_decode($blogs, true);
+    if ($data) {
+      echo "blogs found";
+      $topBlog = $data[0];
+      $blog1 = $data[1];
+      $blog2 = $data[2];
+      $blog3 = $data[3];
+      $blog4 = $data[4];
+      $blog5 = $data[5];
+      $blog5 = $data[6];
+    }
+    else {
+      echo "blogs not found";
+    }
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -135,6 +135,18 @@ exports.resetLoginAttempts = async (req, res) => {
     }
 };
 
+
+exports.getBlogById = async (req, res) => {
+    try {
+        const { _id } = req.query;
+        const blog = await Blog.findById(_id);
+        console.log(blog)
+        res.json(blog)
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
+
 exports.getBlogs = async (req, res) => {
     try {
         const blogs = await Blog.find();

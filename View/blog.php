@@ -93,7 +93,9 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
           </div>
           <div class ="blog-topcontent-topBlog-item">
             <div class="blog-topcontent-topBlog-item-image">
-              <a href="#"><img src="<?php echo htmlspecialchars($topBlog['image']); ?>" alt=""/></a>
+              <a href="/View/blog-page.php?_id=<?php echo urlencode($topBlog["_id"]); ?>">
+                <img src="<?php echo htmlspecialchars($topBlog['image']); ?>" alt=""/>
+              </a>
             </div>
 
             <div class="blog-topcontent-topBlog-item-heading">
@@ -131,6 +133,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
               </div>
 
               <div class="blog-topcontent-latestBlog-item-image">
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog1["_id"]); ?>">
                 <!--<img src="<?php echo htmlspecialchars($blog1['image']); ?>" /> -->
               </div> 
             </div>
@@ -147,6 +150,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
               </div>
 
               <div class="blog-topcontent-latestBlog-item-image">
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog2["_id"]); ?>">
                 <!--<img src="<?php echo htmlspecialchars($blog2['image']); ?>" /> -->
               </div> 
             <?php endif; ?>
@@ -164,6 +168,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
               </div>
 
               <div class="blog-topcontent-latestBlog-item-image">
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog3["_id"]); ?>">
                 <!-- <img src="<?php echo htmlspecialchars($blog3['image']); ?>" /> -->
               <?php endif; ?>
               </div> 
@@ -189,7 +194,8 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
             <!--first item-->
             <div class="blog-gallery-item" id="blog-gallery-item-one">
               <div class="blog-gallery-image">
-              <img src="<?php echo htmlspecialchars($blog4['image']); ?>">
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog4["_id"]); ?>">
+                <img src="<?php echo htmlspecialchars($blog4['image']); ?>">
               </div>
               <div class="blog-gallery-text-title">
               <?php if (isset($blog4)): ?>
@@ -205,6 +211,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
             <!--second item-->
             <div class="blog-gallery-item-reverse" id="blog-gallery-item-two">
               <div class="blog-gallery-image">
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog5["_id"]); ?>">
                 <img src="<?php echo htmlspecialchars($blog5['image']); ?>">
               </div>
               <?php if (isset($blog5)): ?>
@@ -219,6 +226,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
             <div class="blog-gallery-item"  id="blog-gallery-item-three">
             <?php if (isset($blog6)): ?>
               <div class="blog-gallery-image">
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog6["_id"]); ?>">
                 <img src="<?php echo htmlspecialchars($blog6['image']); ?>">
               </div>
                 <h2><?php echo htmlspecialchars($blog6['heading']); ?></h2>
@@ -272,7 +280,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
             <div class="blog-grid">
             <?php if ($data && count($data) > 6): ?>
             <?php for ($i = 6; $i < count($data); $i++): ?>
-                <div class="blog-item" style="background-image: url('<?php echo htmlspecialchars($data[$i]['image']); ?>'); object-fit: cover">
+                <div class="blog-item" href="/View/blog-page.php?_id=<?php echo urlencode($data["_id"]); ?>" style="background-image: url('<?php echo htmlspecialchars($data[$i]['image']); ?>'); object-fit: cover">
                     <h3><?php echo htmlspecialchars($data[$i]['heading']); ?></h3>
                     <p><?php echo htmlspecialchars($data[$i]['short_dsc']); ?></p>
                 </div>
