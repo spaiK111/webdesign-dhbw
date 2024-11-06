@@ -3,10 +3,6 @@
 $login = isset($_GET['login']) ? $_GET['login'] : (isset($_COOKIE['login']) ? $_COOKIE['login'] : '');
 $hashedPassword = isset($_GET['hashedPassword']) ? $_GET['hashedPassword'] : (isset($_COOKIE['password']) ? $_COOKIE['password'] : '');
 
-if (!$login || !$hashedPassword) {
-    die('Login und Passwort sind erforderlich.');
-}
-
 // Funktion zum Senden einer HTTPS-Anfrage
 $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassword=$hashedPassword";
 
