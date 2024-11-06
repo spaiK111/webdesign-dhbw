@@ -6,6 +6,7 @@
   <title>Einloggen</title>
   <link rel="stylesheet" href="assets/login/css/style.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 </head>
 <body>
   <!--navigation bar-->
@@ -38,7 +39,7 @@
     </div>
   </div>
 
-  
+
   
 
   

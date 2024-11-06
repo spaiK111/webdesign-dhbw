@@ -113,8 +113,7 @@ exports.postBlog = async (req, res) => {
 
 exports.register = async (req, res) => {
     try {
-        const { login, password, firstName, lastName } = req.body; // Use req.body to get data from POST request
-        const hashedPassword = CryptoJS.SHA256(password).toString();
+        const { login, hashedPassword, firstName, lastName } = req.body; // Use req.body to get data from POST request
         
         const user = new User({ login: login, firstName: firstName, lastName: lastName, password: hashedPassword });
         await user.save();
@@ -136,7 +135,7 @@ exports.resetLoginAttempts = async (req, res) => {
     }
 };
 
-exports.checkUser = async (req, res) => {
+exports.checkRestriction = async (req, res) => {
     try {
         const { login } = req.query
         const user = await User.findOne({ login: login });
@@ -148,14 +147,10 @@ exports.checkUser = async (req, res) => {
 
 exports.login = async (req, res) => {
     try {
-        const { login, password } = req.query;
-
+        const { login, hashedPassword } = req.query;
         const user = await User.findOne({ login: login });
-        console.log("user", user);
 
         if (user != null) {
-            // Hash the provided password using SHA-256
-            const hashedPassword = CryptoJS.SHA256(password).toString();
 
             // Compare the hashed password with the stored hashed password
             if (hashedPassword === user.password) {
@@ -179,6 +174,20 @@ exports.getUsers = async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 };
+
+exports.getUserData = async (req, res) => {
+    try {
+        const  { login, hashedPassword } = req.query
+        console.log(login)
+        console.log(hashedPassword)
+        const user = await User.findOne({ login: login, password: hashedPassword });
+        console.log(user)
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
+
 
 exports.getMakeOptions = async (req, res) => {
     try {

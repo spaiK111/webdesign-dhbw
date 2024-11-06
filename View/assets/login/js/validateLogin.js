@@ -8,9 +8,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     const savedLogin = getCookie('login');
     const savedPassword = getCookie('password');
 
+
+
         if (savedLogin && savedPassword) {
             // Leite den Benutzer zur admin.php weiter
-            window.location.href = 'admin.php';
+            window.location.href = `http://localhost:3000/View/admin.php?login=${savedLogin}&hashedPassword=${savedPassword}`;
+            return
         }
 
 
@@ -25,16 +28,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const savedLogin = getCookie('login');
         const savedPassword = getCookie('password');
-    
+        const hashedPassword = CryptoJS.SHA256(password).toString();
         if (savedLogin && savedPassword) {
-            if (login === savedLogin && password === savedPassword) {
+            if (login === savedLogin && hashedPassword === savedPassword) {
                 alert('Login erfolgreich (aus Cookies)');
                 return;
             }
         }
 
         try { // ist der benuzter gesperrt?
-            const checkUser = await fetch(`http://localhost:5000/api/posts/checkUser?login=${login}`)
+            const checkUser = await fetch(`http://localhost:5000/api/posts/checkRestriction?login=${login}`)
             const checkUserRestrictuion = await checkUser.json();
             console.log(checkUserRestrictuion)
             if(checkUserRestrictuion.restricted == true){
@@ -47,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         try { // verusche Login und behandle fehlgeschlagenen Login
-            const response = await fetch(`http://localhost:5000/api/posts/loginUser?login=${login}&password=${password}`, {
+            const response = await fetch(`http://localhost:5000/api/posts/loginUser?login=${login}&hashedPassword=${hashedPassword}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -61,7 +64,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 console.log('Login erfolgreich:', data);
 
                 setCookie('login', login, 7);
-                setCookie('password', password, 7);
+                setCookie('password', hashedPassword, 7);
+
+                window.location.href = `http://localhost:3000/View/admin.php?login=${login}&hashedPassword=${hashedPassword}`; // Weiterleitung zur admin.php
             }
             else {
                 // Login fehlgeschlagen
@@ -107,18 +112,22 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
 
-        function setCookie(name, value, days) {
-            const d = new Date();
-            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-            const expires = "expires=" + d.toUTCString();
-            document.cookie = name + "=" + value + ";" + expires + ";path=/";
-        }
-
-        function getCookie(name) {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
-        }
-
     })
+
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    function emptyCookie(name) {
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
 })

@@ -1,3 +1,34 @@
+<?php
+// Empfange die Parameter login und password
+$login = isset($_GET['login']) ? $_GET['login'] : '';
+$hashedPassword = isset($_GET['hashedPassword']) ? $_GET['hashedPassword'] : '';
+
+if (!$login || !$hashedPassword) {
+    die('Login und Passwort sind erforderlich.');
+}
+
+// Funktion zum Senden einer HTTPS-Anfrage
+$apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassword=$hashedPassword";
+
+    // cURL initialisieren
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $apiUrl);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    // API-Anfrage ausführen und Antwort speichern
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    // Antwort in ein Array umwandeln
+    $data = json_decode($response, true);
+    if ($data) {
+
+	}
+	else {
+		echo "Bad Request";
+	}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

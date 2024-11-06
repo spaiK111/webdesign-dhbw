@@ -15,11 +15,13 @@ router.get('/makeOptions', blogController.getMakeOptions);
 
 router.post('/restrictUser', blogController.restrictUser)
 
-router.get('/checkUser', blogController.checkUser)
+router.get('/checkRestriction', blogController.checkRestriction)
 
 router.get('/users', blogController.getUsers);
 
 router.post('/resetLoginAttempts', blogController.resetLoginAttempts )
+
+router.get('/getUserData', blogController.getUserData)
 
 router.post('/decreaseLoginAttempt', blogController.decreaseLoginAttempt )
 // Register
