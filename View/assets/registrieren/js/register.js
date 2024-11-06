@@ -1,10 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
 
-
-    emptyCookie('login');
-    emptyCookie('password');
-
-
     const login = document.getElementById('login')
     const password = document.getElementById('password')
     const firstName = document.getElementById('firstName')
