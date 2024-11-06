@@ -1,3 +1,62 @@
+<?php
+// Empfange die Parameter login und password
+$login = isset($_GET['login']) ? $_GET['login'] : (isset($_COOKIE['login']) ? $_COOKIE['login'] : '');
+$hashedPassword = isset($_GET['hashedPassword']) ? $_GET['hashedPassword'] : (isset($_COOKIE['password']) ? $_COOKIE['password'] : '');
+
+if (!$login || !$hashedPassword) {
+    die('Login und Passwort sind erforderlich.');
+}
+
+// Funktion zum Senden einer HTTPS-Anfrage
+$apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassword=$hashedPassword";
+
+    // cURL initialisieren
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $apiUrl);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    // API-Anfrage ausführen und Antwort speichern
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    // Antwort in ein Array umwandeln
+    $data = json_decode($response, true);
+    if ($data) {
+      echo "login successful";
+	}
+	else {
+		echo "Bad Request";
+	}
+
+  $apiUrl2 = "http://localhost:5000/api/posts/getBlogs";
+
+    // cURL initialisieren
+    $ch1 = curl_init();
+    curl_setopt($ch1, CURLOPT_URL, $apiUrl2);
+    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1);
+
+    // API-Anfrage ausführen und Antwort speichern
+    $blogs = curl_exec($ch1);
+    curl_close($ch1);
+
+    // Antwort in ein Array umwandeln
+    $data = json_decode($blogs, true);
+    if ($data) {
+      echo "blogs found";
+      $topBlog = $data[0];
+      $blog1 = $data[1];
+      $blog2 = $data[2];
+      $blog3 = $data[3];
+      $blog4 = $data[4];
+      $blog5 = $data[5];
+      $blog5 = $data[6];
+    }
+    else {
+      echo "blogs not found";
+    }
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -28,24 +87,27 @@
         <!--Top Blog-->
         <div class="blog-topcontent-topBlog">
           <div class="blog-topcontent-topBlog-title">
-            <h1>Top Blog</h1>
+            <?php if (isset($topBlog)): ?>
+              
+            <h1>Der beste Blog</h1>
           </div>
           <div class ="blog-topcontent-topBlog-item">
             <div class="blog-topcontent-topBlog-item-image">
-              <a href="#"><img src="assets/blog/images/cars-blogpage-bg6.jpg" alt=""/></a>
+              <a href="/View/blog-page.php?_id=<?php echo urlencode($topBlog["_id"]); ?>">
+                <img src="<?php echo htmlspecialchars($topBlog['image']); ?>" alt=""/>
+              </a>
             </div>
 
             <div class="blog-topcontent-topBlog-item-heading">
-              <h2>LOL</h2>
+                <h2><?php echo htmlspecialchars($topBlog['heading']); ?></h2>
             </div>
 
             <div class="blog-topcontent-topBlog-item-paragraph">
-              <p>dhjfhdshfjsdhjfdhdjshfdjhs</p>
+              <p><?php echo htmlspecialchars($topBlog['short_dsc']); ?></p>
+            <?php endif; ?>
             </div>
           </div>
           
-            
-        
         </div>
         <!--End of TopBlog-->
 
@@ -61,45 +123,54 @@
 
             <div class="blog-topcontent-latestBlog-item">
               <div class="blog-topcontent-latestBlog-item-heading">
-                <h2>LOL</h2>
+              <?php if (isset($blog1)): ?>
+                  <h2><?php echo htmlspecialchars($blog1['heading']); ?></h2>
               </div>
 
               <div class="blog-topcontent-latestBlog-item-paragraph">
-                <p>dhjfhdshfjsdhjfdhdjshfdjhs</p>
+                <p><?php echo htmlspecialchars($blog1['short_dsc']); ?></p>
+              <?php endif; ?>
               </div>
 
               <div class="blog-topcontent-latestBlog-item-image">
-                <img src="assets/blog/images/cars-blogpage-bg1.jpg" />
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog1["_id"]); ?>">
+                <!--<img src="<?php echo htmlspecialchars($blog1['image']); ?>" /> -->
               </div> 
             </div>
 
 
             <div class="blog-topcontent-latestBlog-item">
-              <div class="blog-topcontent-latestBlog-item-heading">
-                <h2>LOL</h2>
+            <?php if (isset($blog2)): ?>
+                  <h2><?php echo htmlspecialchars($blog2['heading']); ?></h2>
               </div>
 
               <div class="blog-topcontent-latestBlog-item-paragraph">
-                <p>dhjfhdshfjsdhjfdhdjshfdjhs</p>
+                <p><?php echo htmlspecialchars($blog2['short_dsc']); ?></p>
+              
               </div>
 
               <div class="blog-topcontent-latestBlog-item-image">
-                <img src="assets/blog/images/cars-blogpage-bg1.jpg" />
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog2["_id"]); ?>">
+                <!--<img src="<?php echo htmlspecialchars($blog2['image']); ?>" /> -->
               </div> 
+            <?php endif; ?>
             </div>
 
 
             <div class="blog-topcontent-latestBlog-item">
-              <div class="blog-topcontent-latestBlog-item-heading">
-                <h2>LOL</h2>
+              <?php if (isset($blog3)): ?>
+                  <h2><?php echo htmlspecialchars($blog3['heading']); ?></h2>
               </div>
 
               <div class="blog-topcontent-latestBlog-item-paragraph">
-                <p>dhjfhdshfjsdhjfdhdjshfdjhs</p>
+                <p><?php echo htmlspecialchars($blog3['short_dsc']); ?></p>
+              
               </div>
 
               <div class="blog-topcontent-latestBlog-item-image">
-                <img src="assets/blog/images/cars-blogpage-bg1.jpg" />
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog3["_id"]); ?>">
+                <!-- <img src="<?php echo htmlspecialchars($blog3['image']); ?>" /> -->
+              <?php endif; ?>
               </div> 
             </div>
 
@@ -123,13 +194,16 @@
             <!--first item-->
             <div class="blog-gallery-item" id="blog-gallery-item-one">
               <div class="blog-gallery-image">
-                <img src="assets/blog/images/cars-blogpage-bg1.jpg">
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog4["_id"]); ?>">
+                <img src="<?php echo htmlspecialchars($blog4['image']); ?>">
               </div>
               <div class="blog-gallery-text-title">
-                <h2>Titel</h2>
+              <?php if (isset($blog4)): ?>
+                <h2><?php echo htmlspecialchars($blog4['heading']); ?></h2>
               </div>
               <div class="blog-gallery-text">
-                <p>jsddhskdjskjdlfkdslfkldskfldkslfkldsklfksldkkfldksl</p>
+                <p><?php echo htmlspecialchars($blog4['short_dsc']); ?></p>
+              <?php endif; ?>
               </div>
             </div>
             
@@ -137,27 +211,29 @@
             <!--second item-->
             <div class="blog-gallery-item-reverse" id="blog-gallery-item-two">
               <div class="blog-gallery-image">
-                <img src="assets/blog/images/cars-blogpage-bg1.jpg">
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog5["_id"]); ?>">
+                <img src="<?php echo htmlspecialchars($blog5['image']); ?>">
               </div>
-              <div class="blog-gallery-text-title">
-                <h2>Titel</h2>
+              <?php if (isset($blog5)): ?>
+                <h2><?php echo htmlspecialchars($blog5['heading']); ?></h2>
               </div>
               <div class="blog-gallery-text">
-                <p>jsddhskdjskjdlfkdslfkldskfldkslfkldsklfksldkkfldksl</p>
-              </div>
+                <p><?php echo htmlspecialchars($blog5['short_dsc']); ?></p>
+              <?php endif; ?>
             </div>
 
             <!--third item-->
             <div class="blog-gallery-item"  id="blog-gallery-item-three">
+            <?php if (isset($blog6)): ?>
               <div class="blog-gallery-image">
-                <img src="assets/blog/images/cars-blogpage-bg1.jpg">
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog6["_id"]); ?>">
+                <img src="<?php echo htmlspecialchars($blog6['image']); ?>">
               </div>
-              <div class="blog-gallery-text-title">
-                <h2>Titel</h2>
+                <h2><?php echo htmlspecialchars($blog6['heading']); ?></h2>
               </div>
               <div class="blog-gallery-text">
-                <p>jsddhskdjskjdlfkdslfkldskfldkslfkldsklfksldkkfldksl</p>
-              </div>
+                <p><?php echo htmlspecialchars($blog6['short_dsc']); ?></p>
+              <?php endif; ?>
             </div>
 
 
@@ -202,30 +278,16 @@
 
 
             <div class="blog-grid">
-              <div class="blog-item">
-                <h3>Blog Title 1</h3>
-                <p>Kurze Beschreibung des Blogbeitrags 1.</p>
-              </div>
-              <div class="blog-item">
-                <h3>Blog Title 2</h3>
-                <p>Kurze Beschreibung des Blogbeitrags 2.</p>
-              </div>
-              <div class="blog-item">
-                <h3>Blog Title 3</h3>
-                <p>Kurze Beschreibung des Blogbeitrags 3.</p>
-              </div>
-              <div class="blog-item">
-                <h3>Blog Title 4</h3>
-                <p>Kurze Beschreibung des Blogbeitrags 4.</p>
-              </div>
-              <div class="blog-item">
-                <h3>Blog Title 5</h3>
-                <p>Kurze Beschreibung des Blogbeitrags 5.</p>
-              </div>
-              <div class="blog-item">
-                <h3>cluster.überschrift</h3>
-                <p>Kurze Beschreibung des Blogbeitrags 6.</p>
-              </div>
+            <?php if ($data && count($data) > 6): ?>
+            <?php for ($i = 6; $i < count($data); $i++): ?>
+                <div class="blog-item" href="/View/blog-page.php?_id=<?php echo urlencode($data["_id"]); ?>" style="background-image: url('<?php echo htmlspecialchars($data[$i]['image']); ?>'); object-fit: cover">
+                    <h3><?php echo htmlspecialchars($data[$i]['heading']); ?></h3>
+                    <p><?php echo htmlspecialchars($data[$i]['short_dsc']); ?></p>
+                </div>
+            <?php endfor; ?>
+        <?php else: ?>
+            <p>Keine weiteren Blogeinträge gefunden.</p>
+        <?php endif; ?>
             </div>
 
           </div>

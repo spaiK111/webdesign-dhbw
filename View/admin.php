@@ -1,7 +1,7 @@
 <?php
 // Empfange die Parameter login und password
-$login = isset($_GET['login']) ? $_GET['login'] : '';
-$hashedPassword = isset($_GET['hashedPassword']) ? $_GET['hashedPassword'] : '';
+$login = isset($_GET['login']) ? $_GET['login'] : (isset($_COOKIE['login']) ? $_COOKIE['login'] : '');
+$hashedPassword = isset($_GET['hashedPassword']) ? $_GET['hashedPassword'] : (isset($_COOKIE['password']) ? $_COOKIE['password'] : '');
 
 if (!$login || !$hashedPassword) {
     die('Login und Passwort sind erforderlich.');
@@ -21,8 +21,10 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
     // Antwort in ein Array umwandeln
     $data = json_decode($response, true);
-    if ($data) {
-
+    if ($data) {	
+		$firstName = $data['firstName'];
+		$lastName = $data['lastName'];
+		echo "login successful";
 	}
 	else {
 		echo "Bad Request";
@@ -47,7 +49,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
 	<!-- SIDEBAR -->
 	<section class="sidebar">
-		<a href="/index.html" class="brand">
+		<a href="/View/index.php" class="brand">
 			<span class="text">CarBlog</span>
 		</a>
 		<ul class="side-menu top">
@@ -203,7 +205,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
         </div>
 		<div class="btn-group">
 			<div class ="btn-wrapper">
-				<button class="btn" id="add_blog_txt">Hinzufügen</button>
+			<button class="btn" id="add_blog_txt" authorFirstname="<?php echo $firstName; ?>" authorLastname="<?php echo $lastName; ?>">Hinzufügen</button>
 				<button class="btn" id="clear_blog">Clear</button>
 			</div>
 		</div>

@@ -8,6 +8,12 @@ router.post('/createBlogTxt', blogController.postBlog);
 
 router.post('/createCar', blogController.createCar);
 
+router.get('/checkAdmin', blogController.checkAdmin);
+
+router.get('/getBlogs', blogController.getBlogs);
+
+router.get('/getBlogById', blogController.getBlogById);
+
 // Hole alle Blogposts
 router.get('/', blogController.getAllPosts);
 

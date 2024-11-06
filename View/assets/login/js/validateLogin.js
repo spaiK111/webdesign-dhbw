@@ -11,9 +11,20 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
         if (savedLogin && savedPassword) {
-            // Leite den Benutzer zur admin.php weiter
-            window.location.href = `http://localhost:3000/View/admin.php?login=${savedLogin}&hashedPassword=${savedPassword}`;
-            return
+
+            const checkAdmin = await fetch(`http://localhost:5000/api/posts/checkAdmin?login=${savedLogin}`)
+            const checkAdminData = await checkAdmin.json();
+            console.log(checkAdminData)
+            if(checkAdminData.admin == false){
+                window.location.href = `http://localhost:3000/View/userPage.php?login=${savedLogin}&hashedPassword=${savedPassword}`;
+
+                return 
+            } else {
+                // Leite den Benutzer zur admin.php weiter
+                 window.location.href = `http://localhost:3000/View/admin.php?login=${savedLogin}&hashedPassword=${savedPassword}`;
+                return
+            }
+
         }
 
 
@@ -66,7 +77,18 @@ document.addEventListener('DOMContentLoaded', async () => {
                 setCookie('login', login, 7);
                 setCookie('password', hashedPassword, 7);
 
-                window.location.href = `http://localhost:3000/View/admin.php?login=${login}&hashedPassword=${hashedPassword}`; // Weiterleitung zur admin.php
+                const checkAdmin = await fetch(`http://localhost:5000/api/posts/checkAdmin?login=${savedLogin}`)
+            const checkAdminData = await checkAdmin.json();
+            console.log(checkAdminData)
+                if(checkAdminData.admin == false){
+                    window.location.href = `http://localhost:3000/View/userPage.php?login=${login}&hashedPassword=${hashedPassword}`;
+                    return 
+                } else {
+                    // Leite den Benutzer zur admin.php weiter
+                    window.location.href = `http://localhost:3000/View/admin.php?login=${login}&hashedPassword=${hashedPassword}`;
+                    return
+                }
+
             }
             else {
                 // Login fehlgeschlagen
