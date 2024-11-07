@@ -57,18 +57,12 @@ if ($uid) {
       <body>
         <!-- header -->
         <header>
-          <nav class = "navbar">
-            <div class = "container">
-              <a href = "index.php" class = "navbar-brand">AutoInsider®</a>
-              <div class = "navbar-nav">
-                <a href = "/index.php">home</a>
-                <a href = "/blog.php">blog</a>
-                <a href = "/login.php">login</a>
-                <a href = "/kontakt.php">kontakt</a>     <!-- Entweder separate Kontakt-Seite oder Diret-Link zu Email? -->
-                <a href = "/admin.php">admin</a>
-              </div>
-            </div>
-          </nav>
+          <div class="navbar-preset">
+            <?php include "navbar.php"; ?>
+          </div>
+                
+            
+          
         </header>
     <!-- end of header -->
 <section class="white section-first">
@@ -85,27 +79,15 @@ if ($uid) {
                                 <li><span><?php echo $engine; ?></span> km</li>
                                 <li><?php echo $model; ?></li>
                             </ul>
-                            <a class="link card-auto_phone--link-new">+49 (123) 345-23-22</a>
-                            <a class="btn btn_blue btn_mini modal-open">Kontakt aufnehmen</a>
-                            <a class="btn btn_contur-blue btn-chat icon_wrapper-svg" >
-                                <img class="icon icon-hover" src="assets/preset/images/like.svg" alt="">
-                                <img class="icon icon-hover" src="assets/preset/images/like.svg" alt="">
-                            </a>
+                          
+                            
                         </div>
                     </div>
-                    <div class="card-auto_used-top_price">
-
-                        <div class="now-price this-number">
-                            <div class="now-price-text semibold">
-                                <span>Preis auf Anfrage</span>
-                            </div>
-                        </div>
-
-                    </div>
+                    
                 </div>
                 <!-- Slider -->
 
-                    <h2 class="w3-center">Manual Slideshow</h2>
+                    
 
                     <div class="w3-content w3-display-container">
                         <img class="mySlides" src="<?php echo $image_1?>" style="width:100%">
@@ -113,8 +95,12 @@ if ($uid) {
                         <img class="mySlides" src="<?php echo $image_3?>" style="width:100%">
                         <img class="mySlides" src="<?php echo $image_4?>" style="width:100%">
 
-                        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-                        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                        <div class="button-container">
+                            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                        </div>
+
+                        
                     </div>
                     <script>
                             var slideIndex = 1;
@@ -137,6 +123,42 @@ if ($uid) {
                     </script>
                 
                 <!-- Slider end -->
+                <div class="card-auto_used-interact flex-block">
+                            <a class="interact_link-download flex-block semibold">
+                                <img src="assets/preset/images/download-folder.svg" alt="">
+                                <span id="download-pdf">Auto Daten download</span>
+
+                                <script>
+                                    document.getElementById('download-pdf').addEventListener('click', () => {
+                                    const { jsPDF } = window.jspdf;
+                                    const doc = new jsPDF();
+
+                                    // Wähle den Abschnitt aus, der in das PDF aufgenommen werden soll
+                                    const section = document.querySelector('.white.section-first');
+
+                                    // Füge den Inhalt des Abschnitts zum PDF hinzu
+                                    let y = 10;
+                                    doc.setFontSize(16);
+                                    doc.setTextColor(0, 0, 255);
+                                    doc.text('Auto Daten', 10, y);
+                                    y += 10;
+
+                                    doc.setFontSize(12);
+                                    doc.setTextColor(0, 0, 0);
+                                    const lines = section.innerText.split('\n');
+                                    lines.forEach(line => {
+                                        doc.text(line.trim(), 10, y);
+                                        y += 10;
+                                    });
+
+                                    // Speichere das PDF
+                                    doc.save('auto_daten.pdf');
+                                    })
+                                </script>
+
+
+                            </a>
+                </div>
 
                 <!-- small info -->
                 <div class="card-auto_used-main flex-block">
@@ -147,38 +169,8 @@ if ($uid) {
                             <li>Reviews: 23</li>
                         </ul>
 
-                        <div class="card-auto_used-advantages flex-block">
-
-                            <div class="card-auto_used-advantage flex-block">
-                                <img src="assets/preset/images/top-file.svg" alt="">
-                                <div class="text flex-block">
-                                    <div class="text_main text-uppercase flex-block">
-                                        <span>EXTRA</span>
-                                        <span>Garantie</span>
-                                    </div>
-                                    <div class="text_sub">18 Monate gratis</div>
-                                </div>
-                            </div>
-                            <div class="card-auto_used-advantage flex-block">
-                                <img src="assets/preset/images/convertible-car.svg" alt="">
-                                <div class="text flex-block">
-                                    <div class="text_main text-uppercase flex-block">
-                                        <span>EXTRA</span>
-                                        <span>Trade-in</span>
-                                    </div>
-                                    <div class="text_sub">Gebrauchtwagen</div>
-                                </div>
-                            </div>
-                            <div class="card-auto_used-advantage flex-block">
-                                <img src="assets/preset/images/warranty.svg" alt="">
-                                <div class="text flex-block">
-                                    <div class="text_main text-uppercase flex-block">
-                                        <span>EXTRA</span>
-                                        <span>Lieferung</span>
-                                    </div>
-                                    <div class="text_sub">Free Delivery</div>
-                                </div>
-                            </div>
+                        
+                            
                         </div>
 
                         <div class="card-auto_used-characteristics">
@@ -279,78 +271,7 @@ if ($uid) {
                             </div>
                         </div>
                     </div>
-                    <div class="card-auto_used-main_right">
-                        <div class="card-auto_used-interact flex-block">
-                            <a class="interact_link-download flex-block semibold">
-                                <img src="assets/preset/images/download-folder.svg" alt="">
-                                <span id="download-pdf">Auto Daten download</span>
-
-                                <script>
-                                    document.getElementById('download-pdf').addEventListener('click', () => {
-                                    const { jsPDF } = window.jspdf;
-                                    const doc = new jsPDF();
-
-                                    // Wähle den Abschnitt aus, der in das PDF aufgenommen werden soll
-                                    const section = document.querySelector('.white.section-first');
-
-                                    // Füge den Inhalt des Abschnitts zum PDF hinzu
-                                    let y = 10;
-                                    doc.setFontSize(16);
-                                    doc.setTextColor(0, 0, 255);
-                                    doc.text('Auto Daten', 10, y);
-                                    y += 10;
-
-                                    doc.setFontSize(12);
-                                    doc.setTextColor(0, 0, 0);
-                                    const lines = section.innerText.split('\n');
-                                    lines.forEach(line => {
-                                        doc.text(line.trim(), 10, y);
-                                        y += 10;
-                                    });
-
-                                    // Speichere das PDF
-                                    doc.save('auto_daten.pdf');
-                                    })
-                                </script>
-
-
-                            </a>
-                        </div>
-                        <div class="card-auto_used-price">
-                            <div class="used-price_top">
-                                <div class="now-price this-number flex-block">
-                                    <div class="now-price-text semibold">
-                                        <span> Preis auf Anfrage</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-auto_used-check">
-                            <h2 class="heading_black">VIN Nummer Prüfung</h2>
-                            <div class="description_wrapper">
-                                <div class="description_item">
-                                    Charackteristiken stimmen mit VIN überein
-                                </div>
-                                <div class="description_item">
-                                    Fahrzeughalter & Fahrzeugverbote
-                                </div>
-                                <div>weitere 16 Prüfungen</div>
-                            </div>
-
-                            <div class="btn_wrapper">
-                                <a class="btn btn_contur-blue btn_uppercase modal-open" >Anfrage senden</a>
-                            </div>
-
-                        </div>
-
-                        <div class="card-auto_sevice-banner">
-                            <a>
-                                <img src="assets/preset/images/about-us-p1.jpg" alt="">
-                            </a>
-                        </div>
-
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -358,13 +279,7 @@ if ($uid) {
 </section>
 <!-- footer -->
 <footer>
-    <div class = "social-links">
-      <a href = "#"><i class = "fab fa-facebook-f"></i></a>
-      <a href = "#"><i class = "fab fa-twitter"></i></a>
-      <a href = "#"><i class = "fab fa-instagram"></i></a>
-      <a href = "#"><i class = "fab fa-pinterest"></i></a>
-    </div>
-    <span>AutoInsider®</span>
+    <?php include "footer.php"; ?>
   </footer>
   <!-- end of footer -->
   
