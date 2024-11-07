@@ -31,7 +31,7 @@ export class CarsBuilder {
                         <div class="all_images">
                             <div class="big_image">
                                 <img src="${image_1} ">
-                                <span><i class="far fa-heart"></i> 22</span>
+                                
                             </div>
                             <div class="small_images">
                                 <img src="${image_2}">
