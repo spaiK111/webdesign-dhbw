@@ -13,6 +13,7 @@
                             <xs:element name="make" type="xs:string" />
                             <xs:element name="model" type="xs:string" />
                             <xs:element name="year" type="xs:integer" />
+                            <xs:element name="kw" type="xs:integer" />
                             <xs:element name="category" type="xs:string" />
                             <xs:element name="engine" type="xs:string" />
                             <xs:element name="fuelType" type="xs:string" />

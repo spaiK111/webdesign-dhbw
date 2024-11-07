@@ -7,7 +7,7 @@ const BlogPostSchema = new mongoose.Schema({
     make: {type: String, required: true},
     model: {type: String, required: true},
     year: { type: Number, required: true },
-    kw: { type: Number, required: true }, // Wert muss weg da die Werte in KW_FROM und KW_UP gespeichert werden
+    kw: { type: Number, required: true }, 
     category: {type: String, required: true},
     engine: {type: String, required: true},
     fuelType: {type: String, required: true},
