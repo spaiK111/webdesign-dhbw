@@ -125,7 +125,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
             </div>
 
             <div class="blog-topcontent-topBlog-item-paragraph">
-              <p><?php echo htmlspecialchars($topBlog['short_dsc']); ?></p>
+              <p><?php echo htmlspecialchars(string: $topBlog['short_dsc']); ?></p>
             <?php endif; ?>
             </div>
           </div>
@@ -156,7 +156,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
               <div class="blog-topcontent-latestBlog-item-image">
                 <a href="/View/blog-page.php?_id=<?php echo urlencode($blog1["_id"]); ?>">
-                <!--<img src="<?php echo htmlspecialchars($blog1['image']); ?>" /> -->
+                <img src="<?php echo htmlspecialchars($blog1['image']); ?>" /> 
               </div> 
             </div>
 
@@ -173,7 +173,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
               <div class="blog-topcontent-latestBlog-item-image">
                 <a href="/View/blog-page.php?_id=<?php echo urlencode($blog2["_id"]); ?>">
-                <!--<img src="<?php echo htmlspecialchars($blog2['image']); ?>" /> -->
+                <img src="<?php echo htmlspecialchars($blog2['image']); ?>" /> 
               </div> 
             <?php endif; ?>
             </div>
@@ -191,7 +191,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
               <div class="blog-topcontent-latestBlog-item-image">
                 <a href="/View/blog-page.php?_id=<?php echo urlencode($blog3["_id"]); ?>">
-                <!-- <img src="<?php echo htmlspecialchars($blog3['image']); ?>" /> -->
+                 <img src="<?php echo htmlspecialchars($blog3['image']); ?>" /> 
               <?php endif; ?>
               </div> 
             </div>
