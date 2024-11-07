@@ -116,7 +116,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 				<span class="num">8</span>
 			</a>
 			<a href="#" class="profile">
-				<img src="/assets/admin/images/people.png">
+				<img src="assets//admin/images/defaults.jpg">
 			</a>
 		</nav>
 		<!-- NAVBAR -->

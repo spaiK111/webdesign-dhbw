@@ -1,4 +1,27 @@
+<?php
+// Empfange die Parameter login und password
+$login = isset($_GET['login']) ? $_GET['login'] : (isset($_COOKIE['login']) ? $_COOKIE['login'] : '');
+$hashedPassword = isset($_GET['hashedPassword']) ? $_GET['hashedPassword'] : (isset($_COOKIE['password']) ? $_COOKIE['password'] : '');
 
+// Funktion zum Senden einer HTTPS-Anfrage
+$apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassword=$hashedPassword";
+
+    // cURL initialisieren
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $apiUrl);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    // API-Anfrage ausführen und Antwort speichern
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    // Antwort in ein Array umwandeln
+    $data = json_decode($response, true);
+    if (!$data) {
+      echo "Keine Daten gefunden";
+	}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,9 +43,16 @@
           <a  href="blog.php">blog</a>
           <a  href="login-old.php">login</a>
           <a  href="registrieren-old.php">registrieren</a>
-          <a href="admin.php"> Admin </a>
+          <?php if (isset($data) && isset($data['admin']) && $data['admin'] === true): ?>
+            <a href="admin.php"> Admin </a>
+          <?php endif; ?>
+          <?php if (isset($data)): ?>
+            <a style="color: green">Logged In</a>
+          <?php else: ?>
+            <a style="color: red">Not Logged In</a>
+          <?php endif; ?>
           <!-- Entweder separate Kontakt-Seite oder Diret-Link zu Email? -->
-          <?php if (basename($_SERVER['PHP_SELF']) == 'blog.php'): ?>
+          <?php if (basename($_SERVER['PHP_SELF']) == 'blog.php' && isset($data)): ?>
             <svg class="blog-add-button" xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#fffFFF"><path d="M453-280h60v-166h167v-60H513v-174h-60v174H280v60h173v166Zm27.27 200q-82.74 0-155.5-31.5Q252-143 197.5-197.5t-86-127.34Q80-397.68 80-480.5t31.5-155.66Q143-709 197.5-763t127.34-85.5Q397.68-880 480.5-880t155.66 31.5Q709-817 763-763t85.5 127Q880-563 880-480.27q0 82.74-31.5 155.5Q817-252 763-197.68q-54 54.31-127 86Q563-80 480.27-80Zm.23-60Q622-140 721-239.5t99-241Q820-622 721.19-721T480-820q-141 0-240.5 98.81T140-480q0 141 99.5 240.5t241 99.5Zm-.5-340Z"/></svg>
           <?php endif; ?>
           

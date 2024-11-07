@@ -72,6 +72,28 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/blog/blog.css" />
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.querySelector('.search-input');
+            const blogItems = document.querySelectorAll('.blog-item');
+
+            searchInput.addEventListener('input', () => {
+                const searchTerm = searchInput.value.toLowerCase();
+
+                blogItems.forEach(item => {
+                    const heading = item.querySelector('h3').textContent.toLowerCase();
+                    const description = item.querySelector('p').textContent.toLowerCase();
+
+                    if (heading.includes(searchTerm) || description.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
   </head>
 
   <body>
