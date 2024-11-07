@@ -3,7 +3,7 @@ const xml2js = require('xml2js');
 
 // Function to update the database
 async function dbUpdate(database, formattedEntry) {
-    const collection = database.collection('cars_blogs');
+    const collection = database.collection('cars');
 
     // Check if the blog post with the given uid exists
     const existingPost = await collection.findOne({ uid: formattedEntry.uid });
@@ -58,6 +58,7 @@ async function parseAndUpdate(database) {
                     hsn: entry.hsn[0],
                     tsn: entry.tsn[0],
                     make: entry.make[0],
+                    kw: entry.kw[0],
                     model: entry.model[0],
                     year: entry.year[0],
                     category: entry.category[0],
