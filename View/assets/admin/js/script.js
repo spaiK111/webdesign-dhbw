@@ -6,6 +6,9 @@ const dashboard = document.getElementById('dashboard');
 const divTable = document.querySelector('ul#box-info.box-info');
 const tableData = document.querySelector('div#table-data.table-data');
 
+// Stats
+const statsBlock = document.querySelector('.statistics');
+
 const carBlog = document.getElementById('new-blog-car');
 
 const inputFields = document.querySelector('div.input-fields');
@@ -32,6 +35,7 @@ carBlog.addEventListener('click', function () {
 	tableData.style.display = 'none';
 	inputFields.style.display = 'none';
 	blogNew.style.display = 'block';
+	statsBlock.style.display = 'none';
 }) 
 
 stats.addEventListener('click', function () {
@@ -39,6 +43,7 @@ stats.addEventListener('click', function () {
 	tableData.style.display = 'none';
 	inputFields.style.display = 'none';
 	blogNew.style.display = 'none';
+	statsBlock.style.display = 'block';
 })
 
 
@@ -47,6 +52,7 @@ blog.addEventListener('click', function () {
 	tableData.style.display = 'none';
 	inputFields.style.display = 'block';
 	blogNew.style.display = 'none';
+	statsBlock.style.display = 'none';
 	}
 )
 
@@ -55,6 +61,7 @@ dashboard.addEventListener('click', function () {
 	tableData.style.display = 'flex';
 	inputFields.style.display = 'none';
 	blogNew.style.display = 'none';
+	statsBlock.style.display = 'none';
 })
 
 

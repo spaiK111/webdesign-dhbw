@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const long_dsc = document.getElementById('entry-long-dsc')
     const main_img = document.getElementById('entry-main-image')
 
+
     const authorFirstname = addButton.getAttribute('authorFirstname');
     const authorLastname = addButton.getAttribute('authorLastname');
 

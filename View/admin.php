@@ -41,6 +41,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="assets//admin/css/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 	<title>Admin</title>
 </head>
@@ -275,6 +276,48 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 				<button class="btn" id="add_blog_default" style="margin-top: 20px">Hinzufügen</button>
 
 			</div>
+
+			//Statistik
+			<div class="statistics">
+				<h2>Statistik</h2>
+				<canvas id="statisticsChart" width="800" height="400"></canvas>
+			</div>
+
+			<script>
+				document.addEventListener('DOMContentLoaded', () => {
+					const ctx = document.getElementById('statisticsChart').getContext('2d');
+					const statisticsChart = new Chart(ctx, {
+						type: 'bar', // Diagrammtyp
+						data: {
+							labels: ['Login', 'Blogs', 'Cars', 'Likes Total'], // Beschriftungen
+							datasets: [{
+								label: 'Anzahl',
+								data: [123, 23, 324, 62], // Beispielstatistiken
+								backgroundColor: [
+									'rgba(255, 99, 132, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(255, 206, 86, 0.2)',
+									'rgba(75, 192, 192, 0.2)'
+								],
+								borderColor: [
+									'rgba(255, 99, 132, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(255, 206, 86, 1)',
+									'rgba(75, 192, 192, 1)'
+								],
+								borderWidth: 1
+							}]
+						},
+						options: {
+							scales: {
+								y: {
+									beginAtZero: true
+								}
+							}
+						}
+					});
+				});
+			</script>
 
 			<div id="notification-popup" class="popup hidden">
 				<div class="popup-header">

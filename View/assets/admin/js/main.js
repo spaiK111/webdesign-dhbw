@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const backVolumen = document.getElementById('entry-backVolumen-area')
     const maxSpeed = document.getElementById('entry-maxSpeed-area')
 
+
     //Bilder
     const image1 = document.getElementById('entry-image1')
     const image2 = document.getElementById('entry-image2')
