@@ -234,6 +234,17 @@ exports.resetLoginAttempts = async (req, res) => {
   }
 };
 
+exports.getCarById = async (req, res) => {
+  try {
+    const { uid } = req.query;
+    const blog = await BlogPost.findById(uid);
+    console.log(blog);
+    res.json(blog);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
 exports.getBlogById = async (req, res) => {
   try {
     const { _id } = req.query;

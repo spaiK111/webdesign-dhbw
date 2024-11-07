@@ -3,7 +3,7 @@
 $uid = isset($_GET['uid']) ? $_GET['uid'] : null;
 if ($uid) {
     // API-URL mit der übergebenen ID
-    $apiUrl = "http://localhost:5000/api/posts/getPostById/?uid=$uid";
+    $apiUrl = "http://localhost:5000/api/posts/getCarById/?uid=$uid";
 
     // cURL initialisieren
     $ch = curl_init();
@@ -20,19 +20,15 @@ if ($uid) {
         // Daten erfolgreich abgerufen
         $make = htmlspecialchars($data['make']);
         $model = htmlspecialchars($data['model']);
-        $year = $data['year'];
-        $year_from = htmlspecialchars($year[0]);
-        $year_to = htmlspecialchars($year[1]);
-        $kw = $data['kw'];
-        $kw_from = htmlspecialchars($kw[0]);
-        $kw_to = htmlspecialchars($kw[1]);
+        $year = htmlspecialchars($data[ 'year']);
+        $kw = htmlspecialchars($data['kw']);
         $category = htmlspecialchars($data['category']);
         $engine = htmlspecialchars($data['engine']);
         $fuelType = htmlspecialchars($data['fuelType']);
-        $image_1 = htmlspecialchars($data['images'][0]);
-        $image_2 = htmlspecialchars($data['images'][1]);
-        $image_3 = htmlspecialchars($data['images'][2]);
-        $image_4 = htmlspecialchars($data['images'][3]);
+        $image_1 = htmlspecialchars($data['image_1']);
+        $image_2 = htmlspecialchars($data['image_2']);
+        $image_3 = htmlspecialchars($data['image_3']);
+        $image_4 = htmlspecialchars($data['image_4']);
     } else {
         echo "Fehler beim Abrufen der Daten.";
         exit;
@@ -84,7 +80,7 @@ if ($uid) {
                         <h1><?php echo $make; ?></h1>
                         <div class="used-info_main flex-block">
                             <ul class="list flex-block">
-                                <li><?php echo $year_from - $year_to; ?></li>
+                                <li><?php echo $year?></li>
                                 <li><span><?php echo $engine; ?></span> km</li>
                                 <li><?php echo $model; ?></li>
                             </ul>

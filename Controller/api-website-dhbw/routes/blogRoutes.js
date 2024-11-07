@@ -14,6 +14,8 @@ router.get('/getBlogs', blogController.getBlogs);
 
 router.get('/getBlogById', blogController.getBlogById);
 
+router.get('/getCarById', blogController.getCarById);
+
 // Hole alle Blogposts
 router.get('/', blogController.getAllPosts);
 
