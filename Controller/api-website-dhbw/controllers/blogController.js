@@ -3,7 +3,6 @@ const MakeOptions = require("../models/MakeOptions");
 const Blog = require("../models/Blog");
 const User = require("../models/User");
 const xml2js = require("xml2js");
-const bcrypt = require("bcrypt");
 const fs = require("fs");
 const exp = require("constants");
 const CryptoJS = require("crypto-js");
@@ -240,23 +239,22 @@ exports.register = async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 };
-// RESET
-// exports.resetLoginAttempts = async (req, res) => {
-//   try {
-//     const { login, password } = req.body; // Use req.body to get data from POST request
-//     const hashedPassword = await bcrypt.hash(password, 10);
-//     const user = new User({
-//       login: login,
-//       firstName: firstName,
-//       lastName: lastName,
-//       password: hashedPassword,
-//     });
-//     await user.save();
-//     res.status(201).json(user);
-//   } catch (err) {
-//     res.status(400).json({ error: err.message });
-//   }
-// };
+exports.resetLoginAttempts = async (req, res) => {
+  try {
+    const { login, password } = req.body; // Use req.body to get data from POST request
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const user = new User({
+      login: login,
+      firstName: firstName,
+      lastName: lastName,
+      password: hashedPassword,
+    });
+    await user.save();
+    res.status(201).json(user);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+};
 
 
 
