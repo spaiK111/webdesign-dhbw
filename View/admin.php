@@ -277,23 +277,25 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
 			</div>
 
-			//Statistik
-			<div class="statistics">
+			<!-- Statistic --> 
+			<div class="statistics" style="display:none;">
 				<h2>Statistik</h2>
-				<canvas id="statisticsChart" width="800" height="400"></canvas>
+				<canvas id="statisticsChart" width="800px" height="400px"></canvas>
 			</div>
 
 			<script>
-				document.addEventListener('DOMContentLoaded', () => {
+				document.addEventListener('DOMContentLoaded', async () => {
 					const ctx = document.getElementById('statisticsChart').getContext('2d');
-					await fetch()
+					const response = await fetch(`http://localhost:5000/api/posts/getStats`)
+					const data = await response.json();
+					console.log(data.users, data.blogs, data.posts, data.likes);
 					const statisticsChart = new Chart(ctx, {
 						type: 'bar', // Diagrammtyp
 						data: {
-							labels: ['Login', 'Blogs', 'Cars', 'Likes Total'], // Beschriftungen
+							labels: ['Users', 'Blogs', 'Cars', 'Likes'], // Beschriftungen
 							datasets: [{
 								label: 'Anzahl',
-								data: [123, 23, 324, 62], // Beispielstatistiken
+								data: [`${data.users}`, `${data.blogs}`,`${data.posts}`, `${data.likes}`], // Beispielstatistiken
 								backgroundColor: [
 									'rgba(255, 99, 132, 0.2)',
 									'rgba(54, 162, 235, 0.2)',

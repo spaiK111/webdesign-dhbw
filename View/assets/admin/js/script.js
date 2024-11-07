@@ -7,7 +7,7 @@ const divTable = document.querySelector('ul#box-info.box-info');
 const tableData = document.querySelector('div#table-data.table-data');
 
 // Stats
-const statsBlock = document.querySelector('.statistics');
+const statsBlock = document.querySelector('div.statistics');
 
 const carBlog = document.getElementById('new-blog-car');
 
@@ -44,6 +44,8 @@ stats.addEventListener('click', function () {
 	inputFields.style.display = 'none';
 	blogNew.style.display = 'none';
 	statsBlock.style.display = 'block';
+	statsBlock.style.width = '800px';
+	statsBlock.style.height = '400px';
 })
 
 

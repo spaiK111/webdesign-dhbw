@@ -234,13 +234,19 @@ exports.resetLoginAttempts = async (req, res) => {
   }
 };
 
-exports.getStatsData = async (req, res) => {
+exports.getStats = async (req, res) => {
   try {
     const users = await User.find().countDocuments();
     const posts = await BlogPost.find().countDocuments();
     const blogs = await Blog.find().countDocuments();
-    const cars = await BlogPost.find().countDocuments();
-    res.json({ users: users, posts: posts, blogs: blogs, cars: cars });
+    
+    const result = await Blog.aggregate([
+      { $unwind: "$likes" }, // Entpackt das likes-Array
+      { $group: { _id: null, totalLikes: { $sum: 1 } } } // Gruppiert und summiert die Likes
+    ]);
+
+    const totalLikes = result.length > 0 ? result[0].totalLikes : 0;
+    res.json({ users: users, posts: posts, blogs: blogs, likes: totalLikes });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
