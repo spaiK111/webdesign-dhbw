@@ -29,6 +29,10 @@ router.post('/resetLoginAttempts', blogController.resetLoginAttempts )
 
 router.get('/getUserData', blogController.getUserData)
 
+//Likes
+
+router.post('/like', blogController.like)
+
 router.post('/decreaseLoginAttempt', blogController.decreaseLoginAttempt )
 // Register
 router.post('/register', blogController.register);
