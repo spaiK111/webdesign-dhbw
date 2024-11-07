@@ -44,7 +44,9 @@ router.get('/getUserData', blogController.getUserData)
 
 //Likes
 
-router.post('/like', blogController.like)
+router.post('/likeBlog', blogController.like)
+
+router.post('/unlikeBlog', blogController.unlike)
 
 router.post('/decreaseLoginAttempt', blogController.decreaseLoginAttempt )
 // Register

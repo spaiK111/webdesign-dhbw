@@ -45,6 +45,7 @@ $apiUrl = "http://localhost:5000/api/posts/getBlogById/?_id=$_id";
     <title>Document</title>
     <link rel="stylesheet" href="assets/blog/blog-page.css">
     <link rel="stylesheet" href="assets/like-button/like-button.css">
+    <script src="assets/blog/js/main.js"></script>
 </head>
 <body>
     <header>

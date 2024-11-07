@@ -147,11 +147,30 @@ exports.restrictUser = async (req, res) => {
   }
 };
 
+exports.unlike = async (req, res) => {
+  try {
+    const { _id, login } = req.query;
+    console.log("blogunlike", _id, login);
+    const blogToLike = await Blog.findOneAndUpdate(
+      { _id: _id },
+      {
+        $pull: { likes: login }, // Füge den login zum likes-Array hinzu
+      },
+      { new: true } // Optional: returns the updated document
+    );
+    res.status(201).json(blogToLike);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+};
+
+
 exports.like = async (req, res) => {
   try {
-    const { login } = req.query;
-    const blogToLike = await BlogPost.findOneAndUpdate(
-      { login: login },
+    const { _id, login } = req.query;
+    console.log("bloglike", _id, login);
+    const blogToLike = await Blog.findOneAndUpdate(
+      { _id: _id },
       {
         $push: { likes: login }, // Füge den login zum likes-Array hinzu
       },
