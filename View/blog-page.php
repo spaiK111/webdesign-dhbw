@@ -1,5 +1,6 @@
 <?php
 // Empfange die Parameter login und password
+
 $login = isset($_GET['login']) ? $_GET['login'] : (isset($_COOKIE['login']) ? $_COOKIE['login'] : '');
 $hashedPassword = isset($_GET['hashedPassword']) ? $_GET['hashedPassword'] : (isset($_COOKIE['password']) ? $_COOKIE['password'] : '');
 $_id = isset($_GET['_id']) ? $_GET['_id'] : '';
@@ -29,7 +30,7 @@ $apiUrl = "http://localhost:5000/api/posts/getBlogById/?_id=$_id";
 	else {
 		echo "Bad Request";
 	}
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -50,18 +51,25 @@ $apiUrl = "http://localhost:5000/api/posts/getBlogById/?_id=$_id";
         <div class="blog-page-container">
             <!--Image Part-->
             <div class= "blog-page-image">
-            <?php if ($data): ?>
-                <img src="<?php echo htmlspecialchars($data['image']); ?>">
+                <?php  if ($data): ?>
+                <img src="<?php echo htmlspecialchars($data['image']); ?>"
+                
             </div>
             <!--Text Part-->
             <div class ="blog-page-text-container">
 
                 <div class="blog-page-heading">
                     <h2><?php echo htmlspecialchars($data['heading']); ?></h2>
+                    <h2>lol</h2>
+                    
                 </div>
 
                 <div class="blog-page-short-description">
                     <span><?php echo htmlspecialchars($data['short_dsc']); ?></span>
+                    <div class="blog-like-button">
+                        <?php include "like-button.php"; ?>
+                    </div>
+                    
                 </div>
 
                 <div class="blog-page-long-description">

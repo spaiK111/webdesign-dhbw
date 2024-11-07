@@ -35,9 +35,10 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 40px;
+  margin: 20px auto;
   height: 60vh;
-  width: 95vw;
+  max-width: 90vw;
+  overflow: hidden;
 }
 
 .blog-page-text-container {
@@ -45,17 +46,16 @@ img {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  flex: 1;
+  overflow-y: scroll;
+  gap: 20px;
   width: 100%;
   height: 100%;
   padding-top: 40px;
-  padding-left: 40px;
   padding-right: 20px;
-
+  padding-left: 20px;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
-  gap: 30px;
-  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .blog-page-heading {
@@ -67,20 +67,36 @@ img {
 }
 
 .blog-page-short-description {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
   border-radius: 30px;
+  width: 100%;
   font-weight: bold;
   font-size: clamp(2rem, 1vw + 1rem, 4rem);
 }
 
+.blog-page-short-description span {
+  grid-column: 2;
+}
+
+.blog-page-short-description .blog-like-button {
+  grid-column: 3;
+}
+
+.blog-like-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .blog-page-long-description {
+  border-top: solid 5px rgba(0, 0, 0, 0.6);
   padding: 20px;
   border-radius: 20px;
   width: 100%;
   overflow-wrap: break-word;
-  font-size: clamp(1rem, 1vw + 1rem, 2rem);
-  box-shadow: 5px 5px 38px #c7c7c7, -5px -5px 38px #ffffff;
+  font-size: clamp(0.5rem, 1vw + 1rem, 1.5rem);
+
   height: 100%;
   overflow-y: scroll;
 
@@ -88,14 +104,64 @@ img {
   scrollbar-width: thin;
 }
 
+.blog-page-long-description p {
+  padding: 20px;
+}
+
 .blog-page-image {
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   height: 60vh;
   width: 100%;
-  flex: 1;
+
   overflow: hidden;
   display: flex;
   justify-content: center;
-  width: calc(50% - 40px);
+}
+
+@media (max-width: 1200px) {
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .blog-page-container {
+    height: 100vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .blog-page-image {
+    border-radius: 20px;
+  }
+
+  .blog-page-short-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .blog-page-long-description {
+    padding: 30px;
+  }
+
+  .blog-page-image {
+    height: 100%;
+  }
+}
+
+@media (min-height: 1300px) {
+  .blog-page-short-description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
 }
