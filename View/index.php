@@ -267,11 +267,11 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
         <!--Reset Button-->
         <div class="reset-button" id="first-search-reset-button">
           <i class="fa-solid fa-rotate-right" id="reset-button-one"></i>
-          <a id="reset-button-two">Auswahl zurücksetzen</a>
+          <a id="first-search-reset-button-two">Auswahl zurücksetzen</a>
         </div>
         
         <script>
-          document.getElementById('reset-button-one').addEventListener('click', function() {
+          document.getElementById('first-search-reset-button').addEventListener('click', function() {
               // Alle Select-Elemente zurücksetzen
               const selects = document.querySelectorAll('select');
               selects.forEach(select => {
@@ -285,7 +285,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
               });
           });
 
-          document.getElementById('reset-button-two').addEventListener('click', function() {
+          document.getElementById('first-search-reset-button-two').addEventListener('click', function() {
               // Alle Select-Elemente zurücksetzen
               const selects = document.querySelectorAll('select');
               selects.forEach(select => {
