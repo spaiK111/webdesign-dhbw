@@ -86,9 +86,3 @@
     height: 5vh;
   }
 }
-
-@media (max-height: 900px) {
-  .like-button {
-    height: 100%;
-  }
-}
