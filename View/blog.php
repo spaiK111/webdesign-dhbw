@@ -41,7 +41,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
     $data_blogs = json_decode($blogs, true);
     if ($data_blogs) {
       echo "blogs found";
-      $topBlog = $data[0];
+      $topBlog = $data_blogs[0];
       $blog1 = $data_blogs[1];
       $blog2 = $data_blogs[2];
       $blog3 = $data_blogs[3];
