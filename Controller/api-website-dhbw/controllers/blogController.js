@@ -7,6 +7,7 @@ const bcrypt = require("bcrypt");
 const fs = require("fs");
 const exp = require("constants");
 const CryptoJS = require("crypto-js");
+const nodemailer = require("nodemailer");
 
 // Erstelle einen neuen Blogpost
 exports.createCar = async (req, res) => {
@@ -202,7 +203,11 @@ exports.postBlog = async (req, res) => {
 
 exports.register = async (req, res) => {
   try {
-    const { login, hashedPassword, firstName, lastName } = req.body; // Use req.body to get data from POST request
+    const { login, hashedPassword, firstName, lastName } = req.query; // Use req.body to get data from POST request
+    console.log(login);
+    console.log(hashedPassword);
+    console.log(firstName);
+    console.log(lastName);
 
     const user = new User({
       login: login,
@@ -210,8 +215,8 @@ exports.register = async (req, res) => {
       lastName: lastName,
       password: hashedPassword,
     });
-    await user.save();
-    res.status(201).json(user);
+      await user.save()
+      res.status(201).json(user);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
@@ -233,6 +238,67 @@ exports.resetLoginAttempts = async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 };
+
+exports.validateUser = async (req, res) => {
+  try {
+      const { email } = req.query;
+      const user = await User.findOneAndUpdate(
+          { login: email },
+          { $set: { verified: true } },
+          { new: true }
+      );
+
+      if (!user) {
+          return res.status(404).json({ error: 'User not found' });
+      }
+
+      res.status(200).json({ message: 'User validated', user });
+  } catch (err) {
+      res.status(500).json({ error: err.message });
+  }
+};
+
+exports.sendValidationEmail = async (req, res) => {
+  try {
+      const { email } = req.query;
+      const user = await User.findOne({ login: email });
+
+      if (!user) {
+          return res.status(404).json({ error: 'User not found' });
+      }
+
+      const validationLink = `http://localhost:5000/api/posts/validateUser?email=${encodeURIComponent(email)}`;
+
+      // Erstelle einen Nodemailer-Transporter
+      const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true, // true for port 465, false for other ports
+        auth: {
+          user: "maks.bogachenkov@gmail.com",
+          pass: "pmdp xrxs lafj scrw",
+        },
+      });
+
+      // E-Mail-Optionen
+      const mailOptions = {
+          from: '"AutomobileInsider" <maks.bogachenkov@gmail.com>"',
+          to: email,
+          subject: 'Validate your account',
+          text: `Please click the following link to validate your account: ${validationLink}`
+      };
+
+      // Sende die E-Mail
+      await transporter.sendMail(mailOptions);  
+
+      res.status(200).json({ message: 'Validation email sent' });
+  } catch (err) {
+      res.status(500).json({ error: err.message });
+  }
+};
+
+
+
 
 exports.getStats = async (req, res) => {
   try {

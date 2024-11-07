@@ -16,6 +16,12 @@ router.get('/getBlogById', blogController.getBlogById);
 
 router.get('/getCarById', blogController.getCarById);
 
+//Email User validation
+
+router.post('/sendValidationEmail', blogController.sendValidationEmail);
+
+router.get('/validateUser', blogController.validateUser);
+
 //Stats
 router.get('/getStats', blogController.getStats);
 

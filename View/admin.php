@@ -89,7 +89,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 			<li>
 				<a href="#" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
-					<span class="text">Ausloggen</span>
+					<span class="text" id="log-out">Ausloggen</span>
 				</a>
 			</li>
 		</ul>

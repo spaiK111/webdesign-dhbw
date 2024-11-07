@@ -6,6 +6,8 @@ const dashboard = document.getElementById('dashboard');
 const divTable = document.querySelector('ul#box-info.box-info');
 const tableData = document.querySelector('div#table-data.table-data');
 
+const logOut = document.getElementById('log-out');
+
 // Stats
 const statsBlock = document.querySelector('div.statistics');
 
@@ -66,6 +68,16 @@ dashboard.addEventListener('click', function () {
 	statsBlock.style.display = 'none';
 })
 
+logOut.addEventListener('click', function () {
+	emptyCookie('login');
+	emptyCookie('password');
+	window.location.href = 'http://localhost:3000/View/index.php';
+	alert('Sie wurden erfolgreich ausgeloggt!');
+})
+
+function emptyCookie(name) {
+	document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
 
 
 allSideMenu.forEach(item=> {

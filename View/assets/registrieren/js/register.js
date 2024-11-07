@@ -11,25 +11,29 @@ document.addEventListener('DOMContentLoaded', async () => {
         const errorParagraph = error.querySelector('p');
         const hashedPassword = CryptoJS.SHA256(password).toString();
         try {
-            const response = await fetch('http://localhost:5000/api/posts/register', {
+            const response = await fetch(`http://localhost:5000/api/posts/register?login=${login.value}&hashedPassword=${hashedPassword}&lastName=${lastName}&firstName=${firstName}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
-                    login: login.value,
-                    hashedPassword: hashedPassword,
-                    lastName: lastName.value,
-                    firstName: firstName.value
-
-                })
             });
+            const data = await response.json();
 
             if (response.status === 201) {
-                    setCookie('login', login.value, 7);
-                    setCookie('password', hashedPassword, 7);
+                    if (!data.validated) {
+                        alert('Bitte validieren Sie Ihr Konto. Eine E-Mail wurde an Ihre Adresse gesendet.');
+                        await fetch(`http://localhost:5000/api/posts/sendValidationEmail?email=${data.login}`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                        });
+                        return;
+                    }
+                    // setCookie('login', login.value, 7);
+                    // setCookie('password', hashedPassword, 7);
 
-                    window.location.href = `http://localhost:3000/View/admin.php?login=${login.value}&hashedPassword=${hashedPassword}`; // Weiterleitung zur admin.php
+                    //window.location.href = `http://localhost:3000/View/admin.php?login=${login.value}&hashedPassword=${hashedPassword}`; // Weiterleitung zur admin.php
             } else {
                 const errorData = await response.json();
                 error.style.display = 'flex';
