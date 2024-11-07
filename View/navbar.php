@@ -36,7 +36,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
   <body>
     <nav class="navbar">
       <div class="navbar-container">
-        <a href="index.php" class="navbar-brand">AutoInsider®</a>
+        <a href="index.php" class="navbar-brand">AutoInsider</a>
 
         <div class="navbar-nav">
           <a  href="index.php">home</a>
