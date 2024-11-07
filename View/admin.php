@@ -286,6 +286,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 			<script>
 				document.addEventListener('DOMContentLoaded', () => {
 					const ctx = document.getElementById('statisticsChart').getContext('2d');
+					await fetch()
 					const statisticsChart = new Chart(ctx, {
 						type: 'bar', // Diagrammtyp
 						data: {
