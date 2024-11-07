@@ -212,7 +212,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
     </div>
 
-			<div class = "input-blog" style="display: none; padding: 20px; border: 1px solid #ccc;" id="new-blog-new">
+			<div class = "input-blog" style="display: none; padding: 20px;" id="new-blog-new">
 
 				<h2 class="input-field-txt" >Geben Sie die IDs ein</h2>
 

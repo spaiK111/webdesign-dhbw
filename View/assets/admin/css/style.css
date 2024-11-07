@@ -320,6 +320,10 @@ body {
   font-weight: bold;
 }
 
+.input-blog{
+  border: 1px solid var(--grey);
+}
+
 .notification a {
   color: white;
   text-decoration: none;
