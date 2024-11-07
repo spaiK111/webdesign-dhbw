@@ -39,8 +39,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const image3 = document.getElementById('entry-image3')
     const image4 = document.getElementById('entry-image4')
 
-    const authorFirstname = addButton.getAttribute('authorFirstname');
-    const authorLastname = addButton.getAttribute('authorLastname');
 
 
     addButtonCar.addEventListener('click', async () => {
@@ -67,7 +65,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             const maxSpeedValue = maxSpeed.value;
 
     
+            const authorFirstname = addButton.getAttribute('authorFirstname')
+            const authorLastname = addButton.getAttribute('authorLastname');
             try {
+
+            
+                console.log(authorLastname)
+                console.log(authorFirstname)
                 const response = await fetch(`http://localhost:5000/api/posts/createCar?hsn=${hsnValue}&tsn=${tsnValue}&make=${makeValue}&model=${modelValue}&year=${yearValue}&kw=${kwValue}&category=${categoryValue}&engine=${engineValue}&fuelType=${fueltypeValue}&hubraum=${hubraumValue}&co2=${co2WertValue}&antrieb=${antriebsartValue}&backVolumen=${backVolumenValue}&maxSpeed=${maxSpeedValue}&image_1=${image1Value}&image_2=${image2Value}&image_3=${image3Value}&image_4=${image4Value}&author=${author}`, {
                     method: 'POST',
                     headers: {
@@ -95,8 +99,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         const long_dscValue = long_dsc.value;
         const main_imgValue = main_img.value;
 
+        const authorFirstname = addButton.getAttribute('authorFirstname')
+        const authorLastname = addButton.getAttribute('authorLastname');
 
         try {
+
+                
+            console.log(authorLastname)
+            console.log(authorFirstname)
             const response = await fetch(`http://localhost:5000/api/posts/createBlogTxt?heading=${headingValue}&short_dsc=${short_dscValue}&long_dsc=${long_dscValue}&image=${main_imgValue}&authorFirstname=${authorFirstname}&authorLastname=${authorLastname}`, {
                 method: 'POST',
                 headers: {

@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:5000/api/posts/register?login=${login.value}&hashedPassword=${hashedPassword}&lastName=${lastName}&firstName=${firstName}`, {
+            const response = await fetch(`http://localhost:5000/api/posts/register?login=${login.value}&hashedPassword=${hashedPassword}&lastName=${lastName.value}&firstName=${firstName.value}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
