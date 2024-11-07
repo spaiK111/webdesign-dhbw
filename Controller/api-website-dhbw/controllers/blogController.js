@@ -482,10 +482,10 @@ exports.getAllMakePosts = async (req, res) => {
 };
 
 exports.getPostsPerPage = async (req, res) => {
-  //gPPP
   try {
     const { pagination, make, model, ps1, ps2, category, fueltype } = req.query;
     const query = {};
+
     console.log("Make: ", make);
     console.log("Model: ", model);
     console.log("PS1: ", ps1);
@@ -509,14 +509,22 @@ exports.getPostsPerPage = async (req, res) => {
       query.fuelType = fueltype;
     }
 
-    // if (ps1 && ps2) {
-    //     query.kw = { $elemMatch: { $gte: parseInt(ps1), $lte: parseInt(ps2) } };
-    // } else if (ps1) {
-    //     query.kw = { $elemMatch: { $gte: parseInt(ps1) } };
-    // } else if (ps2) {
-    //     query.kw = { $elemMatch: { $lte: parseInt(ps2) } };
-    // }
-    const page = parseInt(pagination); // Default to page 0 if pagination is not provided
+    // Convert ps1 and ps2 to numbers if they are provided
+    const ps1Number = ps1 ? parseInt(ps1) : null;
+    const ps2Number = ps2 ? parseInt(ps2) : null;
+
+    if (ps1Number !== null && ps2Number !== null) {
+      console.log("111");
+      query.kw = { $gt: ps1Number, $lte: ps2Number };
+    } else if (ps1Number !== null) {
+      console.log("222");
+      query.kw = { $gt: ps1Number };
+    } else if (ps2Number !== null) {
+      console.log("333");
+      query.kw = { $lte: ps2Number };
+    }
+
+    const page = parseInt(pagination) || 0; // Default to page 0 if pagination is not provided
     const limit = 5; // Number of posts per page
 
     const posts = await BlogPost.find(query)
