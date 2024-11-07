@@ -3,7 +3,7 @@
 $uid = isset($_GET['uid']) ? $_GET['uid'] : null;
 if ($uid) {
     // API-URL mit der übergebenen ID
-    $apiUrl = "http://localhost:5000/api/posts/getPostById/?uid=$uid";
+    $apiUrl = "http://localhost:5000/api/posts/getCarById/?uid=$uid";
 
     // cURL initialisieren
     $ch = curl_init();
@@ -20,19 +20,15 @@ if ($uid) {
         // Daten erfolgreich abgerufen
         $make = htmlspecialchars($data['make']);
         $model = htmlspecialchars($data['model']);
-        $year = $data['year'];
-        $year_from = htmlspecialchars($year[0]);
-        $year_to = htmlspecialchars($year[1]);
-        $kw = $data['kw'];
-        $kw_from = htmlspecialchars($kw[0]);
-        $kw_to = htmlspecialchars($kw[1]);
+        $year = htmlspecialchars($data[ 'year']);
+        $kw = htmlspecialchars($data['kw']);
         $category = htmlspecialchars($data['category']);
         $engine = htmlspecialchars($data['engine']);
         $fuelType = htmlspecialchars($data['fuelType']);
-        $image_1 = htmlspecialchars($data['images'][0]);
-        $image_2 = htmlspecialchars($data['images'][1]);
-        $image_3 = htmlspecialchars($data['images'][2]);
-        $image_4 = htmlspecialchars($data['images'][3]);
+        $image_1 = htmlspecialchars($data['image_1']);
+        $image_2 = htmlspecialchars($data['image_2']);
+        $image_3 = htmlspecialchars($data['image_3']);
+        $image_4 = htmlspecialchars($data['image_4']);
     } else {
         echo "Fehler beim Abrufen der Daten.";
         exit;
@@ -55,6 +51,7 @@ if ($uid) {
         <link rel="stylesheet" href="assets/preset/css/style.css">
         <link rel="stylesheet" href="assets/preset/css/test.css">
         <link rel="stylesheet" href="assets/preset/css/slider.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
       </head>
       <body>
@@ -84,7 +81,7 @@ if ($uid) {
                         <h1><?php echo $make; ?></h1>
                         <div class="used-info_main flex-block">
                             <ul class="list flex-block">
-                                <li><?php echo $year_from - $year_to; ?></li>
+                                <li><?php echo $year?></li>
                                 <li><span><?php echo $engine; ?></span> km</li>
                                 <li><?php echo $model; ?></li>
                             </ul>
@@ -286,7 +283,37 @@ if ($uid) {
                         <div class="card-auto_used-interact flex-block">
                             <a class="interact_link-download flex-block semibold">
                                 <img src="assets/preset/images/download-folder.svg" alt="">
-                                <span>Auto Daten download</span>
+                                <span id="download-pdf">Auto Daten download</span>
+
+                                <script>
+                                    document.getElementById('download-pdf').addEventListener('click', () => {
+                                    const { jsPDF } = window.jspdf;
+                                    const doc = new jsPDF();
+
+                                    // Wähle den Abschnitt aus, der in das PDF aufgenommen werden soll
+                                    const section = document.querySelector('.white.section-first');
+
+                                    // Füge den Inhalt des Abschnitts zum PDF hinzu
+                                    let y = 10;
+                                    doc.setFontSize(16);
+                                    doc.setTextColor(0, 0, 255);
+                                    doc.text('Auto Daten', 10, y);
+                                    y += 10;
+
+                                    doc.setFontSize(12);
+                                    doc.setTextColor(0, 0, 0);
+                                    const lines = section.innerText.split('\n');
+                                    lines.forEach(line => {
+                                        doc.text(line.trim(), 10, y);
+                                        y += 10;
+                                    });
+
+                                    // Speichere das PDF
+                                    doc.save('auto_daten.pdf');
+                                    })
+                                </script>
+
+
                             </a>
                         </div>
                         <div class="card-auto_used-price">

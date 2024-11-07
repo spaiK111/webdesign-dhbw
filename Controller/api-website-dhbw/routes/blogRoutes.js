@@ -14,6 +14,19 @@ router.get('/getBlogs', blogController.getBlogs);
 
 router.get('/getBlogById', blogController.getBlogById);
 
+router.get('/getCarById', blogController.getCarById);
+
+//Email User validation
+
+router.get('/checkVerification', blogController.checkVerification);
+
+router.post('/sendValidationEmail', blogController.sendValidationEmail);
+
+router.get('/validateUser', blogController.validateUser);
+
+//Stats
+router.get('/getStats', blogController.getStats);
+
 // Hole alle Blogposts
 router.get('/', blogController.getAllPosts);
 
@@ -28,6 +41,10 @@ router.get('/users', blogController.getUsers);
 router.post('/resetLoginAttempts', blogController.resetLoginAttempts )
 
 router.get('/getUserData', blogController.getUserData)
+
+//Likes
+
+router.post('/like', blogController.like)
 
 router.post('/decreaseLoginAttempt', blogController.decreaseLoginAttempt )
 // Register
