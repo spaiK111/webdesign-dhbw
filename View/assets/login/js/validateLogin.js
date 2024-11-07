@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     submit.addEventListener('click', async () => {
         const login = document.getElementById('login').value;
         const password = document.getElementById('password').value;
+        console.log("PW", password.value)
 
         if (!login || !password) { // Sind alle Felder ausgefüllt?
             alert('Bitte füllen Sie alle Felder aus.');
@@ -59,20 +60,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         catch (err) {
             console.error('Fehler beim Login - im checkUser-Bereich:', err);
         }
-
-        try { // ist der benuzter gesperrt?
-            const checkUserVerification = await fetch(`http://localhost:5000/api/posts/checkVerification?login=${login}`)
-            const userVerification = await checkUserVerification.json();
-            console.log(userVerification)
-            if(userVerification.verified != true){
-                alert("Der Benutzer ist nicht verifiziert! Bitte per E-Mail verifizieren!")
-                return 
-            }
-        }
-        catch (err) {
-            console.error('Fehler beim Login - Verifizierung:', err);
-        }
-
+        // SPÄTER EINKOMMENTIEREN
+        // try { // ist der benuzter gesperrt?
+        //     const checkUserVerification = await fetch(`http://localhost:5000/api/posts/checkVerification?login=${login}`)
+        //     const userVerification = await checkUserVerification.json();
+        //     console.log(userVerification)
+        //     if(userVerification.verified != true){
+        //         alert("Der Benutzer ist nicht verifiziert! Bitte per E-Mail verifizieren!")
+        //         return 
+        //     }
+        // }
+        // catch (err) {
+        //     console.error('Fehler beim Login - Verifizierung:', err);
+        // }
+        console.log("login", login)
+        console.log("hashedPassword", hashedPassword)
         try { // verusche Login und behandle fehlgeschlagenen Login
             const response = await fetch(`http://localhost:5000/api/posts/loginUser?login=${login}&hashedPassword=${hashedPassword}`, {
                 method: 'POST',

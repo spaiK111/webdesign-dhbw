@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     submit.addEventListener('click', async () => {
         const errorParagraph = error.querySelector('p');
-        const hashedPassword = CryptoJS.SHA256(password).toString();
+        console.log("PW", password.value)
+        const hashedPassword = CryptoJS.SHA256(password.value).toString();
 
         if (!validateEmail(login.value)) {
             alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
