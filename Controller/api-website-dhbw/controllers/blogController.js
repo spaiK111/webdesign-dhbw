@@ -240,23 +240,23 @@ exports.register = async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 };
-
-exports.resetLoginAttempts = async (req, res) => {
-  try {
-    const { login, password } = req.body; // Use req.body to get data from POST request
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const user = new User({
-      login: login,
-      firstName: firstName,
-      lastName: lastName,
-      password: hashedPassword,
-    });
-    await user.save();
-    res.status(201).json(user);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-};
+// RESET
+// exports.resetLoginAttempts = async (req, res) => {
+//   try {
+//     const { login, password } = req.body; // Use req.body to get data from POST request
+//     const hashedPassword = await bcrypt.hash(password, 10);
+//     const user = new User({
+//       login: login,
+//       firstName: firstName,
+//       lastName: lastName,
+//       password: hashedPassword,
+//     });
+//     await user.save();
+//     res.status(201).json(user);
+//   } catch (err) {
+//     res.status(400).json({ error: err.message });
+//   }
+// };
 
 
 
