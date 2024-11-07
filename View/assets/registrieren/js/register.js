@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     submit.addEventListener('click', async () => {
         const errorParagraph = error.querySelector('p');
         const hashedPassword = CryptoJS.SHA256(password).toString();
+
+        if (!validateEmail(login.value)) {
+            alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+            return;
+        }
+
         try {
             const response = await fetch(`http://localhost:5000/api/posts/register?login=${login.value}&hashedPassword=${hashedPassword}&lastName=${lastName}&firstName=${firstName}`, {
                 method: 'POST',
@@ -62,6 +68,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function emptyCookie(name) {
         document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+
+    function validateEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
     }
 
 })

@@ -18,6 +18,8 @@ router.get('/getCarById', blogController.getCarById);
 
 //Email User validation
 
+router.get('/checkVerification', blogController.checkVerification);
+
 router.post('/sendValidationEmail', blogController.sendValidationEmail);
 
 router.get('/validateUser', blogController.validateUser);

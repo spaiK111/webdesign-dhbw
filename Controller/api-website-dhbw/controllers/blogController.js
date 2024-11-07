@@ -239,6 +239,8 @@ exports.resetLoginAttempts = async (req, res) => {
   }
 };
 
+
+
 exports.validateUser = async (req, res) => {
   try {
       const { email } = req.query;
@@ -365,6 +367,16 @@ exports.checkRestriction = async (req, res) => {
     const { login } = req.query;
     const user = await User.findOne({ login: login });
     res.json({ restricted: user.restricted });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+exports.checkVerification = async (req, res) => {
+  try {
+    const { login } = req.query;
+    const user = await User.findOne({ login: login });
+    res.json({ verified: user.verified });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
