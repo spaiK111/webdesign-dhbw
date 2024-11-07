@@ -51,6 +51,7 @@ if ($uid) {
         <link rel="stylesheet" href="assets/preset/css/style.css">
         <link rel="stylesheet" href="assets/preset/css/test.css">
         <link rel="stylesheet" href="assets/preset/css/slider.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
       </head>
       <body>
@@ -282,7 +283,37 @@ if ($uid) {
                         <div class="card-auto_used-interact flex-block">
                             <a class="interact_link-download flex-block semibold">
                                 <img src="assets/preset/images/download-folder.svg" alt="">
-                                <span>Auto Daten download</span>
+                                <span id="download-pdf">Auto Daten download</span>
+
+                                <script>
+                                    document.getElementById('download-pdf').addEventListener('click', () => {
+                                    const { jsPDF } = window.jspdf;
+                                    const doc = new jsPDF();
+
+                                    // Wähle den Abschnitt aus, der in das PDF aufgenommen werden soll
+                                    const section = document.querySelector('.white.section-first');
+
+                                    // Füge den Inhalt des Abschnitts zum PDF hinzu
+                                    let y = 10;
+                                    doc.setFontSize(16);
+                                    doc.setTextColor(0, 0, 255);
+                                    doc.text('Auto Daten', 10, y);
+                                    y += 10;
+
+                                    doc.setFontSize(12);
+                                    doc.setTextColor(0, 0, 0);
+                                    const lines = section.innerText.split('\n');
+                                    lines.forEach(line => {
+                                        doc.text(line.trim(), 10, y);
+                                        y += 10;
+                                    });
+
+                                    // Speichere das PDF
+                                    doc.save('auto_daten.pdf');
+                                    })
+                                </script>
+
+
                             </a>
                         </div>
                         <div class="card-auto_used-price">
