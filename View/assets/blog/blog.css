@@ -403,7 +403,15 @@ form {
   font-size: clamp(1rem, 2vw + 1rem, 3rem);
 }
 
+.blog-topcontent-latestBlog-item a {
+  text-decoration: none;
+}
+
 /*TOPBLOG TOPCONTENT*/
+
+.blog-topcontent-topBlog-item a {
+  text-decoration: none;
+}
 
 .blog-topcontent-topBlog {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

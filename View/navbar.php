@@ -47,9 +47,9 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
             <a href="admin.php"> Admin </a>
           <?php endif; ?>
           <?php if (isset($data)): ?>
-            <a style="color: green">Logged In</a>
+            <a style="color: green">Eingeloggt</a>
           <?php else: ?>
-            <a style="color: red">Not Logged In</a>
+            <a style="color: red">Nicht eingeloggt</a>
           <?php endif; ?>
           <!-- Entweder separate Kontakt-Seite oder Diret-Link zu Email? -->
           <?php if (basename($_SERVER['PHP_SELF']) == 'blog.php' && isset($data)): ?>
