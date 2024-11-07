@@ -27,13 +27,13 @@
           <input type="password" placeholder="Passwort" required id="password">
           <i class='bx bxs-lock-alt' ></i>
         </div>
-        <div class="remember-forgot">
-          <label><input type="checkbox">Eingeloggt bleiben</label>
+         <div class="remember-forgot">
+       <!--    <label><input type="checkbox">Eingeloggt bleiben</label> -->
           <a href="#">Passwort vergessen</a>
         </div>
         <button type="button" class="btn" id="submit">Login</button>
         <div class="register-link">
-          <p>Haben Sie noch keinen Account? <a href="#">Registrieren</a></p>
+          <p>Haben Sie noch keinen Account? <a href="/registrieren-old.php">Jetzt registrieren</a></p>
         </div>
       </form>
     </div>
