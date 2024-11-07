@@ -49,7 +49,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
       $blog3 = $data[3];
       $blog4 = $data[4];
       $blog5 = $data[5];
-      $blog5 = $data[6];
+      $blog6 = $data[6];
     }
     else {
       echo "blogs not found";
@@ -163,6 +163,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
             <div class="blog-topcontent-latestBlog-item">
             <?php if (isset($blog2)): ?>
+              <div class ="blog-topcontent-latestBlog-item-heading">
                   <h2><?php echo htmlspecialchars($blog2['heading']); ?></h2>
               </div>
 
@@ -181,8 +182,9 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
             <div class="blog-topcontent-latestBlog-item">
               <?php if (isset($blog3)): ?>
+                <div class= blog-topcontent-latestBlog-item-heading>
                   <h2><?php echo htmlspecialchars($blog3['heading']); ?></h2>
-              </div>
+                </div>
 
               <div class="blog-topcontent-latestBlog-item-paragraph">
                 <p><?php echo htmlspecialchars($blog3['short_dsc']); ?></p>
@@ -237,6 +239,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
                 <img src="<?php echo htmlspecialchars($blog5['image']); ?>">
               </div>
               <?php if (isset($blog5)): ?>
+              <div class="blog-gallery-text-title">
                 <h2><?php echo htmlspecialchars($blog5['heading']); ?></h2>
               </div>
               <div class="blog-gallery-text">
@@ -251,6 +254,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
                 <a href="/View/blog-page.php?_id=<?php echo urlencode($blog6["_id"]); ?>">
                 <img src="<?php echo htmlspecialchars($blog6['image']); ?>">
               </div>
+              <div class="blog-gallery-text-title">
                 <h2><?php echo htmlspecialchars($blog6['heading']); ?></h2>
               </div>
               <div class="blog-gallery-text">

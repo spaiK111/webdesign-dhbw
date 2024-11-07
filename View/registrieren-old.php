@@ -19,7 +19,7 @@
     <form action="">
       <h1>Registrieren</h1>
       <div class="input-box">
-        <input type="text" placeholder="Username" id="login" required>
+        <input type="text" placeholder="Emai-Adresse" id="login" required>
         <i class='bx bxs-user'></i>
       </div>
       <div class="input-box">

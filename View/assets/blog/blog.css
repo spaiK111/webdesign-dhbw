@@ -373,6 +373,7 @@ form {
   filter: brightness(0.7);
   transition: transform 0.4s ease;
   z-index: 1;
+  overflow: hidden;
 }
 
 .blog-topcontent-latestBlog-item-image img {
@@ -792,4 +793,3 @@ form {
   background-repeat: no-repeat;
   object-fit: cover;
 }
-

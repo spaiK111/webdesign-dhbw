@@ -1,26 +1,23 @@
 # Verwende die Node.js-Version 20.18.0
 FROM node:latest
 
-# Setze die Umgebungsvariable
-ENV NODE_ENV production
 
 # Arbeitsverzeichnis erstellen
 WORKDIR /usr/src/app
 
-# Kopiere die package.json und package-lock.json
-COPY Controller/api-website-dhbw/package.json Controller/api-website-dhbw/package-lock.json ./
+
 
 # Installiere die Abhängigkeiten
-RUN npm ci --omit=dev
+COPY package*.json ./
+COPY . . 
 
-# Führe die Anwendung als nicht-root-Benutzer aus
-USER node
+RUN npm install
 
 # Kopiere den Rest der Quellcodes ins Image
-COPY /Controller/api-website-dhbw .
+COPY . .
 
 # Exponiere den Port
-EXPOSE 5000
+EXPOSE 5500
 
 # Starte die Anwendung
-CMD ["npm", "start"]
+CMD ["npm" , "start"]

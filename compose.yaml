@@ -2,22 +2,30 @@ services:
   db:
     image: mongo:latest # Verwende die neueste Version von MongoDB
     container_name: mongodb-container
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: dhbw-stuttgart-2023 # Root-Benutzername für MongoDB
-      MONGO_INITDB_ROOT_PASSWORD: NiBEr650294_X # Root-Passwort für MongoDB
-    #volumes: ./api/db/data:/data/db # Mount-Pfad für MongoDB-Daten
+    #environment:
+    #MONGO_INITDB_ROOT_USERNAME: dhbw-stuttgart-2023 # Root-Benutzername für MongoDB
+    #MONGO_INITDB_ROOT_PASSWORD: NiBEr650294_X # Root-Passwort für MongoDB
+    volumes:
+      - database:/data/db # Mount-Pfad für MongoDB-Daten
     restart: always
+    ports:
+      - 27017:27017
     networks:
       - website-network
 
   api:
-    image: controller-image-test
+    build:
+      context: ./Controller/api-website-dhbw/
+      dockerfile: Dockerfile
     container_name: node-container
     restart: always
+    #environment:
+    #- MONGODB_URI="mongodb+srv://dhbw-stuttgart-2023:NiBEr650294_X@carblog.th2xj.mongodb.net/"
+
     volumes:
       - ./Controller/api-website-dhbw:/home/node/app
     ports:
-      - "5000:5000"
+      - "5500:5500"
 
     depends_on:
       - db
@@ -41,3 +49,6 @@ services:
 networks:
   website-network:
     driver: bridge
+
+volumes:
+  database:
