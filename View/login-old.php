@@ -20,7 +20,7 @@
       <form action="">
         <h1>Login</h1>
         <div class="input-box">
-          <input type="text" placeholder="Username" required id="login">
+          <input type="text" placeholder="E-Mail" required id="login">
           <i class='bx bxs-user'></i>
         </div>
         <div class="input-box">
