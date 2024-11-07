@@ -392,7 +392,7 @@ form {
   padding-left: 20px;
   z-index: 2;
   color: rgba(255, 255, 255, 0.647);
-  font-size: clamp(1rem, 4vw + 1rem, 3rem);
+  font-size: clamp(1rem, 4vw + 1rem, 2rem);
 }
 
 .blog-topcontent-latestBlog-item-paragraph p {
@@ -400,7 +400,7 @@ form {
   padding-left: 20px;
   z-index: 2;
   color: rgba(255, 255, 255, 0.647);
-  font-size: clamp(1rem, 2vw + 1rem, 3rem);
+  font-size: clamp(0.8rem, 2vw + 1rem, 1rem);
 }
 
 .blog-topcontent-latestBlog-item a {
@@ -655,6 +655,11 @@ form {
     "c c a a";
 }
 
+.blog-gallery-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .blog-gallery-item-reverse {
   border-radius: 10px;
   overflow: hidden;
@@ -666,6 +671,11 @@ form {
   grid-template-areas:
     "a a b b "
     "a a c c";
+}
+
+.blog-gallery-item-reverse a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .blog-gallery-item img {
@@ -690,18 +700,29 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: clamp(1.25rem, 2vw + 1rem, 2.5rem);
+  font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
+  padding: 20px;
+  color: #000000;
+
   grid-area: b;
 }
 
+.blog-gallery-text-title h2:hover {
+  color: rgb(0, 0, 0, 0.5);
+}
 .blog-gallery-text {
+  color: #000000;
   grid-area: c;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-size: clamp(0.5rem, 1vw + 1rem, 1.5rem);
+  font-size: clamp(0.5rem, 1vw + 1rem, 1.25rem);
+}
+
+.blog-gallery-text p:hover {
+  color: rgb(0, 0, 0, 0.5);
 }
 
 .blog-gallery-item:hover .blog-gallery-image img {
