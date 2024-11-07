@@ -19,11 +19,8 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
     // Antwort in ein Array umwandeln
     $data = json_decode($response, true);
-    if ($data) {
-      echo "login successful";
-	}
-	else {
-		echo "Nicht eingeloggt";
+    if (!$data) {
+      echo "Nicht eingeloggt";
 	}
 
   $apiUrl2 = "http://localhost:5000/api/posts/getBlogs";
@@ -40,7 +37,6 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
     // Antwort in ein Array umwandeln
     $data_blogs = json_decode($blogs, true);
     if ($data_blogs) {
-      echo "blogs found";
       $topBlog = $data_blogs[0];
       $blog1 = $data_blogs[1];
       $blog2 = $data_blogs[2];
@@ -305,7 +301,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
     <?php if ($data_blogs && count($data_blogs) > 6): ?>
         <?php for ($i = 6; $i < count($data_blogs); $i++): ?>
             <?php if (isset($data_blogs[$i]['_id'], $data_blogs[$i]['image'], $data_blogs[$i]['heading'], $data_blogs[$i]['short_dsc'])): ?>
-                <div class="blog-item" href="/View/blog-page.php?_id=<?php echo urlencode($data_blogs[$i]['_id']); ?>" style="background-image: url('<?php echo htmlspecialchars($dadata_blogsta[$i]['image']); ?>'); object-fit: cover">
+                <div class="blog-item" href="/View/blog-page.php?_id=<?php echo urlencode($data_blogs[$i]['_id']); ?>" style="background-image: url('<?php echo $data_blogs[$i]['image'] ?>'); object-fit: cover">
                     <h3><?php echo htmlspecialchars($data_blogs[$i]['heading']); ?></h3>
                     <p><?php echo htmlspecialchars($data_blogs[$i]['short_dsc']); ?></p>
                 </div>
