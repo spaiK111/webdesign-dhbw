@@ -68,6 +68,29 @@
     <createdAt>1731019478</createdAt>
     <author>Login_user</author>
   </Entry> 
+<Entry>
+    <uid>323232_3232322</uid>
+    <hsn>323232</hsn>
+    <tsn>323232</tsn>
+    <make>Audi</make>
+    <model>A4</model>
+    <year>2020</year>
+    <kw>110</kw>
+    <category>Kombi</category>
+    <engine>2.0 TDI</engine>
+    <fuelType>Diesel</fuelType>
+    <hubraum>1968</hubraum>
+    <co2Wert>130</co2Wert>
+    <antriebsart>Automatik</antriebsart>
+    <backVolumen>5</backVolumen>
+    <maxSpeed>220</maxSpeed>
+    <image_1>https://www.automotiveit.eu/assets/images/a/Audi-A4-2020-15-fcfd23bf.jpg</image_1>
+    <image_2>https://eurotarget.com/foto/ETBN_Offerte/1132745/1132745_0_800x0.jpeg?lm=1698666455</image_2>
+    <image_3>https://udenhout.nl/_cache/_public/37986880-1_YXJfMTI4MHg3MjBfZF8xX2pwZ18vX2Fzc2V0L19wcml2YXRlL2Nhci8xMzA_0adc2d18.webpg</image_3>
+    <image_4>https://cache.willhaben.at/mmo/7/146/994/7977_1730406525.jpg</image_4>
+    <createdAt>1731019478</createdAt>
+    <author>Login_user</author>
+  </Entry> 
 
   <Entry>
     <uid>12398239727_893723</uid> 

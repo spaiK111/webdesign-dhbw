@@ -73,12 +73,6 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
             
             <select class="search-selection" id="make">
               <option selected value =""> Beliebig </option>
-              <!--Hier PHP-->
-              <optgroup label = "Top-Marken">
-              <?php
-                $top = true;
-                include "assets/home/php/createDynamicOptions.php";
-              ?> 
               </optgroup>
               <optgroup label = "Alle Marken">
               <?php include "assets/home/php/createDynamicOptions.php"; ?>
@@ -115,9 +109,9 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
 
         <div class="search-container-item" id ="search-container-leistungsbereich">
-    <label>Leistungsbereich</label>
+    <label>Leistungsbereich (KW)</label>
     <div class="search-selection-item" id ="leistungsbereich-selection" >
-        <input class="search-selection" list="leistungsbereich1" id="ps1" name="ps1" placeholder="Beliebig" />
+        <input class="search-selection" list="leistungsbereich1" id="ps1" name="ps1" placeholder="Beliebig" type="number" />
         <datalist id="leistungsbereich1">
             <option value="20"></option>
             <option value="40"></option>
@@ -129,7 +123,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
         <span class="search-selection-span">bis</span>
 
-        <input class="search-selection" list="leistungsbereich2" id="ps2" name="ps2" placeholder="Beliebig" />
+        <input class="search-selection" list="leistungsbereich2" id="ps2" name="ps2" placeholder="Beliebig"  type="number" />
         <datalist id="leistungsbereich2">
             <option value="140"></option>
             <option value="160"></option>
@@ -155,19 +149,19 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
               <option selected value =""> Beliebig </option>
               
                 
-              <option value="red">Limousine</option>
-              <option value="orange">Kombi</option>
-              <option value="yellow">SUV </option>
-              <option value="green">Coupe</option>
-              <option value="blue">Cabriolet</option>
-              <option value="indigo">Roadster</option>
-              <option value="violet">Sportwagen </option>
-              <option value="purple">Minivan</option>
-              <option value="pink">Pick Up</option>
-              <option value="brown">Kompaktwagen</option>
-              <option value="black">Kleinwagen</option>
-              <option value="white">Crossover</option>
-              <option value="gray">Van</option>
+              <option value="Limousine">Limousine</option>
+              <option value="Kombi">Kombi</option>
+              <option value="SUV">SUV </option>
+              <option value="Coupe">Coupe</option>
+              <option value="Cabriolet">Cabriolet</option>
+              <option value="Roadster">Roadster</option>
+              <option value="Sportwagen">Sportwagen </option>
+              <option value="Minivan">Minivan</option>
+              <option value="Pick Up">Pick Up</option>
+              <option value="Kompaktwagen">Kompaktwagen</option>
+              <option value="Kleinwagen">Kleinwagen</option>
+              <option value="Crossover">Crossover</option>
+              <option value="Van">Van</option>
               
             </select>
             <div class ="search-box">
@@ -183,16 +177,16 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
           <div class="search-selection-item">
             <select class="search-selection" id="fueltype">
               <option selected value =""> Beliebig </option>
-              <option value="gasoline">Benzin</option>
-              <option value="diesel">Diesel</option>
-              <option value="electric">Elektrisch</option>
-              <option value="hybrid">Hybrid</option>
-              <option value="plug-in-hybrid">Plug-in-Hybrid</option>
-              <option value="natural-gas">Erdgas (CNG)</option>
-              <option value="propane">Flüssiggas (LPG)</option>
-              <option value="biofuel">Biokraftstoff</option>
-              <option value="ethanol">Ethanol (E85)</option>
-              <option value="hydrogen">Wasserstoff-Brennstoffzelle</option>
+              <option value="Benzin">Benzin</option>
+              <option value="Diesel">Diesel</option>
+              <option value="Elektrisch">Elektrisch</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="Plug-in-Hybrid">Plug-in-Hybrid</option>
+              <option value="Erdgas (CNG)">Erdgas (CNG)</option>
+              <option value="Flüssiggas (LPG)">Flüssiggas (LPG)</option>
+              <option value="Biokraftstoff">Biokraftstoff</option>
+              <option value="Ethanol (E85)">Ethanol (E85)</option>
+              <option value="Wasserstoff-Brennstoffzelle">Wasserstoff-Brennstoffzelle</option>
             </select>
             <div class ="search-box">
               <svg   version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="292.362px" height="292.362px" viewBox="0 0 292.362 292.362">
@@ -253,7 +247,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
         <div class="search-container-item" id="hsn-container-item">
           <label>Herstellerschlüsselnummer (HSN)</label>
           <div class="search-selection-item">
-            <input type="text" class="search-selection" placeholder="Bitte angeben" id="hsn-input">
+            <input type="number" class="search-selection" placeholder="Bitte angeben" id="hsn-input">
           </div>
         </div>
 
