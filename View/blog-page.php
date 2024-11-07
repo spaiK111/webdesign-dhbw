@@ -26,6 +26,10 @@ $apiUrl = "http://localhost:5000/api/posts/getBlogById/?_id=$_id";
     $data = json_decode($response, true);
     $likes = count($data['likes']);
     $isLiked = in_array($login, $data['likes']);
+    $heading = $data['heading'];
+    $short_dsc = $data['short_dsc'];
+    $long_dsc = $data['long_dsc'];
+    $image = $data['image'];
 
     if ($data) {
         echo "blog found";
@@ -58,20 +62,17 @@ $apiUrl = "http://localhost:5000/api/posts/getBlogById/?_id=$_id";
             <!--Image Part-->
             <div class= "blog-page-image">
                 <?php if (isset($data)): ?>
-                <img src="<?php echo htmlspecialchars($data['image']); ?>"
-                
+                <img src="<?php echo $image ?>">
             </div>
             <!--Text Part-->
             <div class ="blog-page-text-container">
 
                 <div class="blog-page-heading">
-                    <h2><?php echo htmlspecialchars($data['heading']); ?></h2>
-                    <h2>lol</h2>
-                    
+                    <h2><?php echo $heading ?></h2>
                 </div>
 
                 <div class="blog-page-short-description">
-                    <span><?php echo htmlspecialchars($data['short_dsc']); ?></span>
+                    <span><?php echo $short_dsc ?></span>
                     <div class="blog-like-button">
                         <div class="like-button">
                             <input class="on" id="heart" type="checkbox" <?php echo $isLiked ? 'checked' : ''; ?>>
@@ -96,7 +97,7 @@ $apiUrl = "http://localhost:5000/api/posts/getBlogById/?_id=$_id";
                 </div>
 
                 <div class="blog-page-long-description">
-                    <p><?php echo htmlspecialchars($data['long_dsc']); ?></div>
+                    <p><?php echo $long_dsc ?></div>
             <?php endif; ?>
             </div>
 

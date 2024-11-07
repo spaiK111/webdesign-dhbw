@@ -19,7 +19,7 @@
     <form action="">
       <h1>Registrieren</h1>
       <div class="input-box">
-        <input type="text" placeholder="Emai-Adresse" id="login" required>
+        <input type="text" placeholder="E-Mail" id="login" required>
         <i class='bx bxs-user'></i>
       </div>
       <div class="input-box">
@@ -30,10 +30,13 @@
         <input type="text" placeholder="Nachname" id="lastName" required>
         <i class='bx bxs-lock-alt' ></i>
       </div>
-      <div class="input-box">
-        <input type="password" placeholder="Password" id="password" required>
+      <div class="input-box"> 
+        <input type="password" placeholder="Passwort" id="password" required>
         <i class='bx bxs-lock-alt' ></i>
       </div>
+      <div class="register-link">
+          <p>Sie haben bereits einen Account? <a href="/login-old.php">Jetzt anmelden</a></p>
+        </div>
       <button type="button" id="submit" class="btn">Registrieren</button>
     </form>
   </div>

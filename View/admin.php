@@ -24,7 +24,6 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
     if ($data) {	
 		$firstName = $data['firstName'];
 		$lastName = $data['lastName'];
-		echo "login successful";
 	}
 	else {
 		echo "Bad Request";
@@ -189,19 +188,19 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 			<!-- Neue Eingabefelder -->
 	<div class="input-fields">
         <div class="input-group small-input">
-            <label for="brand">Heading</label>
+            <label class="input-field-txt" for="brand">Heading</label>
             <input type="text" id="entry-heading" name="brand" class="small-input">
         </div>
         <div class="input-group  small-input">
-            <label for="year">Kurzbeschreibung</label>
+            <label class="input-field-txt" for="year">Kurzbeschreibung</label>
             <input type="text" id="entry-short-dsc" name="year">
         </div>
         <div class="input-group large-input">
-            <label for="link">Großbeschreibung</label>
+            <label class="input-field-txt" for="link">Großbeschreibung</label>
             <input type="text" class="large-input" id="entry-long-dsc" name="entry-long-dsc">
         </div>
 		<div class="input-group small-input">
-            <label for="brand">Hauptbild</label>
+            <label class="input-field-txt" for="brand">Hauptbild</label>
             <input type="text" id="entry-main-image" name="brand" class="small-input">
         </div>
 		<div class="btn-group">
@@ -213,25 +212,25 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
     </div>
 
-			<div class = "input-blog" style="display: none; padding: 20px; border: 1px solid #ccc;" id="new-blog-new">
+			<div class = "input-blog" style="display: none; padding: 20px;" id="new-blog-new">
 
-				<h2>Geben Sie die IDs ein</h2>
+				<h2 class="input-field-txt" >Geben Sie die IDs ein</h2>
 
-				<p><strong>HSN: </strong> <input class="input" value="2345622" type="number" id="entry-hsn"></p>
+				<p class="input-field-txt"><strong>HSN: </strong> <input class="input" value="2345622" type="number" id="entry-hsn"></p>
 
-				<p><strong>TSN: </strong> <input class="input" value="6543223" type="number" id="entry-tsn"></p>
+				<p class="input-field-txt"><strong>TSN: </strong> <input class="input" value="6543223" type="number" id="entry-tsn"></p>
 
-				<h2>Weitere Daten</h2>
+				<h2 class="input-field-txt">Weitere Daten</h2>
 
-				<p><strong>Make: </strong> <textarea class="textarea resize-ta" id="entry-make-area">BMW</textarea></p>
+				<p class="input-field-txt"><strong>Make: </strong> <textarea class="textarea resize-ta" id="entry-make-area">BMW</textarea></p>
 
-				<p><strong>Model: </strong> <textarea class="textarea resize-ta" id="entry-model-area">318i</textarea></p>
+				<p class="input-field-txt"><strong>Model: </strong> <textarea class="textarea resize-ta" id="entry-model-area">318i</textarea></p>
 
-				<p><strong>Jahr: </strong> <textarea class="textarea resize-ta" id="entry-year-area">2014</textarea></p>
+				<p class="input-field-txt"><strong>Jahr: </strong> <textarea class="textarea resize-ta" id="entry-year-area">2014</textarea></p>
 
-				<p><strong>KW: </strong> <textarea class="textarea resize-ta" id="entry-kw-area">147</textarea></p>
+				<p class="input-field-txt"><strong>KW: </strong> <textarea class="textarea resize-ta" id="entry-kw-area">147</textarea></p>
 
-				<p><strong>Kategorie: </strong>
+				<p class="input-field-txt"><strong>Kategorie: </strong>
 					<select class="textarea resize-ta" id="entry-category">
 						<option value="Limousine" default>Limousine</option>
 						<option value="Kombi">Kombi</option>
@@ -239,9 +238,9 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 					</select>
 				</p>
 
-				<p><strong>Engine: </strong> <textarea class="textarea resize-ta" id="entry-engine">1.9TFSI</textarea></p>
+				<p class="input-field-txt"><strong>Engine: </strong> <textarea class="textarea resize-ta" id="entry-engine">1.9TFSI</textarea></p>
 
-				<p><strong>Kraftstoffart: </strong>
+				<p class="input-field-txt"><strong>Kraftstoffart: </strong>
 					<select class="textarea resize-ta" id="entry-fueltype">
 						<option value="Benzin" default>Benzin</option>
 						<option value="Diesel">Diesel</option>
@@ -249,11 +248,11 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 					</select>
 				</p>
 
-				<p><strong>Hubraum: </strong> <textarea class="textarea resize-ta" id="entry-hubraum-area">1993</textarea></p>
+				<p class="input-field-txt"><strong>Hubraum: </strong> <textarea class="textarea resize-ta" id="entry-hubraum-area">1993</textarea></p>
 				
-				<p><strong>CO2-Emission: </strong> <textarea class="textarea resize-ta" id="entry-co2-area">120</textarea></p>
+				<p class="input-field-txt"><strong>CO2-Emission: </strong> <textarea class="textarea resize-ta" id="entry-co2-area">120</textarea></p>
 
-				<p><strong>Antriebsart: </strong>
+				<p class="input-field-txt"><strong>Antriebsart: </strong>
 					<select class="textarea resize-ta" id="entry-antrieb">
 						<option value="Manuell" default>Manuell</option>
 						<option value="Automatik">Automatik</option>
@@ -261,17 +260,17 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 				</p>
 
 
-				<p><strong>Kofferraumvolumen: </strong> <textarea class="textarea resize-ta" id="entry-backVolumen-area">3</textarea></p>
+				<p class="input-field-txt"><strong>Kofferraumvolumen: </strong> <textarea class="textarea resize-ta" id="entry-backVolumen-area">3</textarea></p>
 
-				<p><strong>Maximale Geschwindigkeit (km/h): </strong> <textarea class="textarea resize-ta" id="entry-maxSpeed-area">260</textarea></p>
+				<p class="input-field-txt"><strong>Maximale Geschwindigkeit (km/h): </strong> <textarea class="textarea resize-ta" id="entry-maxSpeed-area">260</textarea></p>
 
-				<p><strong>Image (1): </strong> <textarea class="textarea resize-ta" id="entry-image1">https://media.istockphoto.com/id/1435226078/photo/front-of-a-white-bmw-m4-parked-on-a-street-with-trees-in-the-background.jpg?s=612x612&w=0&k=20&c=l1IupUrh-_Zbcse-hDkaUAh-qMD82hJspXjnN0IBZlg=</textarea></p>
+				<p class="input-field-txt"><strong>Image (1): </strong> <textarea class="textarea resize-ta" id="entry-image1">https://media.istockphoto.com/id/1435226078/photo/front-of-a-white-bmw-m4-parked-on-a-street-with-trees-in-the-background.jpg?s=612x612&w=0&k=20&c=l1IupUrh-_Zbcse-hDkaUAh-qMD82hJspXjnN0IBZlg=</textarea></p>
 
-				<p><strong>Image (2): </strong> <textarea class="textarea resize-ta" id="entry-image2">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgy3Vihtm_EdW3klYnE0IsHeMwpRMnHJGmng&s</textarea></p>
+				<p class="input-field-txt"><strong>Image (2): </strong> <textarea class="textarea resize-ta" id="entry-image2">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgy3Vihtm_EdW3klYnE0IsHeMwpRMnHJGmng&s</textarea></p>
 
-				<p><strong>Image (3): </strong> <textarea class="textarea resize-ta" id="entry-image3">https://imgd.aeplcdn.com/370x208/n/cw/ec/132513/7-series-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80</textarea></p>
+				<p class="input-field-txt"><strong>Image (3): </strong> <textarea class="textarea resize-ta" id="entry-image3">https://imgd.aeplcdn.com/370x208/n/cw/ec/132513/7-series-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80</textarea></p>
 
-				<p><strong>Image (4): </strong> <textarea class="textarea resize-ta" id="entry-image4">https://t4.ftcdn.net/jpg/04/20/38/41/360_F_420384111_5fzxWlWxvB7bg5BROxfKdBbgBYB2TwGP.jpg</textarea></p>
+				<p class="input-field-txt"><strong>Image (4): </strong> <textarea class="textarea resize-ta" id="entry-image4">https://t4.ftcdn.net/jpg/04/20/38/41/360_F_420384111_5fzxWlWxvB7bg5BROxfKdBbgBYB2TwGP.jpg</textarea></p>
 
 				<button class="btn" id="add_blog_default" style="margin-top: 20px">Hinzufügen</button>
 
@@ -279,7 +278,6 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
 			<!-- Statistic --> 
 			<div class="statistics" style="display:none;">
-				<h2>Statistik</h2>
 				<canvas id="statisticsChart" width="800px" height="400px"></canvas>
 			</div>
 
