@@ -15,10 +15,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log('Selected value:', hsn, tsn);
 
         if(validated){
-            const uid = `${hsn +"_"+ tsn}`;
+            const uid = `${hsn +"_"+tsn}`;
             try{
-                const response = fetch(`http://localhost:5000/api/posts/getPostById/?uid=${uid}`)
+                const response = fetch(`http://localhost:5000/api/posts/getCarByUid/?uid=${uid}`)
                 const post = await response.json();
+                console.log(post)
                 if(!post) {
                     alert(`Die Seite mit der UID ${uid} konnte nicht gefunden werden`);
                     return;

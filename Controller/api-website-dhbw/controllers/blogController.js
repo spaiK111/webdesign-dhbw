@@ -348,6 +348,17 @@ exports.getCarById = async (req, res) => {
   }
 };
 
+exports.getCarByUid = async (req, res) => {
+  try {
+    const { uid } = req.query;
+    const blog = await BlogPost.findOne({uid: uid});
+    console.log(blog);
+    res.status(200).json(blog);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
 exports.getBlogById = async (req, res) => {
   try {
     const { _id } = req.query;
@@ -523,7 +534,7 @@ exports.getPostsPerPage = async (req, res) => {
 exports.getPostById = async (req, res) => {
   try {
     const { uid } = req.query;
-    const post = await BlogPost.findOne({ uid: uid });
+    const post = await BlogPost.findById(uid);
     console.log(post);
     if (!post) {
       return res.status(404).json({ error: "Post nicht gefunden" });

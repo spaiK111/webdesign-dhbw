@@ -30,6 +30,8 @@ router.get('/getStats', blogController.getStats);
 // Hole alle Blogposts
 router.get('/', blogController.getAllPosts);
 
+router.get('/getCarByUid', blogController.getCarByUid);
+
 router.get('/makeOptions', blogController.getMakeOptions);
 
 router.post('/restrictUser', blogController.restrictUser)
@@ -70,6 +72,8 @@ router.put('/:id', blogController.updatePost);
 
 // Lösche einen Blogpost
 router.delete('/:id', blogController.deletePost);
+
+
 
 // Beispieldaten einfügen
 router.post('/seed', blogController.seedPosts);
