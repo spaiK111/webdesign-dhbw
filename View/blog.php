@@ -47,7 +47,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
       $blog3 = $data_blogs[3];
       $blog4 = $data_blogs[4];
       $blog5 = $data_blogs[5];
-      $blog5 = $data_blogs[6];
+      $blog6 = $data_blogs[6];
     }
     else {
       echo "blogs not found";
