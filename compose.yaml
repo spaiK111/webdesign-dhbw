@@ -5,8 +5,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: dhbw-stuttgart-2023 # Root-Benutzername für MongoDB
       MONGO_INITDB_ROOT_PASSWORD: NiBEr650294_X # Root-Passwort für MongoDB
-    #volumes:
-    #- ./api/db/data:/data/db # Mount-Pfad für MongoDB-Daten
+    #volumes: ./api/db/data:/data/db # Mount-Pfad für MongoDB-Daten
     restart: always
     networks:
       - website-network
