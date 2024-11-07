@@ -57,7 +57,7 @@ $apiUrl = "http://localhost:5000/api/posts/getBlogById/?_id=$_id";
         <div class="blog-page-container">
             <!--Image Part-->
             <div class= "blog-page-image">
-                <?php  if ($data): ?>
+                <?php if (isset($data)): ?>
                 <img src="<?php echo htmlspecialchars($data['image']); ?>"
                 
             </div>

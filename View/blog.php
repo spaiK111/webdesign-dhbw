@@ -115,11 +115,15 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
             </div>
 
             <div class="blog-topcontent-topBlog-item-heading">
+            <a href="/View/blog-page.php?_id=<?php echo urlencode($topBlog["_id"]); ?>">
                 <h2><?php echo htmlspecialchars($topBlog['heading']); ?></h2>
+            </a>
             </div>
 
             <div class="blog-topcontent-topBlog-item-paragraph">
+            <a href="/View/blog-page.php?_id=<?php echo urlencode($topBlog["_id"]); ?>">
               <p><?php echo htmlspecialchars(string: $topBlog['short_dsc']); ?></p>
+            </a>
             <?php endif; ?>
             </div>
           </div>
@@ -138,37 +142,46 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
 
             <div class="blog-topcontent-latestBlog-item">
-              <div class="blog-topcontent-latestBlog-item-heading">
               <?php if (isset($blog1)): ?>
-                  <h2><?php echo htmlspecialchars($blog1['heading']); ?></h2>
-              </div>
+                <div class="blog-topcontent-latestBlog-item-heading">
+                  <a href="/View/blog-page.php?_id=<?php echo urlencode($blog1["_id"]); ?>">
+                    <h2><?php echo htmlspecialchars($blog1['heading']); ?></h2>
+                  </a>
+                </div>
 
-              <div class="blog-topcontent-latestBlog-item-paragraph">
-                <p><?php echo htmlspecialchars($blog1['short_dsc']); ?></p>
-              <?php endif; ?>
-              </div>
+                <div class="blog-topcontent-latestBlog-item-paragraph">
+                  <a href="/View/blog-page.php?_id=<?php echo urlencode($blog1["_id"]); ?>">
+                    <p><?php echo htmlspecialchars($blog1['short_dsc']); ?></p>
+                  </a>
+                </div>
 
-              <div class="blog-topcontent-latestBlog-item-image">
-                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog1["_id"]); ?>"></a>
-                <img src="<?php echo htmlspecialchars($blog1['image']); ?>" /> 
-              </div> 
-              </div>
+                <div class="blog-topcontent-latestBlog-item-image">
+                  <a href="/View/blog-page.php?_id=<?php echo urlencode($blog1["_id"]); ?>">
+                  <img src="<?php echo htmlspecialchars($blog1['image']); ?>" /> 
+                  </a>
+                </div> 
+             <?php endif; ?>
+            </div>
 
 
               <div class="blog-topcontent-latestBlog-item">
               <?php if (isset($blog2)): ?>
               <div class ="blog-topcontent-latestBlog-item-heading">
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog2["_id"]); ?>">
                   <h2><?php echo htmlspecialchars($blog2['heading']); ?></h2>
+                </a>
               </div>
 
               <div class="blog-topcontent-latestBlog-item-paragraph">
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog2["_id"]); ?>">
                 <p><?php echo htmlspecialchars($blog2['short_dsc']); ?></p>
-             
+                </a>
               </div>
 
               <div class="blog-topcontent-latestBlog-item-image">
                 <a href="/View/blog-page.php?_id=<?php echo urlencode($blog2["_id"]); ?>"></a>
                 <img src="<?php echo htmlspecialchars($blog2['image']); ?>" /> 
+                </a>
               </div> 
               <?php endif; ?>
             </div>
@@ -177,19 +190,23 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
             <div class="blog-topcontent-latestBlog-item">
               <?php if (isset($blog3)): ?>
                 <div class= blog-topcontent-latestBlog-item-heading>
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog3["_id"]); ?>"> 
                   <h2><?php echo htmlspecialchars($blog3['heading']); ?></h2>
+                </a>
                 </div>
 
-              <div class="blog-topcontent-latestBlog-item-paragraph">
-                <p><?php echo htmlspecialchars($blog3['short_dsc']); ?></p>
-              
-              </div>
+                <div class="blog-topcontent-latestBlog-item-paragraph">
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog3["_id"]); ?>"> 
+                  <p><?php echo htmlspecialchars($blog3['short_dsc']); ?></p>
+                </a>
+                </div>
 
               <div class="blog-topcontent-latestBlog-item-image">
-                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog3["_id"]); ?>"></a>
+                <a href="/View/blog-page.php?_id=<?php echo urlencode($blog3["_id"]); ?>"> 
                  <img src="<?php echo htmlspecialchars($blog3['image']); ?>" /> 
-              <?php endif; ?>
+                </a>
               </div> 
+              <?php endif; ?>
             </div>
 
           </div>
