@@ -69,4 +69,76 @@
     <author>Login_user</author>
   </Entry> 
 
+  <Entry>
+    <uid>12398239727_893723</uid> 
+    <hsn>12398239727</hsn>
+    <tsn>8937239</tsn>
+    <make>Mercedes-Benz</make>
+    <model>C-Klasse</model>
+    <year>2023</year>
+    <kw>150</kw>
+    <category>Limousine</category>
+    <engine>2.0 Turbo</engine>
+    <fuelType>Benzin</fuelType>
+    <hubraum>1991</hubraum>
+    <co2Wert>110</co2Wert>
+    <antriebsart>Automatik</antriebsart>
+    <backVolumen>4</backVolumen>
+    <maxSpeed>240</maxSpeed>
+    <image_1>https://www.mercedes-benz.com/passengercars/mercedes-benz-cars/models/c-class/saloon-w206/explore/highlights/_jcr_content/image.MQ6.8.20211004155825.jpeg</image_1>
+    <image_2>https://cdn.motor1.com/images/mgl/6rOQO/s1/2022-mercedes-benz-c-class-sedan.jpg</image_2>
+    <image_3>https://www.autozeitung.de/assets/field/image/mercedes_c_klasse_t_modell_2021_heck_seitlich.jpg</image_3>
+    <image_4>https://www.carexpert.com.au/wp-content/uploads/2021/10/2022-Mercedes-Benz-C-Class-interior-dashboard.jpg</image_4>
+    <createdAt>1731019478</createdAt> 
+    <author>Login_user</author>
+  </Entry>
+
+  <Entry>
+    <uid>1234567_49384737</uid> 
+    <hsn>1234567</hsn>
+    <tsn>49384737</tsn>
+    <make>Mercedes-Benz</make>
+    <model>C-Klasse</model>
+    <year>2023</year>
+    <kw>150</kw>
+    <category>Limousine</category>
+    <engine>2.0 Turbo</engine>
+    <fuelType>Benzin</fuelType>
+    <hubraum>1991</hubraum>
+    <co2Wert>110</co2Wert>
+    <antriebsart>Automatik</antriebsart>
+    <backVolumen>4</backVolumen>
+    <maxSpeed>240</maxSpeed>
+    <image_1>https://www.mercedes-benz.com/passengercars/mercedes-benz-cars/models/c-class/saloon-w206/explore/highlights/_jcr_content/image.MQ6.8.20211004155825.jpeg</image_1>
+    <image_2>https://cdn.motor1.com/images/mgl/6rOQO/s1/2022-mercedes-benz-c-class-sedan.jpg</image_2>
+    <image_3>https://www.autozeitung.de/assets/field/image/mercedes_c_klasse_t_modell_2021_heck_seitlich.jpg</image_3>
+    <image_4>https://www.carexpert.com.au/wp-content/uploads/2021/10/2022-Mercedes-Benz-C-Class-interior-dashboard.jpg</image_4>
+    <createdAt>1731019478</createdAt> 
+    <author>Login_user</author>
+  </Entry>
+
+  <Entry>
+    <uid>987678263_OKOFJEBFEWU</uid> 
+    <hsn>987678263</hsn>
+    <tsn>OKOFJEBFEWU</tsn>
+    <make>Tesla</make>
+    <model>Model Y</model>
+    <year>2024</year>
+    <kw>335</kw> 
+    <category>SUV</category>
+    <engine>Elektromotor</engine>
+    <fuelType>Elektro</fuelType>
+    <hubraum>0</hubraum> 
+    <co2Wert>0</co2Wert> 
+    <antriebsart>Allrad</antriebsart>
+    <backVolumen>5</backVolumen>
+    <maxSpeed>217</maxSpeed>
+    <image_1>https://www.shop4tesla.com/cdn/shop/articles/tesla-model-y-bleibt-meistverkauftes-elektroauto-in-deutschland-2024-874608.jpg?v=1726029361</image_1> 
+    <image_2>https://cdn.motor1.com/images/mgl/vxo0bq/s1/tesla-model-y-in-new-midnight-cherry-red-and-quicksilver-paint-colors.jpg</image_2> 
+    <image_3>https://abo.miles-mobility.com/media/244/download/Tesla_Model_Y_diagonal_left.jpg?v=1</image_3> 
+    <image_4>https://www.ludego.com/wp-content/uploads/2024/09/3y.png</image_4> 
+    <createdAt>1731019478</createdAt> 
+    <author>Login_user</author>
+  </Entry>
+
 </root>
