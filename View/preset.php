@@ -3,7 +3,7 @@
 $uid = isset($_GET['uid']) ? $_GET['uid'] : null;
 if ($uid) {
     // API-URL mit der übergebenen ID
-    $apiUrl = "http://localhost:5000/api/posts/getCarByUid/?uid=$uid";
+    $apiUrl = "http://localhost:5000/api/posts/getCarById/?uid=$uid";
 
     // cURL initialisieren
     $ch = curl_init();
