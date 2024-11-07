@@ -15,7 +15,7 @@
         <a href = "#"><i class = "fab fa-instagram"></i></a>
         <a href = "#"><i class = "fab fa-pinterest"></i></a>
         </div>
-        <span>AutoInsider®</span>
+        <span>AutoInsider</span>
     </footer>
     
 </body>
