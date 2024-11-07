@@ -20,16 +20,16 @@
       <form action="">
         <h1>Login</h1>
         <div class="input-box">
-          <input type="text" placeholder="Username" required id="login">
+          <input type="text" placeholder="E-Mail" required id="login">
           <i class='bx bxs-user'></i>
         </div>
         <div class="input-box">
-          <input type="password" placeholder="Password" required id="password">
+          <input type="password" placeholder="Passwort" required id="password">
           <i class='bx bxs-lock-alt' ></i>
         </div>
         <div class="remember-forgot">
-          <label><input type="checkbox">Remember Me</label>
-          <a href="#">Password vergessen</a>
+          <label><input type="checkbox">Eingeloggt bleiben</label>
+          <a href="#">Passwort vergessen</a>
         </div>
         <button type="button" class="btn" id="submit">Login</button>
         <div class="register-link">

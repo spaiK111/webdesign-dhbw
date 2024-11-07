@@ -3,9 +3,7 @@
 $login = isset($_GET['login']) ? $_GET['login'] : (isset($_COOKIE['login']) ? $_COOKIE['login'] : '');
 $hashedPassword = isset($_GET['hashedPassword']) ? $_GET['hashedPassword'] : (isset($_COOKIE['password']) ? $_COOKIE['password'] : '');
 
-if (!$login || !$hashedPassword) {
-    die('Login und Passwort sind erforderlich.');
-}
+
 
 // Funktion zum Senden einer HTTPS-Anfrage
 $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassword=$hashedPassword";
@@ -25,7 +23,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
       echo "login successful";
 	}
 	else {
-		echo "Bad Request";
+		echo "Nicht eingeloggt";
 	}
 
   $apiUrl2 = "http://localhost:5000/api/posts/getBlogs";
@@ -40,16 +38,16 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
     curl_close($ch1);
 
     // Antwort in ein Array umwandeln
-    $data = json_decode($blogs, true);
-    if ($data) {
+    $data_blogs = json_decode($blogs, true);
+    if ($data_blogs) {
       echo "blogs found";
       $topBlog = $data[0];
-      $blog1 = $data[1];
-      $blog2 = $data[2];
-      $blog3 = $data[3];
-      $blog4 = $data[4];
-      $blog5 = $data[5];
-      $blog6 = $data[6];
+      $blog1 = $data_blogs[1];
+      $blog2 = $data_blogs[2];
+      $blog3 = $data_blogs[3];
+      $blog4 = $data_blogs[4];
+      $blog5 = $data_blogs[5];
+      $blog6 = $data_blogs[6];
     }
     else {
       echo "blogs not found";
@@ -304,17 +302,19 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
 
             <div class="blog-grid">
-            <?php if ($data && count($data) > 6): ?>
-            <?php for ($i = 6; $i < count($data); $i++): ?>
-                <div class="blog-item" href="/View/blog-page.php?_id=<?php echo urlencode($data["_id"]); ?>" style="background-image: url('<?php echo htmlspecialchars($data[$i]['image']); ?>'); object-fit: cover">
-                    <h3><?php echo htmlspecialchars($data[$i]['heading']); ?></h3>
-                    <p><?php echo htmlspecialchars($data[$i]['short_dsc']); ?></p>
+    <?php if ($data_blogs && count($data_blogs) > 6): ?>
+        <?php for ($i = 6; $i < count($data_blogs); $i++): ?>
+            <?php if (isset($data_blogs[$i]['_id'], $data_blogs[$i]['image'], $data_blogs[$i]['heading'], $data_blogs[$i]['short_dsc'])): ?>
+                <div class="blog-item" href="/View/blog-page.php?_id=<?php echo urlencode($data_blogs[$i]['_id']); ?>" style="background-image: url('<?php echo htmlspecialchars($dadata_blogsta[$i]['image']); ?>'); object-fit: cover">
+                    <h3><?php echo htmlspecialchars($data_blogs[$i]['heading']); ?></h3>
+                    <p><?php echo htmlspecialchars($data_blogs[$i]['short_dsc']); ?></p>
                 </div>
-            <?php endfor; ?>
-        <?php else: ?>
-            <p>Keine weiteren Blogeinträge gefunden.</p>
-        <?php endif; ?>
-            </div>
+            <?php endif; ?>
+        <?php endfor; ?>
+    <?php else: ?>
+        <p>Keine weiteren Blogeinträge gefunden.</p>
+    <?php endif; ?>
+</div>
 
           </div>
           
