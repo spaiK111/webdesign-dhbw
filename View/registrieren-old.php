@@ -30,7 +30,7 @@
         <input type="text" placeholder="Nachname" id="lastName" required>
         <i class='bx bxs-lock-alt' ></i>
       </div>
-      <div class="input-box">
+      <div class="input-box"> 
         <input type="password" placeholder="Passwort" id="password" required>
         <i class='bx bxs-lock-alt' ></i>
       </div>
