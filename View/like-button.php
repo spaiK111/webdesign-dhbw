@@ -24,7 +24,7 @@
         </svg>
         <span class="like-text">Likes</span>
         </label>
-        <span class="like-count "><?php echo htmlspecialchars($data['long_dsc']); ?></span>
+        <span class="like-count "><?php echo count($data['likes']);?></span>
         
     </div>
 
