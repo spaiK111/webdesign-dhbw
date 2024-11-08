@@ -23,29 +23,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     const submit = document.getElementById('filter-button')
     const error = document.getElementById('error')
 
+    const ff_Item = document.querySelector('.pagination2 li a.ff');
+    const bb_Item = document.querySelector('.pagination2 li a.bb');
+
 
     let pagination = 0;
 
     await paginationBuilder.buildPagination(pagination, makeValue);
     await paginationBuilder.changeActivePage();
     await carsBuilder.fetchBlogPosts(pagination, makeValue, modelValue, ps1Value,ps2Value, categoryValue, fueltypeValue)
-
-
-    var close = document.getElementsByClassName("closebtn");
-    var i;
-
-// Loop through all close buttons
-    for (i = 0; i < close.length; i++) {
-  // When someone clicks on a close button
-    close[i].onclick = function(){
-
-    // Get the parent of <span class="closebtn"> (<div class="alert">)
-    var div = this.parentElement;
-
-    // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
-    setTimeout(function(){ div.style.display = "none"; }, 200);
-        }
-    }   
 
     submit.addEventListener('click', async () => {
         const modelValue = model.value
@@ -65,9 +51,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     })
 
-
-
-
     const paginationItems = document.querySelectorAll('.pagination2 li a.page');
     
     paginationItems.forEach(item => {
@@ -83,8 +66,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             await carsBuilder.fetchBlogPosts(pagination, makeValue, modelValue, ps1Value,ps2Value, categoryValue, fueltypeValue)
         });
     });
-    const ff_Item = document.querySelector('.pagination2 li a.ff');
-    const bb_Item = document.querySelector('.pagination2 li a.bb');
+
     ff_Item.addEventListener('click', async () => {
         pagination = await paginationBuilder.getPagesCount() - 1;
 
