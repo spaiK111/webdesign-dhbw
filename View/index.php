@@ -199,7 +199,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
         <div class="search-container-item" id ="search-container-leistungsbereich">
           <label>Modelljahr</label>
           <div class="search-selection-item" id ="leistungsbereich-selection" >
-            <input class="search-selection" list="modelljahr1" id="ps1" name="ps1" placeholder="Beliebig" />
+            <input class="search-selection" list="modelljahr1" id="year1" name="year1" placeholder="Beliebig" type="number" disabled/>
             <datalist id="modelljahr1">
               <option value="2000"></option>
               <option value="2001"></option>
@@ -216,7 +216,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
             <span class="search-selection-span">bis</span>
 
-            <input class="search-selection" list="modelljahr2" id="ps2" name="ps2" placeholder="Beliebig" />
+            <input class="search-selection" list="modelljahr2" id="year2" name="year2" placeholder="Beliebig" type="number" disabled/>
             <datalist id="modelljahr2">
               <option value="2011"></option>
               <option value="2012"></option>

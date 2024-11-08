@@ -1,3 +1,5 @@
+const { validateFields } = require('../validateHsnTsn');
+
 document.addEventListener('DOMContentLoaded', async () => {
     const searchInputHsn = document.getElementById('hsn-input');
     const searchInputTsn = document.getElementById('tsn-input');
@@ -36,14 +38,3 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
 });
-
-async function validateFields(hsn, tsn) {
-
-    if(hsn < 0 || tsn < 0) {
-        alert('HSN und TSN dürfen nicht negativ sein');
-        return false;
-    }
-
-    return true;
-
-}
