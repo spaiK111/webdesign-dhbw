@@ -591,9 +591,27 @@ main {
 
 .input-field-txt {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   color: var(--dark);
+}
+
+.input-image-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin: 40px;
+  gap: 40px;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.input-field-txt strong {
+  font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
+.input-field-txt select {
+  height: 4vh;
 }
 
 .input-fields {
