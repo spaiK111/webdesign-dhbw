@@ -183,4 +183,28 @@
     <createdAt>1731028108383</createdAt>
     <author>Login_user</author>
   </Entry>
+
+  <Entry>
+    <uid>9876782632_OKOFJEBFEWUZ</uid>
+    <hsn>9876782632</hsn>
+    <tsn>OKOFJEBFEWUZ</tsn>
+    <make>Tesla</make>
+    <model>Model X</model>
+    <year>2024</year>
+    <kw>335</kw>
+    <category>SUV</category>
+    <engine>Elektromotor</engine>
+    <fuelType>Elektrisch</fuelType>
+    <hubraum>0</hubraum>
+    <co2Wert>0</co2Wert>
+    <antriebsart>Allrad</antriebsart>
+    <backVolumen>5</backVolumen>
+    <maxSpeed>217</maxSpeed>
+    <image_1>https://images.cgames.de/images/gamestar/226/tesla-model-x-2023-test-teaser-3_6297255.jpg</image_1>
+    <image_2>https://gcm.moniteurautomobile.be/imgcontrol/c680-d465/clients/moniteur/content/medias/images/test_drives/11000/200/60/tesla_model_x_plaid_2023__19_.jpg</image_2>
+    <image_3>https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/2017_Tesla_Model_X_100D_Front.jpg/1200px-2017_Tesla_Model_X_100D_Front.jpg</image_3>
+    <image_4>https://arabam-blog.mncdn.com/wp-content/uploads/2021/07/tesla-model-x.jpg</image_4>
+    <createdAt>1731019478</createdAt>
+    <author>Login_user</author>
+</Entry>
 </root>
