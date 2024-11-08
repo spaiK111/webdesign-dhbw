@@ -32,8 +32,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
 
         }
-
-       
     })
 
 
