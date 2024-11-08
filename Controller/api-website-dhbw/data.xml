@@ -183,6 +183,288 @@
     <createdAt>1731028108383</createdAt>
     <author>Login_user</author>
   </Entry>
+
+  <Entry>
+    <uid>9876782632_OKOFJEBFEWUZ</uid>
+    <hsn>9876782632</hsn>
+    <tsn>OKOFJEBFEWUZ</tsn>
+    <make>Tesla</make>
+    <model>Model X</model>
+    <year>2024</year>
+    <kw>335</kw>
+    <category>SUV</category>
+    <engine>Elektromotor</engine>
+    <fuelType>Elektrisch</fuelType>
+    <hubraum>0</hubraum>
+    <co2Wert>0</co2Wert>
+    <antriebsart>Allrad</antriebsart>
+    <backVolumen>5</backVolumen>
+    <maxSpeed>217</maxSpeed>
+    <image_1>https://images.cgames.de/images/gamestar/226/tesla-model-x-2023-test-teaser-3_6297255.jpg</image_1>
+    <image_2>https://gcm.moniteurautomobile.be/imgcontrol/c680-d465/clients/moniteur/content/medias/images/test_drives/11000/200/60/tesla_model_x_plaid_2023__19_.jpg</image_2>
+    <image_3>https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/2017_Tesla_Model_X_100D_Front.jpg/1200px-2017_Tesla_Model_X_100D_Front.jpg</image_3>
+    <image_4>https://arabam-blog.mncdn.com/wp-content/uploads/2021/07/tesla-model-x.jpg</image_4>
+    <createdAt>1731019478</createdAt>
+    <author>Login_user</author>
+  </Entry>
+
+  <Entry>
+    <uid>76782632_OKOFJEBFEW</uid>
+    <hsn>76782632</hsn>
+    <tsn>OKOFJEBFEW</tsn>
+    <make>Volkswagen</make>
+    <model>I.D. 7</model>
+    <year>2024</year>
+    <kw>225</kw>
+    <category>SUV</category>
+    <engine>Elektromotor</engine>
+    <fuelType>Elektrisch</fuelType>
+    <hubraum>0</hubraum>
+    <co2Wert>0</co2Wert>
+    <antriebsart>Allrad</antriebsart>
+    <backVolumen>5</backVolumen>
+    <maxSpeed>220</maxSpeed>
+    <image_1>https://upload.wikimedia.org/wikipedia/commons/a/a6/Volkswagen_ID.7_IAA_2023_1X7A0375.jpg</image_1>
+    <image_2>https://unterwegs-auf-der-autobahn.de/sites/default/files/public/styles/_galerie_2100x1400_/public/images-news-galerie/db2024au00419-1.jpg</image_2>
+    <image_3>https://uploads.vw-mms.de/system/production/images/vwn/081/099/images/e13b1b0c66e3efc5469c6c399604f0ec3deb1087/DB2024AU00278_web_1600.jpg?1709812457</image_3>
+    <image_4>https://www.electrive.net/media/2024/02/volkswagen-id7-tourer-2024-14-min.jpg</image_4>
+    <createdAt>1731019478</createdAt>
+    <author>Login_user</author>
+</Entry>
+
+<Entry>
+    <uid>632_EBFEW</uid>
+    <hsn>632</hsn>
+    <tsn>EBFEW</tsn>
+    <make>Lamborghini</make>
+    <model>Urus</model>
+    <year>2024</year>
+    <kw>500</kw>
+    <category>SUV</category>
+    <engine>V8 Verberennunsmotor</engine>
+    <fuelType>Benzin</fuelType>
+    <hubraum>295</hubraum>
+    <co2Wert>20000</co2Wert>
+    <antriebsart>Allrad</antriebsart>
+    <backVolumen>5</backVolumen>
+    <maxSpeed>280</maxSpeed>
+    <image_1>https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/urus/2024/10_08_refresh/s1-mobile.jpg</image_1>
+    <image_2>https://www.autoscout24.de/cms-content-assets/1Dw5jxyXjWhocAVgDWcBnt-e0c235f7772f12ec41fc0e4ab7ffa896-Lamborghini-Urus-2019-1280-06-1100.jpg</image_2>
+    <image_3>https://moll.eautoseller.de/administration/upload/LA25091_1021.jpg</image_3>
+    <image_4>https://i.redd.it/v0a87bn64hy91.jpg</image_4>
+    <createdAt>1731019478</createdAt>
+    <author>Login_user</author>
+</Entry>
+
+<Entry>
+    <uid>635_EBFEWZY</uid>
+    <hsn>635</hsn>
+    <tsn>EBFEWZY</tsn>
+    <make>Lamborghini</make>
+    <model>Huracan</model>
+    <year>2024</year>
+    <kw>700</kw>
+    <category>Sportwagen</category>
+    <engine>V8 Verberennunsmotor</engine>
+    <fuelType>Benzin</fuelType>
+    <hubraum>295</hubraum>
+    <co2Wert>25000</co2Wert>
+    <antriebsart>Allrad</antriebsart>
+    <backVolumen>5</backVolumen>
+    <maxSpeed>350</maxSpeed>
+    <image_1>https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/2014-03-04_Geneva_Motor_Show_1377.JPG/1200px-2014-03-04_Geneva_Motor_Show_1377.JPG</image_1>
+    <image_2>https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/2023/model_chooser/huracan_evo_spyder_m.jpg</image_2>
+    <image_3>https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/2023/09_18_refresh/s/gw_hura_s_02_m.jpg</image_3>
+    <image_4>https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/motorsport/cars/huracan_gt3_evo2/huracan_gt3_evo2_og_2.jpg</image_4>
+    <createdAt>1731019478</createdAt>
+    <author>Login_user</author>
+</Entry>
+</root>
+<root>
+  <Entry>
+    <uid>34246536_34246536</uid>
+    <hsn>34246536</hsn>
+    <tsn>34246536</tsn>
+    <make>BMW</make>
+    <model>318i</model>
+    <year>2014</year>
+    <kw>147</kw>
+    <category>Limousine</category>
+    <engine>1.9TFSI</engine>
+    <fuelType>Benzin</fuelType>
+    <hubraum>1993</hubraum>
+    <co2Wert>120</co2Wert>
+    <antriebsart>Manuell</antriebsart>
+    <backVolumen>3</backVolumen>
+    <maxSpeed>260</maxSpeed>
+    <image_1>https://images.bild.de/66fbd545ff575473f05b543c/c0d740dd2c3cd2f7db3b61fb70bfada9,d880dd56?w=992</image_1>
+    <image_2>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgy3Vihtm_EdW3klYnE0IsHeMwpRMnHJGmng</image_2>
+    <image_3>https://imgd.aeplcdn.com/370x208/n/cw/ec/132513/7-series-exterior-right-front-three-quarter-3.jpeg?isig=0</image_3>
+    <image_4>https://t4.ftcdn.net/jpg/04/20/38/41/360_F_420384111_5fzxWlWxvB7bg5BROxfKdBbgBYB2TwGP.jpg</image_4>
+    <createdAt>1730759311761</createdAt>
+    <author>Login_user</author>
+  </Entry>
+  <Entry>
+    <uid>543223_543223</uid>
+    <hsn>543223</hsn>
+    <tsn>543223</tsn>
+    <make>BMW</make>
+    <model>318i</model>
+    <year>2014</year>
+    <kw>147</kw>
+    <category>Limousine</category>
+    <engine>1.9TFSI</engine>
+    <fuelType>Benzin</fuelType>
+    <hubraum>1993</hubraum>
+    <co2Wert>120</co2Wert>
+    <antriebsart>Manuell</antriebsart>
+    <backVolumen>3</backVolumen>
+    <maxSpeed>260</maxSpeed>
+    <image_1>https://images.bild.de/66fbd545ff575473f05b543c/c0d740dd2c3cd2f7db3b61fb70bfada9,d880dd56?w=992</image_1>
+    <image_2>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgy3Vihtm_EdW3klYnE0IsHeMwpRMnHJGmng</image_2>
+    <image_3>https://imgd.aeplcdn.com/370x208/n/cw/ec/132513/7-series-exterior-right-front-three-quarter-3.jpeg?isig=0</image_3>
+    <image_4>https://t4.ftcdn.net/jpg/04/20/38/41/360_F_420384111_5fzxWlWxvB7bg5BROxfKdBbgBYB2TwGP.jpg</image_4>
+    <createdAt>1730759426296</createdAt>
+    <author>Login_user</author>
+  </Entry>
+  <Entry>
+    <uid>1234567_8765432</uid>
+    <hsn>1234567</hsn>
+    <tsn>8765432</tsn>
+    <make>Audi</make>
+    <model>A4</model>
+    <year>2020</year>
+    <kw>110</kw>
+    <category>Kombi</category>
+    <engine>2.0 TDI</engine>
+    <fuelType>Diesel</fuelType>
+    <hubraum>1968</hubraum>
+    <co2Wert>130</co2Wert>
+    <antriebsart>Automatik</antriebsart>
+    <backVolumen>5</backVolumen>
+    <maxSpeed>220</maxSpeed>
+    <image_1>https://www.automotiveit.eu/assets/images/a/Audi-A4-2020-15-fcfd23bf.jpg</image_1>
+    <image_2>https://www.meinauto.de/pics/wpimages/2019/07/audi-a4-limousine-innen-vorne.jpg</image_2>
+    <image_3>https://image.stern.de/8710720/t/G3/v2/w1440/r0/-/15--artikel23033bild01jpg---2ed2c0b8a1904749.jpg</image_3>
+    <image_4>https://cache.willhaben.at/mmo/7/146/994/7977_1730406525.jpg</image_4>
+    <createdAt>1731019478</createdAt>
+    <author>Login_user</author>
+  </Entry>
+  <Entry>
+    <uid>323232_3232322</uid>
+    <hsn>323232</hsn>
+    <tsn>323232</tsn>
+    <make>Audi</make>
+    <model>A4</model>
+    <year>2020</year>
+    <kw>110</kw>
+    <category>Kombi</category>
+    <engine>2.0 TDI</engine>
+    <fuelType>Diesel</fuelType>
+    <hubraum>1968</hubraum>
+    <co2Wert>130</co2Wert>
+    <antriebsart>Automatik</antriebsart>
+    <backVolumen>5</backVolumen>
+    <maxSpeed>220</maxSpeed>
+    <image_1>https://www.automotiveit.eu/assets/images/a/Audi-A4-2020-15-fcfd23bf.jpg</image_1>
+    <image_2>https://eurotarget.com/foto/ETBN_Offerte/1132745/1132745_0_800x0.jpeg?lm=1698666455</image_2>
+    <image_3>https://udenhout.nl/_cache/_public/37986880-1_YXJfMTI4MHg3MjBfZF8xX2pwZ18vX2Fzc2V0L19wcml2YXRlL2Nhci8xMzA_0adc2d18.webpg</image_3>
+    <image_4>https://cache.willhaben.at/mmo/7/146/994/7977_1730406525.jpg</image_4>
+    <createdAt>1731019478</createdAt>
+    <author>Login_user</author>
+  </Entry>
+  <Entry>
+    <uid>12398239727_893723</uid>
+    <hsn>12398239727</hsn>
+    <tsn>8937239</tsn>
+    <make>Mercedes-Benz</make>
+    <model>C-Klasse</model>
+    <year>2023</year>
+    <kw>150</kw>
+    <category>Limousine</category>
+    <engine>2.0 Turbo</engine>
+    <fuelType>Benzin</fuelType>
+    <hubraum>1991</hubraum>
+    <co2Wert>110</co2Wert>
+    <antriebsart>Automatik</antriebsart>
+    <backVolumen>4</backVolumen>
+    <maxSpeed>240</maxSpeed>
+    <image_1>https://www.motortrend.com/uploads/2022/04/2023-Mercedes-AMG-C43-sedan-9.jpg</image_1>
+    <image_2>https://www.mercedes-benz.de/content/germany/de/passengercars/models/saloon/w206-24-2/overview/_jcr_content/root/responsivegrid/media_slider/media_slider_item_579441837/image.component.damq1.3407000143774.jpg/mercedes-benz-c-class-w206-highlights-interior-3302x1858-03-2023.jpg</image_2>
+    <image_3>https://www.motorsport-total.com/img/2021/210402/w620_h500_246432.jpg</image_3>
+    <image_4>https://di-uploads-pod6.dealerinspire.com/raycatenaedison/uploads/2022/11/2022-C-SEDAN-GAL-004-Q-FE-DR.jpg</image_4>
+    <createdAt>1731019478</createdAt>
+    <author>Login_user</author>
+  </Entry>
+  <Entry>
+    <uid>1234567_49384737</uid>
+    <hsn>1234567</hsn>
+    <tsn>49384737</tsn>
+    <make>Mercedes-Benz</make>
+    <model>C-Klasse</model>
+    <year>2023</year>
+    <kw>150</kw>
+    <category>Limousine</category>
+    <engine>2.0 Turbo</engine>
+    <fuelType>Benzin</fuelType>
+    <hubraum>1991</hubraum>
+    <co2Wert>110</co2Wert>
+    <antriebsart>Automatik</antriebsart>
+    <backVolumen>4</backVolumen>
+    <maxSpeed>240</maxSpeed>
+    <image_1>https://cdn.autohaus.de/thumb_1200x675/media/5172/mercedes-c-klasse-2022.jpg</image_1>
+    <image_2>https://assets.adac.de/image/upload/c_scale,f_auto,q_auto,t_2:1-default,w_1500/v1/ADAC-eV/KOR/Bilder/PR/mercedes-c-klasse-limousine-front-2102_q51qbg</image_2>
+    <image_3>https://www.mercedes-benz.de/content/germany/de/passengercars/models/saloon/w206-24-2/overview/_jcr_content/root/responsivegrid/media_slider/media_slider_item_47399986/image.component.damq1.3404315616077.jpg/mercedes-benz-c-class-w206-highlights-exterior-3302x1858-03-2023.jpg</image_3>
+    <image_4>https://roadsrus.de/wp-content/uploads/2023/03/Mercedes-Benz-C-Klasse-T-Modell-Cockpit-Copyright-Mercedes-Benz-AG.jpg</image_4>
+    <createdAt>1731019478</createdAt>
+    <author>Login_user</author>
+  </Entry>
+  <Entry>
+    <uid>987678263_OKOFJEBFEWU</uid>
+    <hsn>987678263</hsn>
+    <tsn>OKOFJEBFEWU</tsn>
+    <make>Tesla</make>
+    <model>Model Y</model>
+    <year>2024</year>
+    <kw>335</kw>
+    <category>SUV</category>
+    <engine>Elektromotor</engine>
+    <fuelType>Elektrisch</fuelType>
+    <hubraum>0</hubraum>
+    <co2Wert>0</co2Wert>
+    <antriebsart>Allrad</antriebsart>
+    <backVolumen>5</backVolumen>
+    <maxSpeed>217</maxSpeed>
+    <image_1>https://www.shop4tesla.com/cdn/shop/articles/tesla-model-y-bleibt-meistverkauftes-elektroauto-in-deutschland-2024-874608.jpg?v=1726029361</image_1>
+    <image_2>https://cdn.motor1.com/images/mgl/vxo0bq/s1/tesla-model-y-in-new-midnight-cherry-red-and-quicksilver-paint-colors.jpg</image_2>
+    <image_3>https://abo.miles-mobility.com/media/244/download/Tesla_Model_Y_diagonal_left.jpg?v=1</image_3>
+    <image_4>https://www.ludego.com/wp-content/uploads/2024/09/3y.png</image_4>
+    <createdAt>1731019478</createdAt>
+    <author>Login_user</author>
+  </Entry>
+  <Entry>
+    <uid>2345622_6543223</uid>
+    <hsn>2345622</hsn>
+    <tsn>6543223</tsn>
+    <make>BMW</make>
+    <model>318i</model>
+    <year>2014</year>
+    <kw>147</kw>
+    <category>Limousine</category>
+    <engine>1.9TFSI</engine>
+    <fuelType>Benzin</fuelType>
+    <hubraum>1993</hubraum>
+    <co2Wert>120</co2Wert>
+    <antriebsart>Manuell</antriebsart>
+    <backVolumen>3</backVolumen>
+    <maxSpeed>260</maxSpeed>
+    <image_1>https://media.istockphoto.com/id/1435226078/photo/front-of-a-white-bmw-m4-parked-on-a-street-with-trees-in-the-background.jpg?s=612x612</image_1>
+    <image_2>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgy3Vihtm_EdW3klYnE0IsHeMwpRMnHJGmng</image_2>
+    <image_3>https://imgd.aeplcdn.com/370x208/n/cw/ec/132513/7-series-exterior-right-front-three-quarter-3.jpeg?isig=0</image_3>
+    <image_4>https://t4.ftcdn.net/jpg/04/20/38/41/360_F_420384111_5fzxWlWxvB7bg5BROxfKdBbgBYB2TwGP.jpg</image_4>
+    <createdAt>1731028108383</createdAt>
+    <author>Login_user</author>
+  </Entry>
   <Entry>
     <uid>9876782632_OKOFJEBFEWUZ</uid>
     <hsn>9876782632</hsn>
@@ -228,5 +510,28 @@
     <image_4>https://www.electrive.net/media/2024/02/volkswagen-id7-tourer-2024-14-min.jpg</image_4>
     <createdAt>1731019478</createdAt>
     <author>Login_user</author>
-</Entry>
+  </Entry>
+  <Entry>
+    <uid>111_111</uid>
+    <hsn>111</hsn>
+    <tsn>111</tsn>
+    <make>BMW</make>
+    <model>318i</model>
+    <year>2014</year>
+    <kw>147</kw>
+    <category>Limousine</category>
+    <engine>1.9TFSI</engine>
+    <fuelType>Benzin</fuelType>
+    <hubraum>1993</hubraum>
+    <co2Wert>120</co2Wert>
+    <antriebsart>Manuell</antriebsart>
+    <backVolumen>3</backVolumen>
+    <maxSpeed>260</maxSpeed>
+    <image_1>https://media.istockphoto.com/id/1435226078/photo/front-of-a-white-bmw-m4-parked-on-a-street-with-trees-in-the-background.jpg?s=612x612</image_1>
+    <image_2>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgy3Vihtm_EdW3klYnE0IsHeMwpRMnHJGmng</image_2>
+    <image_3>https://imgd.aeplcdn.com/370x208/n/cw/ec/132513/7-series-exterior-right-front-three-quarter-3.jpeg?isig=0</image_3>
+    <image_4>https://t4.ftcdn.net/jpg/04/20/38/41/360_F_420384111_5fzxWlWxvB7bg5BROxfKdBbgBYB2TwGP.jpg</image_4>
+    <createdAt>1731047364292</createdAt>
+    <author>Login_user</author>
+  </Entry>
 </root>
