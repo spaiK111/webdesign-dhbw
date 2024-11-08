@@ -523,19 +523,26 @@ form {
   height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .blog-item h3 {
   margin: 0 0 10px;
-  font-size: 18px;
-  color: #264455;
+  font-size: clamp(2rem, 1vw, 10rem);
+  color: rgba(0, 0, 0, 0.6);
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .blog-item p {
+  background-color: white;
   margin: 0;
-  color: #000000;
+  font-size: clamp(1rem, 1vw, 6rem);
+  color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 20px;
 }
 .blog-item:hover {
   background-color: lightgray;
