@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         statsBlock.style.height = '400px';
     })
     
-    
     blog.addEventListener('click', function () {
         divTable.style.display = 'none';
         tableData.style.display = 'none';

@@ -283,7 +283,6 @@ if ($uid) {
   </footer>
   <!-- end of footer -->
   
-  <script src="assets/preset/js/search-bar.js"></script>
   <script src="assets/preset/js/slider.js"></script>
 
 </body>
