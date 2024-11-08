@@ -1,5 +1,3 @@
-const { validateFields } = require('../validateHsnTsn');
-
 document.addEventListener('DOMContentLoaded', async () => {
     const searchInputHsn = document.getElementById('hsn-input');
     const searchInputTsn = document.getElementById('tsn-input');
@@ -12,9 +10,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             alert('Bitte geben Sie HSN und TSN ein');
             return;
         }
-        const validated = await validateFields(hsn, tsn);
-
-        if(validated){
             const uid = `${hsn +"_"+tsn}`;
             try{
                 const response = await fetch(`http://localhost:5000/api/posts/getCarByUid/?uid=${uid}`)
@@ -29,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 alert(`Die Seite mit der UID ${uid} konnte nicht gefunden werden`);
             }
 
-        }
+
     })
 
 

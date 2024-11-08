@@ -21,39 +21,13 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
     // Antwort in ein Array umwandeln
     $data = json_decode($response, true);
-    if ($data) {
-      echo "login successful";
+    if ($data) {	
+		$firstName = $data['firstName'];
+		$lastName = $data['lastName'];
 	}
 	else {
 		echo "Bad Request";
 	}
-
-  $apiUrl2 = "http://localhost:5000/api/posts/getBlogs";
-
-    // cURL initialisieren
-    $ch1 = curl_init();
-    curl_setopt($ch1, CURLOPT_URL, $apiUrl2);
-    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1);
-
-    // API-Anfrage ausführen und Antwort speichern
-    $blogs = curl_exec($ch1);
-    curl_close($ch1);
-
-    // Antwort in ein Array umwandeln
-    $data = json_decode($blogs, true);
-    if ($data) {
-      echo "blogs found";
-      $topBlog = $data[0];
-      $blog1 = $data[1];
-      $blog2 = $data[2];
-      $blog3 = $data[3];
-      $blog4 = $data[4];
-      $blog5 = $data[5];
-      $blog5 = $data[6];
-    }
-    else {
-      echo "blogs not found";
-    }
 
 ?>
 
@@ -90,7 +64,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 		</ul>
 		<ul class="side-menu">
 			<li>
-				<a href="#" class="logout">
+				<a href="#" class="logout" id="log-out">
 					<i class='bx bxs-log-out-circle' ></i>
 					<span class="text">Ausloggen</span>
 				</a>
@@ -187,7 +161,6 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 	<script src="assets//userPage/js/script.js"></script>
 	<script src="assets//userPage/js/popup.js"></script>
 	<script src="assets//userPage/js/main.js"></script>
-	<script src="assets//userPage/js/input.js"></script>
 	<script src="assets//userPage/js/clearButtonBlogForm.js"></script>
 </body>
 </html>

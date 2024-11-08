@@ -4,7 +4,6 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const blogRoutes = require("./routes/blogRoutes"); 
 const parseAndUpdate = require("./parseAndUpdate"); 
-const updateMakeOptions = require("./updateMakeOptions");
 const app = express();
 const port = 5000;
 

@@ -39,9 +39,6 @@
     </div>
   </div>
 
-
-  
-
   
 
   <div class="alert" id="error">

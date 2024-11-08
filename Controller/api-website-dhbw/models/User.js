@@ -4,7 +4,7 @@ const UserSchema = new mongoose.Schema({
     uid: { type: Number, autoIncrement: true }, 
     login: { type: String, unique: true, required: true },
     password: { type: String, required: true },
-    admin: { type: Boolean, default: false },
+    admin: { type: Boolean, default: true },
     lastName: { type: String, required: true },
     firstName: { type: String, required: true },
     profile: { type: String, default: "" },

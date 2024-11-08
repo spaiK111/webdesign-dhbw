@@ -17,9 +17,6 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
     // Antwort in ein Array umwandeln
     $data = json_decode($response, true);
-    if (!$data) {
-      echo "Keine Daten gefunden";
-	}
 
 ?>
 

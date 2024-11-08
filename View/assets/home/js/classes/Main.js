@@ -2,6 +2,9 @@ import { CarsBuilder } from "./CarsBuilder.js";
 import { PaginationBuilder } from "./PaginationBuilder.js";
 import { validateFields }  from "../validateFileds.js";
 
+const ff_Item = document.querySelector('.pagination2 li a.ff');
+const bb_Item = document.querySelector('.pagination2 li a.bb');
+
 document.addEventListener('DOMContentLoaded', async () => {
     const paginationBuilder = new PaginationBuilder();
     const carsBuilder = new CarsBuilder();
@@ -23,8 +26,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const submit = document.getElementById('filter-button')
     const error = document.getElementById('error')
 
-    const ff_Item = document.querySelector('.pagination2 li a.ff');
-    const bb_Item = document.querySelector('.pagination2 li a.bb');
 
     const paginationItems = document.querySelectorAll('.pagination2 li a.page');
 
@@ -65,6 +66,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             await carsBuilder.fetchBlogPosts(pagination, makeValue, modelValue, ps1Value,ps2Value, categoryValue, fueltypeValue)
         });
     });
+
+    const ff_Item = document.querySelector('.pagination2 li a.ff');
+    const bb_Item = document.querySelector('.pagination2 li a.bb');
 
     ff_Item.addEventListener('click', async () => {
         pagination = await paginationBuilder.getPagesCount() - 1;

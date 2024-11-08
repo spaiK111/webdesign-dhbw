@@ -1,6 +1,9 @@
 const allSideMenu = document.querySelectorAll(".sidebar .side-menu.top li a");
 const blog = document.getElementById("new-blog");
 
+const logOut = document.getElementById('log-out');
+    
+
 const activeLink = document.querySelector(".breadcrumb .active");
 const headingMain = document.querySelector(".left h1");
 
@@ -60,6 +63,18 @@ searchButton.addEventListener("click", function (e) {
     }
   }
 });
+
+logOut.addEventListener('click', function () {
+  emptyCookie('login');
+  emptyCookie('password');
+  window.location.href = 'http://localhost:3000/View/index.php';
+  alert('Sie wurden erfolgreich ausgeloggt!');
+})
+
+function emptyCookie(name) {
+	document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+
 
 menuBar.addEventListener("click", function () {
   updateSpanContent();

@@ -203,7 +203,7 @@ exports.postBlog = async (req, res) => {
       image,
       authorFirstname,
       authorLastname,
-    } = req.query; // Use req.body to get data from POST request
+    } = req.query; // 
     const blog = new Blog({
       heading: heading,
       short_dsc: short_dsc,
@@ -220,7 +220,7 @@ exports.postBlog = async (req, res) => {
 
 exports.register = async (req, res) => {
   try {
-    const { login, hashedPassword, firstName, lastName } = req.query; // Use req.body to get data from POST request
+    const { login, hashedPassword, firstName, lastName } = req.query; 
     console.log(login);
     console.log(hashedPassword);
     console.log(firstName);
@@ -240,7 +240,7 @@ exports.register = async (req, res) => {
 };
 exports.resetLoginAttempts = async (req, res) => {
   try {
-    const { login, password } = req.body; // Use req.body to get data from POST request
+    const { login, password } = req.body; 
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = new User({
       login: login,

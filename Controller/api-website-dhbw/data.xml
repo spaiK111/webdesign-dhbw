@@ -183,7 +183,6 @@
     <createdAt>1731028108383</createdAt>
     <author>Login_user</author>
   </Entry>
-
   <Entry>
     <uid>9876782632_OKOFJEBFEWUZ</uid>
     <hsn>9876782632</hsn>
@@ -207,8 +206,7 @@
     <createdAt>1731019478</createdAt>
     <author>Login_user</author>
   </Entry>
-
-    <Entry>
+  <Entry>
     <uid>76782632_OKOFJEBFEW</uid>
     <hsn>76782632</hsn>
     <tsn>OKOFJEBFEW</tsn>
@@ -230,5 +228,28 @@
     <image_4>https://www.electrive.net/media/2024/02/volkswagen-id7-tourer-2024-14-min.jpg</image_4>
     <createdAt>1731019478</createdAt>
     <author>Login_user</author>
-</Entry>
+  </Entry>
+  <Entry>
+    <uid>111_111</uid>
+    <hsn>111</hsn>
+    <tsn>111</tsn>
+    <make>BMW</make>
+    <model>318i</model>
+    <year>2014</year>
+    <kw>147</kw>
+    <category>Limousine</category>
+    <engine>1.9TFSI</engine>
+    <fuelType>Benzin</fuelType>
+    <hubraum>1993</hubraum>
+    <co2Wert>120</co2Wert>
+    <antriebsart>Manuell</antriebsart>
+    <backVolumen>3</backVolumen>
+    <maxSpeed>260</maxSpeed>
+    <image_1>https://media.istockphoto.com/id/1435226078/photo/front-of-a-white-bmw-m4-parked-on-a-street-with-trees-in-the-background.jpg?s=612x612</image_1>
+    <image_2>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgy3Vihtm_EdW3klYnE0IsHeMwpRMnHJGmng</image_2>
+    <image_3>https://imgd.aeplcdn.com/370x208/n/cw/ec/132513/7-series-exterior-right-front-three-quarter-3.jpeg?isig=0</image_3>
+    <image_4>https://t4.ftcdn.net/jpg/04/20/38/41/360_F_420384111_5fzxWlWxvB7bg5BROxfKdBbgBYB2TwGP.jpg</image_4>
+    <createdAt>1731047364292</createdAt>
+    <author>Login_user</author>
+  </Entry>
 </root>

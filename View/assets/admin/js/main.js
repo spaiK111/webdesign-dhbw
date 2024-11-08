@@ -88,8 +88,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const authorFirstname = addButton.getAttribute('authorFirstname')
         const authorLastname = addButton.getAttribute('authorLastname');
-
+        console.log("authorFirstname", authorFirstname)
+        console.log("authorLastname", authorLastname)
+        
         try {
+            
 
             const response = await fetch(`http://localhost:5000/api/posts/createBlogTxt?heading=${headingValue}&short_dsc=${short_dscValue}&long_dsc=${long_dscValue}&image=${main_imgValue}&authorFirstname=${authorFirstname}&authorLastname=${authorLastname}`, {
                 method: 'POST',
