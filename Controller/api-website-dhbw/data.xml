@@ -243,8 +243,8 @@
     <category>SUV</category>
     <engine>V8 Verberennunsmotor</engine>
     <fuelType>Benzin</fuelType>
-    <hubraum>0</hubraum>
-    <co2Wert>0</co2Wert>
+    <hubraum>295</hubraum>
+    <co2Wert>20000</co2Wert>
     <antriebsart>Allrad</antriebsart>
     <backVolumen>5</backVolumen>
     <maxSpeed>280</maxSpeed>
