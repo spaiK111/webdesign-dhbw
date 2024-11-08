@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const addButton = document.getElementById('add_blog_txt');
     const addButtonCar = document.getElementById('add_blog_default');
 
-    // Viet Form
+    // Blog Form
     const heading = document.getElementById('entry-heading')
     const short_dsc = document.getElementById('entry-short-dsc')
     const long_dsc = document.getElementById('entry-long-dsc')
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const long_dscValue = long_dsc.value;
         const main_imgValue = main_img.value;
 
-
         try {
             const response = await fetch(`http://localhost:5000/api/posts/createBlogTxt?heading=${headingValue}&short_dsc=${short_dscValue}&long_dsc=${long_dscValue}&image=${main_imgValue}&authorFirstname=${authorFirstname}&authorLastname=${authorLastname}`, {
                 method: 'POST',
@@ -35,10 +34,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
 
             const data = await response.json();
-            console.log('Success:', data);
-            alert('Blogpost created successfully');
+
+            alert('Blogpost wurde erfolgreich erstellt');
         } catch (error) {
-            console.error('Error fetching pagination:', error);
+            console.error('Fehler beim Erfassen:', error);
         }
     })
 
