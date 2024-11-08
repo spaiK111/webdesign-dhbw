@@ -255,4 +255,28 @@
     <createdAt>1731019478</createdAt>
     <author>Login_user</author>
 </Entry>
+
+<Entry>
+    <uid>635_EBFEWZY</uid>
+    <hsn>635</hsn>
+    <tsn>EBFEWZY</tsn>
+    <make>Lamborghini</make>
+    <model>Huracan</model>
+    <year>2024</year>
+    <kw>700</kw>
+    <category>Sportwagen</category>
+    <engine>V8 Verberennunsmotor</engine>
+    <fuelType>Benzin</fuelType>
+    <hubraum>295</hubraum>
+    <co2Wert>25000</co2Wert>
+    <antriebsart>Allrad</antriebsart>
+    <backVolumen>5</backVolumen>
+    <maxSpeed>350</maxSpeed>
+    <image_1>https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/2014-03-04_Geneva_Motor_Show_1377.JPG/1200px-2014-03-04_Geneva_Motor_Show_1377.JPG</image_1>
+    <image_2>https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/2023/model_chooser/huracan_evo_spyder_m.jpg</image_2>
+    <image_3>https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/2023/09_18_refresh/s/gw_hura_s_02_m.jpg</image_3>
+    <image_4>https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/motorsport/cars/huracan_gt3_evo2/huracan_gt3_evo2_og_2.jpg</image_4>
+    <createdAt>1731019478</createdAt>
+    <author>Login_user</author>
+</Entry>
 </root>
