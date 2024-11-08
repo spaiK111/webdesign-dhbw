@@ -302,10 +302,6 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 				
 
 				
-
-				
-
-				
 				<button class="btn" id="add_blog_default" style="margin-top: 20px">Hinzufügen</button>
 
 			</div>

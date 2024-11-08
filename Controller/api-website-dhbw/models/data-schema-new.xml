@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    
+    <xs:simpleType name="UIDType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z0-9]{8,12}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="ImageType">
+        <xs:sequence>
+            <xs:element name="url" type="xs:string" maxOccurs="4" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="BlogPosts">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="BlogPost" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="uid" type="UIDType"/>
+                            <xs:element name="hsn" type="xs:string"/>
+                            <xs:element name="tsn" type="xs:string"/>
+                            <xs:element name="make" type="xs:string"/>
+                            <xs:element name="model" type="xs:string"/>
+                            <xs:element name="year" type="xs:gYear"/>
+
+                            <xs:element name="kw" type="xs:integer">
+                                <xs:annotation>
+                                    <xs:documentation>Leistung in Kilowatt (KW), minimal 10 und maximal 500</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:integer">
+                                        <xs:minInclusive value="10"/>
+                                        <xs:maxInclusive value="500"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            
+
+                            <xs:element name="category" type="xs:string"/>
+                            <xs:element name="engine" type="xs:string"/>
+                            <xs:element name="fuelType" type="xs:string"/>
+                            
+                            <xs:element name="images" type="ImageType"/>
+
+                            <xs:element name="createdAt" type="xs:dateTime"/>
+                            <xs:element name="author" type="xs:string"/>
+                            
+                            <xs:element name="hubraum" type="xs:integer">
+                                <xs:annotation>
+                                    <xs:documentation>Hubraum in cm³, minimal 500 und maximal 8000</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:integer">
+                                        <xs:minInclusive value="500"/>
+                                        <xs:maxInclusive value="8000"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="co2Wert" type="xs:integer">
+                                <xs:annotation>
+                                    <xs:documentation>CO2-Wert in g/km, minimal 0 und maximal 500</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:integer">
+                                        <xs:minInclusive value="0"/>
+                                        <xs:maxInclusive value="500"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="antriebsart" type="xs:string">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="FWD"/>
+                                        <xs:enumeration value="RWD"/>
+                                        <xs:enumeration value="AWD"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="backVolumen" type="xs:integer" minOccurs="0"/>
+                            <xs:element name="maxSpeed" type="xs:integer" minOccurs="0"/>
+
+                            <xs:attribute name="status" type="xs:string" default="draft"/>
+                            <xs:attribute name="priority" type="xs:integer" use="optional"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
