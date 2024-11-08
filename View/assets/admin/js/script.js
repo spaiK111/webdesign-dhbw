@@ -8,7 +8,6 @@ const tableData = document.querySelector('div#table-data.table-data');
 
 const logOut = document.getElementById('log-out');
 
-// Stats
 const statsBlock = document.querySelector('div.statistics');
 
 const carBlog = document.getElementById('new-blog-car');
@@ -87,32 +86,30 @@ allSideMenu.forEach(item=> {
 	})
 });
 
-
 function updateSpanContent() {
     if (sidebar.classList.contains('hide')) {
-        span.innerHTML = 'C'; // Replace with the desired content
+        span.innerHTML = 'C'; 
     } else {
-        span.innerHTML = 'CarBlog'; // Replace with the original content
+        span.innerHTML = 'CarBlog'; 
     }
 }
-
 
 // TOGGLE SIDEBAR
 const menuBar = document.querySelector('.content nav .bx.bx-menu');
 const sidebar = document.querySelector('.sidebar');
 const content = document.querySelector('.content');
 const span = document.querySelector('.sidebar .brand .text')
-console.log(span)
+
+const searchButton = document.querySelector('.content nav form .form-input button');
+const searchButtonIcon = document.querySelector('.content nav form .form-input button .bx');
+const searchForm = document.querySelector('.content nav form');
+
+const switchMode = document.getElementById('switch-mode');
 
 menuBar.addEventListener('click', function () {
 	sidebar.classList.toggle('hide');
 	content.classList.toggle('full');
 })
-
-
-const searchButton = document.querySelector('.content nav form .form-input button');
-const searchButtonIcon = document.querySelector('.content nav form .form-input button .bx');
-const searchForm = document.querySelector('.content nav form');
 
 searchButton.addEventListener('click', function (e) {
 	if(window.innerWidth < 576) {
@@ -160,10 +157,6 @@ window.addEventListener('resize', function () {
 		searchForm.classList.remove('show');
 	}
 })
-
-
-
-const switchMode = document.getElementById('switch-mode');
 
 switchMode.addEventListener('change', function () {
 	if(this.checked) {

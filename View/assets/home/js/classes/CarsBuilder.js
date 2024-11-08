@@ -12,8 +12,8 @@ export class CarsBuilder {
             const blogPostsContainer = document.getElementById('item-list');
             const response = await fetch(`http://localhost:5000/api/posts/gPPP?pagination=${pagination}&make=${makeVal}&model=${modelVal}&ps1=${ps1Val}&ps2=${ps2Val}&category=${categoryVal}&fueltype=${fueltypeVal}`); // URL der API
             const posts = await response.json();
-            console.log(posts)
-            // Blogposts in das HTML einfügen
+
+
             posts.forEach(async post => {
                 const image_1 = post.image_1 ? post.image_1 : "../../images/car-not-found.jpg"; // Fallback-Bild verwenden
                 const image_2 = post.image_2 ? post.image_2 : "../../images/car-not-found.jpg";
@@ -63,14 +63,13 @@ export class CarsBuilder {
                     <div class="div4">
                     </div>
                 `;
-                console.log("here1")
+
                 blogPostsContainer.appendChild(postElement);
-                console.log("here2")
+
             });
         } catch (error) {
             console.error('Error fetching blog posts:', error);
         }
-
 
     }
 

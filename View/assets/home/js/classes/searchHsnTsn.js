@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const searchInputTsn = document.getElementById('tsn-input');
     const search_btn = document.getElementById('first-filter-button-btn');    
 
-
     search_btn.addEventListener('click', async () => {
         const hsn = searchInputHsn.value;
         const tsn = searchInputTsn.value;
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
         const validated = await validateFields(hsn, tsn);
-        console.log('Selected value:', hsn, tsn);   
 
         if(validated){
             const uid = `${hsn +"_"+tsn}`;

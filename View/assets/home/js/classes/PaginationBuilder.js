@@ -48,7 +48,7 @@ export class PaginationBuilder {
 
     async setActivePage(pageNumber){
         const paginationItems = document.querySelectorAll('.pagination2 li');
-                // Entfernen der Klasse 'active' von allen <a> Elementen mit der Klasse 'page'
+
                 paginationItems.forEach(el => {
                     const pageLink = el.querySelector('a.page');
                     if (pageLink) {
@@ -57,8 +57,7 @@ export class PaginationBuilder {
                 });
 
                 const activePage = document.querySelector(`a.page.page_${pageNumber}`);
-                console.log(activePage);
-                // Hinzufügen der Klasse 'active' zum angeklickten <a> Element
+
                 if (activePage) {
                     activePage.classList.add('active');
                 }
@@ -68,7 +67,7 @@ export class PaginationBuilder {
         const paginationItems = document.querySelectorAll('.pagination2 li');
         paginationItems.forEach(item => {
             item.addEventListener('click', function() {
-                // Entfernen der Klasse 'active' von allen <a> Elementen mit der Klasse 'page'
+
                 paginationItems.forEach(el => {
                     const pageLink = el.querySelector('a.page');
                     if (pageLink) {
@@ -76,8 +75,7 @@ export class PaginationBuilder {
                     }
 
                 });
-        
-                // Hinzufügen der Klasse 'active' zum angeklickten <a> Element
+
                 const clickedLink = this.querySelector('a.page');
                 if (clickedLink) {
                     clickedLink.classList.add('active');
