@@ -320,8 +320,36 @@ body {
   font-weight: bold;
 }
 
-.input-blog{
+.input-blog {
   border: 1px solid var(--grey);
+}
+
+.input-blog input {
+  width: 20vw;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  gap: 20px;
+}
+
+.input-container-grid {
+  gap: 40px;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  border: solid 1px black;
+  padding: 20px;
+}
+
+.input-container-grid p {
+  display: flex;
+  flex-direction: column;
 }
 
 .notification a {
@@ -562,6 +590,9 @@ main {
 }
 
 .input-field-txt {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   color: var(--dark);
 }
 
@@ -603,22 +634,25 @@ div.input-fields {
 div.btn-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content:end;
+  justify-content: end;
   padding: 20px;
-  gap: 20px; 
+  gap: 20px;
 }
 
 button.btn {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: orange;
-  color: white;
+  background-color: white;
+  border: 1px solid rgb(0, 0, 0, 0.6);
+  color: rgb(0, 0, 0, 0.6);
   cursor: pointer;
+  transition: all 0.3s;
 }
 
-
-
+button.btn:hover {
+  background-color: rgb(0, 0, 0, 0.4);
+}
 
 /* Text Fields * / 
 
@@ -669,4 +703,3 @@ button.btn {
     align-items: center;
   }
 }
-

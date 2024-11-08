@@ -51,7 +51,7 @@
   width: 70%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   margin: 10px;
   padding: 20px;
   gap: 1rem;
@@ -67,7 +67,10 @@
 
 .search-container-item label {
   font-weight: 600;
-  font-size: 20px;
+  font-size: clamp(1rem, 1vw + 1rem, 1.5rem);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .search-selection-item {
@@ -125,7 +128,7 @@
   grid-row: 3;
   grid-column: 3;
   display: flex;
-  justify-content: left;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -153,10 +156,12 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
-  padding: 10px;
+  padding: 25px;
+  cursor: pointer;
 }
 
 .search-button-one button {
+  cursor: pointer;
   width: 100%;
   font-size: 1.5rem;
   border-radius: 10px;
@@ -179,7 +184,21 @@
   grid-column: span 2;
 }
 
+#search-container-jahr {
+  grid-column: span 2;
+}
+
 /* Media Queries */
+@media screen and (max-width: 400px) {
+  .search-selection-item {
+    flex-direction: column;
+  }
+
+  #leistungsbereich-selection .search-box {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 540px) {
   .search-container {
     width: 60%;

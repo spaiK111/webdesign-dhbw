@@ -109,37 +109,37 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
 
         <div class="search-container-item" id ="search-container-leistungsbereich">
-    <label>Leistungsbereich (KW)</label>
-    <div class="search-selection-item" id ="leistungsbereich-selection" >
-        <input class="search-selection" list="leistungsbereich1" id="ps1" name="ps1" placeholder="Beliebig" type="number" />
-        <datalist id="leistungsbereich1">
-            <option value="20"></option>
-            <option value="40"></option>
-            <option value="60"></option>
-            <option value="80"></option>
-            <option value="100"></option>
-            <option value="120"></option>
-        </datalist>
+          <label>Leistungsbereich (KW)</label>
+          <div class="search-selection-item" id ="leistungsbereich-selection" >
+            <input class="search-selection" list="leistungsbereich1" id="ps1" name="ps1" placeholder="Beliebig" />
+            <datalist id="leistungsbereich1">
+                <option value="20"></option>
+                <option value="40"></option>
+                <option value="60"></option>
+                <option value="80"></option>
+                <option value="100"></option>
+                <option value="120"></option>
+            </datalist>
 
-        <span class="search-selection-span">bis</span>
+            <span class="search-selection-span">bis</span>
 
-        <input class="search-selection" list="leistungsbereich2" id="ps2" name="ps2" placeholder="Beliebig"  type="number" />
-        <datalist id="leistungsbereich2">
-            <option value="140"></option>
-            <option value="160"></option>
-            <option value="180"></option>
-            <option value="200"></option>
-            <option value="220"></option>
-            <option value="240"></option>
-        </datalist>
+            <input class="search-selection" list="leistungsbereich2" id="ps2" name="ps2" placeholder="Beliebig" />
+            <datalist id="leistungsbereich2">
+                <option value="140"></option>
+                <option value="160"></option>
+                <option value="180"></option>
+                <option value="200"></option>
+                <option value="220"></option>
+                <option value="240"></option>
+            </datalist>
 
-        <div class="search-box">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="292.362px" height="292.362px" viewBox="0 0 292.362 292.362">
-                <path d="M286.935,69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952,0-9.233,1.807-12.85,5.424 C1.807,72.998,0,77.279,0,82.228c0,4.948,1.807,9.229,5.424,12.847l127.907,127.907c3.621,3.617,7.902,5.428,12.85,5.428 s9.233-1.811,12.847-5.428L286.935,95.074c3.613-3.617,5.427-7.898,5.427-12.847C292.362,77.279,290.548,72.998,286.935,69.377z"/>
-            </svg>
+            <div class="search-box">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="292.362px" height="292.362px" viewBox="0 0 292.362 292.362">
+                    <path d="M286.935,69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952,0-9.233,1.807-12.85,5.424 C1.807,72.998,0,77.279,0,82.228c0,4.948,1.807,9.229,5.424,12.847l127.907,127.907c3.621,3.617,7.902,5.428,12.85,5.428 s9.233-1.811,12.847-5.428L286.935,95.074c3.613-3.617,5.427-7.898,5.427-12.847C292.362,77.279,290.548,72.998,286.935,69.377z"/>
+                </svg>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
 
 
         <div class="search-container-item">
@@ -196,8 +196,40 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
         </div>
 
 
-        <!--End of Search Items-->
-        <!--Reset Button-->
+        <div class="search-container-item" id ="search-container-leistungsbereich">
+          <label>Modelljahr</label>
+          <div class="search-selection-item" id ="leistungsbereich-selection" >
+            <input class="search-selection" list="leistungsbereich1" id="ps1" name="ps1" placeholder="Beliebig" />
+            <datalist id="leistungsbereich1">
+              <option value="20"></option>
+              <option value="40"></option>
+              <option value="60"></option>
+              <option value="80"></option>
+              <option value="100"></option>
+              <option value="120"></option>
+            </datalist>
+
+            <span class="search-selection-span">bis</span>
+
+            <input class="search-selection" list="leistungsbereich2" id="ps2" name="ps2" placeholder="Beliebig" />
+            <datalist id="leistungsbereich2">
+              <option value="140"></option>
+              <option value="160"></option>
+              <option value="180"></option>
+              <option value="200"></option>
+              <option value="220"></option>
+              <option value="240"></option>
+            </datalist>
+
+            <div class="search-box">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="292.362px" height="292.362px" viewBox="0 0 292.362 292.362">
+                    <path d="M286.935,69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952,0-9.233,1.807-12.85,5.424 C1.807,72.998,0,77.279,0,82.228c0,4.948,1.807,9.229,5.424,12.847l127.907,127.907c3.621,3.617,7.902,5.428,12.85,5.428 s9.233-1.811,12.847-5.428L286.935,95.074c3.613-3.617,5.427-7.898,5.427-12.847C292.362,77.279,290.548,72.998,286.935,69.377z"/>
+                </svg>
+            </div>
+        </div>
+
+
+        </div>
         <div class="reset-button">
           <i class="fa-solid fa-rotate-right" id="reset-button-one"></i>
           <a id="reset-button-two">Auswahl zurücksetzen</a>
@@ -237,73 +269,79 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
           <button>Suchen</button>
         </div>
       </div>
+      </div>
+        
       <!--End of search-container-->
 
-
       <!--VIET search-container first search-->
-      <div class = "first-search-container">
+    <div class = "first-search-container">
 
-        <div class="search-container-item" id="hsn-container-item">
-          <label>Herstellerschlüsselnummer (HSN)</label>
-          <div class="search-selection-item">
-            <input type="number" class="search-selection" placeholder="Bitte angeben" id="hsn-input">
-          </div>
-        </div>
+<div class="search-container-item" id="hsn-container-item">
+  <label>Herstellerschlüsselnummer (HSN)</label>
+  <div class="search-selection-item">
+    <input type="number" class="search-selection" placeholder="Bitte angeben" id="hsn-input">
+  </div>
+</div>
 
-        <div class="search-container-item" id="tsn-container-item">
-          <label>Typschlüsselnummer (TSN)</label>
-          <div class="search-selection-item">
-            <input type="text" class="search-selection" placeholder="Bitte angeben" id="tsn-input">
-          </div>
-        </div>
+<div class="search-container-item" id="tsn-container-item">
+  <label>Typschlüsselnummer (TSN)</label>
+  <div class="search-selection-item">
+    <input type="text" class="search-selection" placeholder="Bitte angeben" id="tsn-input">
+  </div>
+</div>
 
-        <!--Reset Button-->
-        <div class="reset-button" id="first-search-reset-button">
-          <i class="fa-solid fa-rotate-right" id="reset-button-one"></i>
-          <a id="first-search-reset-button-two">Auswahl zurücksetzen</a>
-        </div>
-        
-        <script>
-          document.getElementById('first-search-reset-button').addEventListener('click', function() {
-              // Alle Select-Elemente zurücksetzen
-              const selects = document.querySelectorAll('select');
-              selects.forEach(select => {
-                  select.selectedIndex = 0; // Setze die Auswahl auf die erste Option
-              });
+<!--Reset Button-->
+<div class="reset-button" id="first-search-reset-button">
+  <i class="fa-solid fa-rotate-right" id="reset-button-one"></i>
+  <a id="first-search-reset-button-two">Auswahl zurücksetzen</a>
+</div>
+
+<script>
+  document.getElementById('first-search-reset-button').addEventListener('click', function() {
+      // Alle Select-Elemente zurücksetzen
+      const selects = document.querySelectorAll('select');
+      selects.forEach(select => {
+          select.selectedIndex = 0; // Setze die Auswahl auf die erste Option
+      });
+
+      // Alle Input-Felder zurücksetzen
+      const inputs = document.querySelectorAll('input');
+      inputs.forEach(input => {
+          input.value = ''; // Setze den Wert auf leer
+      });
+  });
+
+  document.getElementById('first-search-reset-button-two').addEventListener('click', function() {
+      // Alle Select-Elemente zurücksetzen
+      const selects = document.querySelectorAll('select');
+      selects.forEach(select => {
+          select.selectedIndex = 0; // Setze die Auswahl auf die erste Option
+      });
+
+      // Alle Input-Felder zurücksetzen
+      const inputs = document.querySelectorAll('input');
+      inputs.forEach(input => {
+          input.value = ''; // Setze den Wert auf leer
+      });
+  });
+</script>
+
+
+<!--END of Reset Button-->
+<div class = "search-button-one" id="first-filter-button" id="search-tsn-hsn">
+  <button type="reset" id="first-filter-button-btn">Suchen</button>
+</div>
+
+
+</div>
+
+
       
-              // Alle Input-Felder zurücksetzen
-              const inputs = document.querySelectorAll('input');
-              inputs.forEach(input => {
-                  input.value = ''; // Setze den Wert auf leer
-              });
-          });
-
-          document.getElementById('first-search-reset-button-two').addEventListener('click', function() {
-              // Alle Select-Elemente zurücksetzen
-              const selects = document.querySelectorAll('select');
-              selects.forEach(select => {
-                  select.selectedIndex = 0; // Setze die Auswahl auf die erste Option
-              });
-      
-              // Alle Input-Felder zurücksetzen
-              const inputs = document.querySelectorAll('input');
-              inputs.forEach(input => {
-                  input.value = ''; // Setze den Wert auf leer
-              });
-          });
-        </script>
-
-
-        <!--END of Reset Button-->
-        <div class = "search-button-one" id="first-filter-button" id="search-tsn-hsn">
-          <button type="reset" id="first-filter-button-btn">Suchen</button>
-        </div>
-
-
-      </div>
 
 
     </section>
+
+    
 
     <!-- design -->
     <section class = "design" id = "design">
