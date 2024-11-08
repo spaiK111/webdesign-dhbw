@@ -205,7 +205,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
         </div>
 		<div class="btn-group">
 			<div class ="btn-wrapper">
-			<button class="btn" id="add_blog_txt" authorFirstname="<?php echo $firstName; ?>" authorLastname="<?php echo $lastName; ?>">Hinzufügen</button>
+				<button class="btn" id="add_blog_txt" authorFirstname="<?php echo $firstName; ?>" authorLastname="<?php echo $lastName; ?>">Hinzufügen</button>
 				<button class="btn" id="clear_blog">Clear</button>
 			</div>
 		</div>
@@ -214,23 +214,27 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
 			<div class = "input-blog" style="display: none; padding: 20px;" id="new-blog-new">
 
-				<h2 class="input-field-txt" >Geben Sie die IDs ein</h2>
 
-				<p class="input-field-txt"><strong>HSN: </strong> <input class="input" value="2345622" type="number" id="entry-hsn"></p>
-
-				<p class="input-field-txt"><strong>TSN: </strong> <input class="input" value="6543223" type="number" id="entry-tsn"></p>
+				<div class="input-container">
+					<h2 class="input-field-txt" >Geben Sie die IDs ein</h2>
+					<p class="input-field-txt"><strong>HSN: </strong> <input class="input" value="2345622" type="number" id="entry-hsn"></p>
+					<p class="input-field-txt"><strong>TSN: </strong> <input class="input" value="6543223" type="number" id="entry-tsn"></p>
+				</div>
 
 				<h2 class="input-field-txt">Weitere Daten</h2>
+				
+				<div class="input-container-grid">
+					
 
-				<p class="input-field-txt"><strong>Make: </strong> <textarea class="textarea resize-ta" id="entry-make-area">BMW</textarea></p>
+					<p class="input-field-txt"><strong>Make: </strong> <textarea class="textarea resize-ta" id="entry-make-area">BMW</textarea></p>
 
-				<p class="input-field-txt"><strong>Model: </strong> <textarea class="textarea resize-ta" id="entry-model-area">318i</textarea></p>
+					<p class="input-field-txt"><strong>Model: </strong> <textarea class="textarea resize-ta" id="entry-model-area">318i</textarea></p>
 
-				<p class="input-field-txt"><strong>Jahr: </strong> <textarea class="textarea resize-ta" id="entry-year-area">2014</textarea></p>
+					<p class="input-field-txt"><strong>Jahr: </strong> <textarea class="textarea resize-ta" id="entry-year-area">2014</textarea></p>
 
-				<p class="input-field-txt"><strong>KW: </strong> <textarea class="textarea resize-ta" id="entry-kw-area">147</textarea></p>
+					<p class="input-field-txt"><strong>KW: </strong> <textarea class="textarea resize-ta" id="entry-kw-area">147</textarea></p>
 
-				<p class="input-field-txt"><strong>Kategorie: </strong>
+					<p class="input-field-txt"><strong>Kategorie: </strong>
 					<select class="textarea resize-ta" id="entry-category">
 						<option value="Limousine" default>Limousine</option>
 						<option value="Kombi">Kombi</option>
@@ -261,8 +265,17 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
 
 				<p class="input-field-txt"><strong>Kofferraumvolumen: </strong> <textarea class="textarea resize-ta" id="entry-backVolumen-area">3</textarea></p>
-
 				<p class="input-field-txt"><strong>Maximale Geschwindigkeit (km/h): </strong> <textarea class="textarea resize-ta" id="entry-maxSpeed-area">260</textarea></p>
+
+				</div>
+
+
+				<div class="input"
+				
+
+				
+
+				
 
 				<p class="input-field-txt"><strong>Image (1): </strong> <textarea class="textarea resize-ta" id="entry-image1">https://media.istockphoto.com/id/1435226078/photo/front-of-a-white-bmw-m4-parked-on-a-street-with-trees-in-the-background.jpg?s=612x612&w=0&k=20&c=l1IupUrh-_Zbcse-hDkaUAh-qMD82hJspXjnN0IBZlg=</textarea></p>
 
