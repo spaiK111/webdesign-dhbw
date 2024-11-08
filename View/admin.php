@@ -287,21 +287,25 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 				</div>
 
 
-				<div class="input"
+				<div class="input-image-container">
+					
+					<p class="input-field-txt"><strong>Image (1): </strong> <textarea class="textarea resize-ta" id="entry-image1">https://media.istockphoto.com/id/1435226078/photo/front-of-a-white-bmw-m4-parked-on-a-street-with-trees-in-the-background.jpg?s=612x612&w=0&k=20&c=l1IupUrh-_Zbcse-hDkaUAh-qMD82hJspXjnN0IBZlg=</textarea></p>
+
+					<p class="input-field-txt"><strong>Image (2): </strong> <textarea class="textarea resize-ta" id="entry-image2">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgy3Vihtm_EdW3klYnE0IsHeMwpRMnHJGmng&s</textarea></p>
+
+					<p class="input-field-txt"><strong>Image (3): </strong> <textarea class="textarea resize-ta" id="entry-image3">https://imgd.aeplcdn.com/370x208/n/cw/ec/132513/7-series-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80</textarea></p>
+
+					<p class="input-field-txt"><strong>Image (4): </strong> <textarea class="textarea resize-ta" id="entry-image4">https://t4.ftcdn.net/jpg/04/20/38/41/360_F_420384111_5fzxWlWxvB7bg5BROxfKdBbgBYB2TwGP.jpg</textarea></p>
+
+
+				</div>
 				
 
 				
 
 				
 
-				<p class="input-field-txt"><strong>Image (1): </strong> <textarea class="textarea resize-ta" id="entry-image1">https://media.istockphoto.com/id/1435226078/photo/front-of-a-white-bmw-m4-parked-on-a-street-with-trees-in-the-background.jpg?s=612x612&w=0&k=20&c=l1IupUrh-_Zbcse-hDkaUAh-qMD82hJspXjnN0IBZlg=</textarea></p>
-
-				<p class="input-field-txt"><strong>Image (2): </strong> <textarea class="textarea resize-ta" id="entry-image2">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgy3Vihtm_EdW3klYnE0IsHeMwpRMnHJGmng&s</textarea></p>
-
-				<p class="input-field-txt"><strong>Image (3): </strong> <textarea class="textarea resize-ta" id="entry-image3">https://imgd.aeplcdn.com/370x208/n/cw/ec/132513/7-series-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80</textarea></p>
-
-				<p class="input-field-txt"><strong>Image (4): </strong> <textarea class="textarea resize-ta" id="entry-image4">https://t4.ftcdn.net/jpg/04/20/38/41/360_F_420384111_5fzxWlWxvB7bg5BROxfKdBbgBYB2TwGP.jpg</textarea></p>
-
+				
 				<button class="btn" id="add_blog_default" style="margin-top: 20px">Hinzufügen</button>
 
 			</div>

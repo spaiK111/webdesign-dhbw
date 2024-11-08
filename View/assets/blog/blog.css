@@ -461,7 +461,7 @@ form {
   padding-left: 20px;
   z-index: 2;
   color: rgba(255, 255, 255, 0.647);
-  font-size: clamp(2rem, 16vw + 1rem, 6rem);
+  font-size: clamp(1.5rem, 16vw + 1rem, 4rem);
   cursor: pointer;
 }
 
@@ -471,7 +471,7 @@ form {
   padding-left: 20px;
   z-index: 2;
   color: rgba(255, 255, 255, 0.647);
-  font-size: clamp(1rem, 4vw + 1rem, 4rem);
+  font-size: clamp(1rem, 4vw + 1rem, 2.5rem);
   padding-bottom: 2rem;
 }
 
