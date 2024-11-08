@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     submit.addEventListener('click', async () => {
         const errorParagraph = error.querySelector('p');
-        console.log("PW", password.value)
+
         const hashedPassword = CryptoJS.SHA256(password.value).toString();
 
         if (!validateEmail(login.value)) {
@@ -37,19 +37,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                         });
                         return;
                     }
-                    // setCookie('login', login.value, 7);
-                    // setCookie('password', hashedPassword, 7);
 
-                    //window.location.href = `http://localhost:3000/View/admin.php?login=${login.value}&hashedPassword=${hashedPassword}`; // Weiterleitung zur admin.php
+                    window.location.href = `http://localhost:3000/View/login.php`; // Weiterleitung zur admin.php
             } else {
-                const errorData = await response.json();
-                error.style.display = 'flex';
-                errorParagraph.textContent = errorData.error || 'Registration failed';
+               alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
             }
         } catch (err) {
-            error.style.display = 'flex';
-            errorParagraph.textContent = 'An error occurred. Please try again later.';
-            console.error('Error:', err);
+            alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
         }
 
     })
