@@ -32,8 +32,6 @@ router.get('/', blogController.getAllPosts);
 
 router.get('/getCarByUid', blogController.getCarByUid);
 
-router.get('/makeOptions', blogController.getMakeOptions);
-
 router.post('/restrictUser', blogController.restrictUser)
 
 router.get('/checkRestriction', blogController.checkRestriction)
@@ -69,13 +67,5 @@ router.get('/getPostById', blogController.getPostById);
 
 // Aktualisiere einen Blogpost
 router.put('/:id', blogController.updatePost);
-
-// Lösche einen Blogpost
-router.delete('/:id', blogController.deletePost);
-
-
-
-// Beispieldaten einfügen
-router.post('/seed', blogController.seedPosts);
 
 module.exports = router;

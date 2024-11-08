@@ -1,15 +1,14 @@
 const fs = require('fs');
 const xml2js = require('xml2js');
 
-// Function to update the database
+
 async function dbUpdate(database, formattedEntry) {
     const collection = database.collection('cars');
 
-    // Check if the blog post with the given uid exists
     const existingPost = await collection.findOne({ uid: formattedEntry.uid });
 
     if (existingPost) {
-        // Check if any fields are different
+        
         const fieldsToUpdate = {};
         for (const key in formattedEntry) {
             if (formattedEntry[key] !== existingPost[key]) {
@@ -17,42 +16,42 @@ async function dbUpdate(database, formattedEntry) {
             }
         }
 
-        // If there are fields to update, update the document
+       
         if (Object.keys(fieldsToUpdate).length > 0) {
             await collection.updateOne(
                 { uid: formattedEntry.uid },
                 { $set: fieldsToUpdate }
             );
-            console.log(`FormattedEntry with uid ${formattedEntry.uid} updated.`);
+            console.log(`Eintrag mit uid ${formattedEntry.uid} aktualisiert.`);
         } else {
-            console.log(`FormattedEntry with uid ${formattedEntry.uid} is already up-to-date.`);
+            console.log(`Eintrag mit uid ${formattedEntry.uid} ist bereits aktualisiert.`);
         }
     } else {
-        // Insert the new blog post
+        
         await collection.insertOne(formattedEntry);
-        console.log(`FormattedEntry with uid ${formattedEntry.uid} inserted.`);
+        console.log(`Eintrag mit uid ${formattedEntry.uid} neu hinzugefügt.`);
     }
 }
 
-// Function to parse the XML file and update the database
+
 async function parseAndUpdate(database) {
     const parser = new xml2js.Parser();
 
     fs.readFile('data.xml', (err, data) => {
         if (err) {
-            console.error('Error reading XML file:', err);
+            console.error('Fehler beim XML file:', err);
             return;
         }
 
         parser.parseString(data, async (err, result) => {
             if (err) {
-                console.error('Error parsing XML file:', err);
+                console.error('Error beim XML file parsen:', err);
                 return;
             }
 
             const entries = result.root.Entry;
             for (const entry of entries) {
-                // Convert blogPost object to a simpler format
+                
                 const formattedEntry = {
                     uid: entry.uid[0],
                     hsn: entry.hsn[0],

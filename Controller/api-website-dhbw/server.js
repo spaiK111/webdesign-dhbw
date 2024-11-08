@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const blogRoutes = require("./routes/blogRoutes"); // Import der Routen
-const parseAndUpdate = require("./parseAndUpdate"); // Import the parser function
+const blogRoutes = require("./routes/blogRoutes"); 
+const parseAndUpdate = require("./parseAndUpdate"); 
 const updateMakeOptions = require("./updateMakeOptions");
 const app = express();
 const port = 5000;
@@ -20,9 +20,8 @@ mongoose
   })
   .then(async (connection) => {
     console.log("Mit MongoDB verbunden");
-    const database = connection.connection.db; // Get the database instance
-    await parseAndUpdate(database); // Call the parser function with the database instance
-    //await updateMakeOptions(database);
+    const database = connection.connection.db; 
+    await parseAndUpdate(database); 
   })
   .catch((err) => {
     console.error("MongoDB-Verbindung fehlgeschlagen:", err.message);
