@@ -382,5 +382,6 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 	<script src="assets//admin/js/script.js"></script>
 	<script src="assets//admin/js/main.js"></script>
 	<script src="assets//admin/js/clearButtonBlogForm.js"></script>
+	<script src="assets//admin/js/changeView.js"></script>
 </body>
 </html>

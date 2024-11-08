@@ -1,16 +1,12 @@
 const allSideMenu = document.querySelectorAll('.sidebar .side-menu.top li a');
 const config = document.getElementById('config');
-const stats = document.getElementById('stats');
-const blog = document.getElementById('new-blog');
-const dashboard = document.getElementById('dashboard');
+
 const divTable = document.querySelector('ul#box-info.box-info');
 const tableData = document.querySelector('div#table-data.table-data');
 
 const logOut = document.getElementById('log-out');
 
 const statsBlock = document.querySelector('div.statistics');
-
-const carBlog = document.getElementById('new-blog-car');
 
 const inputFields = document.querySelector('div.input-fields');
 
@@ -31,41 +27,6 @@ allSideMenu.forEach(item=> {
 	})
 });
 
-carBlog.addEventListener('click', function () {
-	divTable.style.display = 'none';
-	tableData.style.display = 'none';
-	inputFields.style.display = 'none';
-	blogNew.style.display = 'block';
-	statsBlock.style.display = 'none';
-}) 
-
-stats.addEventListener('click', function () {
-	divTable.style.display = 'none';
-	tableData.style.display = 'none';
-	inputFields.style.display = 'none';
-	blogNew.style.display = 'none';
-	statsBlock.style.display = 'block';
-	statsBlock.style.width = '800px';
-	statsBlock.style.height = '400px';
-})
-
-
-blog.addEventListener('click', function () {
-	divTable.style.display = 'none';
-	tableData.style.display = 'none';
-	inputFields.style.display = 'block';
-	blogNew.style.display = 'none';
-	statsBlock.style.display = 'none';
-	}
-)
-
-dashboard.addEventListener('click', function () {
-	divTable.style.display = 'grid';
-	tableData.style.display = 'flex';
-	inputFields.style.display = 'none';
-	blogNew.style.display = 'none';
-	statsBlock.style.display = 'none';
-})
 
 logOut.addEventListener('click', function () {
 	emptyCookie('login');
