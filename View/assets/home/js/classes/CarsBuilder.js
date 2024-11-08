@@ -41,7 +41,7 @@ export class CarsBuilder {
                         <div class="div2-body">
                             <div class="content">
                                 <h2 class="car-name">
-                                    <a href="./preset.php?uid=${post._id}">${post.make}</a>
+                                    <a href="./preset.php?uid=${post.uid}">${post.make}</a>
                                 </h2>
                             </div>
                             <section>

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
         const validated = await validateFields(hsn, tsn);
-        console.log('Selected value:', hsn, tsn);
+        console.log('Selected value:', hsn, tsn);   
 
         if(validated){
             const uid = `${hsn +"_"+tsn}`;
