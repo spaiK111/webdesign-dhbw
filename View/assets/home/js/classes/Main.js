@@ -155,7 +155,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             return false;
         }
 
-
         return true;
 
     }

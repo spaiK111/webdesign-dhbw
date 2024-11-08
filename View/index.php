@@ -148,7 +148,6 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
             <select class="search-selection" id="category">
               <option selected value =""> Beliebig </option>
               
-                
               <option value="Limousine">Limousine</option>
               <option value="Kombi">Kombi</option>
               <option value="SUV">SUV </option>
@@ -324,15 +323,6 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
       <!-- wird gebaut aus dem Script-->
 
-      <!-- <li href="#"><a>«</a></li>
-      <li href="#"><a class="active">1</a></li>
-      <li href="#"><a>2</a></li>
-      <li href="#"><a>3</a></li>
-      <li href="#"><a>4</a></li>
-      <li href="#"><a>5</a></li>
-      <li href="#"><a>6</a></li>
-      <li href="#"><a href="#">7</a></li>
-      <li href="#"><a href="#">»</a></li> -->
   </ul>
 
   </div>
