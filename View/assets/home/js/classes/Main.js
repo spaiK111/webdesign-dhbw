@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const ff_Item = document.querySelector('.pagination2 li a.ff');
     const bb_Item = document.querySelector('.pagination2 li a.bb');
 
+    const paginationItems = document.querySelectorAll('.pagination2 li a.page');
 
     let pagination = 0;
 
@@ -50,8 +51,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             await carsBuilder.fetchBlogPosts(pagination, makeValue, modelValue, ps1Value,ps2Value, categoryValue, fueltypeValue)
 
     })
-
-    const paginationItems = document.querySelectorAll('.pagination2 li a.page');
     
     paginationItems.forEach(item => {
         item.addEventListener('click', async function() {
@@ -86,14 +85,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     })
 
     make.addEventListener('change', async () => {
-       
         if(make.value !== '') {
-            console.log("111")
             model.removeAttribute("disabled");
             await createmake();
         }
         else {
-            console.log("222")
             model.setAttribute("disabled", "true");
             clearOptionsExceptDefault('model')
         }
@@ -116,31 +112,27 @@ document.addEventListener('DOMContentLoaded', async () => {
         await paginationBuilder.setActivePage(pagination + 1);
     })
 
-
     async function createmake() {
         try {
             const makeValue = make.value
-            const response = await fetch(`http://localhost:5000/api/posts/getAllMakePosts?make=${makeValue}`); // Replace with your actual API endpoint
+            const response = await fetch(`http://localhost:5000/api/posts/getAllMakePosts?make=${makeValue}`); 
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            console.log('Data:', data);
     
             clearOptionsExceptDefault('model')
-            // Create a set to store unique models
+
             const uniqueModels = new Set();
     
-            // Iterate over the entries and add models to the set
+
             data.forEach(entry => {
                 if (entry.model) {
                     uniqueModels.add(entry.model);
                 }
             });
     
-            // Create options from the unique models
-            console.log("Unique-Models", uniqueModels)
-            const selectElement = document.getElementById('model'); // Replace with your actual select element ID
+            const selectElement = document.getElementById('model'); 
             uniqueModels.forEach(model => {
                 const option = document.createElement('option');
                 option.value = model;
@@ -148,7 +140,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 selectElement.appendChild(option);
             });
     
-            console.log('Unique models:', Array.from(uniqueModels));
         } catch (err) {
             console.error('Error:', err);
         }
