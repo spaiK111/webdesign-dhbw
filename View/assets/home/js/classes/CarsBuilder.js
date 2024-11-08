@@ -15,13 +15,10 @@ export class CarsBuilder {
             console.log(posts)
             // Blogposts in das HTML einfügen
             posts.forEach(async post => {
-                console.log("here")
-                const image_1 = post.image_1 ? post.image_1 : "../../../../../car-not-found.jpg"; // Fallback-Bild verwenden
-                const image_2 = post.image_2 ? post.image_2 : "../../../../../car-not-found.jpg";
-                const image_3 = post.image_3 ? post.image_3 : "../../../../../car-not-found.jpg";
-                const image_4 = post.image_4 ? post.image_4 : "../../../../../car-not-found.jpg";
-
-                console.log("here")
+                const image_1 = post.image_1 ? post.image_1 : "../../images/car-not-found.jpg"; // Fallback-Bild verwenden
+                const image_2 = post.image_2 ? post.image_2 : "../../images/car-not-found.jpg";
+                const image_3 = post.image_3 ? post.image_3 : "../../images/car-not-found.jpg";
+                const image_4 = post.image_4 ? post.image_4 : "../../images/car-not-found.jpg";
 
                 const postElement = document.createElement('div');
                 postElement.classList.add('parent');
@@ -31,7 +28,7 @@ export class CarsBuilder {
                         <div class="all_images">
                             <div class="big_image">
                                 <img src="${image_1} ">
-                                <span><i class="far fa-heart"></i> 22</span>
+                                
                             </div>
                             <div class="small_images">
                                 <img src="${image_2}">
@@ -44,7 +41,7 @@ export class CarsBuilder {
                         <div class="div2-body">
                             <div class="content">
                                 <h2 class="car-name">
-                                    <a href="./preset.php?uid=${post._id}">${post.make}</a>
+                                    <a href="./preset.php?uid=${post.uid}">${post.make}</a>
                                 </h2>
                             </div>
                             <section>

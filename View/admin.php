@@ -236,9 +236,19 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
 					<p class="input-field-txt"><strong>Kategorie: </strong>
 					<select class="textarea resize-ta" id="entry-category">
-						<option value="Limousine" default>Limousine</option>
-						<option value="Kombi">Kombi</option>
-						<option value="Cabrio">Cabrio</option>
+					<option value="Limousine">Limousine</option>
+					<option value="Kombi">Kombi</option>
+					<option value="SUV">SUV </option>
+					<option value="Coupe">Coupe</option>
+					<option value="Cabriolet">Cabriolet</option>
+					<option value="Roadster">Roadster</option>
+					<option value="Sportwagen">Sportwagen </option>
+					<option value="Minivan">Minivan</option>
+					<option value="Pick Up">Pick Up</option>
+					<option value="Kompaktwagen">Kompaktwagen</option>
+					<option value="Kleinwagen">Kleinwagen</option>
+					<option value="Crossover">Crossover</option>
+					<option value="Van">Van</option>
 					</select>
 				</p>
 
@@ -246,9 +256,16 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
 				<p class="input-field-txt"><strong>Kraftstoffart: </strong>
 					<select class="textarea resize-ta" id="entry-fueltype">
-						<option value="Benzin" default>Benzin</option>
-						<option value="Diesel">Diesel</option>
-						<option value="Elektro">Elektro</option>
+					<option value="Benzin">Benzin</option>
+					<option value="Diesel">Diesel</option>
+					<option value="Elektrisch">Elektrisch</option>
+					<option value="Hybrid">Hybrid</option>
+					<option value="Plug-in-Hybrid">Plug-in-Hybrid</option>
+					<option value="Erdgas (CNG)">Erdgas (CNG)</option>
+					<option value="Flüssiggas (LPG)">Flüssiggas (LPG)</option>
+					<option value="Biokraftstoff">Biokraftstoff</option>
+					<option value="Ethanol (E85)">Ethanol (E85)</option>
+					<option value="Wasserstoff-Brennstoffzelle">Wasserstoff-Brennstoffzelle</option>
 					</select>
 				</p>
 
