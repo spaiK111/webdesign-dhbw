@@ -199,26 +199,39 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
         <div class="search-container-item" id ="search-container-leistungsbereich">
           <label>Modelljahr</label>
           <div class="search-selection-item" id ="leistungsbereich-selection" >
-            <input class="search-selection" list="leistungsbereich1" id="ps1" name="ps1" placeholder="Beliebig" />
-            <datalist id="leistungsbereich1">
-              <option value="20"></option>
-              <option value="40"></option>
-              <option value="60"></option>
-              <option value="80"></option>
-              <option value="100"></option>
-              <option value="120"></option>
+            <input class="search-selection" list="modelljahr1" id="ps1" name="ps1" placeholder="Beliebig" />
+            <datalist id="modelljahr1">
+              <option value="2000"></option>
+              <option value="2001"></option>
+              <option value="2002"></option>
+              <option value="2003"></option>
+              <option value="2004"></option>
+              <option value="2005"></option>
+              <option value="2006"></option>
+              <option value="2007"></option>
+              <option value="2008"></option>
+              <option value="2009"></option>
+              <option value="2010"></option>
             </datalist>
 
             <span class="search-selection-span">bis</span>
 
-            <input class="search-selection" list="leistungsbereich2" id="ps2" name="ps2" placeholder="Beliebig" />
-            <datalist id="leistungsbereich2">
-              <option value="140"></option>
-              <option value="160"></option>
-              <option value="180"></option>
-              <option value="200"></option>
-              <option value="220"></option>
-              <option value="240"></option>
+            <input class="search-selection" list="modelljahr2" id="ps2" name="ps2" placeholder="Beliebig" />
+            <datalist id="modelljahr2">
+              <option value="2011"></option>
+              <option value="2012"></option>
+              <option value="2013"></option>
+              <option value="2014"></option>
+              <option value="2015"></option>
+              <option value="2016"></option>
+              <option value="2017"></option>
+              <option value="2018"></option>
+              <option value="2019"></option>
+              <option value="2020"></option>
+              <option value="2021"></option>
+              <option value="2022"></option>
+              <option value="2023"></option>
+              <option value="2024"></option>
             </datalist>
 
             <div class="search-box">
