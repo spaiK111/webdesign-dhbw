@@ -60,11 +60,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 error.style.display = 'block'
                 errorParagraph.textContent = 'Fehler bei der Eingabe';
             }
-
             await carsBuilder.deleteOldPosts(); 
             await carsBuilder.fetchBlogPosts(pagination, makeValue, modelValue, ps1Value,ps2Value, categoryValue, fueltypeValue)
-
-
 
     })
 
