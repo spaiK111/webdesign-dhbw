@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
 
-
-    const clearButton = document.getElementById('clear_blog');
     const addButton = document.getElementById('add_blog_txt');
     const addButtonCar = document.getElementById('add_blog_default');
 
@@ -43,17 +41,5 @@ document.addEventListener('DOMContentLoaded', async () => {
             console.error('Error fetching pagination:', error);
         }
     })
-
-    clearButton.addEventListener('click', async () => {
-        console.log("here")
-        const make = document.getElementById('make');
-        if (make) make.value = '';
-
-        const year = document.getElementById('year');
-        if (year) year.value = '';
-
-        const link = document.getElementById('link');
-        if (link) link.value = '';
-    });
 
 })
