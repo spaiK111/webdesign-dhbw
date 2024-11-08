@@ -206,5 +206,29 @@
     <image_4>https://arabam-blog.mncdn.com/wp-content/uploads/2021/07/tesla-model-x.jpg</image_4>
     <createdAt>1731019478</createdAt>
     <author>Login_user</author>
+  </Entry>
+
+    <Entry>
+    <uid>76782632_OKOFJEBFEW</uid>
+    <hsn>76782632</hsn>
+    <tsn>OKOFJEBFEW</tsn>
+    <make>Volkswagen</make>
+    <model>I.D. 7</model>
+    <year>2024</year>
+    <kw>225</kw>
+    <category>SUV</category>
+    <engine>Elektromotor</engine>
+    <fuelType>Elektrisch</fuelType>
+    <hubraum>0</hubraum>
+    <co2Wert>0</co2Wert>
+    <antriebsart>Allrad</antriebsart>
+    <backVolumen>5</backVolumen>
+    <maxSpeed>220</maxSpeed>
+    <image_1>https://upload.wikimedia.org/wikipedia/commons/a/a6/Volkswagen_ID.7_IAA_2023_1X7A0375.jpg</image_1>
+    <image_2>https://unterwegs-auf-der-autobahn.de/sites/default/files/public/styles/_galerie_2100x1400_/public/images-news-galerie/db2024au00419-1.jpg</image_2>
+    <image_3>https://uploads.vw-mms.de/system/production/images/vwn/081/099/images/e13b1b0c66e3efc5469c6c399604f0ec3deb1087/DB2024AU00278_web_1600.jpg?1709812457</image_3>
+    <image_4>https://www.electrive.net/media/2024/02/volkswagen-id7-tourer-2024-14-min.jpg</image_4>
+    <createdAt>1731019478</createdAt>
+    <author>Login_user</author>
 </Entry>
 </root>
