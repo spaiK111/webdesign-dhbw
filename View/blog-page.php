@@ -31,12 +31,8 @@ $apiUrl = "http://localhost:5000/api/posts/getBlogById/?_id=$_id";
     $long_dsc = $data['long_dsc'];
     $image = $data['image'];
 
-    if ($data) {
-        echo "blog found";
-        echo count($data['likes']);
-	}
-	else {
-		echo "Bad Request";
+    if (!$data) {
+        echo "Bad Request";
 	}
     
 ?>
