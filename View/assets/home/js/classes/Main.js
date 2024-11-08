@@ -26,9 +26,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const submit = document.getElementById('filter-button')
     const error = document.getElementById('error')
 
-
-    const paginationItems = document.querySelectorAll('.pagination2 li a.page');
-
     let pagination = 0;
 
     await paginationBuilder.buildPagination(pagination, makeValue);
@@ -52,6 +49,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             await carsBuilder.fetchBlogPosts(pagination, makeValue, modelValue, ps1Value,ps2Value, categoryValue, fueltypeValue)
 
     })
+
+    const paginationItems = document.querySelectorAll('.pagination2 li a.page');
     
     paginationItems.forEach(item => {
         item.addEventListener('click', async function() {
