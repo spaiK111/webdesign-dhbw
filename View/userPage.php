@@ -76,7 +76,7 @@ $apiUrl = "http://localhost:5000/api/posts/getUserData/?login=$login&hashedPassw
 
 	<!-- SIDEBAR -->
 	<section class="sidebar">
-		<a href="/index.html" class="brand">
+		<a href="index.php" class="brand">
 			<span class="text">CarBlog</span>
 		</a>
 		<ul class="side-menu top">
